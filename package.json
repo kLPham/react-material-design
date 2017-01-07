@@ -26,9 +26,8 @@
     "dist": "yarn cleanup && yarn build && yarn build:min",
     "lint": "eslint components --ext .js",
     "patch": "bumped release patch",
-    "prebuild": "yarn clean",
+    "prebuild": "yarn cleanup",
     "prepublish": "yarn prebuild && yarn build ",
-    "works:prepublish": "babel components --out-dir ./lib --source-maps --presets node6,airbnb,react,stage-0 --plugins babel-plugin-add-module-exports,transform-class-properties",
     "release": "bumped release"
   },
   "dependencies": {

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import '@material/button/dist/mdc.button.css';
 
 const cssClasses = {
@@ -16,6 +16,10 @@ const Button = ({ label, type, disabled }) =>
         className={`mdc-button ${typeof type !== 'undefined' ? cssClasses[type] : ''}`}
     >
         {label}
-     </button>;
-
+    </button>;
+Button.propTypes = {
+    label: PropTypes.string.isRequired,
+    type: PropTypes.string,
+    disabled: PropTypes.bool,
+};
 export default Button;

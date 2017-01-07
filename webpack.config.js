@@ -7,34 +7,34 @@ const IS_DEV = process.env.NODE_ENV === 'development';
 const IS_PROD = process.env.NODE_ENV === 'production';
 
 module.exports = [{
-  name:'components',
-  entry: {
-      checkbox: [path.resolve('./components/checkbox/index')],
-      textfield: [path.resolve('./components/textfield/index')]
-  },
-  output: {
-    path: OUT_PATH,
-    publicPath: PUBLIC_PATH,
-    filename: 'rmd.[name].' + (IS_PROD ? 'min.' : '') + 'js',
-    libraryTarget: 'umd',
-    library: '[name]',
-  },
-  devtool: IS_DEV ? 'source-map' : 'cheap-module-source-map',
-  module: {
-    rules: [{
-      test: /\.js?$/,
-      use: ['babel-loader'],
-      include: [
-          path.join(__dirname, 'components'),
-          path.join(__dirname, 'node_modules', '@material')
-      ],
-        exclude:[/(node_modules)/]
+    name: 'components',
+    entry: {
+        checkbox: [path.resolve('./components/checkbox/index')],
+        textfield: [path.resolve('./components/textfield/index')]
     },
-        {
-            test: /\.css$/,
-            use: ['style-loader', 'css-loader']
-        }]
-  },
+    output: {
+        path: OUT_PATH,
+        publicPath: PUBLIC_PATH,
+        filename: 'rmd.[name].' + (IS_PROD ? 'min.' : '') + 'js',
+        libraryTarget: 'umd',
+        library: '[name]',
+    },
+    devtool: IS_DEV ? 'source-map' : 'cheap-module-source-map',
+    module: {
+        rules: [{
+            test: /\.js?$/,
+            use: ['babel-loader'],
+            include: [
+                path.join(__dirname, 'components'),
+                path.join(__dirname, 'node_modules', '@material')
+            ],
+            exclude: [/(node_modules)/]
+        },
+            {
+                test: /\.css$/,
+                use: ['style-loader', 'css-loader']
+            }]
+    },
     plugins: [
         new webpack.DefinePlugin({
             'process.env': {
@@ -63,7 +63,7 @@ module.exports = [{
                 include: [
                     path.join(__dirname, 'components'),
                 ],
-                exclude:[/(node_modules)/]
+                exclude: [/(node_modules)/]
             },
                 {
                     test: /\.css$/,
@@ -74,7 +74,7 @@ module.exports = [{
                         {
                             loader: 'css-loader'
                         }
-                        ]
+                    ]
                 }]
         },
         plugins: [

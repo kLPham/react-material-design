@@ -19,5 +19,6 @@ const FAB = ({ icon, type }) =>
     </button>;
 FAB.propTypes = {
     icon: PropTypes.string.isRequired,
+    type: PropTypes.string,
 };
 export default FAB;

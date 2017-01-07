@@ -1,10 +1,10 @@
 import React from 'react';
-import { Button } from 'react-material-design';
+// import { Button } from 'react-material-design';
+import Button from '../components/button';
 
 const ButtonExamples = () =>
     <div>
         <h2>Button Examples</h2>
-        <Button label="Flat" />
         <Button label="Colored" type="colored" />
         <Button label="Raised" type="raised" />
         <Button label="Disabled" type="primary" disabled />
@@ -13,3 +13,4 @@ const ButtonExamples = () =>
         <Button label="Primary" type="primary" />
     </div>;
 export default ButtonExamples;
+//         <Button label="Flat" />
