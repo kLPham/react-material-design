@@ -6,6 +6,14 @@ Our web projects use React, and Google Material Design theories. So we decided c
 Install
 `yarn add react-material-design`
 
+## Usage
+### Icons
+Ensure that appropriate icon library is added to the `<head>` of your project's html file
+
+* [Material icons](https://material.io/icons): Multiple word icons need to be named with a `-` e.g., `account-circle`
+    * `<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">`
+* Other Icon libraries can be used as well
+[Font Awesome](http://fontawesome.io/icons)
 ## Project Notes
 I want this to work with
 * react

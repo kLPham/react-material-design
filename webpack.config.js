@@ -26,7 +26,7 @@ module.exports = [{
       use: ['babel-loader'],
       include: [
           path.join(__dirname, 'components'),
-        //  path.join(__dirname, 'node_modules', '@material')
+          path.join(__dirname, 'node_modules', '@material')
       ],
         exclude:[/(node_modules)/]
     },
