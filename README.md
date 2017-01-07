@@ -1,6 +1,6 @@
 # Material Design for React
 
-[![npm](https://img.shields.io/npm/dm/express.svg)](https://www.npmjs.com/package/react-material-design)
+[![npm](https://img.shields.io/npm/dm/react-material-design.svg?style=social)](https://www.npmjs.com/package/react-material-design)
 
 React components for [material-components/material-components-web](https://github.com/material-components/material-components-web)'s foundation/adapter classes.
 Our web projects use React, and Google Material Design theories. So we decided contribute to the project that best adheres to [Material Design guidelines](https://material.io/guidelines). Plus Material Components is developed by a core team of engineers and UX designers at Google.
