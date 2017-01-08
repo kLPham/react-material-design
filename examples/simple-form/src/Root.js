@@ -1,4 +1,5 @@
 import React from 'react';
+import MenuExamples from './presentational/MenuExamples';
 import ButtonExamples from './presentational/ButtonExamples';
 import CheckboxExamples from './presentational/CheckboxExamples';
 import FABExamples from './presentational/FABExamples';
@@ -7,10 +8,11 @@ import ListExamples from './presentational/ListExamples';
 
 const Root = () =>
     <div>
+        <MenuExamples />
+        <CheckboxExamples />
+        <InputExamples />
         <ListExamples />
         <ButtonExamples />
         <FABExamples />
-        <CheckboxExamples />
-        <InputExamples />
     </div>;
 export default Root;

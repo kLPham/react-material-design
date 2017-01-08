@@ -1,7 +1,5 @@
 import React from 'react';
-import List from '../components/list';
-import ListItem from '../components/listitem';
-import ListItemDivider from '../components/listitemdivider';
+import { List, ListItem, ListItemDivider } from 'react-material-design';
 
 const ListExamples = () =>
     <div>

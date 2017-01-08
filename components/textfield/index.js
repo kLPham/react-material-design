@@ -2,10 +2,13 @@ import React, { PropTypes, PureComponent } from 'react';
 import '@material/textfield/dist/mdc.textfield.css';
 import { MDCTextfieldFoundation } from '@material/textfield';
 import { Set as ImmutableSet } from 'immutable';
+import FormField from '../formField';
 
+// TODO: Form fields breaks this.
 const { LABEL_FLOAT_ABOVE, HELPTEXT_PERSISTENT } = MDCTextfieldFoundation.cssClasses;
 class Textfield extends PureComponent {
     static propTypes = {
+        alignEnd: PropTypes.bool,
         disabled: PropTypes.bool,
         labelText: PropTypes.string,
         helpText: PropTypes.string,
@@ -104,24 +107,27 @@ class Textfield extends PureComponent {
         const { value, labelText, helpText } = this.props;
         return (
             <div>
-                <div
-                    ref={(d) => { this.anchor = d; }}
-                    className={`mdc-textfield ${classes.toJS().join(' ')}`}
-                >
-                    <input
-                        type="text"
-                        ref={(i) => { this.nativeTf = i; }}
-                        className="mdc-textfield__input"
-                        aria-controls="my-textfield-helptext"
-                        value={value}
-                    />
-                    <label
-                        className={`mdc-textfield__label ${classesLabel.toJS().join(' ')}`}
-                        htmlFor="my-textfield"
+                <FormField alignEnd={this.props.alignEnd}>
+                    <div
+                        ref={(d) => { this.anchor = d; }}
+                        className={`mdc-textfield" ${classes.toJS().join(' ')}`}
                     >
-                        {labelText}
-                    </label>
-                </div>
+                        <input
+                            type="text"
+                            id="my-textfield"
+                            ref={(i) => { this.nativeTf = i; }}
+                            className="mdc-textfield__input"
+                            aria-controls="my-textfield-helptext"
+                            value={value}
+                        />
+                    </div>
+                </FormField>
+                <label
+                    className={`mdc-textfield__label ${classesLabel.toJS().join(' ')}`}
+                    htmlFor="my-textfield"
+                >
+                    {labelText}
+                </label>
                 <p
                     ref={(p) => { this.helpText = p; }}
                     className={`mdc-textfield-helptext ${classesHelpText.toJS().join(' ')}`}

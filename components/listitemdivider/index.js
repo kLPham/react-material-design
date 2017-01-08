@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react';
+import classNames from 'classnames';
 
-const ListItemDivider = ({ inset }) => <li role="separator" className={`mdc-list-divider ${inset && 'mdc-list-divider--inset'}`} />;
+const ListItemDivider = ({ inset }) => <li role="separator" className={classNames('mdc-list-divider', { 'mdc-list-divider--inset': inset })} />;
 ListItemDivider.propTypes = {
     inset: PropTypes.bool,
 };

@@ -1,19 +1,15 @@
 import React, { PropTypes } from 'react';
 import '@material/button/dist/mdc.button.css';
+import classNames from 'classnames';
+import { buttoncssClasses } from '../classes';
 
-const cssClasses = {
-    colored: 'mdc-button--accent',
-    raised: 'mdc-button--raised',
-    dense: 'mdc-button--dense',
-    compact: 'mdc-button--compact',
-    primary: 'mdc-button--primary',
-};
+const cx = classNames.bind(buttoncssClasses);
 
 // TODO: button can have multiple types e.g., primary raised
 const Button = ({ label, type, disabled }) =>
     <button
         disabled={disabled}
-        className={`mdc-button ${typeof type !== 'undefined' ? cssClasses[type] : ''}`}
+        className={cx('mdc-button', buttoncssClasses[type])}
     >
         {label}
     </button>;

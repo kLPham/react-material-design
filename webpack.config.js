@@ -9,8 +9,15 @@ const IS_PROD = process.env.NODE_ENV === 'production';
 module.exports = [{
     name: 'components',
     entry: {
-        checkbox: [path.resolve('./components/checkbox/index')],
-        textfield: [path.resolve('./components/textfield/index')]
+        button: [path.resolve(__dirname,'components/button/index')],
+        checkbox: [path.resolve(__dirname, 'components/checkbox/index')],
+        fab: [path.resolve(__dirname, 'components/fab/index')],
+        formField: [path.resolve(__dirname, 'components/formField/index')],
+        list: [path.resolve(__dirname, 'components/list/index')],
+        listitem: [path.resolve(__dirname, 'components/listitem/index')],
+        listitemdivider: [path.resolve(__dirname, 'components/listitemdivider/index')],
+        menu: [path.resolve(__dirname, 'components/menu/index')],
+        textfield: [path.resolve(__dirname, 'components/textfield/index')],
     },
     output: {
         path: OUT_PATH,
