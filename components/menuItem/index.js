@@ -2,7 +2,8 @@ import React, { PropTypes } from 'react';
 import '@material/list/dist/mdc.list.css';
 import '@material/menu/dist/mdc.menu.css';
 
-// TODO: Handle tabIndex
+// TODO: tabIndex
+// TODO: What behaviors can menu have? Used as a link (Regular link, or react-router), just pick an item,
 const MenuItem = ({ value }) =>
     <li className="mdc-list-item" role="menuitem" tabIndex="0">
         {value}

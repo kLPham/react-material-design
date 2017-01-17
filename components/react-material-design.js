@@ -1,4 +1,5 @@
 const Button = require('./button');
+const Card = require('./card');
 const Checkbox = require('./checkbox');
 const FAB = require('./fab');
 const FormField = require('./formField');
@@ -7,10 +8,12 @@ const ListItem = require('./listitem');
 const ListItemDivider = require('./listitemdivider');
 const Menu = require('./menu');
 const MenuItem = require('./menuItem');
+const Radio = require('./radio');
 const Textfield = require('./textfield');
 
 module.exports = {
     Button,
+    Card,
     Checkbox,
     FAB,
     FormField,
@@ -19,5 +22,6 @@ module.exports = {
     ListItemDivider,
     Menu,
     MenuItem,
+    Radio,
     Textfield,
 };

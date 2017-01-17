@@ -10,6 +10,7 @@ module.exports = [{
     name: 'components',
     entry: {
         button: [path.resolve(__dirname,'components/button/index')],
+        card: [path.resolve(__dirname,'components/card/index')],
         checkbox: [path.resolve(__dirname, 'components/checkbox/index')],
         fab: [path.resolve(__dirname, 'components/fab/index')],
         formField: [path.resolve(__dirname, 'components/formField/index')],
@@ -17,6 +18,8 @@ module.exports = [{
         listitem: [path.resolve(__dirname, 'components/listitem/index')],
         listitemdivider: [path.resolve(__dirname, 'components/listitemdivider/index')],
         menu: [path.resolve(__dirname, 'components/menu/index')],
+        menuItem: [path.resolve(__dirname, 'components/menuItem/index')],
+        radio: [path.resolve(__dirname, 'components/radio/index')],
         textfield: [path.resolve(__dirname, 'components/textfield/index')],
     },
     output: {
