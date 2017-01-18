@@ -5,3 +5,9 @@ export const buttoncssClasses = {
     compact: 'mdc-button--compact',
     primary: 'mdc-button--primary',
 };
+
+export const fabcssClasses = {
+    plain: 'mdc-button--plain',
+    mini: 'mdc-fab--mini',
+    absolute: 'app-fab--absolute',
+};

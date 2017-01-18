@@ -1,16 +1,13 @@
 import React, { PropTypes } from 'react';
 import '@material/fab/dist/mdc.fab.css';
 import classNames from 'classnames';
+import { fabcssClasses } from '../classes';
 
 // TODO: categorize this as button: floating action button.
 // TODO: floating fab @media
 // TODO: might be a more elegant way to handle styles.
-const cssClasses = {
-    plain: 'mdc-button--plain',
-    mini: 'mdc-fab--mini',
-    absolute: 'app-fab--absolute',
-};
-
+// TODO: if location has absolute, then no reason to require type="absolute".
+// TODO: when absolute, don't include className material-icons.
 const styles = {
     'absolute-bottom-right': {
         position: 'absolute',
@@ -53,12 +50,12 @@ const styles = {
         left: '1rem',
     },
 };
-const cx = classNames.bind(cssClasses);
+const cx = classNames.bind(fabcssClasses);
 // if no type
 const FAB = ({ icon, type, location }) =>
     <button
         style={location && styles[location]}
-        className={cx('mdc-fab', cssClasses[type], 'material-icons')}
+        className={cx('mdc-fab', fabcssClasses[type], 'material-icons')}
         aria-label={icon}
     >
         <span className="mdc-fab__icon">

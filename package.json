@@ -22,13 +22,15 @@
   "scripts": {
     "build": "webpack --config webpack.config.js",
     "build:min": "cross-env NODE_ENV=production webpack --config webpack.config.js",
-    "cleanup": "yarn rimraf ./build && yarn rimraf react-material-design-*.tgz",
+    "cleanup": "yarn rimraf ./build && yarn rimraf react-material-design-*.tgz && yarn rimraf ./coverage",
     "dist": "yarn cleanup && yarn build && yarn build:min",
     "lint": "eslint components --ext .js",
     "patch": "bumped release patch",
     "prebuild": "yarn cleanup",
     "prepublish": "yarn prebuild && yarn build ",
-    "release": "bumped release"
+    "release": "bumped release",
+    "test": "jest",
+    "test:coverage": "jest --coverage"
   },
   "dependencies": {
     "babel-cli": "^6.18.0",
@@ -36,9 +38,7 @@
     "babel-eslint": "^7.1.1",
     "babel-loader": "^6.2.10",
     "babel-plugin-add-module-exports": "^0.2.1",
-    "babel-preset-node6": "^11.0.0",
     "babel-preset-react": "^6.16.0",
-    "babel-preset-stage-0": "^6.16.0",
     "classnames": "^2.2.5",
     "cross-env": "^3.1.4",
     "css-loader": "^0.26.1",
@@ -55,11 +55,30 @@
     "webpack": "^2.2.0"
   },
   "devDependencies": {
+    "babel-jest": "^18.0.0",
     "babel-plugin-lodash": "^3.2.11",
+    "babel-preset-latest": "^6.16.0",
+    "babel-preset-stage-0": "^6.16.0",
+    "enzyme": "^2.7.0",
+    "enzyme-to-json": "^1.4.5",
     "eslint": "^3.13.0",
     "eslint-config-airbnb": "^14.0.0",
     "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jest": "^1.0.2",
     "eslint-plugin-jsx-a11y": "^3.0.2",
-    "eslint-plugin-react": "^6.9.0"
+    "eslint-plugin-react": "^6.9.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^18.1.0",
+    "jest-enzyme": "^2.1.0",
+    "react-addons-test-utils": "^15.4.2"
+  },
+  "jest": {
+    "setupTestFrameworkScriptFile": "<rootDir>/node_modules/jest-enzyme/lib/index.js",
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ],
+    "moduleNameMapper": {
+      "\\.(css|less)$": "identity-obj-proxy"
+    }
   }
 }

@@ -38,12 +38,17 @@ module.exports = [{
                 path.join(__dirname, 'components'),
                 path.join(__dirname, 'node_modules', '@material')
             ],
-            exclude: [/(node_modules)/]
+            exclude: [/(node_modules)/, /__tests__/]
         },
             {
                 test: /\.css$/,
                 use: ['style-loader', 'css-loader']
             }]
+    },
+    externals: {
+        'react/addons': true,
+        'react/lib/ExecutionEnvironment': true,
+        'react/lib/ReactContext': true
     },
     plugins: [
         new webpack.DefinePlugin({
@@ -73,7 +78,7 @@ module.exports = [{
                 include: [
                     path.join(__dirname, 'components'),
                 ],
-                exclude: [/(node_modules)/]
+                exclude: [/(node_modules)/, /__tests__/]
             },
                 {
                     test: /\.css$/,

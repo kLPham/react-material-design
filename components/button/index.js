@@ -8,17 +8,13 @@ const cx = classNames.bind(buttoncssClasses);
 // TODO: button can have multiple types e.g., primary raised
 // TODO: typecheck props (label, type, disabled).
 
-const Button = (props) => {
-    const { label, type } = props;
-    return (
-        <button
-            className={cx('mdc-button', buttoncssClasses[type])}
-            {...props}
-        >
-            {label}
-        </button>
-    );
-};
+const Button = ({ label, type, ...rest }) =>
+    <button
+        className={cx('mdc-button', buttoncssClasses[type])}
+        {...rest}
+    >
+        {label}
+    </button>;
 Button.propTypes = {
     label: PropTypes.string.isRequired,
     type: PropTypes.string,

@@ -1,0 +1,50 @@
+exports[`<FAB /> should render absolutely positioned 1`] = `
+<button
+  aria-label="bug_report"
+  className="mdc-fab app-fab--absolute material-icons"
+  style={
+    Object {
+      "bottom": "1rem",
+      "position": "absolute",
+      "right": "1rem",
+    }
+  }>
+  <span
+    className="mdc-fab__icon">
+    bug_report
+  </span>
+</button>
+`;
+
+exports[`<FAB /> should render and have span element 1`] = `
+<button
+  aria-label="bug_report"
+  className="mdc-fab material-icons">
+  <span
+    className="mdc-fab__icon">
+    bug_report
+  </span>
+</button>
+`;
+
+exports[`<FAB /> should render mini 1`] = `
+<button
+  aria-label="bug_report"
+  className="mdc-fab mdc-fab--mini material-icons">
+  <span
+    className="mdc-fab__icon">
+    bug_report
+  </span>
+</button>
+`;
+
+exports[`<FAB /> should render plain 1`] = `
+<button
+  aria-label="bug_report"
+  className="mdc-fab mdc-button--plain material-icons">
+  <span
+    className="mdc-fab__icon">
+    bug_report
+  </span>
+</button>
+`;

@@ -1,4 +1,9 @@
 {
-  "presets": [ "node6", "react", "stage-0"],
-  "plugins": ["babel-plugin-add-module-exports", ["lodash", { "id": ["lodash", "recompose"] }]]
+  "presets": [ "latest", "react", "stage-0"],
+  "plugins": ["babel-plugin-add-module-exports", ["lodash", { "id": ["lodash", "recompose"] }]],
+  "env": {
+    "test": {
+      "plugins": ["transform-es2015-modules-commonjs"]
+    }
+  }
 }
