@@ -1,6 +1,6 @@
 {
   "name": "react-material-design",
-  "version": "0.0.5",
+  "version": "0.0.8",
   "description": "react material-components",
   "main": "index.js",
   "author": "Miguel Amaro <miguel@reactmaterial.com> (https://github.com/miguel-orange)",
@@ -11,8 +11,10 @@
   "keywords": [
     "material-component",
     "material-component-web",
+    "material components",
     "material design",
     "material.io",
+    "material",
     "google design",
     "google material design",
     "react",

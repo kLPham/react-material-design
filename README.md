@@ -5,21 +5,35 @@
 React components for [material-components/material-components-web](https://github.com/material-components/material-components-web)'s foundation/adapter classes.
 Our web projects use React, and Google Material Design theories. So we decided contribute to the project that best adheres to [Material Design guidelines](https://material.io/guidelines). Plus Material Components is developed by a core team of engineers and UX designers at Google.
 
-## Quick Start
-Install
+## Installation
+
 `yarn add react-material-design`
 
-## Usage
+### Examples
+```jsx
+import { FAB } from 'react-material-design';
+
+const FABExample = () =>
+    <FAB
+        location="floating-bottom-right"
+        icon="create_new_folder"
+    />;
+export default FABExample;
+```
+
+Check out examples directory as well.
+
 ### Icons
 Ensure that appropriate icon library is added to the `<head>` of your project's html file
 
 * [Material icons](https://material.io/icons): Multiple word icons need to be named with a `-` e.g., `account-circle`
     * `<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">`
 * Other Icon libraries can be used as well
-[Font Awesome](http://fontawesome.io/icons)
+    * [Font Awesome](http://fontawesome.io/icons)
 
 ## Project Notes
 I want this to work with
+
 * react
 * react-router
 * have animation
