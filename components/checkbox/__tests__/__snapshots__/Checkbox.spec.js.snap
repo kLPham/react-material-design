@@ -1,0 +1,107 @@
+exports[`<Checkbox /> should be able to render 1`] = `
+<div>
+  <div
+    className="mdc-checkbox ">
+    <input
+      checked={false}
+      className="mdc-checkbox__native-control"
+      disabled={false}
+      id="mdc-checkbox"
+      onChange={[Function]}
+      type="checkbox" />
+    <div
+      className="mdc-checkbox__background">
+      <svg
+        className="mdc-checkbox__checkmark"
+        version="1.1"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg">
+        <path
+          className="mdc-checkbox__checkmark__path"
+          d="M1.73,12.91 8.1,19.28 22.79,4.59"
+          fill="none"
+          stroke="white" />
+      </svg>
+      <div
+        className="mdc-checkbox__mixedmark" />
+    </div>
+  </div>
+  <label
+    className="mdc-checkbox-label"
+    htmlFor="mdc-checkbox">
+    My Checkbox Label
+  </label>
+</div>
+`;
+
+exports[`<Checkbox /> should render as checked 1`] = `
+<div>
+  <div
+    className="mdc-checkbox ">
+    <input
+      checked={true}
+      className="mdc-checkbox__native-control"
+      disabled={false}
+      id="mdc-checkbox"
+      onChange={[Function]}
+      type="checkbox" />
+    <div
+      className="mdc-checkbox__background">
+      <svg
+        className="mdc-checkbox__checkmark"
+        version="1.1"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg">
+        <path
+          className="mdc-checkbox__checkmark__path"
+          d="M1.73,12.91 8.1,19.28 22.79,4.59"
+          fill="none"
+          stroke="white" />
+      </svg>
+      <div
+        className="mdc-checkbox__mixedmark" />
+    </div>
+  </div>
+  <label
+    className="mdc-checkbox-label"
+    htmlFor="mdc-checkbox">
+    My Checkbox Label
+  </label>
+</div>
+`;
+
+exports[`<Checkbox /> should render as disabled 1`] = `
+<div>
+  <div
+    className="mdc-checkbox ">
+    <input
+      checked={false}
+      className="mdc-checkbox__native-control"
+      disabled={true}
+      id="mdc-checkbox"
+      onChange={[Function]}
+      type="checkbox" />
+    <div
+      className="mdc-checkbox__background">
+      <svg
+        className="mdc-checkbox__checkmark"
+        version="1.1"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg">
+        <path
+          className="mdc-checkbox__checkmark__path"
+          d="M1.73,12.91 8.1,19.28 22.79,4.59"
+          fill="none"
+          stroke="white" />
+      </svg>
+      <div
+        className="mdc-checkbox__mixedmark" />
+    </div>
+  </div>
+  <label
+    className="mdc-checkbox-label"
+    htmlFor="mdc-checkbox">
+    My Checkbox Label
+  </label>
+</div>
+`;

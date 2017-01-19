@@ -1,0 +1,44 @@
+exports[`<ListItem /> should render a basic list item 1`] = `
+<li
+  className="mdc-list-item">
+  Single-line item
+</li>
+`;
+
+exports[`<ListItem /> should render end (right) detail elements 1`] = `
+<li
+  className="mdc-list-item">
+  Janet Perkins
+  <a
+    aria-label="Remove from favorites"
+    className="mdc-list-item__end-detail material-icons"
+    title="Remove from favorites">
+    favorite
+  </a>
+</li>
+`;
+
+exports[`<ListItem /> should render start (left) detail avatar 1`] = `
+<li
+  className="mdc-list-item">
+  <img
+    className="mdc-list-item__start-detail"
+    height="56"
+    role="presentation"
+    src="http://4vector.com/i/free-vector-george-washington-clip-art_108422_George_Washington_clip_art_hight.png"
+    width="56" />
+  George Washington
+</li>
+`;
+
+exports[`<ListItem /> should render start (left) detail elements 1`] = `
+<li
+  className="mdc-list-item">
+  <i
+    aria-hidden={true}
+    className="mdc-list-item__start-detail material-icons">
+    network_wifi
+  </i>
+  Wi-Fi
+</li>
+`;

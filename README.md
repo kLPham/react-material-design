@@ -9,7 +9,7 @@ Our web projects use React, and Google Material Design theories. So we decided c
 
 `yarn add react-material-design`
 
-### Examples
+## Examples
 ```jsx
 import { FAB } from 'react-material-design';
 
@@ -23,7 +23,7 @@ export default FABExample;
 
 Check out examples directory as well.
 
-### Icons
+## Icons
 Ensure that appropriate icon library is added to the `<head>` of your project's html file
 
 * [Material icons](https://material.io/icons): Multiple word icons need to be named with a `-` e.g., `account-circle`

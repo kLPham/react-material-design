@@ -1,61 +1,51 @@
-import { MDCComponent } from '@material/base';
 import { MDCTextfieldFoundation } from '@material/textfield';
 
-export default class MDCTextfield extends MDCComponent {
-    static attachTo(root) {
-        return new MDCTextfield(root);
-    }
-    getDefaultFoundation() {
-        return new MDCTextfieldFoundation(
-            Object.assign({
-                addClass: className => this.root_.setState(prevState => ({
-                    classes: prevState.classes.add(className),
-                })),
-                removeClass: className => this.root_.setState(prevState => ({
-                    classes: prevState.classes.remove(className),
-                })),
-                addClassToLabel: className => this.root_.setState(prevState => ({
-                    classesLabel: prevState.classesLabel.add(className),
-                })),
-                removeClassFromLabel: className => this.root_.setState(prevState => ({
-                    classesLabel: prevState.classesLabel.remove(className),
-                })),
-            }, this.getInputAdapterMethods_(), this.getHelptextAdapterMethods_()));
-    }
-    getInputAdapterMethods_() {
-        return {
-            registerInputFocusHandler: handler => this.root_.setState({
-                inputFocus: handler }),
-            deregisterInputFocusHandler: handler => this.root_.setState({
-                inputFocus: handler }),
-            registerInputBlurHandler: handler => this.root_.setState({
+export default class MDCTextfield extends MDCTextfieldFoundation {
+    constructor(root) {
+        super();
+        this.adapter_ = Object.assign({
+            addClass: className => root.setState(prevState => ({
+                classes: prevState.classes.add(className),
+            })),
+            removeClass: className => root.setState(prevState => ({
+                classes: prevState.classes.remove(className),
+            })),
+            addClassToLabel: className => root.setState(prevState => ({
+                classesLabel: prevState.classesLabel.add(className),
+            })),
+            removeClassFromLabel: className => root.setState(prevState => ({
+                classesLabel: prevState.classesLabel.remove(className),
+            })),
+            helptextHasClass: className => root.state.classesHelpText.has(className),
+            registerInputFocusHandler: handler => root.setState({
+                inputFocus: handler,
+            }),
+            deregisterInputFocusHandler: handler => root.setState({
+                inputFocus: handler,
+            }),
+            registerInputBlurHandler: handler => root.setState({
                 inputBlur: handler,
             }),
-            deregisterInputBlurHandler: handler => this.root_.setState({
+            deregisterInputBlurHandler: handler => root.setState({
                 inputBLur: handler,
             }),
-            getNativeInput: () => ({
-                checkValidity: () => true,
-                value: this.root_.props.value,
-                disabled: typeof this.root_.props.disabled === 'undefined',
-            }),
-        };
-    }
-    getHelptextAdapterMethods_() {
-        return {
-            addClassToHelptext: className => this.root_.setState(prevState => ({
-                classesHelpText: prevState.classesHelpText.add(className),
-            })),
-            removeClassFromHelptext: className => this.root_.setState(prevState => ({
-                classesHelpText: prevState.classesHelpText.remove(className),
-            })),
-
-            setHelptextAttr: (name, value) => this.root_.setState({
+            setHelptextAttr: (name, value) => root.setState({
                 helpTextAttr: { [name]: value },
             }), // this.helpText.setAttribute(name, value),
-            removeHelptextAttr: (name, value) => this.root_.setState({
+            removeHelptextAttr: (name, value) => root.setState({
                 helpTextAttr: { [name]: value },
             }), // this.helpText.removeAttribute(name, value),
-        };
+            getNativeInput: () => ({
+                checkValidity: () => true,
+                value: root.props.value,
+                disabled: root.props.disabled, // typeof root.props.disabled === 'undefined',
+            }),
+            addClassToHelptext: className => root.setState(prevState => ({
+                classesHelpText: prevState.classesHelpText.add(className),
+            })),
+            removeClassFromHelptext: className => root.setState(prevState => ({
+                classesHelpText: prevState.classesHelpText.remove(className),
+            })),
+        });
     }
 }

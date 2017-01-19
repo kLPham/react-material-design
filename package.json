@@ -1,6 +1,6 @@
 {
   "name": "react-material-design",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "react material-components",
   "main": "index.js",
   "author": "Miguel Amaro <miguel@reactmaterial.com> (https://github.com/miguel-orange)",
@@ -46,19 +46,16 @@
     "css-loader": "^0.26.1",
     "eslint-loader": "^1.6.1",
     "immutable": "^3.8.1",
-    "lodash": "^4.17.4",
     "material-components-web": "^0.2.0",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
-    "react-material-design": "^0.0.5",
-    "recompose": "^0.21.2",
     "rimraf": "^2.5.4",
     "style-loader": "^0.13.1",
     "webpack": "^2.2.0"
   },
   "devDependencies": {
     "babel-jest": "^18.0.0",
-    "babel-plugin-lodash": "^3.2.11",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.18.0",
     "babel-preset-latest": "^6.16.0",
     "babel-preset-stage-0": "^6.16.0",
     "enzyme": "^2.7.0",
@@ -78,6 +75,9 @@
     "setupTestFrameworkScriptFile": "<rootDir>/node_modules/jest-enzyme/lib/index.js",
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
+    ],
+    "transformIgnorePatterns": [
+      "node_modules/?!(@material)"
     ],
     "moduleNameMapper": {
       "\\.(css|less)$": "identity-obj-proxy"

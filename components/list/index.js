@@ -1,19 +1,17 @@
 import React, { PropTypes } from 'react';
 import '@material/list/dist/mdc.list.css';
 import classNames from 'classnames';
-import ListItem from '../listitem';
+import ListItem from './ListItem';
+import { listcssClasses } from '../classes';
 
 // TODO: Two-line lists
-const cssClasses = {
-    dense: 'mdc-list--dense',
-    avatar: 'mdc-list--avatar-list',
-};
-const cx = classNames.bind(cssClasses);
+// TODO: List Groups
+const cx = classNames.bind(listcssClasses);
 
 const List = ({ type, children }) =>
-    <div className={cx('mdc-list', cssClasses[type])}>
+    <ul className={cx('mdc-list', listcssClasses[type])}>
         {children}
-    </div>;
+    </ul>;
 List.propTypes = {
     type: PropTypes.string,
     children: PropTypes.oneOfType([

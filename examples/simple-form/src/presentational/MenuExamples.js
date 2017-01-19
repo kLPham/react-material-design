@@ -1,5 +1,6 @@
 import React from 'react';
-import { Button, Menu, MenuItem } from 'react-material-design';
+import { Button, MenuItem } from 'react-material-design';
+import { Menu } from '../../../../components/react-material-design';
 
 const MenuExamples = () =>
     <div>

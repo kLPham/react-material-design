@@ -11,3 +11,7 @@ export const fabcssClasses = {
     mini: 'mdc-fab--mini',
     absolute: 'app-fab--absolute',
 };
+export const listcssClasses = {
+    dense: 'mdc-list--dense',
+    avatar: 'mdc-list--avatar-list',
+};

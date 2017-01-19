@@ -5,12 +5,8 @@ import { Set as ImmutableSet } from 'immutable';
 import { MDCTextfieldFoundation } from '@material/textfield';
 import MDCTextfield from './component';
 
-// TODO: Disabled Text Fields not up to spec. className mdc-textfield--disabled not getting applied. float above label doesn't work.
-// TODO: setDisabled is not a function.
 // TODO: validation with helper text.
 // TODO: helper text <p> should be after the <div>.
-// TODO: You provided a `value` prop to a form field without an `onChange` handler. This will render a read-only field. If the field should be mutable use `defaultValue`. Otherwise, set either `onChange` or `readOnly`. Check the render method of `Textfield`.
-// TODO: abstract which foundation to create new e.g., new MDCTextfieldFoundation.
 const { HELPTEXT_PERSISTENT, LABEL_FLOAT_ABOVE } = MDCTextfieldFoundation.cssClasses;
 
 class Textfield extends Component {
@@ -25,25 +21,29 @@ class Textfield extends Component {
         classes: new ImmutableSet(),
         classesHelpText: new ImmutableSet(),
         classesLabel: new ImmutableSet(),
+        value: this.props.value,
     };
     componentDidMount() {
         this.foundation = new MDCTextfield(this);
-        const { helpTextPersistent, value } = this.props;
-        const { addClassToHelptext, addClassToLabel } = this.foundation.foundation_.adapter_;
+        this.foundation.init();
+        const { disabled, helpTextPersistent, value } = this.props;
+        const { addClassToHelptext, addClassToLabel } = this.foundation.adapter_;
 
         if (helpTextPersistent) {
             addClassToHelptext(HELPTEXT_PERSISTENT);
         }
-/*        if (disabled) {
-            setDisabled(disabled);
+        if (disabled) {
+            console.log('setDisabled', this.foundation)
+            this.foundation.setDisabled(disabled);
         }
-        */
+
         if (value) {
             addClassToLabel(LABEL_FLOAT_ABOVE);
         }
     }
     componentWillReceiveProps(nextProps) {
         const { disabled, helpTextPersistent } = this.props;
+        const { addClassToLabel } = this.foundation.adapter_;
         if (nextProps.disabled !== disabled) {
             this.setState({
                 disabledInternal: nextProps.disabled,
@@ -55,17 +55,15 @@ class Textfield extends Component {
             });
         }
         if (nextProps.value) {
-            this.foundation.foundation_.adapter_.addClassToLabel(LABEL_FLOAT_ABOVE);
+            addClassToLabel(LABEL_FLOAT_ABOVE);
         }
     }
     componentWillUnmount() {
-        // TODO: not sure this is the right implementation.
         this.foundation.destroy();
     }
-    foundation;
     render() {
-        const { classes, classesHelpText, classesLabel, helpTextAttr, inputBlur, inputFocus } = this.state;
-        const { disabled, helpText, label, value } = this.props;
+        const { classes, classesHelpText, classesLabel, helpTextAttr, inputBlur, inputFocus, value } = this.state;
+        const { disabled, helpText, label } = this.props;
         return (
             <div
                 onFocus={inputFocus}
@@ -77,6 +75,7 @@ class Textfield extends Component {
                     id="my-textfield"
                     className="mdc-textfield__input"
                     value={value}
+                    onChange={event => this.setState({ value: event.target.value })}
                     disabled={disabled}
                 />
                 <label

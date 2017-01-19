@@ -6,35 +6,29 @@ import MDCCheckbox from './component';
 // TODO: state/props evaluation.
 // TODO: understand how this affects React.MDCCheckboxFoundation.isIndeterminate() => boolean Returns whether or not the underlying input is indeterminate. Returns false when no input is available.
 // TODO: removed controlid, when there are more checkboxes does this mess stuff up?
-/*
- onChange={(evt) => {
- this.setState({
- // checked: this.nativeCb.checked,
- indeterminate: false,
- });
- this.props.onChange(evt);
- }}
- */
+
 class Checkbox extends Component {
     static propTypes = {
         checked: PropTypes.bool,
         indeterminate: PropTypes.bool,
         labelId: PropTypes.string,
         label: PropTypes.string,
+        disabled: PropTypes.bool,
     };
 
     static defaultProps = {
         checked: false,
+        disabled: false,
         indeterminate: false,
     };
 
     state = {
         classes: new ImmutableSet(),
-        checked: false,
+        checked: this.props.checked,
     };
     componentDidMount() {
         this.foundation = new MDCCheckbox(this);
-        console.log('componentDidMount', this);
+        this.foundation.init();
     }
     componentWillReceiveProps(nextProps) {
         if (nextProps.checked !== this.props.checked) {
@@ -50,13 +44,12 @@ class Checkbox extends Component {
         }
     }
     componentWillUnmount() {
-        // TODO: not sure this is the right implementation.
         this.foundation.destroy();
     }
     foundation;
     render() {
         const { checked, onChange } = this.state;
-        const { label, labelId } = this.props;
+        const { label, labelId, disabled } = this.props;
         return (
             <div>
                 <div className={`mdc-checkbox ${this.state.classes.toJS().join(' ')}`}>
@@ -65,6 +58,7 @@ class Checkbox extends Component {
                         type="checkbox"
                         className="mdc-checkbox__native-control"
                         aria-labelledby={labelId}
+                        disabled={disabled}
                         checked={checked}
                         onChange={(evt) => {
                             this.setState({

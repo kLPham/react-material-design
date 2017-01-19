@@ -1,11 +1,20 @@
 import React, { PropTypes, PureComponent } from 'react';
-import { MDCSimpleMenu } from '@material/menu';
 import '@material/menu/dist/mdc.menu.css';
 import '@material/button/dist/mdc.button.css';
+import { Set as ImmutableSet } from 'immutable';
+
 import Button from '../button';
-import withFoundation from './hoc';
+import MDCSimpleMenu from './component';
+
 
 // TODO: in specs onClick is on <div> not <ul>. TEST.
+// TODO: Menu presentation types: button, action (see textfield dropdown menu), other control.
+// TODO: disable menu.
+// TODO: Support all permintations of "Button"/"Icon".
+// TODO: I'm thinking that notifySelected is suppoed to be used insted of getIndexForEventTarget.
+// TODO: Positioning the menu.
+// TODO: hasClass, hasNecessaryDom are hacks.
+// TODO: investigate how registerDocumentClickHandler is different than the click generated with registerInteractionHandler
 
 class Menu extends PureComponent {
     static propTypes = {
@@ -20,7 +29,13 @@ class Menu extends PureComponent {
             PropTypes.element,
         ]).isRequired,
     };
+    state = {
+        classes: new ImmutableSet().add('mdc-simple-menu'),
+        selectedItem: null,
+    }
     componentDidMount() {
+        this.foundation = new MDCSimpleMenu(this);
+        this.foundation.init();
         this.menu = new MDCSimpleMenu(this.root);
     }
     menu;
@@ -44,7 +59,7 @@ class Menu extends PureComponent {
                     // onClick={onClick}
 
                     ref={(d) => { this.root = d; }}
-                    className={classes.toJS().join(' ')}
+                    className={classes && classes.toJS().join(' ')}
                     tabIndex="-1"
                 >
                     <ul
@@ -59,4 +74,4 @@ class Menu extends PureComponent {
         );
     }
 }
-export default withFoundation(Menu);
+export default Menu;

@@ -1,5 +1,6 @@
 import React from 'react';
-import { Checkbox } from 'react-material-design';
+// import { Checkbox } from 'react-material-design';
+import { Checkbox } from '../../../../components/react-material-design';
 
 const CheckboxExamples = () =>
     <div>
