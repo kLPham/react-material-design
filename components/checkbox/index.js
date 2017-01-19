@@ -1,19 +1,19 @@
-import React, { PropTypes, Component } from 'react';
-import { Set as ImmutableSet } from 'immutable';
 import '@material/checkbox/dist/mdc.checkbox.css';
+import React, { PropTypes, PureComponent } from 'react';
+import { Set as ImmutableSet } from 'immutable';
 import MDCCheckbox from './component';
 
 // TODO: state/props evaluation.
 // TODO: understand how this affects React.MDCCheckboxFoundation.isIndeterminate() => boolean Returns whether or not the underlying input is indeterminate. Returns false when no input is available.
 // TODO: removed controlid, when there are more checkboxes does this mess stuff up?
 
-class Checkbox extends Component {
+class Checkbox extends PureComponent {
     static propTypes = {
         checked: PropTypes.bool,
-        indeterminate: PropTypes.bool,
-        labelId: PropTypes.string,
-        label: PropTypes.string,
         disabled: PropTypes.bool,
+        indeterminate: PropTypes.bool,
+        label: PropTypes.string,
+        labelId: PropTypes.string,
     };
 
     static defaultProps = {
@@ -23,8 +23,8 @@ class Checkbox extends Component {
     };
 
     state = {
-        classes: new ImmutableSet(),
         checked: this.props.checked,
+        classes: new ImmutableSet(),
     };
     componentDidMount() {
         this.foundation = new MDCCheckbox(this);

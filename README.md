@@ -11,14 +11,17 @@ Our web projects use React, and Google Material Design theories. So we decided c
 
 ## Examples
 ```jsx
+import React from 'react';
+import ReactDOM from 'react-dom';
 import { FAB } from 'react-material-design';
 
-const FABExample = () =>
+ReactDOM.render(
     <FAB
         location="floating-bottom-right"
         icon="create_new_folder"
-    />;
-export default FABExample;
+    />,
+    document.getElementById('root')
+);
 ```
 
 Check out examples directory as well.

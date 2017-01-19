@@ -1,17 +1,16 @@
 export const buttoncssClasses = {
     colored: 'mdc-button--accent',
-    raised: 'mdc-button--raised',
-    dense: 'mdc-button--dense',
     compact: 'mdc-button--compact',
+    dense: 'mdc-button--dense',
     primary: 'mdc-button--primary',
+    raised: 'mdc-button--raised',
 };
 
 export const fabcssClasses = {
-    plain: 'mdc-button--plain',
-    mini: 'mdc-fab--mini',
     absolute: 'app-fab--absolute',
+    mini: 'mdc-fab--mini',
+    plain: 'mdc-button--plain',
 };
 export const listcssClasses = {
-    dense: 'mdc-list--dense',
-    avatar: 'mdc-list--avatar-list',
+    avatar: 'mdc-list--avatar-list', dense: 'mdc-list--dense',
 };

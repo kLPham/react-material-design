@@ -1,6 +1,6 @@
 import React from 'react';
-// import { Textfield } from 'react-material-design';
-import { Textfield } from '../../../../components/react-material-design';
+// import { Textfield } from '../../../../components/react-material-design';
+import { Textfield } from 'react-material-design';
 
 const InputExamples = () =>
     <div>

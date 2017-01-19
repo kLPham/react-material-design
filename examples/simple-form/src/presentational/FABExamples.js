@@ -1,5 +1,6 @@
-import React from 'react';
 import { FAB } from 'react-material-design';
+// import { FAB } from '../../../../components/react-material-design';
+import React from 'react';
 
 const FABExamples = () =>
     <div>

@@ -33,6 +33,6 @@ export default class MDCCheckbox extends MDCCheckboxFoundation {
             }),
             forceLayout: () => console.log('forceLayout'), // this.root_.nativeCb.offsetWidth,
             isAttachedToDOM: () => Boolean(this.root_),
-        })
+        });
     }
 }

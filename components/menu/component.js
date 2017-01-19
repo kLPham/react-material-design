@@ -2,9 +2,8 @@ import { MDCSimpleMenuFoundation } from '@material/menu';
 
 export default class MDCSimpleMenu extends MDCSimpleMenuFoundation {
     constructor(root) {
-        super();
+        super(root);
         this.adapter_ = Object.assign({
-
             addClass: className => root.setState(prevState => ({
                 classes: prevState.classes.add(className),
             })),
@@ -13,11 +12,13 @@ export default class MDCSimpleMenu extends MDCSimpleMenuFoundation {
             })),
             hasClass: className => root.state.classes.contains(className),
             hasNecessaryDom: () => Boolean(root),
-            getInnerDimensions: () => root.root,
+            getInnerDimensions: () => root,
+            hasAnchor: () => true,
+            getAnchorDimensions: () => console.log('getAnchorDimensions'),
             getWindowDimensions: () => console.log('getWindowDimensions'),
             // setScale: (x, y) => console.log('setScale', x, y),
             // setInnerScale: (x, y) => console.log('setInnerScale', x, y),
-            // getNumberOfItems: () => console.log('getNumberOfItems'),
+            getNumberOfItems: () => console.log('getNumberOfItems'),
             registerInteractionHandler: (type, handler) => root.setState({
                 [type]: handler,
             }),

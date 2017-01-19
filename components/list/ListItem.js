@@ -16,10 +16,10 @@ const ListItem = ({ value, icon, leftAvatarUrl, rightIcon, rightTitle }) =>
     </li>;
 
 ListItem.propTypes = {
-    value: PropTypes.string.isRequired,
     icon: PropTypes.string,
-    rightIcon: PropTypes.string,
     leftAvatarUrl: PropTypes.string,
+    rightIcon: PropTypes.string,
     rightTitle: PropTypes.string,
+    value: PropTypes.string.isRequired,
 };
 export default ListItem;

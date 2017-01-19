@@ -1,25 +1,29 @@
 const path = require('path');
 const webpack = require('webpack');
 
-const OUT_PATH = path.join(__dirname, 'build');
-const PUBLIC_PATH = '/assets/';
 const IS_DEV = process.env.NODE_ENV === 'development';
 const IS_PROD = process.env.NODE_ENV === 'production';
+const OUT_PATH = path.join(__dirname, 'build');
+const PUBLIC_PATH = '/assets/';
 
 module.exports = [{
     name: 'components',
     entry: {
-        button: [path.resolve(__dirname,'components/button/index')],
-        card: [path.resolve(__dirname,'components/card/index')],
+        button: [path.resolve(__dirname, 'components/button/index')],
+        card: [path.resolve(__dirname, 'components/card/index')],
         checkbox: [path.resolve(__dirname, 'components/checkbox/index')],
+        drawer: [path.resolve(__dirname, 'components/drawer/index')],
         fab: [path.resolve(__dirname, 'components/fab/index')],
         formField: [path.resolve(__dirname, 'components/formField/index')],
+        iconToggle: [path.resolve(__dirname, 'components/iconToggle/index')],
         list: [path.resolve(__dirname, 'components/list/index')],
         listitem: [path.resolve(__dirname, 'components/list/ListItem')],
         listitemdivider: [path.resolve(__dirname, 'components/list/ListItemDivider')],
         menu: [path.resolve(__dirname, 'components/menu/index')],
-        menuItem: [path.resolve(__dirname, 'components/menuItem/index')],
-        // radio: [path.resolve(__dirname, 'components/radio/index')],
+        menuItem: [path.resolve(__dirname, 'components/menu/menuItem')],
+        radio: [path.resolve(__dirname, 'components/radio/index')],
+        select: [path.resolve(__dirname, 'components/select/index')],
+        snackbar: [path.resolve(__dirname, 'components/snackbar/index')],
         textfield: [path.resolve(__dirname, 'components/textfield/index')],
     },
     output: {

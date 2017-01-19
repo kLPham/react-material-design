@@ -1,6 +1,6 @@
-import React, { PropTypes } from 'react';
 import '@material/fab/dist/mdc.fab.css';
 import classNames from 'classnames';
+import React, { PropTypes } from 'react';
 import { fabcssClasses } from '../classes';
 
 // TODO: categorize this as button: floating action button.
@@ -64,7 +64,7 @@ const FAB = ({ icon, type, location }) =>
     </button>;
 FAB.propTypes = {
     icon: PropTypes.string.isRequired,
-    type: PropTypes.string,
     location: PropTypes.string,
+    type: PropTypes.string,
 };
 export default FAB;

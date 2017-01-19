@@ -1,19 +1,19 @@
 import '@material/textfield/dist/mdc.textfield.css';
-import React, { PropTypes, Component } from 'react';
 import classNames from 'classnames';
-import { Set as ImmutableSet } from 'immutable';
+import React, { PropTypes, PureComponent } from 'react';
 import { MDCTextfieldFoundation } from '@material/textfield';
+import { Set as ImmutableSet } from 'immutable';
 import MDCTextfield from './component';
 
 // TODO: validation with helper text.
 // TODO: helper text <p> should be after the <div>.
 const { HELPTEXT_PERSISTENT, LABEL_FLOAT_ABOVE } = MDCTextfieldFoundation.cssClasses;
 
-class Textfield extends Component {
+class Textfield extends PureComponent {
     static propTypes = {
-        helpTextPersistent: PropTypes.bool,
         disabled: PropTypes.bool,
         helpText: PropTypes.string,
+        helpTextPersistent: PropTypes.bool,
         label: PropTypes.string,
         value: PropTypes.string,
     };
@@ -33,7 +33,7 @@ class Textfield extends Component {
             addClassToHelptext(HELPTEXT_PERSISTENT);
         }
         if (disabled) {
-            console.log('setDisabled', this.foundation)
+            console.log('setDisabled', this.foundation);
             this.foundation.setDisabled(disabled);
         }
 

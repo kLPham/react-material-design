@@ -1,6 +1,6 @@
 import React from 'react';
-// import { Button } from 'react-material-design';
-import Button from '../../../../components/button';
+// import { Button } from '../../../../components/react-material-design';
+import { Button } from 'react-material-design';
 
 const ButtonExamples = () =>
     <div>
