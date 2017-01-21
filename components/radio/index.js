@@ -13,39 +13,43 @@ class Radio extends PureComponent {
         disabled: PropTypes.bool,
         label: PropTypes.string,
     };
-    state={
-        checked: this.props.checked === 'on',
-        classes: new ImmutableSet(),
-        disabled: this.props.disabled,
+    static defaultProps = {
+        checked: false,
+        disabled: false,
+        label: '',
     };
+    constructor(props) {
+        super(props);
+        this.state = {
+            checked: props.checked,
+            classes: new ImmutableSet(),
+            disabled: props.disabled,
+            label: props.label,
+        };
+    }
     componentDidMount() {
         const { disabled } = this.props;
         this.foundation = new MDCRadio(this);
-        this.foundation.init();
 
         if (disabled) {
             this.foundation.setDisabled(disabled);
         }
     }
-    componentWillUnmount() {
-        this.foundation().destroy();
-    }
-    handleClick=(evt) => {
-        const checked = evt.target.value === 'on';
-        console.log('handleClick', checked, evt.target.value);
+    handleChange=(e) => {
+        const checked = e.target.value;
+        this.foundation.setChecked(checked);
         this.setState({
             checked,
         });
     };
     render() {
-        const { checked, classes, disabled } = this.state;
-        const { label } = this.props;
+        const { checked, classes, disabled, label } = this.state;
         return (
             <div>
                 <div className={classNames('mdc-radio', classes.toJS().join(' '))} >
                     <input
                         disabled={disabled}
-                        onClick={evt => this.handleClick(evt)}
+                        onChange={e => this.handleChange(e)}
                         className="mdc-radio__native-control"
                         type="radio"
                         id="radio-1"

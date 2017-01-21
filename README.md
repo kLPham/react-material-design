@@ -2,6 +2,7 @@
 
 [![npm](https://img.shields.io/npm/dm/react-material-design.svg?style=social)](https://www.npmjs.com/package/react-material-design)
 [![Build Status](https://travis-ci.org/react-material-design/react-material-design.svg?branch=release/react-components)](https://travis-ci.org/react-material-design/react-material-design)
+
 React components for [material-components/material-components-web](https://github.com/material-components/material-components-web)'s foundation/adapter classes.
 Our web projects use React, and Google Material Design theories. So we decided contribute to the project that best adheres to [Material Design guidelines](https://material.io/guidelines). Plus Material Components is developed by a core team of engineers and UX designers at Google.
 
@@ -23,9 +24,7 @@ ReactDOM.render(
     document.getElementById('root')
 );
 ```
-
 Check out examples directory as well.
-
 ## Icons
 Ensure that appropriate icon library is added to the `<head>` of your project's html file
 

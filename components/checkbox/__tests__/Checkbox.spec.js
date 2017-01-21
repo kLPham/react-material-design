@@ -36,6 +36,5 @@ describe('<Checkbox />', () => {
         expect(wrapper.find('input')).toHaveClassName('mdc-checkbox__native-control');
         expect(wrapper.find('label')).toHaveClassName('mdc-checkbox-label');
         expect(wrapper.find('label')).toHaveText(label);
-
     });
 });

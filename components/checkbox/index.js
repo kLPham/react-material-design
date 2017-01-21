@@ -3,7 +3,6 @@ import React, { PropTypes, PureComponent } from 'react';
 import { Set as ImmutableSet } from 'immutable';
 import MDCCheckbox from './component';
 
-// TODO: state/props evaluation.
 // TODO: understand how this affects React.MDCCheckboxFoundation.isIndeterminate() => boolean Returns whether or not the underlying input is indeterminate. Returns false when no input is available.
 // TODO: removed controlid, when there are more checkboxes does this mess stuff up?
 
@@ -20,36 +19,54 @@ class Checkbox extends PureComponent {
         checked: false,
         disabled: false,
         indeterminate: false,
+        label: '',
     };
-
-    state = {
-        checked: this.props.checked,
-        classes: new ImmutableSet(),
-    };
+    constructor(props) {
+        super(props);
+        const { checked, disabled, label } = props;
+        this.state = {
+            checked,
+            disabled,
+            classes: new ImmutableSet(),
+            label,
+        };
+    }
     componentDidMount() {
         this.foundation = new MDCCheckbox(this);
         this.foundation.init();
     }
     componentWillReceiveProps(nextProps) {
-        if (nextProps.checked !== this.props.checked) {
-            this.setState({ checked: nextProps.checked, indeterminate: false });
+        const { checked, indeterminate } = this.props;
+        if (nextProps.checked !== checked) {
+            this.setState({
+                checked: nextProps.checked,
+                indeterminate: false,
+            });
         }
-        if (nextProps.indeterminate !== this.props.indeterminate) {
-            this.setState({ indeterminate: nextProps.indeterminate });
+        if (nextProps.indeterminate !== indeterminate) {
+            this.setState({
+                indeterminate: nextProps.indeterminate,
+            });
         }
     }
     componentDidUpdate() {
-        if (this.nativeCb) {
-            this.nativeCb.indeterminate = this.state.indeterminate;
-        }
+        // if (this.nativeCb) {
+        //     this.nativeCb.indeterminate = this.state.indeterminate;
+        // }
     }
     componentWillUnmount() {
         this.foundation.destroy();
     }
-    foundation;
+    handleChange = () => {
+        const checked = this.state.checked;
+        this.setState({
+            checked: !checked,
+            indeterminate: false,
+        });
+    };
     render() {
-        const { checked, onChange } = this.state;
-        const { label, labelId, disabled } = this.props;
+        const { checked, disabled, label } = this.state;
+        const { labelId } = this.props;
         return (
             <div>
                 <div className={`mdc-checkbox ${this.state.classes.toJS().join(' ')}`}>
@@ -60,14 +77,7 @@ class Checkbox extends PureComponent {
                         aria-labelledby={labelId}
                         disabled={disabled}
                         checked={checked}
-                        onChange={(evt) => {
-                            this.setState({
-                                checked: !checked,
-                                indeterminate: false,
-                            });
-                            console.log('onChange', onChange, evt);
-                            onChange(evt);
-                        }}
+                        onChange={() => this.handleChange()}
                     />
                     <div className="mdc-checkbox__background">
                         <svg

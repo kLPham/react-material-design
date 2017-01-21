@@ -1,6 +1,6 @@
 {
   "name": "react-material-design",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "react material-components",
   "main": "index.js",
   "author": "Miguel Amaro <miguel@reactmaterial.com> (https://github.com/miguel-orange)",
@@ -29,7 +29,7 @@
     "lint": "eslint components --ext .js",
     "patch": "bumped release patch",
     "prebuild": "yarn cleanup",
-    "prepublish": "yarn prebuild && yarn build ",
+    "prepublish": "yarn prebuild && yarn dist",
     "release": "bumped release",
     "test": "jest",
     "test:coverage": "jest --coverage"
@@ -40,7 +40,6 @@
     "babel-eslint": "^7.1.1",
     "babel-loader": "^6.2.10",
     "babel-plugin-add-module-exports": "^0.2.1",
-    "babel-preset-react": "^6.16.0",
     "classnames": "^2.2.5",
     "cross-env": "^3.1.4",
     "css-loader": "^0.26.1",
@@ -56,7 +55,8 @@
   "devDependencies": {
     "babel-jest": "^18.0.0",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.18.0",
-    "babel-preset-latest": "^6.16.0",
+    "babel-preset-node6": "^11.0.0",
+    "babel-preset-react": "^6.16.0",
     "babel-preset-stage-0": "^6.16.0",
     "enzyme": "^2.7.0",
     "enzyme-to-json": "^1.4.5",

@@ -1,6 +1,6 @@
 import React from 'react';
 // import { Button, Card, CardActions } from '../../../../components/react-material-design';
-import { Button, Card, CaActions } from 'react-material-design';
+import { Button, Card, CardActions } from 'react-material-design';
 
 const CardExamples = () =>
     <Card>

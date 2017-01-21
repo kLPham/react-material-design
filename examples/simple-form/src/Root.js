@@ -12,9 +12,10 @@ import SelectExamples from './presentational/SelectExamples';
 import SnackbarExamples from './presentational/SnackbarExamples';
 import TextfieldExamples from './presentational/TextfieldExamples';
 
-const Root = () =>   <div>
+const Root = () =>
+    <div>
         <ButtonExamples />
-        <CardExamples />
+        {/* <CardExamples /> */}
         <CheckboxExamples />
         <DrawerExamples />
         <FABExamples />

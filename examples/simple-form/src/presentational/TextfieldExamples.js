@@ -2,7 +2,7 @@ import React from 'react';
 // import { Textfield } from '../../../../components/react-material-design';
 import { Textfield } from 'react-material-design';
 
-const InputExamples = () =>
+const TextfieldExamples = () =>
     <div>
         <h2>Textfield Examples and Right Align</h2>
         <Textfield label="label text" helpText="not persistent" value="I have text" />
@@ -13,4 +13,4 @@ const InputExamples = () =>
         <br /> <Textfield alignEnd helpTextPersistent label="label text, not pre-filled" helpText="alignEnd persisten" />
         <br /> <Textfield alignEnd disabled label="disabled, no help text" value="pre-filled" />
     </div>;
-export default InputExamples;
+export default TextfieldExamples;

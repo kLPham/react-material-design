@@ -16,10 +16,4 @@ export default class MDCRadio extends MDCRadioFoundation {
             })),
         });
     }
-    setChecked(checked) {
-        return super.setChecked(checked);
-    }
-    setDisabled(disabled) {
-        return super.setDisabled(disabled);
-    }
 }

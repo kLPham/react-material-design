@@ -2,8 +2,7 @@ import { MDCTextfieldFoundation } from '@material/textfield';
 
 export default class MDCTextfield extends MDCTextfieldFoundation {
     constructor(root) {
-        super();
-        this.adapter_ = Object.assign({
+        super(Object.assign({
             addClass: className => root.setState(prevState => ({
                 classes: prevState.classes.add(className),
             })),
@@ -30,15 +29,19 @@ export default class MDCTextfield extends MDCTextfieldFoundation {
                 inputBLur: handler,
             }),
             setHelptextAttr: (name, value) => root.setState({
-                helpTextAttr: { [name]: value },
+                helpTextAttr: {
+                    [name]: value,
+                },
             }), // this.helpText.setAttribute(name, value),
             removeHelptextAttr: (name, value) => root.setState({
-                helpTextAttr: { [name]: value },
+                helpTextAttr: {
+                    [name]: value,
+                },
             }), // this.helpText.removeAttribute(name, value),
             getNativeInput: () => ({
                 checkValidity: () => true,
-                value: root.props.value,
-                disabled: root.props.disabled, // typeof root.props.disabled === 'undefined',
+                value: root.state.value,
+                disabled: root.state.disabled,
             }),
             addClassToHelptext: className => root.setState(prevState => ({
                 classesHelpText: prevState.classesHelpText.add(className),
@@ -46,6 +49,6 @@ export default class MDCTextfield extends MDCTextfieldFoundation {
             removeClassFromHelptext: className => root.setState(prevState => ({
                 classesHelpText: prevState.classesHelpText.remove(className),
             })),
-        });
+        }));
     }
 }

@@ -29,7 +29,6 @@ module.exports = {
                     path.join(__dirname, 'src'),
                     path.join(__dirname, '../../components'),
                     path.join(__dirname, '../../node_modules', '@material'),
-                    // path.join(__dirname, 'node_modules', '@material'),
                 ]
             },
             {

@@ -5,9 +5,10 @@ exports[`<Radio /> should render basic radio button 1`] = `
     <input
       checked={false}
       className="mdc-radio__native-control"
+      disabled={false}
       id="radio-1"
       name="radios"
-      onClick={[Function]}
+      onChange={[Function]}
       type="radio" />
     <div
       className="mdc-radio__background">
@@ -27,6 +28,7 @@ exports[`<Radio /> should render basic radio button 1`] = `
 
 exports[`<Radio /> should render disabled radio button 1`] = `
 <Radio
+  checked={false}
   disabled={true}
   label="Radio 1">
   <div>
@@ -38,7 +40,7 @@ exports[`<Radio /> should render disabled radio button 1`] = `
         disabled={true}
         id="radio-1"
         name="radios"
-        onClick={[Function]}
+        onChange={[Function]}
         type="radio" />
       <div
         className="mdc-radio__background">
