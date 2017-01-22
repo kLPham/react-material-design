@@ -1,170 +1,108 @@
-/**
- * Copyright 2016 Google Inc. All Rights Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
-/**
- * @fileoverview This file shows how you can easily integrate MDC-Web components into React, using
- * checkbox as an example. Within the constructor, a foundation is initialized and given an adapter that
- * allows it to perform UI operations in a way idiomatic to React.
- */
-
-import React, { PureComponent, PropTypes } from 'react';
-import { Set as ImmutableSet } from 'immutable';
-// Temporarily using relative reference until we publish on npm.
-import { MDCCheckboxFoundation } from '@material/checkbox';
 import '@material/checkbox/dist/mdc.checkbox.css';
-
-const { ANIM_END_EVENT_NAME } = MDCCheckboxFoundation.strings;
-
+import React, { PropTypes, PureComponent } from 'react';
+import { Set as ImmutableSet } from 'immutable';
+import MDCCheckbox from './component';
+import FormField from '../formField';
+import classNames from 'classnames';
+// TODO: understand how this affects React.MDCCheckboxFoundation.isIndeterminate() => boolean Returns whether or not the underlying input is indeterminate. Returns false when no input is available.
+// TODO: removed controlid, when there are more checkboxes does this mess stuff up?
 class Checkbox extends PureComponent {
     static propTypes = {
-        id: PropTypes.string,
-        labelId: PropTypes.string,
+      alignEnd: PropTypes.bool,
         checked: PropTypes.bool,
+        disabled: PropTypes.bool,
         indeterminate: PropTypes.bool,
-        onChange: PropTypes.func,
-        controlId: PropTypes.number
+        label: PropTypes.string,
+        labelId: PropTypes.string,
     };
 
     static defaultProps = {
+        alignEnd: false,
         checked: false,
+        disabled: false,
         indeterminate: false,
-        onChange: () => {},
+        label: '',
     };
-
-    state = {
-        classes: new ImmutableSet(),
-        checkedInternal: false,
-        indeterminateInternal: false,
-    };
-    // classesToAdd = new ImmutableSet();
-    // classesToRemove = new ImmutableSet();
-
-// Here we initialize a foundation class, passing it an adapter which tells it how to
-// work with the React component in an idiomatic way.
-    foundation = new MDCCheckboxFoundation({
-        addClass: className => this.setState(prevState => ({
-            classes: prevState.classes.add(className),
-        })),
-        removeClass: className => this.setState(prevState => ({
-            classes: prevState.classes.remove(className),
-        })),
-        registerAnimationEndHandler: (handler) => {
-            if (this.refs.root) {
-                this.refs.root.addEventListener(ANIM_END_EVENT_NAME, handler);
-            }
-        },
-        deregisterAnimationEndHandler: (handler) => {
-            if (this.refs.root) {
-                this.refs.root.removeEventListener(ANIM_END_EVENT_NAME, handler);
-            }
-        },
-        registerChangeHandler: (handler) => {
-    // Note that this could also be handled outside of using the native DOM API.
-    // For example, onChange within render could delegate to a function which calls
-    // the handler passed here, as well as performs the other business logic. The point
-    // being our foundations are designed to be adaptable enough to fit the needs of the host
-    // platform.
-            if (this.refs.nativeCb) {
-                this.refs.nativeCb.addEventListener('change', handler);
-            }
-        },
-        deregisterChangeHandler: (handler) => {
-            if (this.refs.nativeCb) {
-                this.refs.nativeCb.removeEventListener('change', handler);
-            }
-        },
-        getNativeControl: () => {
-            if (!this.refs.nativeCb) {
-                throw new Error('Invalid state for operation');
-            }
-            return this.refs.nativeCb;
-        },
-        forceLayout: () => {
-            if (this.refs.nativeCb) {
-                this.refs.nativeCb.offsetWidth;
-            }
-        },
-        isAttachedToDOM: () => Boolean(this.refs.nativeCb),
-    });
-
-    render() {
-    // Within render, we generate the html needed to render a proper MDC-Web checkbox.
-        return (
-            <div ref="root" className={`mdc-checkbox ${this.state.classes.toJS().join(' ')}`}>
-                <input
-                    ref="nativeCb"
-                    id={this.props.controlId}
-                    type="checkbox"
-                    className="mdc-checkbox__native-control"
-                    aria-labelledby={this.props.labelId}
-                    checked={this.state.checkedInternal}
-                    onChange={(evt) => {
-                        this.setState({
-                            checkedInternal: this.refs.nativeCb.checked,
-                            indeterminateInternal: false,
-                        });
-                        this.props.onChange(evt);
-                    }}
-                />
-                <div className="mdc-checkbox__background">
-                    <svg
-                        version="1.1"
-                        className="mdc-checkbox__checkmark"
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24"
-                    >
-                        <path
-                            className="mdc-checkbox__checkmark__path"
-                            fill="none"
-                            stroke="white"
-                            d="M1.73,12.91 8.1,19.28 22.79,4.59"
-                        />
-                    </svg>
-                    <div className="mdc-checkbox__mixedmark" />
-                </div>
-            </div>
-        );
+    constructor(props) {
+        super(props);
+        const { checked, disabled, label } = props;
+        this.state = {
+            checked,
+            disabled,
+            classes: new ImmutableSet(),
+            label,
+        };
     }
-
-// Within the two component lifecycle methods below, we invoke the foundation's lifecycle hooks
-// so that proper work can be performed.
     componentDidMount() {
+        this.foundation = new MDCCheckbox(this);
         this.foundation.init();
     }
-
-// Here we synchronize the internal state of the UI component based on what the user has specified.
-    componentWillReceiveProps(props) {
-        if (props.checked !== this.props.checked) {
-            this.setState({ checkedInternal: props.checked, indeterminateInternal: false });
+    componentWillReceiveProps(nextProps) {
+        const { checked, indeterminate } = this.props;
+        if (nextProps.checked !== checked) {
+            this.setState({
+                checked: nextProps.checked,
+                indeterminate: false,
+            });
         }
-        if (props.indeterminate !== this.props.indeterminate) {
-            this.setState({ indeterminateInternal: props.indeterminate });
+        if (nextProps.indeterminate !== indeterminate) {
+            this.setState({
+                indeterminate: nextProps.indeterminate,
+            });
         }
     }
-
-// Since we cannot set an indeterminate attribute on a native checkbox, we use componentDidUpdate to update
-// the indeterminate value of the native checkbox whenever a change occurs (as opposed to doing so within
-// render()).
     componentDidUpdate() {
-        if (this.refs.nativeCb) {
-            this.refs.nativeCb.indeterminate = this.state.indeterminateInternal;
-        }
+        // if (this.nativeCb) {
+        //     this.nativeCb.indeterminate = this.state.indeterminate;
+        // }
     }
     componentWillUnmount() {
         this.foundation.destroy();
+    }
+    handleChange = () => {
+        const checked = this.state.checked;
+        this.setState({
+            checked: !checked,
+            indeterminate: false,
+        });
+    };
+    render() {
+        const { checked, disabled, label, classes } = this.state;
+        const { alignEnd, labelId } = this.props;
+        return (
+            <FormField
+                alignEnd={alignEnd}
+            >
+                <div className={classNames('mdc-checkbox', classes.toJS().join(' '))}>
+                    <input
+                        id="mdc-checkbox"
+                        type="checkbox"
+                        className="mdc-checkbox__native-control"
+                        aria-labelledby={labelId}
+                        disabled={disabled}
+                        checked={checked}
+                        onChange={() => this.handleChange()}
+                    />
+                    <div className="mdc-checkbox__background">
+                        <svg
+                            version="1.1"
+                            className="mdc-checkbox__checkmark"
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                className="mdc-checkbox__checkmark__path"
+                                fill="none"
+                                stroke="white"
+                                d="M1.73,12.91 8.1,19.28 22.79,4.59"
+                            />
+                        </svg>
+                        <div className="mdc-checkbox__mixedmark" />
+                    </div>
+                </div>
+                <label htmlFor="mdc-checkbox" className="mdc-checkbox-label">{label}</label>
+            </FormField>
+        );
     }
 }
 export default Checkbox;

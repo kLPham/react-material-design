@@ -3,17 +3,18 @@
     "ecmaFeatures": {
       "jsx": true,
       "modules": true
-    },
+    }
   },
   "env": {
-    "browser": true,
     "es6": true,
-    "node": true
+    "node": true,
+    "jest": true
   },
   "globals": {},
   "parser": "babel-eslint",
   "extends": "airbnb",
   "rules": {
+    "import/no-extraneous-dependencies" : 0,
     "import/no-webpack-loader-syntax": 0,
     "indent": ["error", 4, {
       "SwitchCase": 1
@@ -21,13 +22,14 @@
     "max-len": ["error", 1280],
     "no-console": 0,
     "no-param-reassign": 0,
-    "no-underscore-dangle": ["error", { "allow": ["_className", "_id", "_index", "_source", "adapter_" ] }],
+    "no-underscore-dangle": ["error", { "allow": ["adapter_","root_", "getHelptextAdapterMethods_", "getInputAdapterMethods_", "foundation_", "getControlAdapterMethods_"] }],
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "react/jsx-indent": ["error", 4],
-    "react/jsx-indent-props": ["error", 4],
+    "react/jsx-indent-props": ["error", 4]
   },
   "plugins": [
     "react",
-    "import"
+    "import",
+    "jest"
   ]
 }

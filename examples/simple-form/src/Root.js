@@ -1,17 +1,31 @@
 import React from 'react';
-import { Textfield } from 'react-material-design';
-// import Textfield from './components/textfield';
+import ButtonExamples from './presentational/ButtonExamples';
+import CardExamples from './presentational/CardExamples';
+import CheckboxExamples from './presentational/CheckboxExamples';
+import DrawerExamples from './presentational/DrawerExamples';
+import FABExamples from './presentational/FABExamples';
+import IconToggleExamples from './presentational/IconToggleExamples';
+import ListExamples from './presentational/ListExamples';
+import MenuExamples from './presentational/MenuExamples';
+import RadioExamples from './presentational/RadioExamples';
+import SelectExamples from './presentational/SelectExamples';
+import SnackbarExamples from './presentational/SnackbarExamples';
+import TextfieldExamples from './presentational/TextfieldExamples';
 
 const Root = () =>
     <div>
-        <h2>Check box demonstration</h2>
-        <br />
-        <h2>Textfield demonstration</h2>
-        <Textfield labelText="label text" helpText="not persistent" />
-        <Textfield value="value" labelText="label text" helpText="not persistent" />
-        <Textfield value="enabled, pre-filled, no label, no help text " />
-        <br />
-        <Textfield helpTextPersistent labelText="label text, not pre-filled" helpText="persistent: okay, how can I help?" />
-        <Textfield disabled labelText="disabled, no help text" value="pre-filled" />
+        <ButtonExamples />
+        <CardExamples />
+        <CheckboxExamples />
+        <DrawerExamples />
+        <FABExamples />
+        <IconToggleExamples />
+        <ListExamples />
+        <MenuExamples />
+        <RadioExamples />
+        <SelectExamples />
+        <SnackbarExamples />
+        <TextfieldExamples />
     </div>;
+
 export default Root;

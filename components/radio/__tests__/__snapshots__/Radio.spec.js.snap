@@ -1,0 +1,66 @@
+exports[`<Radio /> should render basic radio button 1`] = `
+<FormField
+  alignEnd={false}>
+  <div
+    className="mdc-radio">
+    <input
+      checked={false}
+      className="mdc-radio__native-control"
+      disabled={false}
+      id="radio-1"
+      name="radios"
+      onChange={[Function]}
+      type="radio" />
+    <div
+      className="mdc-radio__background">
+      <div
+        className="mdc-radio__outer-circle" />
+      <div
+        className="mdc-radio__inner-circle" />
+    </div>
+  </div>
+  <label
+    htmlFor="radio-1"
+    id="radio-1-label">
+    Radio 1
+  </label>
+</FormField>
+`;
+
+exports[`<Radio /> should render disabled radio button 1`] = `
+<Radio
+  alignEnd={false}
+  checked={false}
+  disabled={true}
+  label="Radio 1">
+  <FormField
+    alignEnd={false}>
+    <div
+      className="mdc-form-field">
+      <div
+        className="mdc-radio mdc-radio--disabled">
+        <input
+          checked={false}
+          className="mdc-radio__native-control"
+          disabled={true}
+          id="radio-1"
+          name="radios"
+          onChange={[Function]}
+          type="radio" />
+        <div
+          className="mdc-radio__background">
+          <div
+            className="mdc-radio__outer-circle" />
+          <div
+            className="mdc-radio__inner-circle" />
+        </div>
+      </div>
+      <label
+        htmlFor="radio-1"
+        id="radio-1-label">
+        Radio 1
+      </label>
+    </div>
+  </FormField>
+</Radio>
+`;

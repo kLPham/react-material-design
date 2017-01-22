@@ -1,1 +1,11 @@
+.babelrc
+.eslintignore
+.eslintrc
+.idea
+.travis.yml
+__tests__
+components
+examples
 react-material-design-*.tgz
+webpack.config.js
+yarn.lock

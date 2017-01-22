@@ -2,38 +2,46 @@ var path = require('path');
 var webpack = require('webpack');
 
 module.exports = {
-  devtool: 'source-map',
-  entry: [
-    'react-hot-loader/patch',
-    'webpack-hot-middleware/client',
-    path.resolve(__dirname, 'src/index')
-  ],
-  output: {
-    path: path.join(__dirname, 'dist'),
-    filename: 'bundle.js',
-    publicPath: '/static/'
-  },
-  plugins: [
-    new webpack.optimize.OccurenceOrderPlugin(),
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin(),
-  ],
-  module: {
-      preLoaders: [{
-        test: /\.json$/,
-          loader: 'json-loader'
-      }],
-    loaders: [{
-      test: /\.js?$/,
-      loaders: ['babel-loader'],
-      include: [
-          path.join(__dirname, 'src'),
-          path.join(__dirname, 'node_modules', '@material')
-      ]
+    entry: [
+        'react-hot-loader/patch',
+        'webpack-dev-server/client?http://localhost:8080',
+        path.resolve(__dirname, 'src/index')
+    ],
+    output: {
+        filename: 'bundle.js',
+        path: path.join(__dirname, 'dist'),
+        publicPath: '/'
     },
-        {
-            test: /\.css$/,
-            loaders: ['style-loader', 'css-loader']
-        }]
-  }
+    context: path.resolve(__dirname, 'src'),
+    devtool: 'inline-source-map',
+    devServer: {
+        hot: true,
+        contentBase: path.resolve(__dirname, 'dist'),
+        publicPath: '/'
+    },
+
+    module: {
+        rules: [
+            {
+                test: /\.js?$/,
+                use: ['babel-loader'],
+                include: [
+                    path.join(__dirname, 'src'),
+                    path.join(__dirname, '../../components'),
+                    path.join(__dirname, '../../node_modules', '@material'),
+                ]
+            },
+            {
+                test: /\.css$/,
+                use: ['style-loader', 'css-loader'],
+                include: [
+                    path.join(__dirname, '../../node_modules', '@material'),
+                ]
+            }
+        ]
+    },
+    plugins: [
+        new webpack.HotModuleReplacementPlugin(),
+        new webpack.NamedModulesPlugin(),
+    ],
 };
