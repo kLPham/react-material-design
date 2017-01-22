@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { IconToggle } from '../index';
+import IconToggle from '../index';
 
 describe('<IconToggle />', () => {
     it('should be able to render', () => {

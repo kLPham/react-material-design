@@ -5,6 +5,7 @@ import { Checkbox } from 'react-material-design';
 const CheckboxExamples = () =>
     <div>
         <h2>Checkbox Examples</h2>
-        <Checkbox label="Test" />
+        <Checkbox label="My Checkbox Label" />
+        <br /><Checkbox alignEnd label="Align end: My Checkbox Label" />
     </div>;
 export default CheckboxExamples;

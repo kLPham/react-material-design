@@ -15,7 +15,7 @@ import TextfieldExamples from './presentational/TextfieldExamples';
 const Root = () =>
     <div>
         <ButtonExamples />
-        {/* <CardExamples /> */}
+        <CardExamples />
         <CheckboxExamples />
         <DrawerExamples />
         <FABExamples />

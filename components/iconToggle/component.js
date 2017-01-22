@@ -1,6 +1,6 @@
 import { MDCIconToggleFoundation } from '@material/icon-toggle';
 
-export default class MDCIconToggle extends MDCIconToggleFoundation {
+class MDCIconToggle extends MDCIconToggleFoundation {
     constructor(root) {
         super(
         Object.assign({
@@ -35,3 +35,4 @@ export default class MDCIconToggle extends MDCIconToggleFoundation {
         );
     }
 }
+export default MDCIconToggle;

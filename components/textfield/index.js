@@ -4,13 +4,14 @@ import React, { PropTypes, PureComponent } from 'react';
 import { MDCTextfieldFoundation } from '@material/textfield';
 import { Set as ImmutableSet } from 'immutable';
 import MDCTextfield from './component';
-
+import FormField from '../formField';
 // TODO: validation with helper text.
 // TODO: helper text <p> should be after the <div>.
 const { HELPTEXT_PERSISTENT, LABEL_FLOAT_ABOVE } = MDCTextfieldFoundation.cssClasses;
 
 class Textfield extends PureComponent {
     static propTypes = {
+        alignEnd: PropTypes.bool,
         disabled: PropTypes.bool,
         helpText: PropTypes.string,
         helpTextPersistent: PropTypes.bool,
@@ -18,6 +19,7 @@ class Textfield extends PureComponent {
         value: PropTypes.string,
     };
     static defaultProps = {
+        alignEnd: false,
         disabled: false,
         value: '',
     }
@@ -78,29 +80,28 @@ class Textfield extends PureComponent {
     }
     render() {
         const { classes, classesHelpText, classesLabel, helpTextAttr, disabled, inputBlur, inputFocus, value } = this.state;
-        const { helpText, label } = this.props;
+        const { alignEnd, helpText, label } = this.props;
         return (
-            <div>
-                <div
-                    onFocus={inputFocus}
-                    onBlur={inputBlur}
-                    className={classNames('mdc-textfield', classes.toJS().join(' '))}
+            <FormField
+                onFocus={inputFocus}
+                onBlur={inputBlur}
+                alignEnd={alignEnd}
+                additionalClassNames={classNames('mdc-textfield', classes.toJS().join(' '))}
+            >
+                <input
+                    type="text"
+                    id="my-textfield"
+                    className="mdc-textfield__input"
+                    value={value}
+                    onChange={e => this.handleChange(e)}
+                    disabled={disabled}
+                />
+                <label
+                    className={classNames('mdc-textfield__label', classesLabel.toJS().join(' '))}
+                    htmlFor="my-textfield"
                 >
-                    <input
-                        type="text"
-                        id="my-textfield"
-                        className="mdc-textfield__input"
-                        value={value}
-                        onChange={e => this.handleChange(e)}
-                        disabled={disabled}
-                    />
-                    <label
-                        className={classNames('mdc-textfield__label', classesLabel.toJS().join(' '))}
-                        htmlFor="my-textfield"
-                    >
-                        {label}
-                    </label>
-                </div>
+                    {label}
+                </label>
                 <p
                     id="my-text-helptext"
                     className={classNames('mdc-textfield-helptext', classesHelpText.toJS().join(' '))}
@@ -108,7 +109,7 @@ class Textfield extends PureComponent {
                 >
                     {helpText}
                 </p>
-            </div>
+            </FormField>
         );
     }
 }

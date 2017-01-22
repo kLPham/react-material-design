@@ -3,17 +3,19 @@ import classNames from 'classnames';
 import React, { PropTypes, PureComponent } from 'react';
 import { Set as ImmutableSet } from 'immutable';
 import MDCRadio from './component';
-
+import FormField from '../formField';
 // TODO: componentWillReceiveProp lifecycle.
 // TODO: grouping radio buttons. children?
 
 class Radio extends PureComponent {
     static propTypes = {
+        alignEnd: PropTypes.bool,
         checked: PropTypes.bool,
         disabled: PropTypes.bool,
         label: PropTypes.string,
     };
     static defaultProps = {
+        alignEnd: false,
         checked: false,
         disabled: false,
         label: '',
@@ -44,8 +46,9 @@ class Radio extends PureComponent {
     };
     render() {
         const { checked, classes, disabled, label } = this.state;
+        const { alignEnd } = this.props;
         return (
-            <div>
+            <FormField alignEnd={alignEnd}>
                 <div className={classNames('mdc-radio', classes.toJS().join(' '))} >
                     <input
                         disabled={disabled}
@@ -62,7 +65,7 @@ class Radio extends PureComponent {
                     </div>
                 </div>
                 <label id="radio-1-label" htmlFor="radio-1">{label}</label>
-            </div>
+            </FormField>
         );
     }
 }

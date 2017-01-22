@@ -2,12 +2,13 @@ import '@material/checkbox/dist/mdc.checkbox.css';
 import React, { PropTypes, PureComponent } from 'react';
 import { Set as ImmutableSet } from 'immutable';
 import MDCCheckbox from './component';
-
+import FormField from '../formField';
+import classNames from 'classnames';
 // TODO: understand how this affects React.MDCCheckboxFoundation.isIndeterminate() => boolean Returns whether or not the underlying input is indeterminate. Returns false when no input is available.
 // TODO: removed controlid, when there are more checkboxes does this mess stuff up?
-
 class Checkbox extends PureComponent {
     static propTypes = {
+      alignEnd: PropTypes.bool,
         checked: PropTypes.bool,
         disabled: PropTypes.bool,
         indeterminate: PropTypes.bool,
@@ -16,6 +17,7 @@ class Checkbox extends PureComponent {
     };
 
     static defaultProps = {
+        alignEnd: false,
         checked: false,
         disabled: false,
         indeterminate: false,
@@ -65,11 +67,13 @@ class Checkbox extends PureComponent {
         });
     };
     render() {
-        const { checked, disabled, label } = this.state;
-        const { labelId } = this.props;
+        const { checked, disabled, label, classes } = this.state;
+        const { alignEnd, labelId } = this.props;
         return (
-            <div>
-                <div className={`mdc-checkbox ${this.state.classes.toJS().join(' ')}`}>
+            <FormField
+                alignEnd={alignEnd}
+            >
+                <div className={classNames('mdc-checkbox', classes.toJS().join(' '))}>
                     <input
                         id="mdc-checkbox"
                         type="checkbox"
@@ -97,7 +101,7 @@ class Checkbox extends PureComponent {
                     </div>
                 </div>
                 <label htmlFor="mdc-checkbox" className="mdc-checkbox-label">{label}</label>
-            </div>
+            </FormField>
         );
     }
 }

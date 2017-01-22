@@ -1,11 +1,14 @@
 import React, { PropTypes } from 'react';
-import '@material/card/dist/mdc.card.css';
+import classNames from 'classnames';
 
-const CardActions = ({ children }) =>
-    <section className="mdc-card__actions">
+const CardActions = ({ children, vertical }) =>
+    <section className={classNames('mdc-card__actions', { 'mdc-card__actions--vertical': vertical })}>
         {children}
     </section>;
 CardActions.propTypes = {
-    children: PropTypes.any,
+    vertical: PropTypes.bool,
+};
+CardActions.defaultProps = {
+    vertical: false,
 };
 export default CardActions;
