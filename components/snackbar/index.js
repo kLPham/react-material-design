@@ -6,6 +6,7 @@ import MDCSnackbar from './component';
 
 // TODO: use this.foundation.show from other elements.
 // TODO: this.foundation.show() queue didn't seem to work.
+// TODO: doesn't show next snackbar messages.
 class Snackbar extends PureComponent {
     constructor(props) {
         super(props);
@@ -14,20 +15,12 @@ class Snackbar extends PureComponent {
         };
     }
     componentWillMount() {
-        const dialog = {
-            message: 'Im a message',
-            actionText: 'Im action text',
-            actionHandler: () => console.log('im action handler'),
-        };
-        const secondDialog = {
-            message: 'Im a second message',
-            actionText: 'moar',
-            actionHandler: () => console.log('im action handler'),
-        };
         this.foundation = new MDCSnackbar(this);
         this.foundation.init();
-        this.foundation.show(dialog);
-        this.foundation.show(secondDialog);
+    }
+    showSnackbar(payload) {
+      // Error handling?
+        this.foundation.show(payload);
     }
     render() {
         const { actionAriaHidden, actionText, ariaHidden, classes, click, message } = this.state;

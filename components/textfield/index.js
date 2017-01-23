@@ -17,10 +17,13 @@ class Textfield extends PureComponent {
         helpTextPersistent: PropTypes.bool,
         label: PropTypes.string,
         value: PropTypes.string,
+        onChange: PropTypes.func,
+        required: PropTypes.bool,
     };
     static defaultProps = {
         alignEnd: false,
         disabled: false,
+        required: false,
         value: '',
     }
     constructor(props) {
@@ -29,7 +32,6 @@ class Textfield extends PureComponent {
             classes: new ImmutableSet(),
             classesHelpText: new ImmutableSet(),
             classesLabel: new ImmutableSet(),
-            value: props.value,
             disabled: props.disabled,
         };
     }
@@ -54,7 +56,6 @@ class Textfield extends PureComponent {
     componentWillReceiveProps(nextProps) {
         const { disabled, helpTextPersistent } = this.props;
         const { addClassToLabel } = this.foundation.adapter_;
-
         if (nextProps.disabled !== disabled) {
             this.setState({
                 disabledInternal: nextProps.disabled,
@@ -65,26 +66,15 @@ class Textfield extends PureComponent {
                 helpTextPersistentInternal: nextProps.helpTextPersistent,
             });
         }
-        if (nextProps.value) {
-            addClassToLabel(LABEL_FLOAT_ABOVE);
-        }
     }
     componentWillUnmount() {
         this.foundation.destroy();
     }
-    handleChange = (e) => {
-        const { value } = e.target;
-        this.setState({
-            value,
-        });
-    }
     render() {
-        const { classes, classesHelpText, classesLabel, helpTextAttr, disabled, inputBlur, inputFocus, value } = this.state;
-        const { alignEnd, helpText, label } = this.props;
+        const { classes, classesHelpText, classesLabel, helpTextAttr, disabled, inputBlur, inputFocus } = this.state;
+        const { alignEnd, helpText, label, value, required, onChange } = this.props;
         return (
             <FormField
-                onFocus={inputFocus}
-                onBlur={inputBlur}
                 alignEnd={alignEnd}
                 additionalClassNames={classNames('mdc-textfield', classes.toJS().join(' '))}
             >
@@ -93,8 +83,11 @@ class Textfield extends PureComponent {
                     id="my-textfield"
                     className="mdc-textfield__input"
                     value={value}
-                    onChange={e => this.handleChange(e)}
+                    onChange={onChange}
                     disabled={disabled}
+                    required={required}
+                    onFocus={inputFocus}
+                    onBlur={inputBlur}
                 />
                 <label
                     className={classNames('mdc-textfield__label', classesLabel.toJS().join(' '))}

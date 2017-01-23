@@ -42,6 +42,10 @@ const CardExamples = () =>
                 </div>
             </CardSupportingContent>
             <CardActions vertical>
+                <Button type="compact" label="vAction 1" />
+                <Button type="compact" label="vAction 2" />
+            </CardActions>
+            <CardActions >
                 <Button type="compact" label="Action 1" />
                 <Button type="compact" label="Action 2" />
             </CardActions>

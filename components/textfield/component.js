@@ -26,21 +26,23 @@ export default class MDCTextfield extends MDCTextfieldFoundation {
                 inputBlur: handler,
             }),
             deregisterInputBlurHandler: handler => root.setState({
-                inputBLur: handler,
+                inputBlur: handler,
             }),
-            setHelptextAttr: (name, value) => root.setState({
+            setHelptextAttr: (name, value) => root.setState(prevState => ({
                 helpTextAttr: {
+                    ...prevState.helpTextAttr,
                     [name]: value,
                 },
-            }), // this.helpText.setAttribute(name, value),
-            removeHelptextAttr: (name, value) => root.setState({
+            })),
+            removeHelptextAttr: (name, value) => root.setState(prevState => ({
                 helpTextAttr: {
+                    ...prevState.helpTextAttr,
                     [name]: value,
                 },
-            }), // this.helpText.removeAttribute(name, value),
+            })),
             getNativeInput: () => ({
                 checkValidity: () => true,
-                value: root.state.value,
+                value: root.props.value,
                 disabled: root.state.disabled,
             }),
             addClassToHelptext: className => root.setState(prevState => ({

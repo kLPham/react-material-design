@@ -7,6 +7,10 @@ import CardMediaItem from './card/cardMediaItem';
 import CardSupportingContent from './card/cardSupportingContent';
 import Checkbox from './checkbox';
 import Drawer from './drawer';
+import PersistentDrawer from './drawer/peristentDrawer';
+import DrawerContent from './drawer/drawerContent';
+import DrawerHeader from './drawer/drawerHeader';
+import DrawerSpacer from './drawer/drawerSpacer';
 import FAB from './fab';
 import FormField from './formField';
 import IconToggle from './iconToggle';
@@ -30,6 +34,10 @@ module.exports = {
     CardSupportingContent,
     Checkbox,
     Drawer,
+    PersistentDrawer,
+    DrawerContent,
+    DrawerHeader,
+    DrawerSpacer,
     FAB,
     FormField,
     IconToggle,
