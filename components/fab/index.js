@@ -52,11 +52,12 @@ const styles = {
 };
 const cx = classNames.bind(fabcssClasses);
 // if no type
-const FAB = ({ icon, type, location }) =>
+const FAB = ({ icon, type, location, ripple }) =>
     <button
         style={location && styles[location]}
         className={cx('mdc-fab', fabcssClasses[type], 'material-icons')}
         aria-label={icon}
+        data-mdc-auto-init={ripple && 'MDCRipple'}
     >
         <span className="mdc-fab__icon">
             {icon}
@@ -66,5 +67,6 @@ FAB.propTypes = {
     icon: PropTypes.string.isRequired,
     location: PropTypes.string,
     type: PropTypes.string,
+    ripple: PropTypes.bool,
 };
 export default FAB;

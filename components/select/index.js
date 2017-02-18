@@ -1,23 +1,59 @@
-import React, { PureComponent } from 'react';
+import classNames from 'classnames';
 import '@material/select/dist/mdc.select.css';
+import React, { PureComponent } from 'react';
+import { Set as ImmutableSet, Map as ImmutableMap } from 'immutable';
 import MDCSelect from './component';
 
+// TODO: use simple menu.
 class Select extends PureComponent {
-    componentWillMount() {
+    constructor(props) {
+        super(props);
+        this.state = {
+            classes: new ImmutableSet(),
+            menuClasses: new ImmutableSet(),
+            attributes: new ImmutableMap(),
+            style: new ImmutableMap(),
+            menuElStyle: new ImmutableMap(),
+            menuElAttr: new ImmutableMap(),
+        };
+    }
+    componentDidMount() {
         this.foundation = new MDCSelect(this);
         this.foundation.init();
-        console.log('componentWillMount', this.foundation);
+        this.menuRoot.addEventListener('MDCSimpleMenu:selected', this.state['MDCSimpleMenu:selected']);
+        this.menuRoot.addEventListener('MDCSimpleMenu:cancel', this.state['MDCSimpleMenu:cancel']);
+    }
+    componeWillUnmount() {
+        this.foundation.destroy();
     }
     render() {
+        const { attributes, menuElAttr, menuClasses, menuElStyle, classes, click, keyup, keydown, style } = this.state;
         return (
-            <div className="mdc-select" role="listbox" tabIndex="0">
+            <div
+                ref={(d) => { this.rootEl = d; }}
+                className={classNames('mdc-select', classes.toJS().join(' '))}
+                tabIndex="0"
+                role="listbox"
+                onClick={click}
+                onKeyUp={keyup}
+                onKeyDown={keydown}
+                style={style.toJS()}
+                {...attributes.toJS()}
+            >
                 <span className="mdc-select__selected-text">Pick a food group</span>
-                <div className="mdc-simple-menu mdc-select__menu">
-                    <ul className="mdc-list mdc-simple-menu__items">
-                        <li className="mdc-list-item" role="option" id="grains" tabIndex="0">
+                <div
+                    className={classNames('mdc-simple-menu', 'mdc-select__menu', menuClasses.toJS().join(' '))}
+                    {...menuElAttr.toJS()}
+                    style={menuElStyle.toJS()}
+                    ref={(d) => { this.menuRoot = d; }}
+                >
+                    <ul
+                        className="mdc-list mdc-simple-menu__items"
+                    >
+                        <li className="mdc-lismt-item" role="option" id="grains" tabIndex="0">
                             Bread, Cereal, Rice, and Pasta
                         </li>
-                        <li className="mdc-list-item" role="option" id="vegetables" tabIndex="0">
+                        <li className="mdc-list-,item" role="option" id="vegetables" tabIndex="0">
                             Vegetables
                         </li>
                         <li className="mdc-list-item" role="option" id="fruit" tabIndex="0">

@@ -15,19 +15,13 @@ export default class MDCTextfield extends MDCTextfieldFoundation {
             removeClassFromLabel: className => root.setState(prevState => ({
                 classesLabel: prevState.classesLabel.remove(className),
             })),
+            addClassToHelptext: className => root.setState(prevState => ({
+                classesHelpText: prevState.classesHelpText.add(className),
+            })),
+            removeClassFromHelptext: className => root.setState(prevState => ({
+                classesHelpText: prevState.classesHelpText.remove(className),
+            })),
             helptextHasClass: className => root.state.classesHelpText.has(className),
-            registerInputFocusHandler: handler => root.setState({
-                inputFocus: handler,
-            }),
-            deregisterInputFocusHandler: handler => root.setState({
-                inputFocus: handler,
-            }),
-            registerInputBlurHandler: handler => root.setState({
-                inputBlur: handler,
-            }),
-            deregisterInputBlurHandler: handler => root.setState({
-                inputBlur: handler,
-            }),
             setHelptextAttr: (name, value) => root.setState(prevState => ({
                 helpTextAttr: {
                     ...prevState.helpTextAttr,
@@ -40,17 +34,36 @@ export default class MDCTextfield extends MDCTextfieldFoundation {
                     [name]: value,
                 },
             })),
+            registerInputFocusHandler: handler => root.setState({
+                inputFocus: handler,
+            }),
+            deregisterInputFocusHandler: handler => root.setState({
+                inputFocus: handler,
+            }),
+            registerInputBlurHandler: handler => root.setState({
+                inputBlur: handler,
+            }),
+            deregisterInputBlurHandler: handler => root.setState({
+                inputBlur: handler,
+            }),
+            registerInputInputHandler: handler => root.setState({
+                inputInput: handler,
+            }),
+            deregisterInputInputHandler: handler => root.setState({
+                inputInput: handler,
+            }),
+            registerInputKeydownHandler: handler => root.setState({
+                inputKeydown: handler,
+            }),
+            deregisterInputKeydownHandler: handler => root.setState({
+                inputKeydown: handler,
+            }),
             getNativeInput: () => ({
                 checkValidity: () => true,
-                value: root.props.value,
+                value: root.state.value,
                 disabled: root.state.disabled,
             }),
-            addClassToHelptext: className => root.setState(prevState => ({
-                classesHelpText: prevState.classesHelpText.add(className),
-            })),
-            removeClassFromHelptext: className => root.setState(prevState => ({
-                classesHelpText: prevState.classesHelpText.remove(className),
-            })),
+
         }));
     }
 }

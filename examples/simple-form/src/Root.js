@@ -5,12 +5,15 @@ import CheckboxExamples from './presentational/CheckboxExamples';
 import DrawerExamples from './presentational/DrawerExamples';
 import FABExamples from './presentational/FABExamples';
 import IconToggleExamples from './presentational/IconToggleExamples';
+import LayoutGridExamples from './presentational/LayoutGridExamples';
 import ListExamples from './presentational/ListExamples';
 import MenuExamples from './presentational/MenuExamples';
 import RadioExamples from './presentational/RadioExamples';
 import SelectExamples from './presentational/SelectExamples';
 import SnackbarExamples from './presentational/SnackbarExamples';
+import SwitchExamples from './presentational/SwitchExamples';
 import TextfieldExamples from './presentational/TextfieldExamples';
+import ToolbarExamples from './presentational/ToolbarExamples';
 
 const Root = () =>
     <div>
@@ -26,6 +29,7 @@ const Root = () =>
         <SelectExamples />
         <SnackbarExamples />
         <TextfieldExamples />
+        <ToolbarExamples />
     </div>;
 
 export default Root;
