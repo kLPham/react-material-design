@@ -22,13 +22,13 @@
   },
   "dependencies": {
     "classnames": "^2.2.5",
-    "material-components-web": "^0.2.0",
+    "material-components-web": "^0.4.0",
     "react": "^15.4.1",
     "react-dom": "^15.4.1",
     "react-hot-loader": "^3.0.0-beta.6",
     "react-material-design": "^0.1.1",
-    "webpack": "^2.2.0",
-    "webpack-dev-middleware": "^1.9.0",
-    "webpack-hot-middleware": "^2.15.0"
+    "webpack": "^2.2.1",
+    "webpack-dev-middleware": "^1.10.0",
+    "webpack-hot-middleware": "^2.16.1"
   }
 }
