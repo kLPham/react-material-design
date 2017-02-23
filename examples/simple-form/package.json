@@ -17,12 +17,15 @@
     "css-loader": "^0.26.1",
     "eslint": "^3.9.1",
     "eslint-plugin-react": "^6.5.0",
+    "extract-text-webpack-plugin": "^2.0.0-rc.3",
+    "node-sass": "^4.5.0",
+    "sass-loader": "^6.0.2",
     "style-loader": "^0.13.1",
     "webpack-dev-server": "latest"
   },
   "dependencies": {
     "classnames": "^2.2.5",
-    "material-components-web": "^0.4.0",
+    "material-components-web": "^0.5.0",
     "react": "^15.4.1",
     "react-dom": "^15.4.1",
     "react-hot-loader": "^3.0.0-beta.6",

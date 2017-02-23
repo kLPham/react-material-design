@@ -4,6 +4,7 @@ import React, { PropTypes, PureComponent } from 'react';
 import { Set as ImmutableSet } from 'immutable';
 import MDCRadio from './component';
 import FormField from '../formField';
+import uuid from 'uuid-v4';
 // TODO: componentWillReceiveProp lifecycle.
 // TODO: grouping radio buttons. children?
 
@@ -47,6 +48,7 @@ class Radio extends PureComponent {
     render() {
         const { checked, classes, disabled, label } = this.state;
         const { alignEnd } = this.props;
+        const id = uuid();
         return (
             <FormField alignEnd={alignEnd}>
                 <div className={classNames('mdc-radio', classes.toJS().join(' '))} >
@@ -55,7 +57,7 @@ class Radio extends PureComponent {
                         onChange={e => this.handleChange(e)}
                         className="mdc-radio__native-control"
                         type="radio"
-                        id="radio-1"
+                        id={`mdc-radio--${id}`}
                         name="radios"
                         checked={checked}
                     />
@@ -64,7 +66,7 @@ class Radio extends PureComponent {
                         <div className="mdc-radio__inner-circle" />
                     </div>
                 </div>
-                <label id="radio-1-label" htmlFor="radio-1">{label}</label>
+                <label id={`mdc-radio-label--${id}`} htmlFor={`mdc-radio--${id}`}>{label}</label>
             </FormField>
         );
     }

@@ -6,24 +6,25 @@ import { buttoncssClasses } from '../classes';
 const cx = classNames.bind(buttoncssClasses);
 
 // TODO: button can have multiple types e.g., primary raised
-// TODO: typecheck props (label, type, disabled).
+// TODO: typecheck props (label, disabled).
 
-const Button = ({ label, ripple, type, ...rest }) =>
+const Button = ({ label, disabled, ripple, ...rest }) =>
     <button
-        className={cx('mdc-button', buttoncssClasses[type])}
+        className={cx('mdc-button', Object.keys(rest).map(modifier =>
+        buttoncssClasses[modifier]),
+        )}
         data-mdc-auto-init={ripple && 'MDCRipple'}
-        {...rest}
+        disabled={disabled}
     >
         {label}
     </button>;
 Button.propTypes = {
     label: PropTypes.string.isRequired,
     ripple: PropTypes.bool,
-    type: PropTypes.string,
+    disabled: PropTypes.bool,
 };
 Button.defaultProps = {
     label: '',
     ripple: null,
-    type: '',
 };
 export default Button;

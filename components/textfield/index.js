@@ -5,6 +5,7 @@ import { MDCTextfieldFoundation } from '@material/textfield';
 import { Set as ImmutableSet } from 'immutable';
 import MDCTextfield from './component';
 import FormField from '../formField';
+import uuid from 'uuid-v4';
 
 // TODO: validation with helper text.
 // TODO: helper text <p> should be after the <div>.
@@ -29,7 +30,7 @@ class Textfield extends PureComponent {
     }
     constructor(props) {
         super(props);
-        console.log(props.disabled)
+        console.log(props.disabled);
         this.state = {
             classes: new ImmutableSet(),
             classesHelpText: new ImmutableSet(),
@@ -77,6 +78,7 @@ class Textfield extends PureComponent {
     render() {
         const { classes, classesHelpText, classesLabel, helpTextAttr, disabled, inputBlur, inputInput, inputKeydown, inputFocus, value } = this.state;
         const { alignEnd, helpText, label, required, onChange } = this.props;
+        const id = uuid();
         return (
             <FormField
                 alignEnd={alignEnd}
@@ -84,7 +86,7 @@ class Textfield extends PureComponent {
             >
                 <input
                     type="text"
-                    id="my-textfield"
+                    id={`mdc-textfield--${id}`}
                     className="mdc-textfield__input"
                     value={value}
                     onChange={onChange || this.handleChange}
@@ -97,12 +99,12 @@ class Textfield extends PureComponent {
                 />
                 <label
                     className={classNames('mdc-textfield__label', classesLabel.toJS().join(' '))}
-                    htmlFor="my-textfield"
+                    htmlFor={`mdc-textfield--${id}`}
                 >
                     {label}
                 </label>
                 <p
-                    id="my-text-helptext"
+                    id={`mdc-textfield-helptext--${id}`}
                     className={classNames('mdc-textfield-helptext', classesHelpText.toJS().join(' '))}
                     {...helpTextAttr}
                 >

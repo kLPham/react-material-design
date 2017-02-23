@@ -1,5 +1,6 @@
 export const buttoncssClasses = {
     colored: 'mdc-button--accent',
+    accent: 'mdc-button--accent',
     compact: 'mdc-button--compact',
     dense: 'mdc-button--dense',
     primary: 'mdc-button--primary',

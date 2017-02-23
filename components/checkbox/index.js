@@ -1,14 +1,15 @@
 import '@material/checkbox/dist/mdc.checkbox.css';
 import React, { PropTypes, PureComponent } from 'react';
-import { Set as ImmutableSet } from 'immutable';
-import MDCCheckbox from './component';
-import FormField from '../formField';
 import classNames from 'classnames';
-// TODO: understand how this affects React.MDCCheckboxFoundation.isIndeterminate() => boolean Returns whether or not the underlying input is indeterminate. Returns false when no input is available.
+import { Set as ImmutableSet } from 'immutable';
+import FormField from '../formField';
+import MDCCheckbox from './component';
+import uuid from 'uuid-v4';
+// TODO: Indeterminate see: https://css-tricks.com/indeterminate-checkboxes/
 // TODO: removed controlid, when there are more checkboxes does this mess stuff up?
 class Checkbox extends PureComponent {
     static propTypes = {
-      alignEnd: PropTypes.bool,
+        alignEnd: PropTypes.bool,
         checked: PropTypes.bool,
         disabled: PropTypes.bool,
         indeterminate: PropTypes.bool,
@@ -69,13 +70,14 @@ class Checkbox extends PureComponent {
     render() {
         const { checked, disabled, label, classes } = this.state;
         const { alignEnd, labelId } = this.props;
+        const id = uuid();
         return (
             <FormField
                 alignEnd={alignEnd}
             >
                 <div className={classNames('mdc-checkbox', classes.toJS().join(' '))}>
                     <input
-                        id="mdc-checkbox"
+                        id={`mdc-checkbox--${id}`}
                         type="checkbox"
                         className="mdc-checkbox__native-control"
                         aria-labelledby={labelId}
@@ -100,7 +102,7 @@ class Checkbox extends PureComponent {
                         <div className="mdc-checkbox__mixedmark" />
                     </div>
                 </div>
-                <label htmlFor="mdc-checkbox" className="mdc-checkbox-label">{label}</label>
+                <label htmlFor={`mdc-checkbox--${id}`} className="mdc-checkbox-label">{label}</label>
             </FormField>
         );
     }

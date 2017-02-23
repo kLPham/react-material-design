@@ -23,11 +23,13 @@ const Root = () =>
         <DrawerExamples />
         <FABExamples />
         <IconToggleExamples />
+        <LayoutGridExamples />
         <ListExamples />
         <MenuExamples />
         <RadioExamples />
         <SelectExamples />
         <SnackbarExamples />
+        <SwitchExamples />
         <TextfieldExamples />
         <ToolbarExamples />
     </div>;
