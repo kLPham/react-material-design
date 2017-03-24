@@ -65,5 +65,7 @@ export default class MDCTextfield extends MDCTextfieldFoundation {
             }),
 
         }));
+        this.addClassToHelptext = className => this.adapter_.addClassToHelptext(className);
+        this.addClassToLabel = className => this.adapter_.addClassToLabel(className);
     }
 }

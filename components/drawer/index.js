@@ -1,8 +1,9 @@
 import React, { PropTypes } from 'react';
+import '@material/drawer/dist/mdc.drawer.css';
 // TODO: I don't like two drawers. if type = blah then?
 
 const Drawer = ({ children }) =>
-    <nav className="mdc-permanent-drawer mdc-typography">
+    <aside className="mdc-permanent-drawer mdc-typography">
         {children}
-    </nav>;
+    </aside>;
 export default Drawer;

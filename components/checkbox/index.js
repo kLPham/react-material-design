@@ -36,6 +36,9 @@ class Checkbox extends PureComponent {
     }
     componentDidMount() {
         this.foundation = new MDCCheckbox(this);
+        console.dir(MDCCheckbox);
+        console.dir(this.foundation);
+
         this.foundation.init();
     }
     componentWillReceiveProps(nextProps) {

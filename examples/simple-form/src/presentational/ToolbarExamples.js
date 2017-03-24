@@ -8,7 +8,7 @@ const ToolbarExamples = () =>
         <h2>Toolbar Examples</h2>
         <Toolbar
             title="Title"
-            startElement={<a className="material-icons">menu</a>}
+            startElements={<a className="material-icons">menu</a>}
         />
         {/* <Toolbar
             fixed

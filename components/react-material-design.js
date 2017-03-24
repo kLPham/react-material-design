@@ -12,6 +12,7 @@ import DrawerHeader from './drawer/drawerHeader';
 import DrawerSpacer from './drawer/drawerSpacer';
 import FAB from './fab';
 import FormField from './formField';
+import IconButton from './button/iconButton';
 import IconToggle from './iconToggle';
 import LayoutGrid from './layout-grid';
 import LayoutGridCell from './layout-grid/layoutGridCell';
@@ -43,6 +44,7 @@ module.exports = {
     DrawerSpacer,
     FAB,
     FormField,
+    IconButton,
     IconToggle,
     LayoutGrid,
     LayoutGridCell,

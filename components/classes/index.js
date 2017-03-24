@@ -9,7 +9,7 @@ export const buttoncssClasses = {
 export const fabcssClasses = {
     absolute: 'app-fab--absolute',
     mini: 'mdc-fab--mini',
-    plain: 'mdc-button--plain',
+    plain: 'mdc-fab--plain',
 };
 export const listcssClasses = {
     avatar: 'mdc-list--avatar-list', dense: 'mdc-list--dense',
@@ -26,6 +26,14 @@ export const layoutGridCellcssClasses = {
     top: 'mdc-layout-grid__cell--align-top',
     middle: 'mdc-layout-grid__cell--align-middle',
     bottom: 'mdc-layout-grid__cell--align-bottom',
-
-
+};
+export const iconcssClasses = {
+    primary: 'mdc-icon-toggle--primary',
+    accent: 'mdc-icon-toggle--accent',
+};
+export const drawerHeadercssClasses = {
+    primary: 'mdc-theme--primary-bg mdc-theme--text-primary-on-primary',
+};
+export const textfieldcssClasses = {
+    primary: 'mdc-theme--primary-bg mdc-theme--text-primary-on-primary',
 };

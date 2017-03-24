@@ -1,7 +1,6 @@
 import React from 'react';
-// import { Button } from '../../../../components/react-material-design';
-import { Button } from 'react-material-design';
-
+import { Button } from '../../../../components/react-material-design';
+// import { Button } from 'react-material-design';
 const ButtonExamples = () =>
     <div>
         <h2>Button Examples</h2>
@@ -20,7 +19,5 @@ const ButtonExamples = () =>
         <Button label="Primary Raised" primary raised />
         <Button label="Ripple Primary" ripple primary />
         <Button label="Ripple Primary" ripple primary imnotinlist />
-
-
     </div>;
 export default ButtonExamples;

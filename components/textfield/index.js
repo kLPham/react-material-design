@@ -6,9 +6,10 @@ import { Set as ImmutableSet } from 'immutable';
 import MDCTextfield from './component';
 import FormField from '../formField';
 import uuid from 'uuid-v4';
-
+import { textfieldcssClasses } from '../classes';
 // TODO: validation with helper text.
 // TODO: helper text <p> should be after the <div>.
+// TODO: Dark themes
 const { HELPTEXT_PERSISTENT, LABEL_FLOAT_ABOVE } = MDCTextfieldFoundation.cssClasses;
 
 class Textfield extends PureComponent {
@@ -20,6 +21,7 @@ class Textfield extends PureComponent {
         label: PropTypes.string,
         value: PropTypes.string,
         onChange: PropTypes.func,
+        primary: PropTypes.bool,
         required: PropTypes.bool,
     };
     static defaultProps = {
@@ -30,22 +32,23 @@ class Textfield extends PureComponent {
     }
     constructor(props) {
         super(props);
-        console.log(props.disabled);
         this.state = {
             classes: new ImmutableSet(),
             classesHelpText: new ImmutableSet(),
             classesLabel: new ImmutableSet(),
             disabled: props.disabled,
             value: props.value,
+            id: uuid(),
         };
     }
     componentDidMount() {
         this.foundation = new MDCTextfield(this);
+        console.dir(this.foundation);
         this.foundation.init();
 
         const { helpTextPersistent, value } = this.props;
         const { disabled } = this.state;
-        const { addClassToHelptext, addClassToLabel } = this.foundation.adapter_;
+        const { addClassToHelptext, addClassToLabel } = this.foundation;
 
         if (helpTextPersistent) {
             addClassToHelptext(HELPTEXT_PERSISTENT);
@@ -59,7 +62,7 @@ class Textfield extends PureComponent {
     }
     componentWillReceiveProps(nextProps) {
         const { disabled, helpTextPersistent } = this.props;
-        const { addClassToLabel } = this.foundation.adapter_;
+        const { addClassToLabel } = this.foundation;
         if (nextProps.disabled !== disabled) {
             this.setState({
                 disabledInternal: nextProps.disabled,
@@ -74,11 +77,10 @@ class Textfield extends PureComponent {
     componentWillUnmount() {
         this.foundation.destroy();
     }
-    handleChange = e => this.setState({ value: e.target.value })
+    // handleChange = e => this.setState({ value: e.target.value })
     render() {
-        const { classes, classesHelpText, classesLabel, helpTextAttr, disabled, inputBlur, inputInput, inputKeydown, inputFocus, value } = this.state;
-        const { alignEnd, helpText, label, required, onChange } = this.props;
-        const id = uuid();
+        const { classes, classesHelpText, classesLabel, helpTextAttr, disabled, id, inputBlur, inputInput, inputKeydown, inputFocus, value } = this.state;
+        const { alignEnd, helpText, label, required, onChange, primary } = this.props;
         return (
             <FormField
                 alignEnd={alignEnd}
@@ -89,7 +91,7 @@ class Textfield extends PureComponent {
                     id={`mdc-textfield--${id}`}
                     className="mdc-textfield__input"
                     value={value}
-                    onChange={onChange || this.handleChange}
+                    onChange={onChange}
                     disabled={disabled}
                     required={required}
                     onFocus={inputFocus}
@@ -98,7 +100,7 @@ class Textfield extends PureComponent {
                     onKeyDown={inputKeydown}
                 />
                 <label
-                    className={classNames('mdc-textfield__label', classesLabel.toJS().join(' '))}
+                    className={classNames('mdc-textfield__label', primary && textfieldcssClasses.primary, classesLabel.toJS().join(' '))}
                     htmlFor={`mdc-textfield--${id}`}
                 >
                     {label}

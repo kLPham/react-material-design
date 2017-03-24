@@ -2,22 +2,22 @@ import React from 'react';
 import { Button, Menu, MenuItem } from '../../../../components/react-material-design';
 // import { Button, Menu, MenuItem } from 'react-material-design';
 
-const MenuExamples = () =>
+const Menus = () =>
     <div>
-        <h2>Menu Example</h2>
-        Button Menu
+        <h1>Menus</h1>
+        <h2>Button Menu</h2>
         <Menu label="Clickie" type="button">
             <MenuItem value="An Item" />
             <MenuItem value="Another Item" />
         </Menu>
-        Button Menu disabled
+        <h2>Button Menu disabled</h2>
         <Menu disabled label="No Clickie" type="button">
             <MenuItem value="An Item" />
             <MenuItem value="Another Item" />
         </Menu>
-        Icon Menu
-        Dropdown menu?
-        Button Menu
+        <h2>Icon Menu</h2>
+        <h2>Dropdown menu?</h2>
+        <h2>Button Menu</h2>
         <Button label="click me">
             <Menu type="button">
                 <MenuItem value="A Menu Item" />
@@ -25,4 +25,4 @@ const MenuExamples = () =>
             </Menu>
         </Button>
     </div>;
-export default MenuExamples;
+export default Menus;

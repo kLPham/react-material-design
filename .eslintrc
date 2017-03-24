@@ -22,7 +22,7 @@
     "max-len": ["error", 1280],
     "no-console": 0,
     "no-param-reassign": 0,
-    "no-underscore-dangle": ["error", { "allow": ["adapter_","root_", "getHelptextAdapterMethods_", "getInputAdapterMethods_", "foundation_", "getControlAdapterMethods_"] }],
+    "no-underscore-dangle": ["error", { "allow": ["root_", "getHelptextAdapterMethods_", "getInputAdapterMethods_", "foundation_", "getControlAdapterMethods_"] }],
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "react/jsx-indent": ["error", 4],
     "react/jsx-indent-props": ["error", 4]

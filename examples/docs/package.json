@@ -1,0 +1,40 @@
+{
+  "name": "react-material-design-simple-form",
+  "version": "1.0.0",
+  "description": "Simple demonstration of react-material-design componenets",
+  "scripts": {
+    "start": "webpack-dev-server"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core": "^6.22.21",
+    "babel-loader": "^6.2.10",
+    "babel-preset-latest": "^6.23.0",
+    "babel-preset-react": "^6.23.0",
+    "babel-preset-stage-0": "^6.23.0",
+    "css-loader": "^0.26.1",
+    "eslint": "^3.14.1",
+    "eslint-plugin-react": "^6.9.0",
+    "extract-text-webpack-plugin": "^2.0.0-rc.3",
+    "node-sass": "^4.5.0",
+    "sass-loader": "^6.0.2",
+    "style-loader": "^0.13.1",
+    "webpack-dev-server": "^2.4.1"
+  },
+  "dependencies": {
+    "history": "^4.5.1",
+    "json-loader": "^0.5.4",
+    "material-components-web": "^0.5.0",
+    "raw-loader": "^0.5.1",
+    "react": "^15.4.2",
+    "react-code-toggle": "^0.1.1",
+    "react-docgen": "^2.13.0",
+    "react-dom": "^15.4.2",
+    "react-hot-loader": "^3.0.0-beta.6",
+    "react-material-design": "^0.1.1",
+    "react-router-dom": "next",
+    "webpack": "^2.2.1",
+    "webpack-dev-middleware": "^1.10.1",
+    "webpack-hot-middleware": "^2.17.1"
+  }
+}

@@ -2,8 +2,7 @@ import { MDCRadioFoundation } from '@material/radio';
 
 export default class MDCRadio extends MDCRadioFoundation {
     constructor(root) {
-        super(root);
-        this.adapter_ = Object.assign({
+        super(Object.assign({
             getNativeControl: () => ({
                 checked: root.state.checked,
                 disabled: root.state.disabled,
@@ -14,6 +13,6 @@ export default class MDCRadio extends MDCRadioFoundation {
             removeClass: className => root.setState(prevState => ({
                 classes: prevState.classes.remove(className),
             })),
-        });
+        }));
     }
 }

@@ -2,9 +2,9 @@ import '@material/radio/dist/mdc.radio.css';
 import classNames from 'classnames';
 import React, { PropTypes, PureComponent } from 'react';
 import { Set as ImmutableSet } from 'immutable';
+import uuid from 'uuid-v4';
 import MDCRadio from './component';
 import FormField from '../formField';
-import uuid from 'uuid-v4';
 // TODO: componentWillReceiveProp lifecycle.
 // TODO: grouping radio buttons. children?
 

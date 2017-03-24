@@ -5,6 +5,7 @@ import { getCorrectEventName } from '@material/animation';
 
 export default class MDCCheckbox extends MDCCheckboxFoundation {
     constructor(root) {
+    //  console.dir(MDCCheckboxFoundation)
         super(
             Object.assign({
                 addClass: className => root.setState(prevState => ({
