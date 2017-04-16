@@ -1,6 +1,7 @@
 import '@material/fab/dist/mdc.fab.css';
 import classNames from 'classnames';
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import { fabcssClasses } from '../classes';
 
 // TODO: categorize this as button: floating action button.

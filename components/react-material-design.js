@@ -6,6 +6,7 @@ import CardMediaItem from './card/cardMediaItem';
 import CardSupportingContent from './card/cardSupportingContent';
 import CardTitle from './card/cardTitle';
 import Checkbox from './checkbox';
+import Dialog from './dialog';
 import Drawer from './drawer';
 import DrawerContent from './drawer/drawerContent';
 import DrawerHeader from './drawer/drawerHeader';
@@ -38,6 +39,7 @@ module.exports = {
     CardSupportingContent,
     CardTitle,
     Checkbox,
+    Dialog,
     Drawer,
     DrawerContent,
     DrawerHeader,

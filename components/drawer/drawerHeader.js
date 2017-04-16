@@ -1,7 +1,8 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import '@material/drawer/dist/mdc.drawer.css';
 import { drawerHeadercssClasses } from '../classes';
-import classNames from 'classnames';
 
 // TODO: what do you want header to be able to be?
 const DrawerHeader = ({ children, primary }) =>

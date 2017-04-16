@@ -3,11 +3,13 @@
     "version": "0.1.6",
     "description": "react material-components",
     "main": "index.js",
-    "contributors": [{
-        "email": "miguel@reactmaterial.com",
-        "name": "Miguel Amaro",
-        "url": "https://github.com/miguel-orange"
-    }],
+    "contributors": [
+        {
+            "email": "miguel@reactmaterial.com",
+            "name": "Miguel Amaro",
+            "url": "https://github.com/miguel-orange"
+        }
+    ],
     "license": "MIT",
     "repository": {
         "type": "git",
@@ -42,7 +44,7 @@
         "prepublish": "yarn prebuild && yarn dist",
         "release": "bumped release",
         "test": "jest",
-        "test:coverage": "jest --coverage",
+        "test:coverage": "jest --coverage"
     },
     "dependencies": {
         "babel-cli": "^6.18.0",
@@ -55,12 +57,13 @@
         "css-loader": "^0.26.1",
         "eslint-loader": "^1.6.1",
         "immutable": "^3.8.1",
-        "material-components-web": "^0.5.0",
+        "material-components-web": "^0.8.0",
+        "prop-types": "^15.5.8",
         "raw-loader": "^0.5.1",
         "react": "^15.4.2",
         "react-docgen": "^2.13.0",
         "react-dom": "^15.4.2",
-        "react-router-dom": "next",
+        "react-router-dom": "^4.1.1",
         "rimraf": "^2.5.4",
         "style-loader": "^0.13.1",
         "uuid-v4": "^0.1.0",

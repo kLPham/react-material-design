@@ -59,6 +59,7 @@ export default class MDCSimpleMenu extends MDCSimpleMenuFoundation {
               focusItemAtIndex: index => console.log('focusItemAtIndex', index),
               setTransformOrigin: value => root.mainRoot.style.transformOrigin = value,
               setPosition: position => console.log('setPosition', position),
+              getAccurateTime: () => console.log('getAccurateTime'),
           }));
     }
 }

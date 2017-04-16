@@ -1,6 +1,7 @@
 import '@material/radio/dist/mdc.radio.css';
 import classNames from 'classnames';
-import React, { PropTypes, PureComponent } from 'react';
+import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
 import { Set as ImmutableSet } from 'immutable';
 import uuid from 'uuid-v4';
 import MDCRadio from './component';

@@ -1,10 +1,11 @@
 import '@material/checkbox/dist/mdc.checkbox.css';
-import React, { PropTypes, PureComponent } from 'react';
+import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { Set as ImmutableSet } from 'immutable';
+import uuid from 'uuid-v4';
 import FormField from '../formField';
 import MDCCheckbox from './component';
-import uuid from 'uuid-v4';
 // TODO: Indeterminate see: https://css-tricks.com/indeterminate-checkboxes/
 // TODO: removed controlid, when there are more checkboxes does this mess stuff up?
 class Checkbox extends PureComponent {

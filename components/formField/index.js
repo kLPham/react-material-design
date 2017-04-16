@@ -1,6 +1,7 @@
 import '@material/form-field/dist/mdc.form-field.css';
 import classnames from 'classnames';
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
 const FormField = ({ additionalClassNames, alignEnd, children, ...rest }) =>
     <div

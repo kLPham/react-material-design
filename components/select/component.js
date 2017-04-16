@@ -61,6 +61,7 @@ export default class MDCSelect extends MDCSelectFoundation {
                 isMenuOpen: () => root.state.isMenuOpen,
                 getNumberOfOptions: () => root.menuRoot.childNodes[0].childElementCount,
                 getTextForOptionAtIndex: index => root.menuRoot.childNodes[0].childNodes[index].innerText,
+                getValueForOptionAtIndex: index => console.log('getValueForOptionAtIndex', index),
                 setAttrForOptionAtIndex: (index, attr, value) => console.log('setAttrForOptionAtIndex', index, attr, value),
                 rmAttrForOptionAtIndex: (index, attr) => console.log('rmAttrForOptionAtIndex', index, attr),
                 getOffsetTopForOptionAtIndex: index => 0, // root.menuRoot.childNodes[index].offsetTop,

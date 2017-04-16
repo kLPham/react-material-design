@@ -16,7 +16,7 @@ class MDCTemporaryDrawer extends MDCTemporaryDrawerFoundation {
               [`root${type}`]: handler,
 
           }),
-          degisterInteractionHandler: (type, handler) => root.setState({
+          deregisterInteractionHandler: (type, handler) => root.setState({
               [`root${type}`]: handler,
           }),
           registerDrawerHandler: (type, handler) => root.setState({

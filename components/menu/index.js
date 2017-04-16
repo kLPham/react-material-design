@@ -1,6 +1,7 @@
 import '@material/button/dist/mdc.button.css';
 import '@material/menu/dist/mdc.menu.css';
-import React, { PropTypes, PureComponent } from 'react';
+import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
 import { Set as ImmutableSet } from 'immutable';
 import classNames from 'classnames';
 import Button from '../button';
@@ -48,7 +49,7 @@ class Menu extends PureComponent {
         const { classes, click, keydown, keyup, onClick } = this.state;
         return (
             <div
-                ref={(d)=> {this.documentRoot = d;}}
+                ref={(d) => { this.documentRoot = d; }}
                 onClick={onClick}
             >
                 <Button

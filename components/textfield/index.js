@@ -1,11 +1,12 @@
 import '@material/textfield/dist/mdc.textfield.css';
 import classNames from 'classnames';
-import React, { PropTypes, PureComponent } from 'react';
+import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
+import uuid from 'uuid-v4';
 import { MDCTextfieldFoundation } from '@material/textfield';
 import { Set as ImmutableSet } from 'immutable';
 import MDCTextfield from './component';
 import FormField from '../formField';
-import uuid from 'uuid-v4';
 import { textfieldcssClasses } from '../classes';
 // TODO: validation with helper text.
 // TODO: helper text <p> should be after the <div>.
@@ -75,6 +76,7 @@ class Textfield extends PureComponent {
         }
     }
     componentWillUnmount() {
+      console.dir(this);
         this.foundation.destroy();
     }
     // handleChange = e => this.setState({ value: e.target.value })

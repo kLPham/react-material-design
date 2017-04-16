@@ -1,7 +1,8 @@
 import '@material/list/dist/mdc.list.css';
 import classNames from 'classnames';
 import ListItem from './ListItem';
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import { listcssClasses } from '../classes';
 
 // TODO: Two-line lists

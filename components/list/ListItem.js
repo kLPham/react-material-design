@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 import '@material/list/dist/mdc.list.css';
 import '@material/drawer/dist/mdc.drawer.css';

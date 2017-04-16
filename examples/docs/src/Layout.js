@@ -1,8 +1,9 @@
 import React from 'react';
-import { Link, Route } from 'react-router-dom';
-import { Drawer, DrawerContent, DrawerHeader, DrawerSpacer, IconButton, List, ListItem, Textfield, Toolbar } from '../../../components/react-material-design';
+import { Route } from 'react-router-dom';
+import { Dialog, Drawer, DrawerContent, DrawerHeader, DrawerSpacer, IconButton, List, ListItem, Textfield, Toolbar } from '../../../components/react-material-design';
 import Buttons from './Containers/Buttons';
 import Cards from './Containers/Cards';
+import Dialogs from './Containers/Dialogs';
 import Lists from './Containers/Lists';
 import Menus from './Containers/Menus';
 import SelectionControls from './Containers/SelectionControls';
@@ -26,7 +27,6 @@ const Layout = ({ location }) => {
     const breadCrumbs = titleCase(location);
     breadCrumbs.shift();
     return (<div>
-
         <Toolbar
             startElements={<IconButton primary icon="menu" />}
             title={breadCrumbs.join(' – ')}
@@ -38,16 +38,17 @@ const Layout = ({ location }) => {
         >
             <Drawer>
                 <DrawerHeader primary>React Material Design</DrawerHeader>
-                <h3>Setup</h3>
-                <DrawerContent>
+                {/* <h3>Setup</h3>
+                    <DrawerContent>
                     <List>
                         <ListItem to="/setup/getting-started/" value="Getting Started" />
                     </List>
-                </DrawerContent>
-                <DrawerSpacer />
+                    </DrawerContent>
+                <DrawerSpacer /> */}
                 <h3>Components</h3>
                 <DrawerContent>
                     <List>
+                        <ListItem to="/components/dialogs" value="Dialogs" />
                         <ListItem to="/components/buttons" value="Buttons" />
                         <ListItem to="/components/cards" value="Cards" />
                         <ListItem to="/components/lists" value="Lists" />
@@ -66,7 +67,8 @@ const Layout = ({ location }) => {
                 </DrawerContent>
             </Drawer>
             <main style={{ paddingLeft: '16px', maxWidth: '84vw' }}>
-                <Route exact path="/" render={() => <h1>Welcome</h1>} />
+                <Route exact path="/" render={() => <div><h1>Welcome</h1><Dialog /></div>} />
+                <Route path="/components/dialogs" component={Dialogs} />
                 <Route path="/components/buttons" component={Buttons} />
                 <Route path="/components/cards" component={Cards} />
                 <Route path="/components/lists" component={Lists} />

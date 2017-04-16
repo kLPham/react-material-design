@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import '@material/card/dist/mdc.card.css';
 
 // TODO: Horizontal blocks

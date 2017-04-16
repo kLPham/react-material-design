@@ -1,4 +1,4 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
 import '@material/drawer/dist/mdc.drawer.css';
 // TODO: I don't like two drawers. if type = blah then?
 

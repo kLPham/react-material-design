@@ -1,6 +1,7 @@
 import '@material/menu/dist/mdc.menu.css';
 import '@material/icon-toggle/dist/mdc.icon-toggle.css';
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 const IconButton = ({ icon, primary }) =>
@@ -12,6 +13,6 @@ const IconButton = ({ icon, primary }) =>
     </i>;
 IconButton.propTypes = {
     icon: PropTypes.string.isRequired,
-    primary: PropTypes.bool
+    primary: PropTypes.bool,
 };
 export default IconButton;

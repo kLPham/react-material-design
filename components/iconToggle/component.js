@@ -14,7 +14,7 @@ class MDCIconToggle extends MDCIconToggleFoundation {
                 [type]: handler,
 
             }),
-            degisterInteractionHandler: (type, handler) => root.setState({
+            deregisterInteractionHandler: (type, handler) => root.setState({
                 [type]: handler,
             }),
             setText: text => root.setState({
