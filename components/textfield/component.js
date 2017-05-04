@@ -2,7 +2,7 @@ import { MDCTextfieldFoundation } from '@material/textfield';
 
 export default class MDCTextfield extends MDCTextfieldFoundation {
     constructor(root) {
-        super(Object.assign({
+        super({
             addClass: className => root.setState(prevState => ({
                 classes: prevState.classes.add(className),
             })),
@@ -60,11 +60,10 @@ export default class MDCTextfield extends MDCTextfieldFoundation {
             }),
             getNativeInput: () => ({
                 checkValidity: () => true,
-                value: root.state.value,
+                value: root.props.value,
                 disabled: root.state.disabled,
             }),
-
-        }));
+        });
         this.addClassToHelptext = className => this.adapter_.addClassToHelptext(className);
         this.addClassToLabel = className => this.adapter_.addClassToLabel(className);
     }

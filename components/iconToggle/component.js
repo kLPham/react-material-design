@@ -2,8 +2,7 @@ import { MDCIconToggleFoundation } from '@material/icon-toggle';
 
 class MDCIconToggle extends MDCIconToggleFoundation {
     constructor(root) {
-        super(
-        Object.assign({
+        super({
             addClass: className => root.setState(prevState => ({
                 classes: prevState.classes.add(className),
             })),
@@ -23,16 +22,11 @@ class MDCIconToggle extends MDCIconToggleFoundation {
             getTabIndex: tabIndex => console.log('getTabIndex', tabIndex),
             setTabIndex: tabIndex => console.log('setTabIndex', tabIndex),
             getAttr: name => root.state[name],
-            setAttr: (name, value) => root.setState({
-                [name]: value,
-            }),
             rmAttr: name => root.setState({
                 [name]: null,
             }),
             notifyChange: evtData => console.log('notifyChange', evtData),
-
-        }),
-        );
+        });
     }
 }
 export default MDCIconToggle;

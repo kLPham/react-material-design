@@ -10,7 +10,7 @@ class PersistentDrawer extends PureComponent {
     constructor(props) {
         super(props);
         this.state = {
-            classes: new ImmutableSet().add('mdc-temporary-drawer'),
+            classes: new ImmutableSet().add('mdc-persistent-drawer'),
         };
     }
     componentWillMount() {
@@ -40,7 +40,7 @@ class PersistentDrawer extends PureComponent {
                 className={classNames('mdc-typography', classes.toJS().join(' '))}
             >
                 <nav
-                    className="mdc-temporary-drawer__drawer"
+                    className="mdc-persistent-drawer__drawer"
                     onClick={drawerclick}
                     onTouchStart={drawertouchstart}
                 >

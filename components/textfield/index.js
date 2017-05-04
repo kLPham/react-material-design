@@ -44,7 +44,6 @@ class Textfield extends PureComponent {
     }
     componentDidMount() {
         this.foundation = new MDCTextfield(this);
-        console.dir(this.foundation);
         this.foundation.init();
 
         const { helpTextPersistent, value } = this.props;
@@ -76,13 +75,19 @@ class Textfield extends PureComponent {
         }
     }
     componentWillUnmount() {
-      console.dir(this);
         this.foundation.destroy();
     }
-    // handleChange = e => this.setState({ value: e.target.value })
+    handleChange = (e) => {
+        const { onChange } = this.props;
+        const { value } = e.target;
+
+        if (onChange) {
+            onChange(value, e);
+        }
+    }
     render() {
-        const { classes, classesHelpText, classesLabel, helpTextAttr, disabled, id, inputBlur, inputInput, inputKeydown, inputFocus, value } = this.state;
-        const { alignEnd, helpText, label, required, onChange, primary } = this.props;
+        const { classes, classesHelpText, classesLabel, helpTextAttr, disabled, id, inputBlur, inputInput, inputKeydown, inputFocus } = this.state;
+        const { alignEnd, helpText, label, required, primary, value } = this.props;
         return (
             <FormField
                 alignEnd={alignEnd}
@@ -93,7 +98,7 @@ class Textfield extends PureComponent {
                     id={`mdc-textfield--${id}`}
                     className="mdc-textfield__input"
                     value={value}
-                    onChange={onChange}
+                    onChange={this.handleChange}
                     disabled={disabled}
                     required={required}
                     onFocus={inputFocus}

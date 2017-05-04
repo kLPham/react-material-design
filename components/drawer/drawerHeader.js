@@ -6,8 +6,8 @@ import { drawerHeadercssClasses } from '../classes';
 
 // TODO: what do you want header to be able to be?
 const DrawerHeader = ({ children, primary }) =>
-    <header className="mdc-temporary-drawer__header">
-        <div className={classNames('mdc-temporary-drawer__header-content', primary && drawerHeadercssClasses.primary)}>
+    <header className="mdc-persistent-drawer__header">
+        <div className={classNames('mdc-persistent-drawer__header-content', primary && drawerHeadercssClasses.primary)}>
             {children}
         </div>
     </header>;

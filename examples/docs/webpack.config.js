@@ -19,16 +19,17 @@ module.exports = {
   //  context: path.resolve(__dirname, 'src'),
   devtool: 'inline-source-map',
   devServer: {
-    hot: true,
     contentBase: path.resolve(__dirname, 'dist'),
-    publicPath: '/'
+    historyApiFallback: true,
+    hot: true,
+    publicPath: '/',
   },
-
   module: {
     rules: [
       {
         test: /\.js?$/,
         use: ['babel-loader'],
+        include:[path.resolve(__dirname, 'src'), path.resolve(__dirname, '../../', 'components')],
         exclude: /node_modules/,
       }, {
         test: /\.css$/,

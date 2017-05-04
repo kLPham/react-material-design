@@ -40,16 +40,19 @@ const styles = {
         position: 'fixed',
         bottom: '1rem',
         left: '1rem',
+        zIndex: 3,
     },
     'floating-top-right': {
         position: 'fixed',
         top: '1rem',
         right: '1rem',
+        zIndex: 3,
     },
     'floating-top-left': {
         position: 'fixed',
         top: '1rem',
         left: '1rem',
+        zIndex: 3,
     },
 };
 const cx = classNames.bind(fabcssClasses);

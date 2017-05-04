@@ -13,6 +13,8 @@ import DrawerHeader from './drawer/drawerHeader';
 import DrawerSpacer from './drawer/drawerSpacer';
 import FAB from './fab';
 import FormField from './formField';
+import GridList from './gridList';
+import GridTile from './gridList/gridTile';
 import IconButton from './button/iconButton';
 import IconToggle from './iconToggle';
 import LayoutGrid from './layout-grid';
@@ -29,6 +31,7 @@ import Snackbar from './snackbar';
 import Switch from './switch';
 import Textfield from './textfield';
 import Toolbar from './toolbar';
+import ToolbarRow from './toolbar/toolbarRow';
 
 module.exports = {
     Button,
@@ -46,6 +49,8 @@ module.exports = {
     DrawerSpacer,
     FAB,
     FormField,
+    GridList,
+    GridTile,
     IconButton,
     IconToggle,
     LayoutGrid,
@@ -62,4 +67,5 @@ module.exports = {
     Switch,
     Textfield,
     Toolbar,
+    ToolbarRow,
 };

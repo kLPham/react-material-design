@@ -1,13 +1,18 @@
-import React, { PureComponent } from 'react';
 import '@material/dialog/dist/mdc.dialog.css';
-import { Set as ImmutableSet } from 'immutable';
+import React, { PureComponent } from 'react';
 import classNames from 'classnames';
+import { Set as ImmutableSet } from 'immutable';
 import MDCDialog from './component';
 
+// TODO: trapFocusOnSurface https://www.w3.org/TR/wai-aria-practices/#dialog_modal
+/**
+* Dialog
+*/
 class Dialog extends PureComponent {
     state = {
         classes: new ImmutableSet().add('mdc-dialog'),
-        classesBody: new ImmutableSet().add('mdc-dialog__body'),
+        classesBody: new ImmutableSet().add('mdc-dialog__body').add('mdc-dialog__body--scrollable'),
+        styles: { visibility: 'hidden' },
     }
     componentDidMount() {
         this.foundation = new MDCDialog(this);
@@ -17,14 +22,14 @@ class Dialog extends PureComponent {
         this.foundation.destroy();
     }
     render() {
-        const { classes, classesBody, rootclick, surfaceclick } = this.state;
+        const { classes, classesBody, rootclick, surfaceclick, styles } = this.state;
         return (
             <aside
+                style={styles}
                 id="my-mdc-dialog"
                 onClick={rootclick}
                 className={classNames(classes.toJS().join(' '))}
                 role="alertdialog"
-                aria-hidden={this.state['aria-hidden']}
                 aria-labelledby="my-mdc-dialog-label"
                 aria-describedby="my-mdc-dialog-description"
             >
@@ -37,13 +42,12 @@ class Dialog extends PureComponent {
                     <section
                         id="my-mdc-dialog-description"
                         className={classNames(classesBody.toJS().join(' '))}
-                        aria-hidden={this.state['bodyaria-hidden']}
                     >
                         Let Google help apps determine location. This means sending anonymous location data to Google, even when no apps are running.
                     </section>
                     <footer className="mdc-dialog__footer">
                         <button type="button" className="mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--cancel">Decline</button>
-                        <button type="button" className="mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--accept">Accept</button>
+                        <button ref={(b) => { this.buttonAccept = b; }} type="button" className="mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--accept">Accept</button>
                     </footer>
                 </div>
                 <div className="mdc-dialog__backdrop" />

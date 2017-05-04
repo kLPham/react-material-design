@@ -1,7 +1,7 @@
 {
   "name": "react-material-design-simple-form",
   "version": "1.0.0",
-  "description": "Simple demonstration of react-material-design componenets",
+  "description": "Simple demonstration of react-material-design components",
   "scripts": {
     "start": "webpack-dev-server",
     "lint": "eslint src"

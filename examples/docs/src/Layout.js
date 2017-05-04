@@ -4,6 +4,7 @@ import { Dialog, Drawer, DrawerContent, DrawerHeader, DrawerSpacer, IconButton, 
 import Buttons from './Containers/Buttons';
 import Cards from './Containers/Cards';
 import Dialogs from './Containers/Dialogs';
+import GridLists from './Containers/GridLists';
 import Lists from './Containers/Lists';
 import Menus from './Containers/Menus';
 import SelectionControls from './Containers/SelectionControls';
@@ -28,9 +29,10 @@ const Layout = ({ location }) => {
     breadCrumbs.shift();
     return (<div>
         <Toolbar
-            startElements={<IconButton primary icon="menu" />}
+            fixed
+            leftElements={<IconButton primary icon="menu" />}
             title={breadCrumbs.join(' – ')}
-            endElements={<Textfield primary label="Search" />}
+            rightElements={<Textfield primary label="Search" />}
         />
         <section
             className="content"
@@ -48,6 +50,7 @@ const Layout = ({ location }) => {
                 <h3>Components</h3>
                 <DrawerContent>
                     <List>
+                        <ListItem to="/components/grid-lists" value="Grid Lists" />
                         <ListItem to="/components/dialogs" value="Dialogs" />
                         <ListItem to="/components/buttons" value="Buttons" />
                         <ListItem to="/components/cards" value="Cards" />
@@ -68,6 +71,7 @@ const Layout = ({ location }) => {
             </Drawer>
             <main style={{ paddingLeft: '16px', maxWidth: '84vw' }}>
                 <Route exact path="/" render={() => <div><h1>Welcome</h1><Dialog /></div>} />
+                <Route path="/components/grid-lists" component={GridLists} />
                 <Route path="/components/dialogs" component={Dialogs} />
                 <Route path="/components/buttons" component={Buttons} />
                 <Route path="/components/cards" component={Cards} />
