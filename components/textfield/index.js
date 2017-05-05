@@ -73,6 +73,9 @@ class Textfield extends PureComponent {
                 helpTextPersistentInternal: nextProps.helpTextPersistent,
             });
         }
+        if (nextProps.value) {
+            addClassToLabel(LABEL_FLOAT_ABOVE);
+        }
     }
     componentWillUnmount() {
         this.foundation.destroy();

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="JavaScriptLibraryMappings">
+    <file url="PROJECT" libraries="{enzyme-DefinitelyTyped, jest-DefinitelyTyped, npm-DefinitelyTyped, react-DefinitelyTyped, react-addons-test-utils-DefinitelyTyped}" />
+    <includedPredefinedLibrary name="Node.js Core" />
+  </component>
+</project>
