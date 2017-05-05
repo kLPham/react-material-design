@@ -33,7 +33,7 @@
         "webpack"
     ],
     "scripts": {
-        "build": "webpack -p",
+        "build": "webpack",
         "build:min": "cross-env NODE_ENV=production webpack --config webpack.config.js",
         "cleanup": "yarn rimraf ./build && yarn rimraf react-material-design-*.tgz && yarn rimraf ./coverage",
         "dist": "yarn cleanup && yarn build && yarn build:min",
@@ -81,9 +81,9 @@
         "enzyme": "^2.8.2",
         "enzyme-to-json": "^1.4.5",
         "eslint": "^3.15.0",
-        "eslint-config-airbnb": "^14.0.0",
+        "eslint-config-airbnb": "^14.1.0",
         "eslint-plugin-import": "^2.2.0",
-        "eslint-plugin-jest": "^1.0.2",
+        "eslint-plugin-jest": "^19.0.1",
         "eslint-plugin-jsx-a11y": "^3.0.2",
         "eslint-plugin-react": "^6.9.0",
         "identity-obj-proxy": "^3.0.0",
