@@ -2,7 +2,7 @@ import '@material/textfield/dist/mdc.textfield.css';
 import classNames from 'classnames';
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import uuid from 'uuid-v4';
+import { v4 } from 'uuid';
 import { MDCTextfieldFoundation } from '@material/textfield';
 import { Set as ImmutableSet } from 'immutable';
 import MDCTextfield from './component';
@@ -39,7 +39,7 @@ class Textfield extends PureComponent {
             classesLabel: new ImmutableSet(),
             disabled: props.disabled,
             value: props.value,
-            id: uuid(),
+            id: v4(),
         };
     }
     componentDidMount() {

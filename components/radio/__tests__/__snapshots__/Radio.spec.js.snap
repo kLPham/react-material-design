@@ -1,27 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`<Radio /> should render basic radio button 1`] = `
 <FormField
-  alignEnd={false}>
+  alignEnd={false}
+>
   <div
-    className="mdc-radio">
+    className="mdc-radio"
+  >
     <input
       checked={false}
       className="mdc-radio__native-control"
       disabled={false}
-      id="radio-1"
-      name="radios"
+      id="mdc-radio--2e732f05-f466-4fba-acb5-2f3be58daf75"
       onChange={[Function]}
-      type="radio" />
+      type="radio"
+    />
     <div
-      className="mdc-radio__background">
+      className="mdc-radio__background"
+    >
       <div
-        className="mdc-radio__outer-circle" />
+        className="mdc-radio__outer-circle"
+      />
       <div
-        className="mdc-radio__inner-circle" />
+        className="mdc-radio__inner-circle"
+      />
     </div>
   </div>
   <label
-    htmlFor="radio-1"
-    id="radio-1-label">
+    htmlFor="mdc-radio--2e732f05-f466-4fba-acb5-2f3be58daf75"
+    id="mdc-radio-label--2e732f05-f466-4fba-acb5-2f3be58daf75"
+  >
     Radio 1
   </label>
 </FormField>
@@ -32,32 +40,40 @@ exports[`<Radio /> should render disabled radio button 1`] = `
   alignEnd={false}
   checked={false}
   disabled={true}
-  label="Radio 1">
+  label="Radio 1"
+>
   <FormField
-    alignEnd={false}>
+    alignEnd={false}
+  >
     <div
-      className="mdc-form-field">
+      className="mdc-form-field"
+    >
       <div
-        className="mdc-radio mdc-radio--disabled">
+        className="mdc-radio mdc-radio--disabled"
+      >
         <input
           checked={false}
           className="mdc-radio__native-control"
           disabled={true}
-          id="radio-1"
-          name="radios"
+          id="mdc-radio--2e732f05-f466-4fba-acb5-2f3be58daf75"
           onChange={[Function]}
-          type="radio" />
+          type="radio"
+        />
         <div
-          className="mdc-radio__background">
+          className="mdc-radio__background"
+        >
           <div
-            className="mdc-radio__outer-circle" />
+            className="mdc-radio__outer-circle"
+          />
           <div
-            className="mdc-radio__inner-circle" />
+            className="mdc-radio__inner-circle"
+          />
         </div>
       </div>
       <label
-        htmlFor="radio-1"
-        id="radio-1-label">
+        htmlFor="mdc-radio--2e732f05-f466-4fba-acb5-2f3be58daf75"
+        id="mdc-radio-label--2e732f05-f466-4fba-acb5-2f3be58daf75"
+      >
         Radio 1
       </label>
     </div>

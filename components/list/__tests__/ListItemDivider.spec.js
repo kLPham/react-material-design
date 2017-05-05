@@ -4,19 +4,19 @@ import ListItemDivider from '../ListItemDivider';
 
 describe('<ListItemDivider />', () => {
     it('should render as list item div', () => {
-        const wrapper = shallow(
+        const listItemDivider = shallow(
             <ListItemDivider />,
         );
-        expect(wrapper).toMatchSnapshot();
-        expect(wrapper).toHaveClassName('mdc-list-divider');
-        expect(wrapper).toHaveProp('role');
+        expect(listItemDivider).toMatchSnapshot();
+        expect(listItemDivider).toHaveClassName('mdc-list-divider');
+        expect(listItemDivider).toHaveProp('role');
     });
     it('should render as list item div with inset', () => {
-        const wrapper = shallow(
+        const listItemDivider = shallow(
             <ListItemDivider inset />,
         );
-        expect(wrapper).toMatchSnapshot();
-        expect(wrapper).toHaveClassName('mdc-list-divider mdc-list-divider--inset');
-        expect(wrapper).toHaveProp('role');
+        expect(listItemDivider).toMatchSnapshot();
+        expect(listItemDivider).toHaveClassName('mdc-list-divider mdc-list-divider--inset');
+        expect(listItemDivider).toHaveProp('role');
     });
 });

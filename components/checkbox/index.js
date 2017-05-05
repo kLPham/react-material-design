@@ -3,7 +3,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { Set as ImmutableSet } from 'immutable';
-import uuid from 'uuid-v4';
+import { v4 } from 'uuid';
 import FormField from '../formField';
 import MDCCheckbox from './component';
 // TODO: Indeterminate see: https://css-tricks.com/indeterminate-checkboxes/
@@ -74,7 +74,7 @@ class Checkbox extends PureComponent {
     render() {
         const { checked, disabled, label, classes } = this.state;
         const { alignEnd, labelId } = this.props;
-        const id = uuid();
+        const id = v4();
         return (
             <FormField
                 alignEnd={alignEnd}

@@ -2,10 +2,10 @@ import '@material/switch/dist/mdc.switch.css';
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import uuid from 'uuid-v4';
+import { v4 } from 'uuid';
 
 const Switch = ({ disabled, label }) => {
-    const id = uuid();
+    const id = v4();
     return (
         <div>
             <div className={classNames('mdc-switch', { 'mdc-switch--disabled': disabled })}>

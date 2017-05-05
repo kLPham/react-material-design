@@ -41,11 +41,8 @@ GridList.propTypes = {
   */
     headerCaption: PropTypes.bool,
     /**
-    * Children must be one or more Grid Tile component(s).
+    * Children must be more than one Grid Tile components.
     */
-    children: PropTypes.oneOfType([
-        PropTypes.element,
-        PropTypes.arrayOf(PropTypes.element),
-    ]).isRequired,
+    children: PropTypes.arrayOf(PropTypes.element).isRequired,
 };
 export default GridList;

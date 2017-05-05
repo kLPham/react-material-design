@@ -64,10 +64,10 @@ const FAB = ({ icon, location, ripple, ...rest }) =>
         style={location && styles[location]}
         className={cx('mdc-fab',
             Object.keys(rest).map(modifier =>
-            fabcssClasses[modifier]),
-        'material-icons')
-
-        }
+                fabcssClasses[modifier],
+            ),
+            'material-icons',
+        )}
         aria-label={icon}
         data-mdc-auto-init={ripple && 'MDCRipple'}
     >

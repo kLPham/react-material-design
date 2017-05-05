@@ -1,34 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`<List /> should render avatar with avatar li 1`] = `
 <ul
-  className="mdc-list mdc-list--avatar-list">
+  className="mdc-list mdc-list--avatar-list"
+>
   <li
-    className="mdc-list-item">
+    className="mdc-list-item"
+  >
     <img
       alt="Picture of Janet Perkins"
       className="mdc-list-item__start-detail"
       height="56"
       src="/users/1/profile_pic.png"
-      width="56" />
+      width="56"
+    />
     Janet Perkins
   </li>
   <li
-    className="mdc-list-item">
+    className="mdc-list-item"
+  >
     <img
       alt="Picture of Mary Johnson"
       className="mdc-list-item__start-detail"
       height="56"
       src="/users/2/profile_pic.png"
-      width="56" />
+      width="56"
+    />
     Mary Johnson
   </li>
   <li
-    className="mdc-list-item">
+    className="mdc-list-item"
+  >
     <img
       alt="Picture of Peter Carlsson"
       className="mdc-list-item__start-detail"
       height="56"
       src="/users/3/profile_pic.png"
-      width="56" />
+      width="56"
+    />
     Peter Carlsson
   </li>
 </ul>
@@ -36,13 +45,16 @@ exports[`<List /> should render avatar with avatar li 1`] = `
 
 exports[`<List /> should render dense with basic li 1`] = `
 <ul
-  className="mdc-list mdc-list--dense">
+  className="mdc-list mdc-list--dense"
+>
   <li
-    className="mdc-list-item">
+    className="mdc-list-item"
+  >
     Item One
   </li>
   <li
-    className="mdc-list-item">
+    className="mdc-list-item"
+  >
     Item Two
   </li>
 </ul>
@@ -50,13 +62,16 @@ exports[`<List /> should render dense with basic li 1`] = `
 
 exports[`<List /> should render with basic li 1`] = `
 <ul
-  className="mdc-list">
+  className="mdc-list"
+>
   <li
-    className="mdc-list-item">
+    className="mdc-list-item"
+  >
     Item One
   </li>
   <li
-    className="mdc-list-item">
+    className="mdc-list-item"
+  >
     Item Two
   </li>
 </ul>

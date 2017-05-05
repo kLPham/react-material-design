@@ -1,6 +1,6 @@
 {
     "name": "react-material-design",
-    "version": "0.1.6",
+    "version": "0.1.7",
     "description": "react material-components",
     "main": "index.js",
     "contributors": [
@@ -33,7 +33,7 @@
         "webpack"
     ],
     "scripts": {
-        "build": "webpack --config webpack.config.js",
+        "build": "webpack -p",
         "build:min": "cross-env NODE_ENV=production webpack --config webpack.config.js",
         "cleanup": "yarn rimraf ./build && yarn rimraf react-material-design-*.tgz && yarn rimraf ./coverage",
         "dist": "yarn cleanup && yarn build && yarn build:min",
@@ -66,16 +66,19 @@
         "react-router-dom": "^4.1.1",
         "rimraf": "^2.6.1",
         "style-loader": "^0.17.0",
+        "uuid": "^3.0.1",
         "uuid-v4": "^0.1.0",
         "webpack": "^2.5.0"
     },
     "devDependencies": {
-        "babel-jest": "^18.0.0",
+        "babel-jest": "^19.0.0",
         "babel-plugin-transform-es2015-modules-commonjs": "^6.24.1",
+        "babel-preset-env": "^1.4.0",
+        "babel-preset-es2015": "^6.24.1",
         "babel-preset-node6": "^11.0.0",
         "babel-preset-react": "^6.24.1",
         "babel-preset-stage-0": "^6.24.1",
-        "enzyme": "^2.7.1",
+        "enzyme": "^2.8.2",
         "enzyme-to-json": "^1.4.5",
         "eslint": "^3.15.0",
         "eslint-config-airbnb": "^14.0.0",
@@ -84,9 +87,10 @@
         "eslint-plugin-jsx-a11y": "^3.0.2",
         "eslint-plugin-react": "^6.9.0",
         "identity-obj-proxy": "^3.0.0",
-        "jest": "^18.1.0",
-        "jest-enzyme": "^2.1.2",
-        "react-addons-test-utils": "^15.5.1"
+        "jest": "^19.0.2",
+        "jest-enzyme": "^3.1.0",
+        "react-addons-test-utils": "^15.5.1",
+        "react-test-renderer": "^15.5.4"
     },
     "jest": {
         "setupTestFrameworkScriptFile": "<rootDir>/node_modules/jest-enzyme/lib/index.js",

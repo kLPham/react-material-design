@@ -5,7 +5,7 @@ import { listcssClasses } from '../../classes';
 
 describe('<List />', () => {
     it('should render with basic li', () => {
-        const wrapper = shallow(
+        const list = shallow(
             <List>
                 <li className="mdc-list-item">
                     Item One
@@ -15,15 +15,15 @@ describe('<List />', () => {
                 </li>
             </List>,
         );
-        expect(wrapper).toMatchSnapshot();
-        expect(wrapper.find('ul')).toHaveClassName('mdc-list');
-        expect(wrapper.find('li')).toBePresent();
-        expect(wrapper.find('li').at(1)).toHaveText('Item Two');
+        expect(list).toMatchSnapshot();
+        expect(list.find('ul')).toHaveClassName('mdc-list');
+        expect(list.find('li')).toBePresent();
+        expect(list.find('li').at(1)).toHaveText('Item Two');
     });
     it('should render dense with basic li', () => {
         const type = 'dense';
         const cssClass = listcssClasses[type];
-        const wrapper = shallow(
+        const list = shallow(
             <List type={type}>
                 <li className="mdc-list-item">
                     Item One
@@ -33,16 +33,16 @@ describe('<List />', () => {
                 </li>
             </List>,
         );
-        expect(wrapper).toMatchSnapshot();
-        expect(wrapper.find('ul')).toHaveClassName('mdc-list');
-        expect(wrapper).toHaveClassName(cssClass);
-        expect(wrapper.find('li')).toBePresent();
-        expect(wrapper.find('li').at(1)).toHaveText('Item Two');
+        expect(list).toMatchSnapshot();
+        expect(list.find('ul')).toHaveClassName('mdc-list');
+        expect(list).toHaveClassName(cssClass);
+        expect(list.find('li')).toBePresent();
+        expect(list.find('li').at(1)).toHaveText('Item Two');
     });
     it('should render avatar with avatar li', () => {
         const type = 'avatar';
         const cssClass = listcssClasses[type];
-        const wrapper = shallow(
+        const list = shallow(
             <List type={type}>
                 <li className="mdc-list-item">
                     <img
@@ -68,10 +68,10 @@ describe('<List />', () => {
             </List>
         ,
         );
-        expect(wrapper).toMatchSnapshot();
-        expect(wrapper.find('ul')).toHaveClassName('mdc-list');
-        expect(wrapper).toHaveClassName(cssClass);
-        expect(wrapper.find('li')).toBePresent();
-        expect(wrapper.find('li').at(1)).toHaveText('Mary Johnson');
+        expect(list).toMatchSnapshot();
+        expect(list.find('ul')).toHaveClassName('mdc-list');
+        expect(list).toHaveClassName(cssClass);
+        expect(list.find('li')).toBePresent();
+        expect(list.find('li').at(1)).toHaveText('Mary Johnson');
     });
 });

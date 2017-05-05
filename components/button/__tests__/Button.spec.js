@@ -6,83 +6,85 @@ import { buttoncssClasses } from '../../classes';
 describe('<Button />', () => {
     it('should render flat', () => {
         const label = 'Flat button';
-        const wrapper = shallow(
+        const defaultClass = 'mdc-button';
+        const button = shallow(
             <Button label={label} />,
         );
-        expect(wrapper).toMatchSnapshot();
-        expect(wrapper).toHaveText(label);
+        expect(button).toMatchSnapshot();
+        expect(button).toHaveText(label);
+        expect(button).toHaveClassName(defaultClass);
     });
     it('should render colored', () => {
         const label = 'Colored button';
-        const type = 'colored';
-        const cssClass = buttoncssClasses[type];
-        const wrapper = shallow(
-            <Button label={label} type={type} />,
+        const colored = true;
+        const cssClass = buttoncssClasses.colored;
+        const button = shallow(
+            <Button colored={colored} label={label} />,
         );
-        expect(wrapper).toMatchSnapshot();
-        expect(wrapper).toHaveText(label);
-        expect(wrapper).toHaveClassName(cssClass);
+        expect(button).toMatchSnapshot();
+        expect(button).toHaveText(label);
+        expect(button).toHaveClassName(cssClass);
     });
 
     it('should render raised', () => {
         const label = 'Raised button';
-        const type = 'raised';
-        const cssClass = buttoncssClasses[type];
-        const wrapper = shallow(
-            <Button label={label} type={type} />,
+        const raised = true;
+        const cssClass = buttoncssClasses.raised;
+        const button = shallow(
+            <Button raised={raised} label={label} />,
         );
-        expect(wrapper).toMatchSnapshot();
-        expect(wrapper).toHaveText(label);
-        expect(wrapper).toHaveClassName(cssClass);
+        expect(button).toMatchSnapshot();
+        expect(button).toHaveText(label);
+        expect(button).toHaveClassName(cssClass);
     });
 
     it('should render raised disabled', () => {
         const label = 'Raised disabled button';
-        const type = 'raised';
-        const cssClass = buttoncssClasses[type];
-        const wrapper = shallow(
-            <Button label={label} type={type} disabled />,
+        const raised = true;
+        const cssClass = buttoncssClasses.raised;
+        const disabled = true;
+        const button = shallow(
+            <Button raised={raised} label={label} disabled={disabled} />,
         );
-        expect(wrapper).toMatchSnapshot();
-        expect(wrapper).toHaveText(label);
-        expect(wrapper).toHaveClassName(cssClass);
-        expect(wrapper).toBeDisabled();
+        expect(button).toMatchSnapshot();
+        expect(button).toHaveText(label);
+        expect(button).toHaveClassName(cssClass);
+        expect(button).toBeDisabled();
     });
 
     it('should render dense', () => {
         const label = 'Dense button';
-        const type = 'dense';
-        const cssClass = buttoncssClasses[type];
-
-        const wrapper = shallow(
-            <Button label={label} type={type} />,
+        const dense = true;
+        const cssClass = buttoncssClasses.dense;
+        const button = shallow(
+            <Button label={label} dense={dense} />,
         );
-        expect(wrapper).toMatchSnapshot();
-        expect(wrapper).toHaveText(label);
-        expect(wrapper).toHaveClassName(cssClass);
+        expect(button).toMatchSnapshot();
+        expect(button).toHaveText(label);
+        expect(button).toHaveClassName(cssClass);
     });
 
     it('should render compact', () => {
         const label = 'Compact button';
-        const type = 'compact';
-        const cssClass = buttoncssClasses[type];
-        const wrapper = shallow(
-            <Button label={label} type={type} />,
+        const compact = true;
+        const cssClass = buttoncssClasses.compact;
+        const button = shallow(
+            <Button label={label} compact={compact} />,
         );
-        expect(wrapper).toMatchSnapshot();
-        expect(wrapper).toHaveText(label);
-        expect(wrapper).toHaveClassName(cssClass);
+        expect(button).toMatchSnapshot();
+        expect(button).toHaveText(label);
+        expect(button).toHaveClassName(cssClass);
     });
 
     it('should render primary', () => {
         const label = 'Primary button';
-        const type = 'primary';
-        const cssClass = buttoncssClasses[type];
-        const wrapper = shallow(
-            <Button label={label} type={type} />,
+        const primary = true;
+        const cssClass = buttoncssClasses.primary;
+        const button = shallow(
+            <Button label={label} primary={primary} />,
         );
-        expect(wrapper).toMatchSnapshot();
-        expect(wrapper).toHaveText(label);
-        expect(wrapper).toHaveClassName(cssClass);
+        expect(button).toMatchSnapshot();
+        expect(button).toHaveText(label);
+        expect(button).toHaveClassName(cssClass);
     });
 });

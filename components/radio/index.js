@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Set as ImmutableSet } from 'immutable';
-import uuid from 'uuid-v4';
+import { v4 } from 'uuid';
 import MDCRadio from './component';
 import FormField from '../formField';
 // TODO: componentWillReceiveProp lifecycle.
@@ -49,7 +49,7 @@ class Radio extends PureComponent {
     render() {
         const { checked, classes, disabled, label } = this.state;
         const { alignEnd } = this.props;
-        const id = uuid();
+        const id = v4();
         return (
             <FormField alignEnd={alignEnd}>
                 <div className={classNames('mdc-radio', classes.toJS().join(' '))} >
@@ -59,7 +59,6 @@ class Radio extends PureComponent {
                         className="mdc-radio__native-control"
                         type="radio"
                         id={`mdc-radio--${id}`}
-                        name="radios"
                         checked={checked}
                     />
                     <div className="mdc-radio__background">
