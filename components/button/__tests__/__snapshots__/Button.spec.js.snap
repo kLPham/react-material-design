@@ -1,41 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`<Button /> should render colored 1`] = `
 <button
-  className="mdc-button mdc-button--accent">
+  className="mdc-button mdc-button--accent"
+>
   Colored button
 </button>
 `;
 
 exports[`<Button /> should render compact 1`] = `
 <button
-  className="mdc-button mdc-button--compact">
+  className="mdc-button mdc-button--compact"
+>
   Compact button
 </button>
 `;
 
 exports[`<Button /> should render dense 1`] = `
 <button
-  className="mdc-button mdc-button--dense">
+  className="mdc-button mdc-button--dense"
+>
   Dense button
 </button>
 `;
 
 exports[`<Button /> should render flat 1`] = `
 <button
-  className="mdc-button">
+  className="mdc-button "
+>
   Flat button
 </button>
 `;
 
 exports[`<Button /> should render primary 1`] = `
 <button
-  className="mdc-button mdc-button--primary">
+  className="mdc-button mdc-button--primary"
+>
   Primary button
 </button>
 `;
 
 exports[`<Button /> should render raised 1`] = `
 <button
-  className="mdc-button mdc-button--raised">
+  className="mdc-button mdc-button--raised"
+>
   Raised button
 </button>
 `;
@@ -43,7 +51,8 @@ exports[`<Button /> should render raised 1`] = `
 exports[`<Button /> should render raised disabled 1`] = `
 <button
   className="mdc-button mdc-button--raised"
-  disabled={true}>
+  disabled={true}
+>
   Raised disabled button
 </button>
 `;

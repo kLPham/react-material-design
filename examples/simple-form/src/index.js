@@ -2,6 +2,8 @@ import App from './App';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
+import './sass/_theme.scss';
+import '@material/typography/mdc-typography.scss';
 
 const rootEl = document.getElementById('root');
 

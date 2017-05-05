@@ -1,7 +1,9 @@
 import '@material/radio/dist/mdc.radio.css';
 import classNames from 'classnames';
-import React, { PropTypes, PureComponent } from 'react';
+import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
 import { Set as ImmutableSet } from 'immutable';
+import { v4 } from 'uuid';
 import MDCRadio from './component';
 import FormField from '../formField';
 // TODO: componentWillReceiveProp lifecycle.
@@ -47,6 +49,7 @@ class Radio extends PureComponent {
     render() {
         const { checked, classes, disabled, label } = this.state;
         const { alignEnd } = this.props;
+        const id = v4();
         return (
             <FormField alignEnd={alignEnd}>
                 <div className={classNames('mdc-radio', classes.toJS().join(' '))} >
@@ -55,8 +58,7 @@ class Radio extends PureComponent {
                         onChange={e => this.handleChange(e)}
                         className="mdc-radio__native-control"
                         type="radio"
-                        id="radio-1"
-                        name="radios"
+                        id={`mdc-radio--${id}`}
                         checked={checked}
                     />
                     <div className="mdc-radio__background">
@@ -64,7 +66,7 @@ class Radio extends PureComponent {
                         <div className="mdc-radio__inner-circle" />
                     </div>
                 </div>
-                <label id="radio-1-label" htmlFor="radio-1">{label}</label>
+                <label id={`mdc-radio-label--${id}`} htmlFor={`mdc-radio--${id}`}>{label}</label>
             </FormField>
         );
     }

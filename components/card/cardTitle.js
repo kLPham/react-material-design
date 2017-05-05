@@ -1,6 +1,7 @@
 import classNames from 'classnames';
-import React, { PropTypes } from 'react';
-
+import React from 'react';
+import PropTypes from 'prop-types';
+// TODO: Avatar support
 const CardTitle = ({ title, subtitle, larger }) =>
     <section className="mdc-card__primary">
         <h1 className={classNames('mdc-card__title', { 'mdc-card__title--large': larger })}>

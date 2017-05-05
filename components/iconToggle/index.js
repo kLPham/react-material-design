@@ -1,16 +1,20 @@
 import '@material/icon-toggle/dist/mdc.icon-toggle.css';
 import classNames from 'classnames';
-import React, { PureComponent, PropTypes } from 'react';
+import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
 import { Set as ImmutableSet } from 'immutable';
 import MDCIconToggle from './component';
-
+import { iconcssClasses } from '../classes';
 // TODO: animation sticks after click, like most animation.
 // TODO: User experience. Do I ask for both toggle on/off, do I attempt to find ones with borders?
-// TODO: css classes: mdc-icon-toggle--primary and mdc-icon-toggle--accent
+const cx = classNames.bind(iconcssClasses);
+
 class IconToggle extends PureComponent {
     static propTypes = {
         icon: PropTypes.string.isRequired,
         disabled: PropTypes.bool,
+        primary: PropTypes.bool,
+        accent: PropTypes.bool,
     };
     static defaultProps ={
         disabled: false,
@@ -38,9 +42,10 @@ class IconToggle extends PureComponent {
     }
     render() {
         const { classes, click, keyup, keydown, icon, disabled } = this.state;
+        const { accent, primary } = this.props;
         return (
             <i
-                className={classNames('mdc-icon-toggle', 'material-icons', classes.toJS().join(' '))}
+                className={cx('mdc-icon-toggle', 'material-icons', classes.toJS().join(' '), iconcssClasses[primary && 'primary'], iconcssClasses[accent && 'accent'])}
                 role="button"
                 onClick={click}
                 onKeyUp={keyup}

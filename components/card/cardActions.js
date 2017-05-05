@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 const CardActions = ({ children, vertical }) =>
@@ -6,6 +7,7 @@ const CardActions = ({ children, vertical }) =>
         {children}
     </section>;
 CardActions.propTypes = {
+    children: PropTypes.any,
     vertical: PropTypes.bool,
 };
 CardActions.defaultProps = {

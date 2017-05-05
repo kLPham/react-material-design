@@ -1,12 +1,16 @@
 import '@material/textfield/dist/mdc.textfield.css';
 import classNames from 'classnames';
-import React, { PropTypes, PureComponent } from 'react';
+import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
+import { v4 } from 'uuid';
 import { MDCTextfieldFoundation } from '@material/textfield';
 import { Set as ImmutableSet } from 'immutable';
 import MDCTextfield from './component';
 import FormField from '../formField';
+import { textfieldcssClasses } from '../classes';
 // TODO: validation with helper text.
 // TODO: helper text <p> should be after the <div>.
+// TODO: Dark themes
 const { HELPTEXT_PERSISTENT, LABEL_FLOAT_ABOVE } = MDCTextfieldFoundation.cssClasses;
 
 class Textfield extends PureComponent {
@@ -17,10 +21,14 @@ class Textfield extends PureComponent {
         helpTextPersistent: PropTypes.bool,
         label: PropTypes.string,
         value: PropTypes.string,
+        onChange: PropTypes.func,
+        primary: PropTypes.bool,
+        required: PropTypes.bool,
     };
     static defaultProps = {
         alignEnd: false,
         disabled: false,
+        required: false,
         value: '',
     }
     constructor(props) {
@@ -29,8 +37,9 @@ class Textfield extends PureComponent {
             classes: new ImmutableSet(),
             classesHelpText: new ImmutableSet(),
             classesLabel: new ImmutableSet(),
-            value: props.value,
             disabled: props.disabled,
+            value: props.value,
+            id: v4(),
         };
     }
     componentDidMount() {
@@ -39,7 +48,7 @@ class Textfield extends PureComponent {
 
         const { helpTextPersistent, value } = this.props;
         const { disabled } = this.state;
-        const { addClassToHelptext, addClassToLabel } = this.foundation.adapter_;
+        const { addClassToHelptext, addClassToLabel } = this.foundation;
 
         if (helpTextPersistent) {
             addClassToHelptext(HELPTEXT_PERSISTENT);
@@ -53,8 +62,7 @@ class Textfield extends PureComponent {
     }
     componentWillReceiveProps(nextProps) {
         const { disabled, helpTextPersistent } = this.props;
-        const { addClassToLabel } = this.foundation.adapter_;
-
+        const { addClassToLabel } = this.foundation;
         if (nextProps.disabled !== disabled) {
             this.setState({
                 disabledInternal: nextProps.disabled,
@@ -73,37 +81,42 @@ class Textfield extends PureComponent {
         this.foundation.destroy();
     }
     handleChange = (e) => {
+        const { onChange } = this.props;
         const { value } = e.target;
-        this.setState({
-            value,
-        });
+
+        if (onChange) {
+            onChange(value, e);
+        }
     }
     render() {
-        const { classes, classesHelpText, classesLabel, helpTextAttr, disabled, inputBlur, inputFocus, value } = this.state;
-        const { alignEnd, helpText, label } = this.props;
+        const { classes, classesHelpText, classesLabel, helpTextAttr, disabled, id, inputBlur, inputInput, inputKeydown, inputFocus } = this.state;
+        const { alignEnd, helpText, label, required, primary, value } = this.props;
         return (
             <FormField
-                onFocus={inputFocus}
-                onBlur={inputBlur}
                 alignEnd={alignEnd}
                 additionalClassNames={classNames('mdc-textfield', classes.toJS().join(' '))}
             >
                 <input
                     type="text"
-                    id="my-textfield"
+                    id={`mdc-textfield--${id}`}
                     className="mdc-textfield__input"
                     value={value}
-                    onChange={e => this.handleChange(e)}
+                    onChange={this.handleChange}
                     disabled={disabled}
+                    required={required}
+                    onFocus={inputFocus}
+                    onBlur={inputBlur}
+                    onInput={inputInput}
+                    onKeyDown={inputKeydown}
                 />
                 <label
-                    className={classNames('mdc-textfield__label', classesLabel.toJS().join(' '))}
-                    htmlFor="my-textfield"
+                    className={classNames('mdc-textfield__label', primary && textfieldcssClasses.primary, classesLabel.toJS().join(' '))}
+                    htmlFor={`mdc-textfield--${id}`}
                 >
                     {label}
                 </label>
                 <p
-                    id="my-text-helptext"
+                    id={`mdc-textfield-helptext--${id}`}
                     className={classNames('mdc-textfield-helptext', classesHelpText.toJS().join(' '))}
                     {...helpTextAttr}
                 >

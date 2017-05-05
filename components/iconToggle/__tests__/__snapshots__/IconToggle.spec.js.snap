@@ -1,3 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`<IconToggle /> should be able to render 1`] = `
 <i
   aria-disabled={false}
@@ -6,7 +8,8 @@ exports[`<IconToggle /> should be able to render 1`] = `
   onKeyDown={[Function]}
   onKeyUp={[Function]}
   role="button"
-  tabIndex="0">
+  tabIndex="0"
+>
   favorite_border
 </i>
 `;

@@ -2,7 +2,7 @@ import { MDCTextfieldFoundation } from '@material/textfield';
 
 export default class MDCTextfield extends MDCTextfieldFoundation {
     constructor(root) {
-        super(Object.assign({
+        super({
             addClass: className => root.setState(prevState => ({
                 classes: prevState.classes.add(className),
             })),
@@ -15,7 +15,25 @@ export default class MDCTextfield extends MDCTextfieldFoundation {
             removeClassFromLabel: className => root.setState(prevState => ({
                 classesLabel: prevState.classesLabel.remove(className),
             })),
+            addClassToHelptext: className => root.setState(prevState => ({
+                classesHelpText: prevState.classesHelpText.add(className),
+            })),
+            removeClassFromHelptext: className => root.setState(prevState => ({
+                classesHelpText: prevState.classesHelpText.remove(className),
+            })),
             helptextHasClass: className => root.state.classesHelpText.has(className),
+            setHelptextAttr: (name, value) => root.setState(prevState => ({
+                helpTextAttr: {
+                    ...prevState.helpTextAttr,
+                    [name]: value,
+                },
+            })),
+            removeHelptextAttr: (name, value) => root.setState(prevState => ({
+                helpTextAttr: {
+                    ...prevState.helpTextAttr,
+                    [name]: value,
+                },
+            })),
             registerInputFocusHandler: handler => root.setState({
                 inputFocus: handler,
             }),
@@ -26,29 +44,27 @@ export default class MDCTextfield extends MDCTextfieldFoundation {
                 inputBlur: handler,
             }),
             deregisterInputBlurHandler: handler => root.setState({
-                inputBLur: handler,
+                inputBlur: handler,
             }),
-            setHelptextAttr: (name, value) => root.setState({
-                helpTextAttr: {
-                    [name]: value,
-                },
-            }), // this.helpText.setAttribute(name, value),
-            removeHelptextAttr: (name, value) => root.setState({
-                helpTextAttr: {
-                    [name]: value,
-                },
-            }), // this.helpText.removeAttribute(name, value),
+            registerInputInputHandler: handler => root.setState({
+                inputInput: handler,
+            }),
+            deregisterInputInputHandler: handler => root.setState({
+                inputInput: handler,
+            }),
+            registerInputKeydownHandler: handler => root.setState({
+                inputKeydown: handler,
+            }),
+            deregisterInputKeydownHandler: handler => root.setState({
+                inputKeydown: handler,
+            }),
             getNativeInput: () => ({
                 checkValidity: () => true,
-                value: root.state.value,
+                value: root.props.value,
                 disabled: root.state.disabled,
             }),
-            addClassToHelptext: className => root.setState(prevState => ({
-                classesHelpText: prevState.classesHelpText.add(className),
-            })),
-            removeClassFromHelptext: className => root.setState(prevState => ({
-                classesHelpText: prevState.classesHelpText.remove(className),
-            })),
-        }));
+        });
+        this.addClassToHelptext = className => this.adapter_.addClassToHelptext(className);
+        this.addClassToLabel = className => this.adapter_.addClassToLabel(className);
     }
 }

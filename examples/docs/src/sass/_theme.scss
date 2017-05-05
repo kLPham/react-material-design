@@ -1,0 +1,8 @@
+// $mdc-theme-primary: #9c27b0;
+// $mdc-theme-accent: #ffab40;
+// $mdc-theme-background: #333;
+
+body.mdc-theme--dark {
+        background-color: #333 !important;
+      }
+@import "~@material/theme/mdc-theme";

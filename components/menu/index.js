@@ -1,8 +1,9 @@
 import '@material/button/dist/mdc.button.css';
 import '@material/menu/dist/mdc.menu.css';
-import React, { PropTypes, PureComponent } from 'react';
+import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
 import { Set as ImmutableSet } from 'immutable';
-
+import classNames from 'classnames';
 import Button from '../button';
 import MDCSimpleMenu from './component';
 
@@ -34,36 +35,40 @@ class Menu extends PureComponent {
     }
     componentDidMount() {
         this.foundation = new MDCSimpleMenu(this);
+        console.dir(this.foundation);
         this.foundation.init();
     }
     menu;
     handleClick = () => {
-        console.log('handleClick', this.foundation);
         this.foundation.open();
         // const { open } = this.foundation.open;
         // this.menu.open = !open;
     };
     render() {
-        const { children, classes, click, disabled, keydown, keyup, label } = this.props;
+        const { children, disabled, label } = this.props;
+        const { classes, click, keydown, keyup, onClick } = this.state;
         return (
-            <div>
+            <div
+                ref={(d) => { this.documentRoot = d; }}
+                onClick={onClick}
+            >
                 <Button
+
                     disabled={disabled}
                     onClick={this.handleClick}
                     label={label}
                 />
                 <div
+                    ref={(d) => { this.mainRoot = d; }}
+                    className={classNames(classes.toJS().join(' '))}
                     onKeyDown={keydown}
                     onKeyUp={keyup}
                     onClick={click}
-                    // onClick={onClick}
-
-                    ref={(d) => { this.root = d; }}
-                    className={classes && classes.toJS().join(' ')}
                     tabIndex="-1"
                 >
                     <ul
                         className="mdc-simple-menu__items mdc-list"
+                        ref={(d) => { this.itemContainer = d; }}
                         role="menu"
                         aria-hidden="true"
                     >

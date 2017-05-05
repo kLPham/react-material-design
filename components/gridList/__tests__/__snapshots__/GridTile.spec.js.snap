@@ -1,0 +1,152 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<GridTile /> should be able to render a title 1`] = `
+<li
+  className="mdc-grid-tile"
+>
+  <div
+    className="mdc-grid-tile__primary"
+  >
+    <div
+      className="mdc-grid-tile__primary-content my-tile-image"
+      style={
+        Object {
+          "backgroundImage": "url(https://static.pexels.com/photos/58997/pexels-photo-58997.jpeg)",
+        }
+      }
+    />
+  </div>
+  <span
+    className="mdc-grid-tile__secondary"
+  >
+    <span
+      className="mdc-grid-tile__title"
+    >
+      This is my title
+    </span>
+  </span>
+</li>
+`;
+
+exports[`<GridTile /> should be able to render an icon 1`] = `
+<li
+  className="mdc-grid-tile"
+>
+  <div
+    className="mdc-grid-tile__primary"
+  >
+    <div
+      className="mdc-grid-tile__primary-content my-tile-image"
+      style={
+        Object {
+          "backgroundImage": "url(https://static.pexels.com/photos/58997/pexels-photo-58997.jpeg)",
+        }
+      }
+    />
+  </div>
+  <span
+    className="mdc-grid-tile__secondary"
+  >
+    <i
+      className="mdc-grid-tile__icon material-icons"
+    >
+      menu
+    </i>
+    <span
+      className="mdc-grid-tile__title"
+    >
+      This is my title
+    </span>
+  </span>
+</li>
+`;
+
+exports[`<GridTile /> should be able to render icon and support text 1`] = `
+<li
+  className="mdc-grid-tile"
+>
+  <div
+    className="mdc-grid-tile__primary"
+  >
+    <div
+      className="mdc-grid-tile__primary-content my-tile-image"
+      style={
+        Object {
+          "backgroundImage": "url(https://static.pexels.com/photos/58997/pexels-photo-58997.jpeg)",
+        }
+      }
+    />
+  </div>
+  <span
+    className="mdc-grid-tile__secondary"
+  >
+    <i
+      className="mdc-grid-tile__icon material-icons"
+    >
+      menu
+    </i>
+    <span
+      className="mdc-grid-tile__title"
+    >
+      This is my title
+    </span>
+    <span
+      className="mdc-grid-tile__support-text"
+    >
+      This is my support text.
+    </span>
+  </span>
+</li>
+`;
+
+exports[`<GridTile /> should be able to render support text 1`] = `
+<li
+  className="mdc-grid-tile"
+>
+  <div
+    className="mdc-grid-tile__primary"
+  >
+    <div
+      className="mdc-grid-tile__primary-content my-tile-image"
+      style={
+        Object {
+          "backgroundImage": "url(https://static.pexels.com/photos/58997/pexels-photo-58997.jpeg)",
+        }
+      }
+    />
+  </div>
+  <span
+    className="mdc-grid-tile__secondary"
+  >
+    <span
+      className="mdc-grid-tile__title"
+    >
+      This is my title
+    </span>
+    <span
+      className="mdc-grid-tile__support-text"
+    >
+      This is my support text.
+    </span>
+  </span>
+</li>
+`;
+
+exports[`<GridTile /> should be able to render without a title 1`] = `
+<li
+  className="mdc-grid-tile"
+>
+  <div
+    className="mdc-grid-tile__primary"
+  >
+    <div
+      className="mdc-grid-tile__primary-content my-tile-image"
+      style={
+        Object {
+          "backgroundImage": "url(https://static.pexels.com/photos/58997/pexels-photo-58997.jpeg)",
+        }
+      }
+    />
+  </div>
+</li>
+`;

@@ -1,14 +1,16 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { cardMediaItemcssClasses as imgClasses } from '../classes';
 import CardTitle from './cardTitle';
 
 const cx = classNames.bind(imgClasses);
 
-const CardMedia = ({ imgSrc, imgSize, ...rest }) =>
+const CardMedia = ({ children, imgSrc, imgSize, title, ...rest }) =>
     <div className="mdc-card__horizontal-block">
-        <CardTitle {...rest} />
+        {title && <CardTitle title={title}{...rest} />}
         <img alt="" className={cx('mdc-card__media-item', imgClasses[imgSize])} src={imgSrc} />
+        {children}
     </div>;
 CardMedia.propTypes = {
     imgSrc: PropTypes.string.isRequired,

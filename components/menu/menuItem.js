@@ -1,6 +1,7 @@
 import '@material/list/dist/mdc.list.css';
 import '@material/menu/dist/mdc.menu.css';
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
 // TODO: tabIndex
 // TODO: What behaviors can menu have? Used as a link (Regular link, or react-router), just pick an item,
