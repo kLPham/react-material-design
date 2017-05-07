@@ -39,6 +39,49 @@ exports[`<Checkbox /> should be able to render 1`] = `
   <label
     className="mdc-checkbox-label"
     htmlFor="mdc-checkbox--2e732f05-f466-4fba-acb5-2f3be58daf75"
+  />
+</FormField>
+`;
+
+exports[`<Checkbox /> should be able to render with a label 1`] = `
+<FormField
+  alignEnd={false}
+>
+  <div
+    className="mdc-checkbox"
+  >
+    <input
+      checked={false}
+      className="mdc-checkbox__native-control"
+      disabled={false}
+      id="mdc-checkbox--2e732f05-f466-4fba-acb5-2f3be58daf75"
+      onChange={[Function]}
+      type="checkbox"
+    />
+    <div
+      className="mdc-checkbox__background"
+    >
+      <svg
+        className="mdc-checkbox__checkmark"
+        version="1.1"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          className="mdc-checkbox__checkmark__path"
+          d="M1.73,12.91 8.1,19.28 22.79,4.59"
+          fill="none"
+          stroke="white"
+        />
+      </svg>
+      <div
+        className="mdc-checkbox__mixedmark"
+      />
+    </div>
+  </div>
+  <label
+    className="mdc-checkbox-label"
+    htmlFor="mdc-checkbox--2e732f05-f466-4fba-acb5-2f3be58daf75"
   >
     My Checkbox Label
   </label>

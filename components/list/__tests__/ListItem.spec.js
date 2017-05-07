@@ -9,8 +9,6 @@ describe('<ListItem />', () => {
             <ListItem value={value} />,
         );
         expect(listItem).toMatchSnapshot();
-        expect(listItem).toHaveClassName('mdc-list-item');
-        expect(listItem).toHaveText(value);
     });
     it('should render start (left) detail elements', () => {
         const value = 'Wi-Fi';
@@ -19,10 +17,6 @@ describe('<ListItem />', () => {
             <ListItem value={value} icon={leftIcon} />,
         );
         expect(listItem).toMatchSnapshot();
-        expect(listItem).toHaveClassName('mdc-list-item');
-        expect(listItem.find('i')).toBePresent();
-        expect(listItem.find('i')).toHaveClassName('mdc-list-item__start-detail material-icons');
-        expect(listItem.find('i')).toHaveText(leftIcon);
     });
     it('should render start (left) detail avatar', () => {
         const value = 'George Washington';
@@ -31,11 +25,6 @@ describe('<ListItem />', () => {
             <ListItem value={value} leftAvatarUrl={leftAvatarUrl} />,
         );
         expect(listItem).toMatchSnapshot();
-        expect(listItem).toHaveClassName('mdc-list-item');
-        expect(listItem.find('li')).toHaveText(value);
-        expect(listItem.find('img')).toBePresent();
-        expect(listItem.find('img')).toHaveClassName('mdc-list-item__start-detail');
-        expect(listItem.find('img')).toHaveProp('src');
     });
     it('should render end (right) detail elements', () => {
         const value = 'Janet Perkins';
@@ -45,10 +34,5 @@ describe('<ListItem />', () => {
             <ListItem value={value} rightIcon={rightIcon} rightTitle={rightTitle} />,
         );
         expect(listItem).toMatchSnapshot();
-        expect(listItem).toHaveClassName('mdc-list-item');
-        expect(listItem.find('a')).toBePresent();
-        expect(listItem.find('a')).toHaveClassName('mdc-list-item__end-detail material-icons');
-        expect(listItem.find('a')).toHaveText(rightIcon);
-        expect(listItem.find('a')).toHaveProp('title');
     });
 });

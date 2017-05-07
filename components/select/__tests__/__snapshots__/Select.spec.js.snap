@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Select /> should render 1`] = `
+<div
+  className="mdc-select"
+  role="listbox"
+  style={Object {}}
+  tabIndex="0"
+>
+  <span
+    className="mdc-select__selected-text"
+  >
+    Pick a food group
+  </span>
+  <div
+    className="mdc-simple-menu mdc-select__menu"
+    style={Object {}}
+  >
+    <ul
+      className="mdc-list mdc-simple-menu__items"
+    >
+      <li
+        className="mdc-lismt-item"
+        id="grains"
+        role="option"
+        tabIndex="0"
+      >
+        Bread, Cereal, Rice, and Pasta
+      </li>
+      <li
+        className="mdc-list-,item"
+        id="vegetables"
+        role="option"
+        tabIndex="0"
+      >
+        Vegetables
+      </li>
+      <li
+        className="mdc-list-item"
+        id="fruit"
+        role="option"
+        tabIndex="0"
+      >
+        Fruit
+      </li>
+      <li
+        className="mdc-list-item"
+        id="dairy"
+        role="option"
+        tabIndex="0"
+      >
+        Milk, Yogurt, and Cheese
+      </li>
+      <li
+        className="mdc-list-item"
+        id="meat"
+        role="option"
+        tabIndex="0"
+      >
+        Meat, Poultry, Fish, Dry Beans, Eggs, and Nuts
+      </li>
+      <li
+        className="mdc-list-item"
+        id="fats"
+        role="option"
+        tabIndex="0"
+      >
+        Fats, Oils, and Sweets
+      </li>
+    </ul>
+  </div>
+</div>
+`;

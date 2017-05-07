@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Menu /> should render 1`] = `
+<div>
+  <Button
+    label="Clickie"
+    onClick={[Function]}
+  />
+  <div
+    className="mdc-simple-menu"
+    tabIndex="-1"
+  >
+    <ul
+      aria-hidden="true"
+      className="mdc-simple-menu__items mdc-list"
+      role="menu"
+    >
+      <MenuItem
+        value="One"
+      />
+    </ul>
+  </div>
+</div>
+`;
+
+exports[`<Menu /> should render disabled 1`] = `
+<div>
+  <Button
+    disabled={true}
+    label="Clickie"
+    onClick={[Function]}
+  />
+  <div
+    className="mdc-simple-menu"
+    tabIndex="-1"
+  >
+    <ul
+      aria-hidden="true"
+      className="mdc-simple-menu__items mdc-list"
+      role="menu"
+    >
+      <MenuItem
+        value="One"
+      />
+      <MenuItem
+        value="Two"
+      />
+    </ul>
+  </div>
+</div>
+`;

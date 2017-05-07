@@ -1,0 +1,81 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ToolbarRow /> should render 1`] = `
+<div
+  className="mdc-toolbar__row"
+>
+  <section
+    className="mdc-toolbar__section mdc-toolbar__section--align-start"
+  />
+</div>
+`;
+
+exports[`<ToolbarRow /> should render with a title 1`] = `
+<div
+  className="mdc-toolbar__row"
+>
+  <section
+    className="mdc-toolbar__section mdc-toolbar__section--align-start"
+  >
+    <span
+      className="mdc-toolbar__title"
+    >
+      This is my Title
+    </span>
+  </section>
+</div>
+`;
+
+exports[`<ToolbarRow /> should render with centerElements 1`] = `
+<div
+  className="mdc-toolbar__row"
+>
+  <section
+    className="mdc-toolbar__section mdc-toolbar__section--align-start"
+  />
+  <section
+    className="mdc-toolbar__section"
+  >
+    <i
+      className="material-icons"
+    >
+      cloud
+    </i>
+  </section>
+</div>
+`;
+
+exports[`<ToolbarRow /> should render with leftElements 1`] = `
+<div
+  className="mdc-toolbar__row"
+>
+  <section
+    className="mdc-toolbar__section mdc-toolbar__section--align-start"
+  >
+    <i
+      className="material-icons"
+    >
+      cloud
+    </i>
+  </section>
+</div>
+`;
+
+exports[`<ToolbarRow /> should render with rightElements 1`] = `
+<div
+  className="mdc-toolbar__row"
+>
+  <section
+    className="mdc-toolbar__section mdc-toolbar__section--align-start"
+  />
+  <section
+    className="mdc-toolbar__section mdc-toolbar__section--align-end"
+  >
+    <i
+      className="material-icons"
+    >
+      cloud
+    </i>
+  </section>
+</div>
+`;

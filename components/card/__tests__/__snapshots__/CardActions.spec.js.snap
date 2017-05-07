@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CardActions /> should render 1`] = `
+<section
+  className="mdc-card__actions"
+>
+  <button>
+    Click
+  </button>
+</section>
+`;
+
+exports[`<CardActions /> should render vertical 1`] = `
+<section
+  className="mdc-card__actions mdc-card__actions--vertical"
+>
+  <button>
+    Click
+  </button>
+</section>
+`;

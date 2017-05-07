@@ -31,6 +31,7 @@ ListItem.propTypes = {
     rightIcon: PropTypes.string,
     rightTitle: PropTypes.string,
     value: PropTypes.string.isRequired,
+    to: PropTypes.string,
 };
 
 export default ListItem;

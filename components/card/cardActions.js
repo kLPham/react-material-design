@@ -7,7 +7,7 @@ const CardActions = ({ children, vertical }) =>
         {children}
     </section>;
 CardActions.propTypes = {
-    children: PropTypes.any,
+    children: PropTypes.any.isRequired,
     vertical: PropTypes.bool,
 };
 CardActions.defaultProps = {

@@ -9,7 +9,7 @@ const Card = ({ children, style }) =>
         {children}
     </div>;
 Card.propTypes = {
-    children: PropTypes.any,
+    children: PropTypes.any.isRequired,
     horizontal: PropTypes.bool,
     style: PropTypes.object,
 };

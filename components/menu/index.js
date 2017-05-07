@@ -22,12 +22,8 @@ class Menu extends PureComponent {
             PropTypes.arrayOf(PropTypes.element),
             PropTypes.element,
         ]).isRequired,
-        classes: PropTypes.any,
-        click: PropTypes.func,
         disabled: PropTypes.bool,
-        keydown: PropTypes.func,
-        keyup: PropTypes.func,
-        label: PropTypes.string,
+        label: PropTypes.string.isRequired,
     };
     state = {
         classes: new ImmutableSet().add('mdc-simple-menu'),
@@ -53,7 +49,6 @@ class Menu extends PureComponent {
                 onClick={onClick}
             >
                 <Button
-
                     disabled={disabled}
                     onClick={this.handleClick}
                     label={label}

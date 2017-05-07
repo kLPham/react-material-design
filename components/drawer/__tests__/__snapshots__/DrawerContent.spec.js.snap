@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<DrawerContent /> should render 1`] = `
+<nav
+  className="mdc-permanent-drawer__content mdc-list"
+  id="icon-with-text-demo"
+>
+  Text
+</nav>
+`;

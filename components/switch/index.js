@@ -14,7 +14,7 @@ const Switch = ({ disabled, label }) => {
                     <div className="mdc-switch__knob" />
                 </div>
             </div>
-            <label htmlFor={`mdc-switch--${id}`} className="mdc-switch-label">{label}</label>
+            {label && <label htmlFor={`mdc-switch--${id}`} className="mdc-switch-label">{label}</label>}
         </div>
     );
 };

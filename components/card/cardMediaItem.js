@@ -6,14 +6,16 @@ import CardTitle from './cardTitle';
 
 const cx = classNames.bind(imgClasses);
 
-const CardMedia = ({ children, imgSrc, imgSize, title, ...rest }) =>
+const CardMediaItem = ({ children, imgSrc, imgSize, title, ...rest }) =>
     <div className="mdc-card__horizontal-block">
         {title && <CardTitle title={title}{...rest} />}
         <img alt="" className={cx('mdc-card__media-item', imgClasses[imgSize])} src={imgSrc} />
         {children}
     </div>;
-CardMedia.propTypes = {
+CardMediaItem.propTypes = {
     imgSrc: PropTypes.string.isRequired,
     imgSize: PropTypes.number,
+    title: PropTypes.string,
+    children: PropTypes.any
 };
-export default CardMedia;
+export default CardMediaItem;

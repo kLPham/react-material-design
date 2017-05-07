@@ -8,12 +8,12 @@ const ToolbarRow = ({ centerElements, rightElements, leftElements, title }) =>
             {leftElements}
             {title && <span className="mdc-toolbar__title">{title}</span>}
         </section>
-        <section className="mdc-toolbar__section">
+        {centerElements && <section className="mdc-toolbar__section">
             {centerElements}
-        </section>
-        <section className="mdc-toolbar__section mdc-toolbar__section--align-end">
+        </section>}
+        {rightElements && <section className="mdc-toolbar__section mdc-toolbar__section--align-end">
             {rightElements}
-        </section>
+        </section>}
     </div>;
 ToolbarRow.propTypes = {
     centerElements: PropTypes.oneOfType([

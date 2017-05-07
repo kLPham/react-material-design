@@ -14,9 +14,6 @@ describe('<GridList />', () => {
             </GridList>,
 );
         expect(gridList).toMatchSnapshot();
-        expect(gridList.find('div').first()).toHaveClassName('mdc-grid-list');
-        expect(gridList.find('ul')).toHaveClassName('mdc-grid-list__tiles');
-        expect(gridList.find('ul').children()).toHaveLength(2);
     });
     it('should be able to display header caption', () => {
         const supportText = 'This is my support text.';
@@ -28,11 +25,6 @@ describe('<GridList />', () => {
             </GridList>,
           );
         expect(gridList).toMatchSnapshot();
-        expect(gridList.find('div').first()).toHaveClassName('mdc-grid-list');
-        expect(gridList.find('div').first()).toHaveClassName('mdc-grid-list--header-caption');
-        expect(gridList.find('ul')).toHaveClassName('mdc-grid-list__tiles');
-        expect(gridList.find('ul').children()).toHaveLength(2);
-        expect(gridList).toHaveClassName('mdc-grid-list--twoline-caption');
     });
     it('should be able to display two line caption', () => {
         const supportText = 'This is my support text.';
@@ -43,10 +35,6 @@ describe('<GridList />', () => {
             </GridList>,
           );
         expect(gridList).toMatchSnapshot();
-        expect(gridList.find('div').first()).toHaveClassName('mdc-grid-list');
-        expect(gridList.find('ul')).toHaveClassName('mdc-grid-list__tiles');
-        expect(gridList.find('ul').children()).toHaveLength(2);
-        expect(gridList).toHaveClassName('mdc-grid-list--twoline-caption');
     });
     it('should be able to display icon', () => {
         const supportText = 'This is my support text.';
@@ -59,10 +47,5 @@ describe('<GridList />', () => {
             </GridList>,
           );
         expect(gridList).toMatchSnapshot();
-        expect(gridList.find('div').first()).toHaveClassName('mdc-grid-list');
-        expect(gridList.find('div').first()).toHaveClassName('mdc-grid-list--with-icon-align-end');
-        expect(gridList.find('ul')).toHaveClassName('mdc-grid-list__tiles');
-        expect(gridList.find('ul').children()).toHaveLength(2);
-        expect(gridList).toHaveClassName('mdc-grid-list--twoline-caption');
     });
 });

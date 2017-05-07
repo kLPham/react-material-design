@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react';
 import '@material/snackbar/dist/mdc.snackbar.css';
 import { Set as ImmutableSet } from 'immutable';
 import classNames from 'classnames';
+import PropTypes from 'prop-types';
 import MDCSnackbar from './component';
 
 // TODO: use this.foundation.show from other elements.
@@ -23,7 +24,8 @@ class Snackbar extends PureComponent {
         this.foundation.show(payload);
     }
     render() {
-        const { actionAriaHidden, actionText, ariaHidden, classes, click, message } = this.state;
+        const { actionAriaHidden, ariaHidden, classes, click } = this.state;
+        const { message, actionText } = this.props;
         return (
             <div
                 className={classNames('mdc-snackbar', classes.toJS().join(' '))}
@@ -33,15 +35,18 @@ class Snackbar extends PureComponent {
                 onClick={click}
             >
                 <div className="mdc-snackbar__text">{message}</div>
-                <div className="mdc-snackbar__action-wrapper" aria-hidden={actionAriaHidden}>
+                {actionText && <div className="mdc-snackbar__action-wrapper" aria-hidden={actionAriaHidden}>
                     <button
                         type="button"
-
                         className="mdc-button mdc-snackbar__action-button"
                     >{actionText}</button>
-                </div>
+                </div>}
             </div>
         );
     }
 }
+Snackbar.propTypes = {
+    message: PropTypes.string.isRequired,
+    actionText: PropTypes.string,
+};
 export default Snackbar;

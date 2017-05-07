@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<MenuItem /> should render 1`] = `
+<li
+  className="mdc-list-item"
+  role="menuitem"
+  tabIndex="0"
+>
+  this is my value
+</li>
+`;

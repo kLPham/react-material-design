@@ -1,0 +1,77 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Switch /> should render 1`] = `
+<div>
+  <div
+    className="mdc-switch"
+  >
+    <input
+      className="mdc-switch__native-control"
+      id="mdc-switch--2e732f05-f466-4fba-acb5-2f3be58daf75"
+      type="checkbox"
+    />
+    <div
+      className="mdc-switch__background"
+    >
+      <div
+        className="mdc-switch__knob"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<Switch /> should render with a label 1`] = `
+<div>
+  <div
+    className="mdc-switch"
+  >
+    <input
+      className="mdc-switch__native-control"
+      id="mdc-switch--2e732f05-f466-4fba-acb5-2f3be58daf75"
+      type="checkbox"
+    />
+    <div
+      className="mdc-switch__background"
+    >
+      <div
+        className="mdc-switch__knob"
+      />
+    </div>
+  </div>
+  <label
+    className="mdc-switch-label"
+    htmlFor="mdc-switch--2e732f05-f466-4fba-acb5-2f3be58daf75"
+  >
+    this is my label
+  </label>
+</div>
+`;
+
+exports[`<Switch /> should render with a label 2`] = `
+<div>
+  <div
+    className="mdc-switch mdc-switch--disabled"
+  >
+    <input
+      className="mdc-switch__native-control"
+      disabled={true}
+      id="mdc-switch--2e732f05-f466-4fba-acb5-2f3be58daf75"
+      type="checkbox"
+    />
+    <div
+      className="mdc-switch__background"
+    >
+      <div
+        className="mdc-switch__knob"
+      />
+    </div>
+  </div>
+  <label
+    className="mdc-switch-label"
+    htmlFor="mdc-switch--2e732f05-f466-4fba-acb5-2f3be58daf75"
+  >
+    this is my label
+  </label>
+</div>
+`;

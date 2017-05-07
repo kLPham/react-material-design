@@ -13,6 +13,6 @@ const FormField = ({ additionalClassNames, alignEnd, children, ...rest }) =>
 FormField.propTypes = {
     alignEnd: PropTypes.bool,
     additionalClassNames: PropTypes.string,
-    children: PropTypes.any,
+    children: PropTypes.any.isRequired,
 };
 export default FormField;

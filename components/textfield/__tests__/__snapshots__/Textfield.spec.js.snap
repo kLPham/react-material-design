@@ -1,0 +1,143 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Textfield /> should render 1`] = `
+<FormField
+  additionalClassNames="mdc-textfield"
+  alignEnd={false}
+>
+  <input
+    className="mdc-textfield__input"
+    disabled={false}
+    id="mdc-textfield--2e732f05-f466-4fba-acb5-2f3be58daf75"
+    onChange={[Function]}
+    required={false}
+    type="text"
+    value=""
+  />
+  <label
+    className="mdc-textfield__label"
+    htmlFor="mdc-textfield--2e732f05-f466-4fba-acb5-2f3be58daf75"
+  />
+</FormField>
+`;
+
+exports[`<Textfield /> should render as required 1`] = `
+<FormField
+  additionalClassNames="mdc-textfield"
+  alignEnd={false}
+>
+  <input
+    className="mdc-textfield__input"
+    disabled={false}
+    id="mdc-textfield--2e732f05-f466-4fba-acb5-2f3be58daf75"
+    onChange={[Function]}
+    required={true}
+    type="text"
+    value=""
+  />
+  <label
+    className="mdc-textfield__label"
+    htmlFor="mdc-textfield--2e732f05-f466-4fba-acb5-2f3be58daf75"
+  >
+    this is my label
+  </label>
+</FormField>
+`;
+
+exports[`<Textfield /> should render with a helpText 1`] = `
+<FormField
+  additionalClassNames="mdc-textfield"
+  alignEnd={false}
+>
+  <input
+    className="mdc-textfield__input"
+    disabled={false}
+    id="mdc-textfield--2e732f05-f466-4fba-acb5-2f3be58daf75"
+    onChange={[Function]}
+    required={false}
+    type="text"
+    value="this is my value"
+  />
+  <label
+    className="mdc-textfield__label"
+    htmlFor="mdc-textfield--2e732f05-f466-4fba-acb5-2f3be58daf75"
+  >
+    this is my label
+  </label>
+  <p
+    className="mdc-textfield-helptext"
+    id="mdc-textfield-helptext--2e732f05-f466-4fba-acb5-2f3be58daf75"
+  >
+    this is my helpText
+  </p>
+</FormField>
+`;
+
+exports[`<Textfield /> should render with a label 1`] = `
+<FormField
+  additionalClassNames="mdc-textfield"
+  alignEnd={false}
+>
+  <input
+    className="mdc-textfield__input"
+    disabled={false}
+    id="mdc-textfield--2e732f05-f466-4fba-acb5-2f3be58daf75"
+    onChange={[Function]}
+    required={false}
+    type="text"
+    value=""
+  />
+  <label
+    className="mdc-textfield__label"
+    htmlFor="mdc-textfield--2e732f05-f466-4fba-acb5-2f3be58daf75"
+  >
+    this is my label
+  </label>
+</FormField>
+`;
+
+exports[`<Textfield /> should render with a value 1`] = `
+<FormField
+  additionalClassNames="mdc-textfield"
+  alignEnd={false}
+>
+  <input
+    className="mdc-textfield__input"
+    disabled={false}
+    id="mdc-textfield--2e732f05-f466-4fba-acb5-2f3be58daf75"
+    onChange={[Function]}
+    required={false}
+    type="text"
+    value="this is my value"
+  />
+  <label
+    className="mdc-textfield__label"
+    htmlFor="mdc-textfield--2e732f05-f466-4fba-acb5-2f3be58daf75"
+  >
+    this is my label
+  </label>
+</FormField>
+`;
+
+exports[`<Textfield /> should render with as primary 1`] = `
+<FormField
+  additionalClassNames="mdc-textfield"
+  alignEnd={false}
+>
+  <input
+    className="mdc-textfield__input"
+    disabled={false}
+    id="mdc-textfield--2e732f05-f466-4fba-acb5-2f3be58daf75"
+    onChange={[Function]}
+    required={false}
+    type="text"
+    value="this is my value"
+  />
+  <label
+    className="mdc-textfield__label mdc-theme--primary-bg mdc-theme--text-primary-on-primary"
+    htmlFor="mdc-textfield--2e732f05-f466-4fba-acb5-2f3be58daf75"
+  >
+    this is my label
+  </label>
+</FormField>
+`;

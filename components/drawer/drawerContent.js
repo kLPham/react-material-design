@@ -8,7 +8,7 @@ const DrawerContent = ({ children }) =>
     <nav id="icon-with-text-demo" className="mdc-permanent-drawer__content mdc-list">
         {children}
     </nav>;
-DrawerContent.PropTypes = {
+DrawerContent.propTypes = {
     children: PropTypes.any.isRequired,
 };
 export default DrawerContent;

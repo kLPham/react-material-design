@@ -7,9 +7,9 @@ const CardTitle = ({ title, subtitle, larger }) =>
         <h1 className={classNames('mdc-card__title', { 'mdc-card__title--large': larger })}>
             {title}
         </h1>
-        <h2 className="mdc-card__subtitle">
+        {subtitle && <h2 className="mdc-card__subtitle">
             {subtitle}
-        </h2>
+        </h2>}
     </section>;
 CardTitle.propTypes = {
     title: PropTypes.string.isRequired,
