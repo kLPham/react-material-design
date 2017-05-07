@@ -24,7 +24,7 @@ import ListItem from './list/ListItem';
 import ListItemDivider from './list/ListItemDivider';
 import Menu from './menu';
 import MenuItem from './menu/menuItem';
-import PersistentDrawer from './drawer/peristentDrawer';
+import PersistentDrawer from './drawer/persistentDrawer';
 import Radio from './radio';
 import Select from './select';
 import Snackbar from './snackbar';
