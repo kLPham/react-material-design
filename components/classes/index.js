@@ -12,7 +12,8 @@ export const fabcssClasses = {
     plain: 'mdc-fab--plain',
 };
 export const listcssClasses = {
-    avatar: 'mdc-list--avatar-list', dense: 'mdc-list--dense',
+    avatar: 'mdc-list--avatar-list',
+    dense: 'mdc-list--dense',
 };
 export const cardMediaItemcssClasses = {
     1.5: 'mdc-card__media-item--1dot5x',

@@ -10,11 +10,6 @@ import FABDoc from '!raw-loader!../../../../components/fab';
 const parsedButtonDoc = parse(ButtonDoc);
 const parsedFABDoc = parse(FABDoc);
 
-const renderType = {
-    CodeBlock: {
-        language: 'js',
-        value: '<Button label="Disabled Raised" raised disabled />',
-    } };
 const Buttons = () =>
     <div>
         <h1>Buttons</h1>
@@ -42,8 +37,8 @@ const Buttons = () =>
                 <Button label="Compact" compact />
                 <Button label="Primary" primary />
                 <Button label="Ripple Primary" ripple primary />
-                <Button label="Ripple Primary" ripple primary imnotinlist />
-                <Button label="Ripple Primary" ripple primary imnotinlist />
+                <Button label="Ripple Primary" ripple primary />
+                <Button label="Ripple Primary" ripple primary />
             </CodeToggle>
             <h3>Raised Buttons</h3>
             <CodeToggle>

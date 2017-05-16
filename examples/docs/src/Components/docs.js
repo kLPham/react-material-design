@@ -1,9 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const Main = ({ componentDocs }) => {
+const Docs = ({ componentDocs }) => {
     const { description, props } = componentDocs;
-    const propRows = []
-    console.log('props', props);
+    const propRows = [];
     for (const [key, value] of Object.entries(props)) {
       const { type, required, defaultValue, description } = value;
         propRows.push(<tr key={key}>
@@ -16,25 +16,25 @@ const Main = ({ componentDocs }) => {
     }
     return (
         <div>
-            <h3>{`Properties for ${description}`}</h3>
-            <section>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Property Name</th>
-                            <th>Type</th>
-                            <th>Required</th>
-                            <th>Default Value</th>
-                            <th>Description</th>
-                        </tr>
-                        </thead>
-                    <tbody>
-                        {propRows}
-                    </tbody>
-                </table>
-            </section>
+            <h2>{`Properties for ${description}`}</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Property Name</th>
+                        <th>Type</th>
+                        <th>Required</th>
+                        <th>Default Value</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {propRows}
+                </tbody>
+            </table>
         </div>
     );
 };
-
-export default Main;
+Docs.propTypes = {
+  componentDocs: PropTypes.any,
+}
+export default Docs;

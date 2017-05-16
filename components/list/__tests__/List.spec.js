@@ -1,66 +1,47 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import List from '../index';
-import { listcssClasses } from '../../classes';
+import ListItem from '../ListItem';
 
 describe('<List />', () => {
     it('should render with basic li', () => {
         const list = shallow(
             <List>
-                <li className="mdc-list-item">
-                    Item One
-                </li>
-                <li className="mdc-list-item">
-                    Item Two
-                </li>
+                <ListItem value="Item One" />
+                <ListItem value="Item Two" />
+                <ListItem value="Item Two" />
             </List>,
         );
         expect(list).toMatchSnapshot();
     });
     it('should render dense with basic li', () => {
-        const type = 'dense';
-        const cssClass = listcssClasses[type];
+        const dense = true;
         const list = shallow(
-            <List type={type}>
-                <li className="mdc-list-item">
-                    Item One
-                </li>
-                <li className="mdc-list-item">
-                    Item Two
-                </li>
+            <List dense={dense}>
+                <ListItem value="Item One" />
+                <ListItem value="Item Two" />
+                <ListItem value="Item Two" />
             </List>,
         );
         expect(list).toMatchSnapshot();
     });
     it('should render avatar with avatar li', () => {
-        const type = 'avatar';
-        const cssClass = listcssClasses[type];
         const list = shallow(
-            <List type={type}>
-                <li className="mdc-list-item">
-                    <img
-                        className="mdc-list-item__start-detail" src="/users/1/profile_pic.png"
-                        width="56" height="56" alt="Picture of Janet Perkins"
-                    />
-                    Janet Perkins
-                </li>
-                <li className="mdc-list-item">
-                    <img
-                        className="mdc-list-item__start-detail" src="/users/2/profile_pic.png"
-                        width="56" height="56" alt="Picture of Mary Johnson"
-                    />
-                    Mary Johnson
-                </li>
-                <li className="mdc-list-item">
-                    <img
-                        className="mdc-list-item__start-detail" src="/users/3/profile_pic.png"
-                        width="56" height="56" alt="Picture of Peter Carlsson"
-                    />
-                    Peter Carlsson
-                </li>
+            <List>
+                <ListItem avatarSrc="http://4vector.com/i/free-vector-george-washington-clip-art_108422_George_Washington_clip_art_hight.png" value="George Washington" />
+                <ListItem avatarSrc="https://www.goodfreephotos.com/albums/vector-images/abraham-lincoln-vector-clipart.png" value="Abraham Lincoln" />
+                <ListItem avatarSrc="http://png-4.vector.me/files/images/4/4/448988/marco_simoncelli_vector_portrait_thumb.gif" value="Marco Simoncelli" />
             </List>
         ,
         );
+        expect(list).toMatchSnapshot();
+    });
+    it('should render two-line list', () => {
+        const list = shallow(
+            <List>
+                <ListItem value="Item 1" secondaryValue="Secondary Value 1" />
+            </List>,
+      );
         expect(list).toMatchSnapshot();
     });
 });

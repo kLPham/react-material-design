@@ -21,7 +21,7 @@ import LayoutGrid from './layout-grid';
 import LayoutGridCell from './layout-grid/layoutGridCell';
 import List from './list';
 import ListItem from './list/ListItem';
-import ListItemDivider from './list/ListItemDivider';
+import ListDivider from './list/ListDivider';
 import Menu from './menu';
 import MenuItem from './menu/menuItem';
 import PersistentDrawer from './drawer/persistentDrawer';
@@ -57,7 +57,7 @@ module.exports = {
     LayoutGridCell,
     List,
     ListItem,
-    ListItemDivider,
+    ListDivider,
     Menu,
     MenuItem,
     PersistentDrawer,

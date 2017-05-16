@@ -20,19 +20,27 @@ describe('<ListItem />', () => {
     });
     it('should render start (left) detail avatar', () => {
         const value = 'George Washington';
-        const leftAvatarUrl = 'http://4vector.com/i/free-vector-george-washington-clip-art_108422_George_Washington_clip_art_hight.png';
+        const avatarSrc = 'http://4vector.com/i/free-vector-george-washington-clip-art_108422_George_Washington_clip_art_hight.png';
         const listItem = shallow(
-            <ListItem value={value} leftAvatarUrl={leftAvatarUrl} />,
+            <ListItem value={value} avatarSrc={avatarSrc} />,
         );
         expect(listItem).toMatchSnapshot();
     });
     it('should render end (right) detail elements', () => {
         const value = 'Janet Perkins';
-        const rightIcon = 'favorite';
+        const iconRight = 'favorite';
         const rightTitle = 'Remove from favorites';
         const listItem = shallow(
-            <ListItem value={value} rightIcon={rightIcon} rightTitle={rightTitle} />,
+            <ListItem value={value} iconRight={iconRight} rightTitle={rightTitle} />,
         );
+        expect(listItem).toMatchSnapshot();
+    });
+    it('should render two-line list item', () => {
+        const value = 'Item 1';
+        const secondaryValue = 'Secondary Value 1';
+        const listItem = shallow(
+            <ListItem value={value} secondaryValue={secondaryValue} />,
+      );
         expect(listItem).toMatchSnapshot();
     });
 });

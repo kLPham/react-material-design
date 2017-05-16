@@ -63,7 +63,7 @@ const FAB = ({ icon, location, ripple, ...rest }) =>
     <button
         style={location && styles[location]}
         className={cx('mdc-fab',
-            Object.keys(rest).map(modifier =>
+            ...Object.keys(rest).map(modifier =>
                 fabcssClasses[modifier],
             ),
             'material-icons',

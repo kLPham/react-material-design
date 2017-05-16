@@ -1,1 +1,0 @@
-Simple demonstration of react-material-design components.
