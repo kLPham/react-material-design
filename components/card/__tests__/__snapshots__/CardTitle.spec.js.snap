@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CardTitle /> should render 1`] = `
+<section
+  className="mdc-card__primary"
+>
+  <h1
+    className="mdc-card__title"
+  >
+    this is my title
+  </h1>
+</section>
+`;
+
+exports[`<CardTitle /> should render larger 1`] = `
+<section
+  className="mdc-card__primary"
+>
+  <h1
+    className="mdc-card__title mdc-card__title--large"
+  >
+    this is my title
+  </h1>
+</section>
+`;
+
+exports[`<CardTitle /> should render with subtitle 1`] = `
+<section
+  className="mdc-card__primary"
+>
+  <h1
+    className="mdc-card__title"
+  >
+    this is my title
+  </h1>
+  <h2
+    className="mdc-card__subtitle"
+  >
+    this is my subtitle
+  </h2>
+</section>
+`;

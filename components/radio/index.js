@@ -54,19 +54,19 @@ class Radio extends PureComponent {
             <FormField alignEnd={alignEnd}>
                 <div className={classNames('mdc-radio', classes.toJS().join(' '))} >
                     <input
-                        disabled={disabled}
-                        onChange={e => this.handleChange(e)}
-                        className="mdc-radio__native-control"
-                        type="radio"
-                        id={`mdc-radio--${id}`}
                         checked={checked}
+                        className="mdc-radio__native-control"
+                        disabled={disabled}
+                        id={`mdc-radio--${id}`}
+                        onChange={e => this.handleChange(e)}
+                        type="radio"
                     />
                     <div className="mdc-radio__background">
                         <div className="mdc-radio__outer-circle" />
                         <div className="mdc-radio__inner-circle" />
                     </div>
                 </div>
-                <label id={`mdc-radio-label--${id}`} htmlFor={`mdc-radio--${id}`}>{label}</label>
+                {label && <label id={`mdc-radio-label--${id}`} htmlFor={`mdc-radio--${id}`}>{label}</label>}
             </FormField>
         );
     }

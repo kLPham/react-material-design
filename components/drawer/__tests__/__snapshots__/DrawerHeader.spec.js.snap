@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<DrawerHeader /> should render 1`] = `
+<header
+  className="mdc-persistent-drawer__header"
+>
+  <div
+    className="mdc-persistent-drawer__header-content"
+  >
+    Text
+  </div>
+</header>
+`;
+
+exports[`<DrawerHeader /> should render primary 1`] = `
+<header
+  className="mdc-persistent-drawer__header"
+>
+  <div
+    className="mdc-persistent-drawer__header-content mdc-theme--primary-bg mdc-theme--text-primary-on-primary"
+  >
+    Text
+  </div>
+</header>
+`;

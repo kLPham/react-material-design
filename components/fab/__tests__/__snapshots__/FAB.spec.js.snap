@@ -23,7 +23,7 @@ exports[`<FAB /> should render absolutely positioned 1`] = `
 exports[`<FAB /> should render and have span element 1`] = `
 <button
   aria-label="bug_report"
-  className="mdc-fab  material-icons"
+  className="mdc-fab material-icons"
 >
   <span
     className="mdc-fab__icon"

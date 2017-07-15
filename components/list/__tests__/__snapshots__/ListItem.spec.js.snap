@@ -51,3 +51,20 @@ exports[`<ListItem /> should render start (left) detail elements 1`] = `
   Wi-Fi
 </li>
 `;
+
+exports[`<ListItem /> should render two-line list item 1`] = `
+<li
+  className="mdc-list-item"
+>
+  <span
+    className="mdc-list-item__text"
+  >
+    Item 1
+    <span
+      className="mdc-list-item__text__secondary"
+    >
+      Secondary Value 1
+    </span>
+  </span>
+</li>
+`;

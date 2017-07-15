@@ -26,7 +26,7 @@ exports[`<Button /> should render dense 1`] = `
 
 exports[`<Button /> should render flat 1`] = `
 <button
-  className="mdc-button "
+  className="mdc-button"
 >
   Flat button
 </button>

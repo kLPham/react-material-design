@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CardSupportingContent /> should render 1`] = `
+<section
+  className="mdc-card__supporting-text"
+>
+  Text
+</section>
+`;

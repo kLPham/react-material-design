@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CardMedia /> should render 1`] = `
+<section
+  className="mdc-card__media"
+  style={
+    Object {
+      "background": "url(http://google.com/image.jpeg)",
+    }
+  }
+/>
+`;
+
+exports[`<CardMedia /> should render with children 1`] = `
+<section
+  className="mdc-card__media"
+  style={
+    Object {
+      "background": "url(http://google.com/image.jpeg)",
+    }
+  }
+>
+  Text
+</section>
+`;

@@ -12,7 +12,7 @@ class Dialog extends PureComponent {
     state = {
         classes: new ImmutableSet().add('mdc-dialog'),
         classesBody: new ImmutableSet().add('mdc-dialog__body').add('mdc-dialog__body--scrollable'),
-        styles: { visibility: 'hidden' },
+        styles: {},
     }
     componentDidMount() {
         this.foundation = new MDCDialog(this);

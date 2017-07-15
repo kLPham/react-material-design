@@ -4,42 +4,18 @@ exports[`<List /> should render avatar with avatar li 1`] = `
 <ul
   className="mdc-list mdc-list--avatar-list"
 >
-  <li
-    className="mdc-list-item"
-  >
-    <img
-      alt="Picture of Janet Perkins"
-      className="mdc-list-item__start-detail"
-      height="56"
-      src="/users/1/profile_pic.png"
-      width="56"
-    />
-    Janet Perkins
-  </li>
-  <li
-    className="mdc-list-item"
-  >
-    <img
-      alt="Picture of Mary Johnson"
-      className="mdc-list-item__start-detail"
-      height="56"
-      src="/users/2/profile_pic.png"
-      width="56"
-    />
-    Mary Johnson
-  </li>
-  <li
-    className="mdc-list-item"
-  >
-    <img
-      alt="Picture of Peter Carlsson"
-      className="mdc-list-item__start-detail"
-      height="56"
-      src="/users/3/profile_pic.png"
-      width="56"
-    />
-    Peter Carlsson
-  </li>
+  <ListItem
+    avatarSrc="http://4vector.com/i/free-vector-george-washington-clip-art_108422_George_Washington_clip_art_hight.png"
+    value="George Washington"
+  />
+  <ListItem
+    avatarSrc="https://www.goodfreephotos.com/albums/vector-images/abraham-lincoln-vector-clipart.png"
+    value="Abraham Lincoln"
+  />
+  <ListItem
+    avatarSrc="http://png-4.vector.me/files/images/4/4/448988/marco_simoncelli_vector_portrait_thumb.gif"
+    value="Marco Simoncelli"
+  />
 </ul>
 `;
 
@@ -47,16 +23,26 @@ exports[`<List /> should render dense with basic li 1`] = `
 <ul
   className="mdc-list mdc-list--dense"
 >
-  <li
-    className="mdc-list-item"
-  >
-    Item One
-  </li>
-  <li
-    className="mdc-list-item"
-  >
-    Item Two
-  </li>
+  <ListItem
+    value="Item One"
+  />
+  <ListItem
+    value="Item Two"
+  />
+  <ListItem
+    value="Item Two"
+  />
+</ul>
+`;
+
+exports[`<List /> should render two-line list 1`] = `
+<ul
+  className="mdc-list mdc-list--two-line"
+>
+  <ListItem
+    secondaryValue="Secondary Value 1"
+    value="Item 1"
+  />
 </ul>
 `;
 
@@ -64,15 +50,14 @@ exports[`<List /> should render with basic li 1`] = `
 <ul
   className="mdc-list"
 >
-  <li
-    className="mdc-list-item"
-  >
-    Item One
-  </li>
-  <li
-    className="mdc-list-item"
-  >
-    Item Two
-  </li>
+  <ListItem
+    value="Item One"
+  />
+  <ListItem
+    value="Item Two"
+  />
+  <ListItem
+    value="Item Two"
+  />
 </ul>
 `;

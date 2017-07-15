@@ -6,7 +6,11 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 const extractSass = new ExtractTextPlugin({
   filename: '[name].[hash].css', allChunks: false
   //  disable: process.env.NODE_ENV == 'development'
-})
+});
+const extractCss = new ExtractTextPlugin({
+  filename: '[name].[hash].css', allChunks: false,
+});
+
 module.exports = {
   entry: [
     'react-hot-loader/patch', 'webpack-dev-server/client?http://localhost:8080', 'webpack/hot/only-dev-server', './src/index'
@@ -17,7 +21,7 @@ module.exports = {
     publicPath: '/'
   },
   //  context: path.resolve(__dirname, 'src'),
-  devtool: 'inline-source-map',
+  devtool: 'eval',
   devServer: {
     contentBase: path.resolve(__dirname, 'dist'),
     historyApiFallback: true,
@@ -33,12 +37,15 @@ module.exports = {
         exclude: /node_modules/,
       }, {
         test: /\.css$/,
-        use: [
-          'style-loader', 'css-loader'
-        ],
+        use: extractCss.extract({
+          fallback: 'style-loader',
+          use: 'css-loader',
+        }),
       }, {
         test: /\.scss$/,
-        loader: extractSass.extract(['css-loader', 'sass-loader'])
+        loader: extractSass.extract({
+          use: ['css-loader', 'sass-loader']
+        })
       }, {
         test: /\.json$/,
         loader: 'json-loader'
@@ -63,6 +70,7 @@ module.exports = {
       template: path.resolve(__dirname, 'src', 'index.template.ejs'),
       inject: 'body'
     }),
-    extractSass
+    extractSass,
+    extractCss
   ]
 };

@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<FormField /> should render 1`] = `
+<div
+  className="mdc-form-field"
+>
+  <button>
+    Click
+  </button>
+</div>
+`;
+
+exports[`<FormField /> should render with alignEnd 1`] = `
+<div
+  className="mdc-form-field mdc-form-field--align-end"
+>
+  <button>
+    Click
+  </button>
+</div>
+`;

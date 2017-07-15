@@ -1,4 +1,4 @@
-import '@material/button/dist/mdc.button.css';
+import '@material/button/dist/mdc.button.min.css';
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
@@ -11,15 +11,16 @@ const cx = classNames.bind(buttoncssClasses);
 * Flat and Raised Buttons
 */
 const Button = ({ label, disabled, ripple, ...rest }) =>
-    <button
-        className={cx('mdc-button', Object.keys(rest).map(modifier =>
-        buttoncssClasses[modifier]),
-        )}
+    (<button
+        className={cx('mdc-button', ...Object.keys(rest).map(modifier =>
+            buttoncssClasses[modifier],
+        ))}
         data-mdc-auto-init={ripple && 'MDCRipple'}
         disabled={disabled}
     >
         {label}
-    </button>;
+    </button>);
+
 Button.propTypes = {
   /**
   * Colors the button with the accent color.

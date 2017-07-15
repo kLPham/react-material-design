@@ -1,55 +1,98 @@
 import React from 'react';
-import { List, ListItem, ListItemDivider } from '../../../../components/react-material-design';
-// import { List, ListItem, ListItemDivider } from 'react-material-design';
+import CodeToggle from 'react-code-toggle';
+import { parse } from 'react-docgen';
+import { List, ListItem, ListDivider } from '../../../../components/react-material-design';
+// import { List, ListItem, ListDivider } from 'react-material-design';
+import Docs from '../Components/docs';
+import ListDoc from '!raw-loader!../../../../components/list';
+import ListDividerDoc from '!raw-loader!../../../../components/list/ListDivider';
+import ListItemDoc from '!raw-loader!../../../../components/list/ListItem';
+
+const parsedListDoc = parse(ListDoc);
+const parsedListDividerDoc = parse(ListDividerDoc);
+const parsedListItemDoc = parse(ListItemDoc);
 
 const Lists = () =>
     <div>
         <h1>Lists</h1>
         <h2>Basic</h2>
-        <List>
-            <ListItem value="Item One" />
-            <ListItem value="Item Two" />
-            <ListItem value="Item Two" />
-        </List>
+        <CodeToggle>
+            <List>
+                <ListItem value="Item One" />
+                <ListItem value="Item Two" />
+                <ListItem value="Item Two" />
+            </List>
+        </CodeToggle>
         <h2>Dense</h2>
-        <List type="dense">
-            <ListItem value="Item One" />
-            <ListItem value="Item Two" />
-            <ListItem value="Item Two" />
-        </List>
+        <CodeToggle>
+            <List dense>
+                <ListItem value="Item One" />
+                <ListItem value="Item Two" />
+                <ListItem value="Item Two" />
+            </List>
+        </CodeToggle>
         <h2>Left Icons</h2>
-        <List>
-            <ListItem value="No Icon" />
-            <ListItem icon="network_wifi" value="Wi-Fi" />
-            <ListItem icon="bluetooth" value="Bluetooth" />
-        </List>
-        <h2>Left Avatar</h2>
-        <List type="avatar">
-            <ListItem leftAvatarUrl="http://4vector.com/i/free-vector-george-washington-clip-art_108422_George_Washington_clip_art_hight.png" value="George Washington" />
-            <ListItem leftAvatarUrl="https://www.goodfreephotos.com/albums/vector-images/abraham-lincoln-vector-clipart.png" value="Abraham Lincoln" />
-            <ListItem leftAvatarUrl="http://png-4.vector.me/files/images/4/4/448988/marco_simoncelli_vector_portrait_thumb.gif" value="Marco Simoncelli" />
-        </List>
+        <CodeToggle>
+
+            <List>
+                <ListItem value="No Icon" />
+                <ListItem icon="network_wifi" value="Wi-Fi" />
+                <ListItem icon="bluetooth" value="Bluetooth" />
+            </List>
+        </CodeToggle>
+
+        <h2>Avatar</h2>
+        <CodeToggle>
+            <List>
+                <ListItem avatarSrc="http://4vector.com/i/free-vector-george-washington-clip-art_108422_George_Washington_clip_art_hight.png" value="George Washington" />
+                <ListItem avatarSrc="https://www.goodfreephotos.com/albums/vector-images/abraham-lincoln-vector-clipart.png" value="Abraham Lincoln" />
+                <ListItem avatarSrc="http://png-4.vector.me/files/images/4/4/448988/marco_simoncelli_vector_portrait_thumb.gif" value="Marco Simoncelli" />
+            </List>
+        </CodeToggle>
         <h2>Right Icon</h2>
-        <List type="avatar">
-            <ListItem rightIcon="favorite" rightTitle="Add to favorites" value="Janet Perkins" />
-            <ListItem rightIcon="favorite_border" value="Mary Johnson" />
-        </List>
+        <CodeToggle>
+            <List>
+                <ListItem iconRight="favorite" rightTitle="Add to favorites" value="Janet Perkins" />
+                <ListItem iconRight="favorite_border" value="Mary Johnson" />
+            </List>
+        </CodeToggle>
         <h2>Avatar and Right Icon</h2>
-        <List type="avatar">
-            <ListItem rightIcon="favorite" rightTitle="Add to favorites" value="Janet Perkins" />
-            <ListItem leftAvatarUrl="https://www.goodfreephotos.com/albums/vector-images/abraham-lincoln-vector-clipart.png" value="Mary Johnson" />
-            <ListItem rightIcon="favorite_border" leftAvatarUrl="http://png-4.vector.me/files/images/4/4/448988/marco_simoncelli_vector_portrait_thumb.gif" value="Marco Simoncelli" />
-        </List>
+        <CodeToggle>
+            <List>
+                <ListItem iconRight="favorite" rightTitle="Add to favorites" value="Janet Perkins" />
+                <ListItem avatarSrc="https://www.goodfreephotos.com/albums/vector-images/abraham-lincoln-vector-clipart.png" value="Mary Johnson" />
+                <ListItem iconRight="favorite_border" avatarSrc="http://png-4.vector.me/files/images/4/4/448988/marco_simoncelli_vector_portrait_thumb.gif" value="Marco Simoncelli" />
+            </List>
+        </CodeToggle>
         <h2>List Dividers and inset</h2>
-        <List>
-            <ListItem value="Item 1 - Division 1" />
-            <ListItem value="Item 2 - Division 1" />
-            <ListItemDivider />
-            <ListItem value="Item 1 - Division 2" />
-            <ListItem value="Item 2 - Division 2" />
-            <ListItemDivider inset />
-            <ListItem value="Item after inset - Division 3" />
-            <ListItem value="Item 2 - Division 3" />
-        </List>
+        <CodeToggle>
+            <List>
+                <ListItem value="Item 1 - Division 1" />
+                <ListItem value="Item 2 - Division 1" />
+                <ListDivider />
+                <ListItem value="Item 1 - Division 2" />
+                <ListItem value="Item 2 - Division 2" />
+                <ListDivider inset />
+                <ListItem value="Item after inset - Division 3" />
+                <ListItem value="Item 2 - Division 3" />
+            </List>
+        </CodeToggle>
+        <h2>Two-line List</h2>
+        <CodeToggle>
+            <List>
+                <ListItem value="Item 1" secondaryValue="Secondary Value 1" />
+                <ListItem value="Item 2" secondaryValue="Secondary Value 2" />
+            </List>
+        </CodeToggle>
+        <h3>One Item</h3>
+        <CodeToggle>
+            <List>
+                <ListItem value="Item 1" secondaryValue="Secondary Value 1" />
+            </List>
+        </CodeToggle>
+        <Docs componentDocs={parsedListDoc} />
+        <Docs componentDocs={parsedListItemDoc} />
+        <Docs componentDocs={parsedListDividerDoc} />
+
     </div>;
 export default Lists;

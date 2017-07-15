@@ -115,13 +115,15 @@ class Textfield extends PureComponent {
                 >
                     {label}
                 </label>
-                <p
-                    id={`mdc-textfield-helptext--${id}`}
-                    className={classNames('mdc-textfield-helptext', classesHelpText.toJS().join(' '))}
-                    {...helpTextAttr}
-                >
-                    {helpText}
-                </p>
+                {
+                    helpText && <p
+                        id={`mdc-textfield-helptext--${id}`}
+                        className={classNames('mdc-textfield-helptext', classesHelpText.toJS().join(' '))}
+                        {...helpTextAttr}
+                    >
+                        {helpText}
+                    </p>
+                }
             </FormField>
         );
     }

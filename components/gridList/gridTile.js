@@ -5,7 +5,7 @@ import '@material/grid-list/dist/mdc.grid-list.css';
 * Grid Tiles
 */
 const GridTile = ({ src, title, icon, supportText }) =>
-    <li className="mdc-grid-tile">
+    (<li className="mdc-grid-tile">
         <div className="mdc-grid-tile__primary">
             <div
                 style={{ backgroundImage: `url(${src})` }}
@@ -24,7 +24,7 @@ const GridTile = ({ src, title, icon, supportText }) =>
                 }
             </span>
         }
-    </li>;
+    </li>);
 GridTile.propTypes = {
 
     icon: PropTypes.string,

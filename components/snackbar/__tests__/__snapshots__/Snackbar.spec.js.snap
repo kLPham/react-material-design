@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Snackbar /> should render with a message 1`] = `
+<div
+  aria-atomic="true"
+  aria-hidden={true}
+  aria-live="assertive"
+  className="mdc-snackbar"
+  onClick={[Function]}
+>
+  <div
+    className="mdc-snackbar__text"
+  >
+    this is my message
+  </div>
+</div>
+`;
+
+exports[`<Snackbar /> should render with actionText 1`] = `
+<div
+  aria-atomic="true"
+  aria-hidden={true}
+  aria-live="assertive"
+  className="mdc-snackbar"
+  onClick={[Function]}
+>
+  <div
+    className="mdc-snackbar__text"
+  >
+    this is my message
+  </div>
+  <div
+    aria-hidden={true}
+    className="mdc-snackbar__action-wrapper"
+  >
+    <button
+      className="mdc-button mdc-snackbar__action-button"
+      type="button"
+    >
+      submit
+    </button>
+  </div>
+</div>
+`;

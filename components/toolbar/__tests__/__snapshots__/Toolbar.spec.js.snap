@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Toolbar /> should render a toolbar 1`] = `
+<header
+  className="mdc-toolbar"
+>
+  <ToolbarRow />
+</header>
+`;
+
+exports[`<Toolbar /> should render fixed 1`] = `
+<header
+  className="mdc-toolbar mdc-toolbar--fixed"
+>
+  <ToolbarRow />
+</header>
+`;
+
+exports[`<Toolbar /> should render with a title 1`] = `
+<header
+  className="mdc-toolbar"
+>
+  <ToolbarRow
+    title="This is my Title"
+  />
+</header>
+`;
+
+exports[`<Toolbar /> should render with multiple rows 1`] = `
+<header
+  className="mdc-toolbar"
+>
+  <ToolbarRow
+    title="This is my title"
+  />
+  <ToolbarRow
+    centerElements={
+      <i
+        className="material-icons"
+      >
+        cloud
+      </i>
+    }
+  />
+</header>
+`;

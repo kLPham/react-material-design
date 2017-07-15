@@ -4,15 +4,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const FormField = ({ additionalClassNames, alignEnd, children, ...rest }) =>
-    <div
+    (<div
         {...rest}
         className={classnames('mdc-form-field', { 'mdc-form-field--align-end': alignEnd }, additionalClassNames)}
     >
         {children}
-    </div>;
+    </div>);
 FormField.propTypes = {
     alignEnd: PropTypes.bool,
     additionalClassNames: PropTypes.string,
-    children: PropTypes.any,
+    children: PropTypes.any.isRequired,
 };
 export default FormField;

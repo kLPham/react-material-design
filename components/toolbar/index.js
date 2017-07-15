@@ -6,10 +6,10 @@ import ToolbarRow from './toolbarRow';
 
 // TODO: consider how to handle mdc-toolbar-fixed-adjust for sibling components
 const Toolbar = ({ children, fixed, ...rest }) =>
-    <header className={classNames('mdc-toolbar', { 'mdc-toolbar--fixed': fixed })}>
+    (<header className={classNames('mdc-toolbar', { 'mdc-toolbar--fixed': fixed })}>
         <ToolbarRow {...rest} />
         {children}
-    </header>;
+    </header>);
 Toolbar.propTypes = {
     children: PropTypes.oneOfType([
         PropTypes.element,

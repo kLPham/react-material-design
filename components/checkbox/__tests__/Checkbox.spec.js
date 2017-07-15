@@ -7,14 +7,17 @@ jest.mock('uuid', () => ({
 }));
 describe('<Checkbox />', () => {
     it('should be able to render', () => {
+        const checkbox = shallow(
+            <Checkbox />,
+        );
+        expect(checkbox).toMatchSnapshot();
+    });
+    it('should be able to render with a label', () => {
         const label = 'My Checkbox Label';
         const checkbox = shallow(
             <Checkbox label={label} />,
         );
         expect(checkbox).toMatchSnapshot();
-        expect(checkbox.find('input')).toHaveClassName('mdc-checkbox__native-control');
-        expect(checkbox.find('label')).toHaveClassName('mdc-checkbox-label');
-        expect(checkbox.find('label')).toHaveText(label);
     });
     it('should render as checked', () => {
         const label = 'My Checkbox Label';
@@ -23,10 +26,6 @@ describe('<Checkbox />', () => {
             <Checkbox checked={checked} label={label} />,
         );
         expect(checkbox).toMatchSnapshot();
-        expect(checkbox.find('input')).toBeChecked();
-        expect(checkbox.find('input')).toHaveClassName('mdc-checkbox__native-control');
-        expect(checkbox.find('label')).toHaveClassName('mdc-checkbox-label');
-        expect(checkbox.find('label')).toHaveText(label);
     });
     it('should render as disabled', () => {
         const label = 'My Checkbox Label';
@@ -35,9 +34,5 @@ describe('<Checkbox />', () => {
             <Checkbox disabled={disabled} label={label} />,
         );
         expect(checkbox).toMatchSnapshot();
-        expect(checkbox.find('input')).toBeDisabled();
-        expect(checkbox.find('input')).toHaveClassName('mdc-checkbox__native-control');
-        expect(checkbox.find('label')).toHaveClassName('mdc-checkbox-label');
-        expect(checkbox.find('label')).toHaveText(label);
     });
 });

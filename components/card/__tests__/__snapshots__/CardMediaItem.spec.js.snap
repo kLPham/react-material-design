@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CardMediaItem /> should render 1`] = `
+<div
+  className="mdc-card__horizontal-block"
+>
+  <img
+    alt=""
+    className="mdc-card__media-item"
+    src="http://google.com/image.jpeg"
+  />
+</div>
+`;
+
+exports[`<CardMediaItem /> should render with a title 1`] = `
+<div
+  className="mdc-card__horizontal-block"
+>
+  <CardTitle
+    larger={false}
+    subtitle=""
+    title="this is my title"
+  />
+  <img
+    alt=""
+    className="mdc-card__media-item"
+    src="http://google.com/image.jpeg"
+  />
+</div>
+`;
+
+exports[`<CardMediaItem /> should render with children 1`] = `
+<div
+  className="mdc-card__horizontal-block"
+>
+  <img
+    alt=""
+    className="mdc-card__media-item"
+    src="http://google.com/image.jpeg"
+  />
+  Text
+</div>
+`;
+
+exports[`<CardMediaItem /> should render with imgSize 1`] = `
+<div
+  className="mdc-card__horizontal-block"
+>
+  <img
+    alt=""
+    className="mdc-card__media-item mdc-card__media-item--1dot5x"
+    src="http://google.com/image.jpeg"
+  />
+</div>
+`;

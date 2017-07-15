@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Tab /> should render 1`] = `
+<a
+  className="mdc-tab"
+>
+  Home
+</a>
+`;
+
+exports[`<Tab /> should render active 1`] = `
+<a
+  className="mdc-tab mdc-tab--active"
+>
+  Home
+</a>
+`;
+
+exports[`<Tab /> should render with icon 1`] = `
+<a
+  className="mdc-tab"
+>
+  <i
+    aria-label="home"
+    className="material-icons mdc-tab__icon"
+  >
+    home
+  </i>
+</a>
+`;
+
+exports[`<Tab /> should render with icon and Text 1`] = `
+<a
+  className="mdc-tab mdc-tab--with-icon-and-text"
+>
+  <i
+    aria-label="home"
+    className="material-icons mdc-tab__icon"
+  >
+    home
+  </i>
+  <span
+    className="mdc-tab__icon-text"
+  >
+    Home
+  </span>
+</a>
+`;
