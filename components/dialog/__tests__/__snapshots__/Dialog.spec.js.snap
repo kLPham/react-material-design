@@ -7,11 +7,7 @@ exports[`<Dialog /> should render 1`] = `
   className="mdc-dialog"
   id="my-mdc-dialog"
   role="alertdialog"
-  style={
-    Object {
-      "visibility": "hidden",
-    }
-  }
+  style={Object {}}
 >
   <div
     className="mdc-dialog__surface"
