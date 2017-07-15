@@ -20,6 +20,7 @@ exports[`<Select /> should render 1`] = `
       className="mdc-list mdc-simple-menu__items"
     >
       <li
+        aria-selected={true}
         className="mdc-lismt-item"
         id="grains"
         role="option"
@@ -28,6 +29,7 @@ exports[`<Select /> should render 1`] = `
         Bread, Cereal, Rice, and Pasta
       </li>
       <li
+        aria-selected={true}
         className="mdc-list-,item"
         id="vegetables"
         role="option"
@@ -36,6 +38,7 @@ exports[`<Select /> should render 1`] = `
         Vegetables
       </li>
       <li
+        aria-selected={true}
         className="mdc-list-item"
         id="fruit"
         role="option"
@@ -44,6 +47,7 @@ exports[`<Select /> should render 1`] = `
         Fruit
       </li>
       <li
+        aria-selected={true}
         className="mdc-list-item"
         id="dairy"
         role="option"
@@ -52,6 +56,7 @@ exports[`<Select /> should render 1`] = `
         Milk, Yogurt, and Cheese
       </li>
       <li
+        aria-selected={true}
         className="mdc-list-item"
         id="meat"
         role="option"
@@ -60,6 +65,7 @@ exports[`<Select /> should render 1`] = `
         Meat, Poultry, Fish, Dry Beans, Eggs, and Nuts
       </li>
       <li
+        aria-selected={true}
         className="mdc-list-item"
         id="fats"
         role="option"

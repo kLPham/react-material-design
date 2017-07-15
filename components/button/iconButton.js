@@ -5,12 +5,12 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 const IconButton = ({ icon, primary }) =>
-    <i
+    (<i
         className={classNames('mdc-icon-toggle', 'material-icons', { 'mdc-theme--text-primary-on-primary': primary })}
         role="button"
     >
         {icon}
-    </i>;
+    </i>);
 IconButton.propTypes = {
     icon: PropTypes.string.isRequired,
     primary: PropTypes.bool,

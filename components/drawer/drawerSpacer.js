@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import '@material/drawer/dist/mdc.drawer.css';
 
 const DrawerSpacer = ({ children }) =>
-    <div className="mdc-persistent-drawer__toolbar-spacer">
+    (<div className="mdc-persistent-drawer__toolbar-spacer">
         {children}
-    </div>;
+    </div>);
 DrawerSpacer.propTypes = {
     children: PropTypes.any,
 };

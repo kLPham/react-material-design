@@ -6,9 +6,9 @@ import PropTypes from 'prop-types';
 // TODO: tabIndex
 // TODO: What behaviors can menu have? Used as a link (Regular link, or react-router), just pick an item,
 const MenuItem = ({ value }) =>
-    <li className="mdc-list-item" role="menuitem" tabIndex="0">
+    (<li className="mdc-list-item" role="menuitem" tabIndex="0">
         {value}
-    </li>;
+    </li>);
 MenuItem.propTypes = {
     value: PropTypes.string.isRequired,
 };

@@ -60,7 +60,7 @@ const cx = classNames.bind(fabcssClasses);
 * Floating Action Button
 */
 const FAB = ({ icon, location, ripple, ...rest }) =>
-    <button
+    (<button
         style={location && styles[location]}
         className={cx('mdc-fab',
             ...Object.keys(rest).map(modifier =>
@@ -74,7 +74,7 @@ const FAB = ({ icon, location, ripple, ...rest }) =>
         <span className="mdc-fab__icon">
             {icon}
         </span>
-    </button>;
+    </button>);
 FAB.propTypes = {
     /**
     * Uses Material Design Icon Font, e.g. icon="g_translate". You may use any other icon method you wish.

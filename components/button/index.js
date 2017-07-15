@@ -11,7 +11,7 @@ const cx = classNames.bind(buttoncssClasses);
 * Flat and Raised Buttons
 */
 const Button = ({ label, disabled, ripple, ...rest }) =>
-    <button
+    (<button
         className={cx('mdc-button', ...Object.keys(rest).map(modifier =>
             buttoncssClasses[modifier],
         ))}
@@ -19,7 +19,7 @@ const Button = ({ label, disabled, ripple, ...rest }) =>
         disabled={disabled}
     >
         {label}
-    </button>;
+    </button>);
 
 Button.propTypes = {
   /**

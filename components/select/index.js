@@ -50,22 +50,22 @@ class Select extends PureComponent {
                     <ul
                         className="mdc-list mdc-simple-menu__items"
                     >
-                        <li className="mdc-lismt-item" role="option" id="grains" tabIndex="0">
+                        <li className="mdc-lismt-item" aria-selected role="option" id="grains" tabIndex="0">
                             Bread, Cereal, Rice, and Pasta
                         </li>
-                        <li className="mdc-list-,item" role="option" id="vegetables" tabIndex="0">
+                        <li className="mdc-list-,item" aria-selected role="option" id="vegetables" tabIndex="0">
                             Vegetables
                         </li>
-                        <li className="mdc-list-item" role="option" id="fruit" tabIndex="0">
+                        <li className="mdc-list-item" aria-selected role="option" id="fruit" tabIndex="0">
                             Fruit
                         </li>
-                        <li className="mdc-list-item" role="option" id="dairy" tabIndex="0">
+                        <li className="mdc-list-item" aria-selected role="option" id="dairy" tabIndex="0">
                             Milk, Yogurt, and Cheese
                         </li>
-                        <li className="mdc-list-item" role="option" id="meat" tabIndex="0">
+                        <li className="mdc-list-item" aria-selected role="option" id="meat" tabIndex="0">
                             Meat, Poultry, Fish, Dry Beans, Eggs, and Nuts
                         </li>
-                        <li className="mdc-list-item" role="option" id="fats" tabIndex="0">
+                        <li className="mdc-list-item" aria-selected role="option" id="fats" tabIndex="0">
                             Fats, Oils, and Sweets
                         </li>
                     </ul>

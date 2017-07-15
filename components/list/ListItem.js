@@ -10,7 +10,7 @@ import '@material/drawer/dist/mdc.drawer.css';
 /**
 * List Item
 */
-const ListItem = ({ avatarSrc, icon, iconRight, rightTitle, secondaryValue, to, value}) => {
+const ListItem = ({ avatarSrc, icon, iconRight, rightTitle, secondaryValue, to, value }) => {
     if (to) {
         return (<NavLink activeClassName="mdc-permanent-drawer--selected" className="mdc-list-item" to={to}>
             {icon && <i className="mdc-list-item__start-detail material-icons" aria-hidden>{icon}</i>}
