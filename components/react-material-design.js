@@ -19,6 +19,7 @@ import IconButton from './button/iconButton';
 import IconToggle from './iconToggle';
 import LayoutGrid from './layout-grid';
 import LayoutGridCell from './layout-grid/layoutGridCell';
+import LinearProgress from './linear-progress';
 import List from './list';
 import ListItem from './list/ListItem';
 import ListDivider from './list/ListDivider';
@@ -29,6 +30,8 @@ import Radio from './radio';
 import Select from './select';
 import Snackbar from './snackbar';
 import Switch from './switch';
+import Tab from './tabs/tab';
+import Tabs from './tabs';
 import Textfield from './textfield';
 import Toolbar from './toolbar';
 import ToolbarRow from './toolbar/toolbarRow';
@@ -55,6 +58,7 @@ module.exports = {
     IconToggle,
     LayoutGrid,
     LayoutGridCell,
+    LinearProgress,
     List,
     ListItem,
     ListDivider,
@@ -65,6 +69,8 @@ module.exports = {
     Select,
     Snackbar,
     Switch,
+    Tab,
+    Tabs,
     Textfield,
     Toolbar,
     ToolbarRow,
