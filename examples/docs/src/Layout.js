@@ -5,6 +5,7 @@ import Buttons from './Containers/Buttons';
 import Cards from './Containers/Cards';
 import Dialogs from './Containers/Dialogs';
 import GridLists from './Containers/GridLists';
+import LayoutGrids from './Containers/LayoutGrids';
 import Lists from './Containers/Lists';
 import Menus from './Containers/Menus';
 import ProgressActivty from './Containers/ProgressActivity';
@@ -63,6 +64,7 @@ const Layout = ({ location }) => {
                         <ListItem to="/components/textfields" value="Textfields" />
                         <ListItem to="/components/tabs" value="Tabs" />
                         <ListItem to="/components/progress-activity" value="Progress and Activity" />
+                        <ListItem to="/layout/responsive-ui-grid" value="Responsive UI" />
                     </List>
                 </DrawerContent>
                 <DrawerSpacer />
@@ -87,6 +89,7 @@ const Layout = ({ location }) => {
                 <Route path="/components/tabs" component={Tabs} />
                 <Route path="/components/textfields" component={Textfields} />
                 <Route path="/patterns/navigation" component={Navigation} />
+                <Route path="/layout/responsive-ui-grid" component={LayoutGrids} />
             </main>
         </section>
     </div>);
