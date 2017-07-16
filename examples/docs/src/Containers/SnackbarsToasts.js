@@ -19,9 +19,7 @@ class SnackbarsToasts extends Component {
         this.snackBar.showSnackbar(payload);
     };
     handleChange(e, names) {
-        const { target } = e;
-        const { value } = target;
-        this.setState({ [names]: value });
+        this.setState({ [names]: e });
     }
     render() {
         const { message, actionText } = this.state;
@@ -45,7 +43,7 @@ class SnackbarsToasts extends Component {
                 />
                 <br />
                 <Button primary raised label="Show Snackbar" onClick={this.showSnackbar} />
-                <Snackbar ref={(s) => { this.snackBar = s; }} />
+                <Snackbar ref={(s) => { this.snackBar = s; }} visibleUntilTimeout />
             </div>
         );
     }

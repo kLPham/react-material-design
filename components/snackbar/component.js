@@ -1,14 +1,15 @@
+import { getCorrectEventName } from '@material/animation';
 import { MDCSnackbarFoundation } from '@material/snackbar';
 
 // TODO: registerTransitionEndHandler execution.
 export default class MDCSnackbar extends MDCSnackbarFoundation {
     constructor(root) {
         super({
-            addClass: className => root.setState(prevState => ({
-                classes: prevState.classes.add(className),
+            addClass: className => root.setState(({ classes }) => ({
+                classes: classes.add(className),
             })),
-            removeClass: className => root.setState(prevState => ({
-                classes: prevState.classes.remove(className),
+            removeClass: className => root.setState(({ classes }) => ({
+                classes: classes.remove(className),
             })),
             setAriaHidden: () => root.setState({
                 ariaHidden: true,
@@ -34,8 +35,8 @@ export default class MDCSnackbar extends MDCSnackbarFoundation {
             deregisterActionClickHandler: handler => root.setState({
                 click: handler,
             }),
-            registerTransitionEndHandler: handler => console.log('registerTransitionEndHandler', handler),
-            deregisterTransitionEndHandler: handler => console.log('deregisterTransitionEndHandler', handler),
+            registerTransitionEndHandler: handler => root.documentRoot.addEventListener(getCorrectEventName(window, 'transitionend'), handler),
+            deregisterTransitionEndHandler: handler => root.documentRoot.removeEventListener(getCorrectEventName(window, 'transitionend'), handler),
         });
     }
 }

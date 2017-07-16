@@ -1,14 +1,14 @@
-import React, { PureComponent } from 'react';
 import '@material/snackbar/dist/mdc.snackbar.css';
-import { Set as ImmutableSet } from 'immutable';
-import classNames from 'classnames';
 import PropTypes from 'prop-types';
+import React, { PureComponent } from 'react';
+import classNames from 'classnames';
+import { Set as ImmutableSet } from 'immutable';
 import MDCSnackbar from './component';
 
-// TODO: use this.foundation.show from other elements.
-// TODO: this.foundation.show() queue didn't seem to work.
-// TODO: doesn't show next snackbar messages.
 class Snackbar extends PureComponent {
+    static propTypes = {
+        visibleUntilTimeout: PropTypes.bool,
+    };
     constructor(props) {
         super(props);
         this.state = {
@@ -16,28 +16,32 @@ class Snackbar extends PureComponent {
         };
     }
     componentWillMount() {
+        const { visibleUntilTimeout } = this.props;
         this.foundation = new MDCSnackbar(this);
         this.foundation.init();
+        if (visibleUntilTimeout) {
+            this.foundation.setDismissOnAction(!visibleUntilTimeout);
+        }
     }
     showSnackbar(payload) {
       // Error handling?
         this.foundation.show(payload);
     }
     render() {
-        const { actionAriaHidden, ariaHidden, classes, click } = this.state;
-        const { message, actionText } = this.props;
+        const { actionText, actionAriaHidden, ariaHidden, classes, click, message } = this.state;
         return (
             <div
                 className={classNames('mdc-snackbar', classes.toJS().join(' '))}
                 aria-live="assertive"
                 aria-atomic="true"
                 aria-hidden={ariaHidden}
-                onClick={click}
+                ref={(d) => { this.documentRoot = d; }}
             >
                 <div className="mdc-snackbar__text">{message}</div>
                 {actionText && <div className="mdc-snackbar__action-wrapper" aria-hidden={actionAriaHidden}>
                     <button
                         type="button"
+                        onClick={click}
                         className="mdc-button mdc-snackbar__action-button"
                     >{actionText}</button>
                 </div>}
@@ -45,8 +49,4 @@ class Snackbar extends PureComponent {
         );
     }
 }
-Snackbar.propTypes = {
-    message: PropTypes.string.isRequired,
-    actionText: PropTypes.string,
-};
 export default Snackbar;
