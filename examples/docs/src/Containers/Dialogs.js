@@ -3,8 +3,8 @@ import React from 'react';
 // import { Dialog } from 'react-material-design';
 
 const Dialogs = () =>
-    <div>
+    (<div>
         <h2>Dialogs</h2>
         {/* <Dialog /> */}
-    </div>;
+    </div>);
 export default Dialogs;

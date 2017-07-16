@@ -4,11 +4,11 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const extractSass = new ExtractTextPlugin({
-  filename: '[name].[hash].css', allChunks: false
+  filename: 'src/[name].[hash].css', allChunks: false
   //  disable: process.env.NODE_ENV == 'development'
 });
 const extractCss = new ExtractTextPlugin({
-  filename: '[name].[hash].css', allChunks: false,
+  filename: 'src/[name].[hash].css', allChunks: false,
 });
 
 module.exports = {
@@ -16,8 +16,8 @@ module.exports = {
     'react-hot-loader/patch', 'webpack-dev-server/client?http://localhost:8080', 'webpack/hot/only-dev-server', './src/index'
   ],
   output: {
-    filename: '[name].[hash].js',
-    path: path.resolve(__dirname, 'dist'),
+    filename: 'src/[name].[hash].js',
+    path: path.resolve(__dirname, '../../docs'),
     publicPath: '/'
   },
   //  context: path.resolve(__dirname, 'src'),

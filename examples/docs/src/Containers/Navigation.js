@@ -1,15 +1,16 @@
 // import { Drawer } from 'react-material-design';
-import { Button, Drawer, PersistentDrawer, DrawerContent, DrawerHeader, DrawerSpacer } from '../../../../components/react-material-design';
 import React, { PureComponent } from 'react';
+import { Button, Drawer, PersistentDrawer, DrawerContent, DrawerHeader, DrawerSpacer } from '../../../../components/react-material-design';
 
 class Navigation extends PureComponent {
     openDrawer = () => this.drawer.openDrawer();
     render() {
         return (
             <div>
+                <h3>Click the menu icon above to open and close the drawer</h3>
                 <PersistentDrawer ref={(c) => { this.drawer = c; }}>
-                    <DrawerHeader>Header content goes here</DrawerHeader>
-                    <DrawerContent>
+                    <DrawerHeader primary type="persistent">Header content goes here</DrawerHeader>
+                    <DrawerContent type="persistent">
                         <a className="mdc-list-item mdc-temporary-drawer--selected" href="#">
                             <i className="material-icons mdc-list-item__start-detail" aria-hidden="true">inbox</i>Inbox
                         </a>
@@ -23,7 +24,9 @@ class Navigation extends PureComponent {
                         </a>
                     </DrawerContent>
                 </PersistentDrawer>
-                <Button onClick={this.openDrawer} type="raised" label="Open Drawer" />
+                <main>
+                    <Button onClick={this.openDrawer} type="raised" label="Open Drawer" />
+              </main>
             </div>
         );
     }

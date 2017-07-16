@@ -17,17 +17,21 @@ class MDCTemporaryDrawer extends MDCTemporaryDrawerFoundation {
                 bodyClasses: bodyClasses.remove(className),
             })),
             hasNecessaryDom: () => true,
-            registerInteractionHandler: (type, handler) => root.setState({
-                [`root${type}`]: handler,
+            registerInteractionHandler: (evt, handler) => root.setState({
+                [`root${evt}`]: handler,
 
             }),
-            deregisterInteractionHandler: (type, handler) => root.setState({
-                [`root${type}`]: handler,
+            deregisterInteractionHandler: (evt, handler) => root.setState({
+                [`root${evt}`]: handler,
             }),
-            registerDrawerInteractionHandler: (evt, handler) => console.log('registerDrawerInteractionHandler', evt, handler),
-            deregisterDrawerInteractionHandler: (evt, handler) => console.log('deregisterDrawerInteractionHandler', evt, handler),
-            registerTransitionEndHandler: handler => console.log('registerTransitionEndHandler', handler),
-            deregisterTransitionEndHandler: handler => console.log('deregisterTransitionEndHandler', handler),
+            registerDrawerInteractionHandler: (evt, handler) => root.setState({
+                [`drawer${evt}`]: handler,
+            }),
+            deregisterDrawerInteractionHandler: (evt, handler) => root.setState({
+                [`drawer${evt}`]: handler,
+            }),
+            registerTransitionEndHandler: handler => root.drawerContainer.addEventListener('transitionend', handler),
+            deregisterTransitionEndHandler: handler => root.drawerContainer.removeEventListener('transitionend', handler),
             registerDocumentKeydownHandler: handler => document.addEventListener('keydown', handler),
             deregisterDocumentKeydownHandler: handler => document.removeEventListener('keydown', handler),
             getDrawerWidth: () => {}, // console.log('getDrawerWidth'),

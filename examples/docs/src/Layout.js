@@ -1,14 +1,16 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
-import { Dialog, Drawer, DrawerContent, DrawerHeader, DrawerSpacer, IconButton, List, ListItem, Textfield, Toolbar } from '../../../components/react-material-design';
+import { Dialog, Drawer, DrawerContent, DrawerHeader, DrawerSpacer, IconButton, List, ListItem, PersistentDrawer, Textfield, Toolbar } from '../../../components/react-material-design';
 import Buttons from './Containers/Buttons';
 import Cards from './Containers/Cards';
 import Dialogs from './Containers/Dialogs';
+import GettingStarted from './Containers/GettingStarted';
 import GridLists from './Containers/GridLists';
 import LayoutGrids from './Containers/LayoutGrids';
 import Lists from './Containers/Lists';
 import Menus from './Containers/Menus';
 import ProgressActivty from './Containers/ProgressActivity';
+import Root from './Containers/Root';
 import SelectionControls from './Containers/SelectionControls';
 import SnackbarsToasts from './Containers/SnackbarsToasts';
 import Tabs from './Containers/Tabs';
@@ -36,10 +38,26 @@ const Layout = ({ location }) => {
     return (<div>
         <Toolbar
             fixed
-            leftElements={<IconButton primary icon="menu" />}
+            leftElements={<IconButton primary icon="menu" onClick={() => this.drawer.openDrawer()} />}
             title={breadCrumbs.join(' – ')}
             rightElements={<Textfield primary label="Search" />}
         />
+        <PersistentDrawer ref={(c) => { this.drawer = c; }}>
+            <DrawerHeader type="persistent">Header content goes here</DrawerHeader>
+            <DrawerContent type="persistent">
+                <a className="mdc-list-item mdc-temporary-drawer--selected" href="#">
+                    <i className="material-icons mdc-list-item__start-detail" aria-hidden="true">inbox</i>Inbox
+                </a>
+                <DrawerSpacer />
+                <a className="mdc-list-item" href="#">
+                    <i className="material-icons mdc-list-item__start-detail" aria-hidden="true">star</i>Star
+                </a>
+                <DrawerSpacer>I have content</DrawerSpacer>
+                <a className="mdc-list-item" href="#">
+                    <i className="material-icons mdc-list-item__start-detail" aria-hidden="true">star</i>Star
+                </a>
+            </DrawerContent>
+        </PersistentDrawer>
         <section
             className="content mdc-toolbar-fixed-adjust"
             style={contentStyles}
@@ -54,7 +72,7 @@ const Layout = ({ location }) => {
                     <h3>Components</h3>
                     <List>
                         <ListItem to="/components/grid-lists" value="Grid Lists" />
-                        <ListItem to="/components/dialogs" value="Dialogs" />
+                        {/* <ListItem to="/components/dialogs" value="Dialogs" /> */}
                         <ListItem to="/components/buttons" value="Buttons" />
                         <ListItem to="/components/cards" value="Cards" />
                         <ListItem to="/components/lists" value="Lists" />
@@ -78,7 +96,8 @@ const Layout = ({ location }) => {
                 </DrawerContent>
             </Drawer>
             <main style={mainStyles}>
-                <Route exact path="/" render={() => <div><h1>Welcome</h1></div>} />
+                <Route exact path="/" component={Root} />
+                <Route path="/setup/getting-started" component={GettingStarted} />
                 <Route path="/components/grid-lists" component={GridLists} />
                 <Route path="/components/dialogs" component={Dialogs} />
                 <Route path="/components/buttons" component={Buttons} />

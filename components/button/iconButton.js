@@ -4,11 +4,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-const IconButton = ({ icon, primary }) =>
+const IconButton = ({ icon, primary, onClick }) =>
     (<i
         className={classNames('mdc-icon-toggle', 'material-icons', { 'mdc-theme--text-primary-on-primary': primary })}
         role="button"
-    >
+        onClick={onClick}
+     >
         {icon}
     </i>);
 IconButton.propTypes = {
