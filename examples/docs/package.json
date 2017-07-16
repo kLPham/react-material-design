@@ -25,7 +25,7 @@
   "dependencies": {
     "history": "^4.5.1",
     "json-loader": "^0.5.4",
-    "material-components-web": "^0.10.0",
+    "material-components-web": "^0.13.0",
     "prop-types": "^15.5.10",
     "raw-loader": "^0.5.1",
     "react": "^15.5.4",

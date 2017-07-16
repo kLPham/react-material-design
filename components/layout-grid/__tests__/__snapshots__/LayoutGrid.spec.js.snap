@@ -4,6 +4,73 @@ exports[`<LayoutGrid /> should render 1`] = `
 <div
   className="mdc-layout-grid"
 >
-  <LayoutGridCell />
+  <div
+    className="mdc-layout-grid__inner"
+  >
+    <LayoutGridCell />
+  </div>
 </div>
+`;
+
+exports[`<LayoutGrid /> should render nested 1`] = `
+<LayoutGrid>
+  <div
+    className="mdc-layout-grid"
+  >
+    <div
+      className="mdc-layout-grid__inner"
+    >
+      <LayoutGridCell>
+        <div
+          className="mdc-layout-grid__cell"
+        >
+          <LayoutGrid
+            nested={true}
+          >
+            <div
+              className="mdc-layout-grid__inner"
+            >
+              <LayoutGridCell>
+                <div
+                  className="mdc-layout-grid__cell"
+                >
+                  <div>
+                    Second Level
+                  </div>
+                </div>
+              </LayoutGridCell>
+              <LayoutGridCell>
+                <div
+                  className="mdc-layout-grid__cell"
+                >
+                  <div>
+                    Second Level
+                  </div>
+                </div>
+              </LayoutGridCell>
+            </div>
+          </LayoutGrid>
+        </div>
+      </LayoutGridCell>
+      <LayoutGridCell>
+        <div
+          className="mdc-layout-grid__cell"
+        >
+          <div>
+            First Level
+          </div>
+        </div>
+      </LayoutGridCell>
+      <LayoutGridCell>
+        <div
+          className="mdc-layout-grid__cell"
+        >
+          <div>
+            First Level
+          </div>
+        </div>
+      </LayoutGridCell>
+    </div>
+  </div>
+</LayoutGrid>
 `;

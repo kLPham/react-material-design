@@ -20,20 +20,9 @@ export const cardMediaItemcssClasses = {
     2: 'mdc-card__media-item--2x',
     3: 'mdc-card__media-item--3x',
 };
-export const layoutGridCellcssClasses = {
-    2: 'mdc-layout-grid__cell--span-2',
-    4: 'mdc-layout-grid__cell--span-4',
-    6: 'mdc-layout-grid__cell--span-6',
-    top: 'mdc-layout-grid__cell--align-top',
-    middle: 'mdc-layout-grid__cell--align-middle',
-    bottom: 'mdc-layout-grid__cell--align-bottom',
-};
 export const iconcssClasses = {
     primary: 'mdc-icon-toggle--primary',
     accent: 'mdc-icon-toggle--accent',
-};
-export const drawerHeadercssClasses = {
-    primary: 'mdc-theme--primary-bg mdc-theme--text-primary-on-primary',
 };
 export const textfieldcssClasses = {
     primary: 'mdc-theme--primary-bg mdc-theme--text-primary-on-primary',

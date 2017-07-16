@@ -9,19 +9,26 @@ describe('<LayoutGridCell />', () => {
     );
         expect(layoutGridCell).toMatchSnapshot();
     });
-    it('should render with span', () => {
-        const span = 2;
+    it('should render with columnSpan', () => {
+        const columnSpan = 2;
         const layoutGridCell = shallow(
-            <LayoutGridCell span={span} />,
+            <LayoutGridCell columnSpan={columnSpan} />,
     );
         expect(layoutGridCell).toMatchSnapshot();
     });
     it('should render with alignment', () => {
-        const span = 2;
-        const alignment = 'middle';
+        const alignment = 'top';
         const layoutGridCell = shallow(
-            <LayoutGridCell span={span} alignment={alignment} />,
+            <LayoutGridCell alignment={alignment} />,
     );
+        expect(layoutGridCell).toMatchSnapshot();
+    });
+    it('should render with screenSize', () => {
+        const columnSpan = 2;
+        const screenSize = 'tablet';
+        const layoutGridCell = shallow(
+            <LayoutGridCell columnSpan={columnSpan} screenSize={screenSize} />,
+      );
         expect(layoutGridCell).toMatchSnapshot();
     });
 });

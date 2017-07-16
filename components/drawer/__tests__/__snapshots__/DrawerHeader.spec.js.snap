@@ -2,10 +2,10 @@
 
 exports[`<DrawerHeader /> should render 1`] = `
 <header
-  className="mdc-persistent-drawer__header"
+  className="mdc-temporary-drawer__header"
 >
   <div
-    className="mdc-persistent-drawer__header-content"
+    className="mdc-temporary-drawer__header-content"
   >
     Text
   </div>
@@ -14,10 +14,10 @@ exports[`<DrawerHeader /> should render 1`] = `
 
 exports[`<DrawerHeader /> should render primary 1`] = `
 <header
-  className="mdc-persistent-drawer__header"
+  className="mdc-temporary-drawer__header"
 >
   <div
-    className="mdc-persistent-drawer__header-content mdc-theme--primary-bg mdc-theme--text-primary-on-primary"
+    className="mdc-temporary-drawer__header-content mdc-theme--primary-bg mdc-theme--text-primary-on-primary"
   >
     Text
   </div>

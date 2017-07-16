@@ -8,12 +8,18 @@ exports[`<LayoutGridCell /> should render 1`] = `
 
 exports[`<LayoutGridCell /> should render with alignment 1`] = `
 <div
-  className="mdc-layout-grid__cell mdc-layout-grid__cell--span-2 mdc-layout-grid__cell--align-middle"
+  className="mdc-layout-grid__cell mdc-layout-grid__cell--align-top"
 />
 `;
 
-exports[`<LayoutGridCell /> should render with span 1`] = `
+exports[`<LayoutGridCell /> should render with columnSpan 1`] = `
 <div
   className="mdc-layout-grid__cell mdc-layout-grid__cell--span-2"
+/>
+`;
+
+exports[`<LayoutGridCell /> should render with screenSize 1`] = `
+<div
+  className="mdc-layout-grid__cell mdc-layout-grid__cell--span-2 mdc-layout-grid__cell--span-2-tablet"
 />
 `;
