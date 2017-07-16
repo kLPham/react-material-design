@@ -24,9 +24,6 @@ export const iconcssClasses = {
     primary: 'mdc-icon-toggle--primary',
     accent: 'mdc-icon-toggle--accent',
 };
-export const drawerHeadercssClasses = {
-    primary: 'mdc-theme--primary-bg mdc-theme--text-primary-on-primary',
-};
 export const textfieldcssClasses = {
     primary: 'mdc-theme--primary-bg mdc-theme--text-primary-on-primary',
 };

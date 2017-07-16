@@ -2,12 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import '@material/drawer/dist/mdc.drawer.css';
-import { drawerHeadercssClasses } from '../classes';
 
 // TODO: what do you want header to be able to be?
-const DrawerHeader = ({ children, primary }) =>
-    (<header className="mdc-persistent-drawer__header">
-        <div className={classNames('mdc-persistent-drawer__header-content', primary && drawerHeadercssClasses.primary)}>
+const DrawerHeader = ({ children, primary, type }) =>
+    (<header className={`mdc-${type}-drawer__header`}>
+        <div className={classNames(`mdc-${type}-drawer__header-content`, { 'mdc-theme--primary-bg mdc-theme--text-primary-on-primary': primary })}>
             {children}
         </div>
     </header>);
@@ -15,5 +14,9 @@ const DrawerHeader = ({ children, primary }) =>
 DrawerHeader.propTypes = {
     children: PropTypes.any.isRequired,
     primary: PropTypes.bool,
+    type: PropTypes.oneOf(['temporary', 'persistent']),
+};
+DrawerHeader.defaultProps = {
+    type: 'temporary',
 };
 export default DrawerHeader;

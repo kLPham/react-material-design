@@ -2,7 +2,7 @@
 
 exports[`<DrawerContent /> should render 1`] = `
 <nav
-  className="mdc-permanent-drawer__content mdc-list"
+  className="mdc-temporary-drawer__content"
   id="icon-with-text-demo"
 >
   Text

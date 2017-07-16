@@ -4,11 +4,15 @@ import '@material/drawer/dist/mdc.drawer.css';
 
 // TODO: HOC: I'd like to use existing list-item and feed it mdc-temporary-drawer--* classes.
 
-const DrawerContent = ({ children }) =>
-    (<nav id="icon-with-text-demo" className="mdc-permanent-drawer__content mdc-list">
+const DrawerContent = ({ children, type }) =>
+    (<nav id="icon-with-text-demo" className={`mdc-${type}-drawer__content`}>
         {children}
     </nav>);
 DrawerContent.propTypes = {
     children: PropTypes.any.isRequired,
+    type: PropTypes.oneOf(['temporary', 'permanent', 'persistent']),
+};
+DrawerContent.defaultProps = {
+    type: 'temporary',
 };
 export default DrawerContent;
