@@ -2,6 +2,6 @@
 
 exports[`<DrawerSpacer /> should render 1`] = `
 <div
-  className="mdc-persistent-drawer__toolbar-spacer"
+  className="mdc-temporary-drawer__toolbar-spacer"
 />
 `;

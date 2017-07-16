@@ -1,5 +1,6 @@
-import React, { PureComponent } from 'react';
 import '@material/drawer/dist/mdc.drawer.css';
+import PropTypes from 'prop-types';
+import React, { PureComponent } from 'react';
 import classNames from 'classnames';
 import { Set as ImmutableSet } from 'immutable';
 import MDCTemporaryDrawer from './component';
@@ -8,9 +9,13 @@ import MDCTemporaryDrawer from './component';
 // TODO: this.foundation.open() from other elements.
 // TODO: I'd like to see an implementation of mini to persistent.
 class PersistentDrawer extends PureComponent {
+    static propTypes = {
+        children: PropTypes.any,
+    }
     constructor(props) {
         super(props);
         this.state = {
+            bodyClasses: new ImmutableSet(),
             classes: new ImmutableSet().add('mdc-persistent-drawer'),
         };
     }
@@ -31,7 +36,7 @@ class PersistentDrawer extends PureComponent {
         console.log('isOpen', this.foundation.isOpen());
     }
     render() {
-        const { classes, rootclick, roottouchmove, roottouchend, drawerclick, drawertouchstart } = this.state;
+        const { bodyClasses, classes, drawerclick, drawertouchstart, rootclick, roottouchend, roottouchmove } = this.state;
         const { children } = this.props;
         return (
             <aside
@@ -41,7 +46,7 @@ class PersistentDrawer extends PureComponent {
                 className={classNames('mdc-typography', classes.toJS().join(' '))}
             >
                 <nav
-                    className="mdc-persistent-drawer__drawer"
+                    className={classNames('mdc-persistent-drawer__drawer', bodyClasses.toJS().join(' '))}
                     onClick={drawerclick}
                     onTouchStart={drawertouchstart}
                 >

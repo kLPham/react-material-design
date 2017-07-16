@@ -15,13 +15,16 @@ import Tabs from './Containers/Tabs';
 import Textfields from './Containers/Textfields';
 import Navigation from './Containers/Navigation';
 
-const styles = {
-  //  boxSizing: 'border-box',
+const contentStyles = {
     display: 'flex',
-    height: '100vh',
+    flex: '1 1 auto',
+    height: '100%',
+    boxSizing: 'border-box',
 };
-
-// TODO: Drawer to scroll if out of view.
+const mainStyles = {
+    paddingLeft: '16px',
+    display: 'block',
+};
 
 const Layout = ({ location }) => {
     const reg = /\/|\-/g;
@@ -38,20 +41,17 @@ const Layout = ({ location }) => {
             rightElements={<Textfield primary label="Search" />}
         />
         <section
-            className="content"
-            style={styles}
+            className="content mdc-toolbar-fixed-adjust"
+            style={contentStyles}
         >
-            <Drawer>
-                <DrawerHeader primary>React Material Design</DrawerHeader>
-                {/* <h3>Setup</h3>
-                    <DrawerContent>
+            <Drawer type="permanent">
+                <DrawerContent type="permanent">
+                    <h3>Setup</h3>
                     <List>
                         <ListItem to="/setup/getting-started/" value="Getting Started" />
                     </List>
-                    </DrawerContent>
-                <DrawerSpacer /> */}
-                <h3>Components</h3>
-                <DrawerContent>
+                    <DrawerSpacer type="permanent" />
+                    <h3>Components</h3>
                     <List>
                         <ListItem to="/components/grid-lists" value="Grid Lists" />
                         <ListItem to="/components/dialogs" value="Dialogs" />
@@ -64,19 +64,21 @@ const Layout = ({ location }) => {
                         <ListItem to="/components/textfields" value="Textfields" />
                         <ListItem to="/components/tabs" value="Tabs" />
                         <ListItem to="/components/progress-activity" value="Progress and Activity" />
+                    </List>
+                    <DrawerSpacer type="permanent" />
+                    <h3>Layout</h3>
+                    <List>
                         <ListItem to="/layout/responsive-ui-grid" value="Responsive UI" />
                     </List>
-                </DrawerContent>
-                <DrawerSpacer />
-                <h3>Patterns</h3>
-                <DrawerContent>
+                    <DrawerSpacer type="permanent" />
+                    <h3>Patterns</h3>
                     <List>
                         <ListItem to="/patterns/navigation" value="Navigation" />
                     </List>
                 </DrawerContent>
             </Drawer>
-            <main style={{ paddingLeft: '16px', maxWidth: '84vw' }}>
-                <Route exact path="/" render={() => <div><h1>Welcome</h1><Dialog /></div>} />
+            <main style={mainStyles}>
+                <Route exact path="/" render={() => <div><h1>Welcome</h1></div>} />
                 <Route path="/components/grid-lists" component={GridLists} />
                 <Route path="/components/dialogs" component={Dialogs} />
                 <Route path="/components/buttons" component={Buttons} />
