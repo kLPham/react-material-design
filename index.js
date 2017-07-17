@@ -1,1 +1,1 @@
-module.exports = require('./build/rmd');
+module.exports = require('./build/rmd.min');

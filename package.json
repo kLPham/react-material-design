@@ -1,6 +1,6 @@
 {
     "name": "react-material-design",
-    "version": "0.2.1",
+    "version": "0.2.3",
     "description": "react material-components",
     "main": "index.js",
     "contributors": [
@@ -39,7 +39,7 @@
         "dist": "yarn cleanup && yarn build && yarn build:min",
         "docgen": "react-docgen ./components --pretty -o output.json -e component.js -e react-material-design.js -i classes",
         "lint": "eslint components --ext .js",
-        "prepublish": "yarn dist",
+        "prepare": "yarn dist",
         "test": "jest",
         "test:coverage": "jest --coverage"
     },
