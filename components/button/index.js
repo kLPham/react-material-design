@@ -10,7 +10,7 @@ const cx = classNames.bind(buttoncssClasses);
 /**
 * Flat and Raised Buttons
 */
-const Button = ({ label, disabled, ripple, onClick, ...rest }) =>
+const Button = ({ children, label, disabled, ripple, onClick, ...rest }) =>
     (<button
         className={cx('mdc-button', ...Object.keys(rest).map(modifier =>
             buttoncssClasses[modifier],
@@ -18,8 +18,9 @@ const Button = ({ label, disabled, ripple, onClick, ...rest }) =>
         data-mdc-auto-init={ripple && 'MDCRipple'}
         disabled={disabled}
         onClick={onClick}
-    >
+     >
         {label}
+        {children}
     </button>);
 
 Button.propTypes = {

@@ -22,12 +22,12 @@ class Menu extends PureComponent {
             PropTypes.arrayOf(PropTypes.element),
             PropTypes.element,
         ]).isRequired,
-        disabled: PropTypes.bool,
-        label: PropTypes.string.isRequired,
+        parentLabel: PropTypes.string.isRequired,
     };
     state = {
         classes: new ImmutableSet().add('mdc-simple-menu'),
         selectedItem: null,
+        saveFocus: null,
     }
     componentDidMount() {
         this.foundation = new MDCSimpleMenu(this);
@@ -41,32 +41,24 @@ class Menu extends PureComponent {
         // this.menu.open = !open;
     };
     render() {
-        const { children, disabled, label } = this.props;
+        const { children, parentLabel, ...rest } = this.props;
         const { classes, click, keydown, keyup, onClick } = this.state;
         return (
-            <div
-                ref={(d) => { this.documentRoot = d; }}
-                onClick={onClick}
-            >
-                <Button
-
-                    disabled={disabled}
-                    onClick={this.handleClick}
-                    label={label}
-                />
+            <div>
+                <Button className="mdc-menu-anchor" label={parentLabel} onClick={() => this.handleClick()} {...rest} />
                 <div
-                    ref={(d) => { this.mainRoot = d; }}
                     className={classNames(classes.toJS().join(' '))}
+                    onClick={click}
                     onKeyDown={keydown}
                     onKeyUp={keyup}
-                    onClick={click}
+                    ref={(d) => { this.mainRoot = d; }}
                     tabIndex="-1"
                 >
                     <ul
-                        className="mdc-simple-menu__items mdc-list"
-                        ref={(d) => { this.itemContainer = d; }}
-                        role="menu"
                         aria-hidden="true"
+                        className="mdc-simple-menu__items mdc-list"
+                        ref={(d) => { this.itemsContainer = d; }}
+                        role="menu"
                     >
                         {children}
                     </ul>
