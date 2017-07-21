@@ -21,7 +21,7 @@ exports[`<Select /> should render 1`] = `
     >
       <li
         aria-selected={true}
-        className="mdc-lismt-item"
+        className="mdc-list-item"
         id="grains"
         role="option"
         tabIndex="0"
@@ -30,7 +30,7 @@ exports[`<Select /> should render 1`] = `
       </li>
       <li
         aria-selected={true}
-        className="mdc-list-,item"
+        className="mdc-list-item"
         id="vegetables"
         role="option"
         tabIndex="0"

@@ -3,8 +3,8 @@ import { parse } from 'react-docgen';
 import CodeToggle from 'react-code-toggle';
 import { Button, Card, CardActions, CardMedia, CardMediaItem, CardSupportingContent, CardTitle } from '../../../../components/react-material-design';
 // import { Button, Card, CardActions, CardMedia, CardMediaItem, CardSupportingContent, CardTitle } from 'react-material-design';
-const corgiPic = 'http://cdn3-www.dogtime.com/assets/uploads/gallery/pembroke-welsh-corgi-dog-breed-pictures/prance-8.jpg';
-const brightPic = 'http://www.publicdomainpictures.net/pictures/190000/velka/bright-pastels-abstract-background.jpg';
+const corgiPic = 'https://static.pexels.com/photos/58997/pexels-photo-58997.jpeg';
+const brightPic = 'https://static.pexels.com/photos/311039/pexels-photo-311039.jpeg';
 const styles1 ={
   maxWidth: '50vw',
   marginBottom:'30px'

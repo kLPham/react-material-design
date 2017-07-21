@@ -16,10 +16,13 @@ class Dialog extends PureComponent {
     }
     componentDidMount() {
         this.foundation = new MDCDialog(this);
-        this.foundation.open();
+        // this.foundation.open();
     }
     componentWillUnmount() {
         this.foundation.destroy();
+    }
+    handleOpen() {
+      this.foundation.open();
     }
     render() {
         const { classes, classesBody, rootclick, surfaceclick, styles } = this.state;
@@ -33,7 +36,11 @@ class Dialog extends PureComponent {
                 aria-labelledby="my-mdc-dialog-label"
                 aria-describedby="my-mdc-dialog-description"
             >
-                <div className="mdc-dialog__surface" onClick={surfaceclick}>
+                <div
+                    className="mdc-dialog__surface"
+                    onClick={surfaceclick}
+                    ref={(d) => {this.dialogSurface = d;}}
+                >
                     <header className="mdc-dialog__header">
                         <h2 id="my-mdc-dialog-label" className="mdc-dialog__header__title">
                             Use Googles location service?

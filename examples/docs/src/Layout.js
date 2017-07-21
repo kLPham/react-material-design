@@ -72,7 +72,7 @@ const Layout = ({ location }) => {
                     <h3>Components</h3>
                     <List>
                         <ListItem to="/components/grid-lists" value="Grid Lists" />
-                        {/* <ListItem to="/components/dialogs" value="Dialogs" /> */}
+                        <ListItem to="/components/dialogs" value="Dialogs" />
                         <ListItem to="/components/buttons" value="Buttons" />
                         <ListItem to="/components/cards" value="Cards" />
                         <ListItem to="/components/lists" value="Lists" />

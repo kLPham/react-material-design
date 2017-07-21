@@ -20,7 +20,7 @@ export default class MDCDialog extends MDCDialogFoundation {
             removeBodyClass: className => root.setState(prevState => ({
                 classesBody: prevState.classesBody.remove(className),
             })),
-            eventTargetHasClass: (target, className) => console.log('eventTargetHasClass', target, className),
+            eventTargetHasClass: (target, className) => target.classList.contains(className),
             registerInteractionHandler: (evt, handler) => root.setState({
                 [`root${evt}`]: handler,
             }),
@@ -28,9 +28,13 @@ export default class MDCDialog extends MDCDialogFoundation {
             registerSurfaceInteractionHandler: (evt, handler) => root.setState({
                 [`surface${evt}`]: handler,
             }),
-            deregisterSurfaceInteractionHandler: (evt, handler) => console.log('deregisterSurfaceInteractionHandler', evt, handler),
+            deregisterSurfaceInteractionHandler: (evt, handler) => root.setState({
+                [`surface${evt}`]: handler,
+            }),
             registerDocumentKeydownHandler: handler => document.addEventListener('keydown', handler),
             deregisterDocumentKeydownHandler: handler => document.removeEventListener('keydown', handler),
+            registerTransitionEndHandler: handler => root.dialogSurface.addEventListener('transitionend', handler),
+            deregisterTransitionEndHandler: handler => root.dialogSurface.removeEventListener('transitionend', handler),
             notifyAccept: () => console.log('notifyAccept'),
             notifyCancel: () => console.log('notifyCancel'),
             trapFocusOnSurface: () => console.log('trapFocusOnSurface'),

@@ -44,9 +44,9 @@ const Lists = () =>
         <h2>Avatar</h2>
         <CodeToggle>
             <List>
-                <ListItem avatarSrc="http://4vector.com/i/free-vector-george-washington-clip-art_108422_George_Washington_clip_art_hight.png" value="George Washington" />
+                <ListItem avatarSrc="https://www.goodfreephotos.com/albums/vector-images/george-washington-portrait.png" value="George Washington" />
                 <ListItem avatarSrc="https://www.goodfreephotos.com/albums/vector-images/abraham-lincoln-vector-clipart.png" value="Abraham Lincoln" />
-                <ListItem avatarSrc="http://png-4.vector.me/files/images/4/4/448988/marco_simoncelli_vector_portrait_thumb.gif" value="Marco Simoncelli" />
+                <ListItem avatarSrc="https://www.goodfreephotos.com/albums/people/theodore-roosevelt-portrait.jpg" value="Theodore Roosevelt" />
             </List>
         </CodeToggle>
         <h2>Right Icon</h2>
@@ -61,7 +61,7 @@ const Lists = () =>
             <List>
                 <ListItem iconRight="favorite" rightTitle="Add to favorites" value="Janet Perkins" />
                 <ListItem avatarSrc="https://www.goodfreephotos.com/albums/vector-images/abraham-lincoln-vector-clipart.png" value="Mary Johnson" />
-                <ListItem iconRight="favorite_border" avatarSrc="http://png-4.vector.me/files/images/4/4/448988/marco_simoncelli_vector_portrait_thumb.gif" value="Marco Simoncelli" />
+                <ListItem iconRight="favorite_border" avatarSrc="https://www.goodfreephotos.com/albums/people/theodore-roosevelt-portrait.jpg" value="Theodore Roosevelt" />
             </List>
         </CodeToggle>
         <h2>List Dividers and inset</h2>

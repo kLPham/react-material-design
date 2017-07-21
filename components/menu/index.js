@@ -57,7 +57,7 @@ class Menu extends PureComponent {
                     <ul
                         aria-hidden="true"
                         className="mdc-simple-menu__items mdc-list"
-                        ref={(d) => { this.itemsContainer = d; }}
+                        ref={(u) => { this.itemsContainer = u; }}
                         role="menu"
                     >
                         {children}

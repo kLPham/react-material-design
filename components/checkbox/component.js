@@ -30,7 +30,7 @@ export default class MDCCheckbox extends MDCCheckboxFoundation {
                 indeterminate: root.state.indeterminate,
                 disabled: root.state.disabled,
             }),
-            forceLayout: () => console.log('forceLayout'), // this.root_.nativeCb.offsetWidth,
+            forceLayout: () => this.root_.offsetWidth,
             isAttachedToDOM: () => Boolean(this.root_),
         });
     }

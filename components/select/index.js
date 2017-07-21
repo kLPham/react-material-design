@@ -20,8 +20,8 @@ class Select extends PureComponent {
     componentDidMount() {
         this.foundation = new MDCSelect(this);
         this.foundation.init();
-        this.menuRoot.addEventListener('MDCSimpleMenu:selected', this.state['MDCSimpleMenu:selected']);
-        this.menuRoot.addEventListener('MDCSimpleMenu:cancel', this.state['MDCSimpleMenu:cancel']);
+        this.menuEl.addEventListener('MDCSimpleMenu:selected', this.state['MDCSimpleMenu:selected']);
+        this.menuEl.addEventListener('MDCSimpleMenu:cancel', this.state['MDCSimpleMenu:cancel']);
     }
     componeWillUnmount() {
         this.foundation.destroy();
@@ -45,15 +45,16 @@ class Select extends PureComponent {
                     className={classNames('mdc-simple-menu', 'mdc-select__menu', menuClasses.toJS().join(' '))}
                     {...menuElAttr.toJS()}
                     style={menuElStyle.toJS()}
-                    ref={(d) => { this.menuRoot = d; }}
+                    ref={(d) => { this.menuEl = d; }}
                 >
                     <ul
                         className="mdc-list mdc-simple-menu__items"
+                        ref={(u) => { this.itemsContainer = u; }}
                     >
-                        <li className="mdc-lismt-item" aria-selected role="option" id="grains" tabIndex="0">
+                        <li className="mdc-list-item" aria-selected role="option" id="grains" tabIndex="0">
                             Bread, Cereal, Rice, and Pasta
                         </li>
-                        <li className="mdc-list-,item" aria-selected role="option" id="vegetables" tabIndex="0">
+                        <li className="mdc-list-item" aria-selected role="option" id="vegetables" tabIndex="0">
                             Vegetables
                         </li>
                         <li className="mdc-list-item" aria-selected role="option" id="fruit" tabIndex="0">
