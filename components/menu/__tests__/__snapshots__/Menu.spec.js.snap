@@ -3,6 +3,7 @@
 exports[`<Menu /> should render 1`] = `
 <div>
   <Button
+    className="mdc-menu-anchor"
     label="Clickie"
     onClick={[Function]}
   />
@@ -26,6 +27,7 @@ exports[`<Menu /> should render 1`] = `
 exports[`<Menu /> should render disabled 1`] = `
 <div>
   <Button
+    className="mdc-menu-anchor"
     disabled={true}
     label="Clickie"
     onClick={[Function]}

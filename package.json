@@ -60,12 +60,12 @@
         "react": "^15.6.1",
         "react-docgen": "^2.16.0",
         "react-dom": "^15.6.1",
-        "react-router-dom": "^4.1.1",
+        "react-router-dom": "^4.1.2",
         "react-test-renderer": "^15.6.1",
         "rimraf": "^2.6.1",
         "style-loader": "^0.18.2",
         "uuid": "^3.1.0",
-        "webpack": "^3.2.0"
+        "webpack": "^3.3.0"
     },
     "devDependencies": {
         "babel-jest": "^20.0.3",
@@ -83,7 +83,7 @@
         "eslint-plugin-react": "^7.1.0",
         "identity-obj-proxy": "^3.0.0",
         "jest": "^20.0.4",
-        "jest-enzyme": "^3.5.3",
+        "jest-enzyme": "^3.6.0",
         "react-addons-test-utils": "^15.6.0"
     },
     "jest": {

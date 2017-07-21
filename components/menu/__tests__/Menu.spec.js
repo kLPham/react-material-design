@@ -5,19 +5,19 @@ import MenuItem from '../menuItem';
 
 describe('<Menu />', () => {
     it('should render', () => {
-        const label = 'Clickie';
+        const parentLabel = 'Clickie';
         const menu = shallow(
-            <Menu label={label}>
+            <Menu parentLabel={parentLabel}>
                 <MenuItem value="One" />
             </Menu>,
     );
         expect(menu).toMatchSnapshot();
     });
     it('should render disabled', () => {
-        const label = 'Clickie';
+        const parentLabel = 'Clickie';
         const disabled = true;
         const menu = shallow(
-            <Menu label={label} disabled={disabled}>
+            <Menu parentLabel={parentLabel} disabled={disabled}>
                 <MenuItem value="One" />
                 <MenuItem value="Two" />
             </Menu>,
