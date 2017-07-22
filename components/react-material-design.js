@@ -29,6 +29,7 @@ import PersistentDrawer from './drawer/persistentDrawer';
 import Radio from './radio';
 import Select from './select';
 import Snackbar from './snackbar';
+import Slider from './slider';
 import Switch from './switch';
 import Tab from './tabs/tab';
 import Tabs from './tabs';
@@ -68,6 +69,7 @@ module.exports = {
     Radio,
     Select,
     Snackbar,
+    Slider,
     Switch,
     Tab,
     Tabs,
