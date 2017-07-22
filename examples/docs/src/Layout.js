@@ -13,6 +13,7 @@ import ProgressActivty from './Containers/ProgressActivity';
 import Root from './Containers/Root';
 import SelectionControls from './Containers/SelectionControls';
 import SnackbarsToasts from './Containers/SnackbarsToasts';
+import Sliders from './Containers/Sliders';
 import Tabs from './Containers/Tabs';
 import Textfields from './Containers/Textfields';
 import Navigation from './Containers/Navigation';
@@ -79,6 +80,7 @@ const Layout = ({ location }) => {
                         <ListItem to="/components/menus" value="Menus" />
                         <ListItem to="/components/selection-controls" value="Selection Controls" />
                         <ListItem to="/components/snackbars-toasts" value="Snackbars and Toasts" />
+                        <ListItem to="/components/sliders" value="Sliders" />
                         <ListItem to="/components/textfields" value="Textfields" />
                         <ListItem to="/components/tabs" value="Tabs" />
                         <ListItem to="/components/progress-activity" value="Progress and Activity" />
@@ -107,6 +109,7 @@ const Layout = ({ location }) => {
                 <Route path="/components/progress-activity" component={ProgressActivty} />
                 <Route path="/components/selection-controls" component={SelectionControls} />
                 <Route path="/components/snackbars-toasts" component={SnackbarsToasts} />
+                <Route path="/components/sliders" component={Sliders} />
                 <Route path="/components/tabs" component={Tabs} />
                 <Route path="/components/textfields" component={Textfields} />
                 <Route path="/patterns/navigation" component={Navigation} />
