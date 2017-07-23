@@ -25,7 +25,6 @@ import ListItem from './list/ListItem';
 import ListDivider from './list/ListDivider';
 import Menu from './menu';
 import MenuItem from './menu/menuItem';
-import PersistentDrawer from './drawer/persistentDrawer';
 import Radio from './radio';
 import Select from './select';
 import Snackbar from './snackbar';
@@ -65,7 +64,6 @@ module.exports = {
     ListDivider,
     Menu,
     MenuItem,
-    PersistentDrawer,
     Radio,
     Select,
     Snackbar,

@@ -1,7 +1,31 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Drawer /> should render 1`] = `
-<nav
+<aside
   className="mdc-temporary-drawer mdc-typography"
-/>
+>
+  <nav
+    className="mdc-temporary-drawer__drawer"
+  />
+</aside>
+`;
+
+exports[`<Drawer /> should render permanent 1`] = `
+<aside
+  className="mdc-permanent-drawer mdc-typography"
+>
+  <nav
+    className="mdc-permanent-drawer__drawer"
+  />
+</aside>
+`;
+
+exports[`<Drawer /> should render persistent 1`] = `
+<aside
+  className="mdc-persistent-drawer mdc-typography"
+>
+  <nav
+    className="mdc-persistent-drawer__drawer"
+  />
+</aside>
 `;
