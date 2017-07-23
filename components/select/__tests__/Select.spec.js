@@ -9,4 +9,11 @@ describe('<Select />', () => {
     );
         expect(select).toMatchSnapshot();
     });
+    it('should render disabled', () => {
+        const disable = true;
+        const select = shallow(
+            <Select disable={disable} />,
+      );
+        expect(select).toMatchSnapshot();
+    });
 });
