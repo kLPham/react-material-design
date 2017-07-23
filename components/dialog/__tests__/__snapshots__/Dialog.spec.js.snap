@@ -7,7 +7,6 @@ exports[`<Dialog /> should render 1`] = `
   className="mdc-dialog"
   id="my-mdc-dialog"
   role="alertdialog"
-  style={Object {}}
 >
   <div
     className="mdc-dialog__surface"
@@ -23,7 +22,7 @@ exports[`<Dialog /> should render 1`] = `
       </h2>
     </header>
     <section
-      className="mdc-dialog__body mdc-dialog__body--scrollable"
+      className="mdc-dialog__body"
       id="my-mdc-dialog-description"
     >
       Let Google help apps determine location. This means sending anonymous location data to Google, even when no apps are running.
@@ -33,6 +32,7 @@ exports[`<Dialog /> should render 1`] = `
     >
       <button
         className="mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--cancel"
+        onClick={[Function]}
         type="button"
       >
         Decline
