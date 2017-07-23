@@ -1,50 +1,33 @@
 import '@material/snackbar/dist/mdc.snackbar.css';
 import PropTypes from 'prop-types';
-import React, { PureComponent } from 'react';
-import classNames from 'classnames';
-import { Set as ImmutableSet } from 'immutable';
-import MDCSnackbar from './component';
+import React, { Component } from 'react';
+import { MDCSnackbar } from '@material/snackbar';
 
-class Snackbar extends PureComponent {
+class Snackbar extends Component {
     static propTypes = {
         visibleUntilTimeout: PropTypes.bool,
-    };
-    constructor(props) {
-        super(props);
-        this.state = {
-            classes: new ImmutableSet(),
-        };
     }
-    componentWillMount() {
+    componentDidMount() {
         const { visibleUntilTimeout } = this.props;
-        this.foundation = new MDCSnackbar(this);
-        this.foundation.init();
-        if (visibleUntilTimeout) {
-            this.foundation.setDismissOnAction(!visibleUntilTimeout);
-        }
+        this.snackbar = new MDCSnackbar(this.mainRoot);
+        this.snackbar.dismissesOnAction = visibleUntilTimeout;
     }
     showSnackbar(payload) {
-      // Error handling?
-        this.foundation.show(payload);
+        this.snackbar.show(payload);
     }
     render() {
-        const { actionText, actionAriaHidden, ariaHidden, classes, click, message } = this.state;
         return (
             <div
-                className={classNames('mdc-snackbar', classes.toJS().join(' '))}
+                ref={(d) => { this.mainRoot = d; }}
+                className="mdc-snackbar"
                 aria-live="assertive"
                 aria-atomic="true"
-                aria-hidden={ariaHidden}
-                ref={(d) => { this.documentRoot = d; }}
+                aria-hidden="true"
             >
-                <div className="mdc-snackbar__text">{message}</div>
-                {actionText && <div className="mdc-snackbar__action-wrapper" aria-hidden={actionAriaHidden}>
-                    <button
-                        type="button"
-                        onClick={click}
-                        className="mdc-button mdc-snackbar__action-button"
-                    >{actionText}</button>
-                </div>}
+                <div className="mdc-snackbar__text" />
+                <div className="mdc-snackbar__action-wrapper">
+                    <button type="button" className="mdc-button mdc-snackbar__action-button" />
+                </div>
             </div>
         );
     }

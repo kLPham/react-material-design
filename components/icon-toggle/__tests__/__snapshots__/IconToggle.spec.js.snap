@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<IconToggle /> should be able to render 1`] = `
+<i
+  aria-label="Add to favorites"
+  aria-pressed="false"
+  className="mdc-icon-toggle material-icons"
+  data-toggle-off="{\\"label\\": \\"Add to favorites\\", \\"content\\": \\"favorite_border\\"}"
+  data-toggle-on="{\\"label\\": \\"Remove from favorites\\", \\"content\\": \\"favorite\\"}"
+  role="button"
+  tabIndex="0"
+>
+  favorite_border
+</i>
+`;
+
+exports[`<IconToggle /> should render accent 1`] = `
+<i
+  aria-label="Add to favorites"
+  aria-pressed="false"
+  className="mdc-icon-toggle material-icons mdc-icon-toggle--accent"
+  data-toggle-off="{\\"label\\": \\"Add to favorites\\", \\"content\\": \\"favorite_border\\"}"
+  data-toggle-on="{\\"label\\": \\"Remove from favorites\\", \\"content\\": \\"favorite\\"}"
+  role="button"
+  tabIndex="0"
+>
+  favorite_border
+</i>
+`;
+
+exports[`<IconToggle /> should render disabled 1`] = `
+<i
+  aria-label="Add to favorites"
+  aria-pressed="false"
+  className="mdc-icon-toggle material-icons"
+  data-toggle-off="{\\"label\\": \\"Add to favorites\\", \\"content\\": \\"favorite_border\\"}"
+  data-toggle-on="{\\"label\\": \\"Remove from favorites\\", \\"content\\": \\"favorite\\"}"
+  role="button"
+  tabIndex="0"
+>
+  favorite_border
+</i>
+`;
+
+exports[`<IconToggle /> should render primary 1`] = `
+<i
+  aria-label="Add to favorites"
+  aria-pressed="false"
+  className="mdc-icon-toggle material-icons mdc-icon-toggle--primary"
+  data-toggle-off="{\\"label\\": \\"Add to favorites\\", \\"content\\": \\"favorite_border\\"}"
+  data-toggle-on="{\\"label\\": \\"Remove from favorites\\", \\"content\\": \\"favorite\\"}"
+  role="button"
+  tabIndex="0"
+>
+  favorite_border
+</i>
+`;
+
+exports[`<IconToggle /> shound render with custom icons 1`] = `
+<i
+  aria-label="Add to favorites"
+  aria-pressed="false"
+  className="mdc-icon-toggle material-icons"
+  data-toggle-off="{\\"label\\": \\"Add to favorites\\", \\"content\\": \\"star_border\\"}"
+  data-toggle-on="{\\"label\\": \\"Remove from favorites\\", \\"content\\": \\"star\\"}"
+  role="button"
+  tabIndex="0"
+>
+  favorite_border
+</i>
+`;

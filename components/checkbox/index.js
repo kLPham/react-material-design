@@ -1,99 +1,39 @@
 import '@material/checkbox/dist/mdc.checkbox.css';
-import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
-import { Set as ImmutableSet } from 'immutable';
+import React, { Component } from 'react';
+import { MDCCheckbox } from '@material/checkbox';
 import { v4 } from 'uuid';
-import FormField from '../formField';
-import MDCCheckbox from './component';
-// TODO: Indeterminate see: https://css-tricks.com/indeterminate-checkboxes/
-// TODO: removed controlid, when there are more checkboxes does this mess stuff up?
-class Checkbox extends PureComponent {
+
+// TODO: Align End
+class Checkbox extends Component {
     static propTypes = {
-        alignEnd: PropTypes.bool,
         checked: PropTypes.bool,
-        disabled: PropTypes.bool,
+        disable: PropTypes.bool,
         indeterminate: PropTypes.bool,
         label: PropTypes.string,
-        labelId: PropTypes.string,
-    };
-
-    static defaultProps = {
-        alignEnd: false,
-        checked: false,
-        disabled: false,
-        indeterminate: false,
-        label: '',
-    };
-    constructor(props) {
-        super(props);
-        const { checked, disabled, label } = props;
-        this.state = {
-            checked,
-            disabled,
-            classes: new ImmutableSet(),
-            label,
-        };
     }
     componentDidMount() {
-        this.foundation = new MDCCheckbox(this);
-        console.dir(MDCCheckbox);
-        console.dir(this.foundation);
-
-        this.foundation.init();
+        const { checked, disable, indeterminate } = this.props;
+        this.checkbox = new MDCCheckbox(this.mainRoot);
+        this.checkbox.foundation_.setDisabled(disable);
+        this.checkbox.foundation_.setChecked(checked);
+        this.checkbox.foundation_.setIndeterminate(indeterminate);
     }
-    componentWillReceiveProps(nextProps) {
-        const { checked, indeterminate } = this.props;
-        if (nextProps.checked !== checked) {
-            this.setState({
-                checked: nextProps.checked,
-                indeterminate: false,
-            });
-        }
-        if (nextProps.indeterminate !== indeterminate) {
-            this.setState({
-                indeterminate: nextProps.indeterminate,
-            });
-        }
-    }
-    componentDidUpdate() {
-        // if (this.nativeCb) {
-        //     this.nativeCb.indeterminate = this.state.indeterminate;
-        // }
-    }
-    componentWillUnmount() {
-        this.foundation.destroy();
-    }
-    handleChange = () => {
-        const checked = this.state.checked;
-        this.setState({
-            checked: !checked,
-            indeterminate: false,
-        });
-    };
     render() {
-        const { checked, disabled, label, classes } = this.state;
-        const { alignEnd, labelId } = this.props;
+        const { label } = this.props;
         const id = v4();
+
         return (
-            <FormField
-                alignEnd={alignEnd}
-            >
-                <div className={classNames('mdc-checkbox', classes.toJS().join(' '))}>
+            <div className="mdc-form-field">
+                <div ref={(d) => { this.mainRoot = d; }} className="mdc-checkbox">
                     <input
+                        className="mdc-checkbox__native-control"
                         id={`mdc-checkbox--${id}`}
                         type="checkbox"
-                        className="mdc-checkbox__native-control"
-                        aria-labelledby={labelId}
-                        disabled={disabled}
-                        checked={checked}
-                        onChange={() => this.handleChange()}
                     />
                     <div className="mdc-checkbox__background">
                         <svg
-                            version="1.1"
                             className="mdc-checkbox__checkmark"
-                            xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 24 24"
                         >
                             <path
@@ -106,8 +46,8 @@ class Checkbox extends PureComponent {
                         <div className="mdc-checkbox__mixedmark" />
                     </div>
                 </div>
-                <label htmlFor={`mdc-checkbox--${id}`} className="mdc-checkbox-label">{label}</label>
-            </FormField>
+                {label && <label htmlFor={`mdc-checkbox--${id}`}>{label}</label>}
+            </div>
         );
     }
 }

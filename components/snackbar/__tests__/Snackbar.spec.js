@@ -9,4 +9,11 @@ describe('<Snackbar />', () => {
     );
         expect(snackbar).toMatchSnapshot();
     });
+    it('should render visibleUntilTimeout', () => {
+        const visibleUntilTimeout = true;
+        const snackbar = shallow(
+            <Snackbar visibleUntilTimeout={visibleUntilTimeout} />,
+      );
+        expect(snackbar).toMatchSnapshot();
+    });
 });

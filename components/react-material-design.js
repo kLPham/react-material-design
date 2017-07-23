@@ -13,10 +13,10 @@ import DrawerHeader from './drawer/drawerHeader';
 import DrawerSpacer from './drawer/drawerSpacer';
 import FAB from './fab';
 import FormField from './formField';
-import GridList from './gridList';
-import GridTile from './gridList/gridTile';
+import GridList from './grid-list';
+import GridTile from './grid-list/gridTile';
 import IconButton from './button/iconButton';
-import IconToggle from './iconToggle';
+import IconToggle from './icon-toggle';
 import LayoutGrid from './layout-grid';
 import LayoutGridCell from './layout-grid/layoutGridCell';
 import LinearProgress from './linear-progress';
@@ -25,13 +25,14 @@ import ListItem from './list/ListItem';
 import ListDivider from './list/ListDivider';
 import Menu from './menu';
 import MenuItem from './menu/menuItem';
-import PersistentDrawer from './drawer/persistentDrawer';
 import Radio from './radio';
 import Select from './select';
 import Snackbar from './snackbar';
+import Slider from './slider';
 import Switch from './switch';
 import Tab from './tabs/tab';
-import Tabs from './tabs';
+import TabBar from './tabs';
+import TabBarScroller from './tabs/tabBarScroller';
 import Textfield from './textfield';
 import Toolbar from './toolbar';
 import ToolbarRow from './toolbar/toolbarRow';
@@ -64,13 +65,14 @@ module.exports = {
     ListDivider,
     Menu,
     MenuItem,
-    PersistentDrawer,
     Radio,
     Select,
     Snackbar,
+    Slider,
     Switch,
     Tab,
-    Tabs,
+    TabBar,
+    TabBarScroller,
     Textfield,
     Toolbar,
     ToolbarRow,

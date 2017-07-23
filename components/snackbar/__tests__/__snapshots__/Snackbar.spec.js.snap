@@ -3,12 +3,41 @@
 exports[`<Snackbar /> should render 1`] = `
 <div
   aria-atomic="true"
-  aria-hidden={true}
+  aria-hidden="true"
   aria-live="assertive"
   className="mdc-snackbar"
 >
   <div
     className="mdc-snackbar__text"
   />
+  <div
+    className="mdc-snackbar__action-wrapper"
+  >
+    <button
+      className="mdc-button mdc-snackbar__action-button"
+      type="button"
+    />
+  </div>
+</div>
+`;
+
+exports[`<Snackbar /> should render visibleUntilTimeout 1`] = `
+<div
+  aria-atomic="true"
+  aria-hidden="true"
+  aria-live="assertive"
+  className="mdc-snackbar"
+>
+  <div
+    className="mdc-snackbar__text"
+  />
+  <div
+    className="mdc-snackbar__action-wrapper"
+  >
+    <button
+      className="mdc-button mdc-snackbar__action-button"
+      type="button"
+    />
+  </div>
 </div>
 `;

@@ -1,72 +1,52 @@
-import classNames from 'classnames';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import '@material/select/dist/mdc.select.css';
-import React, { PureComponent } from 'react';
-import { Set as ImmutableSet, Map as ImmutableMap } from 'immutable';
-import MDCSelect from './component';
+import { MDCSelect } from '@material/select';
 
-// TODO: use simple menu.
-class Select extends PureComponent {
-    constructor(props) {
-        super(props);
-        this.state = {
-            classes: new ImmutableSet(),
-            menuClasses: new ImmutableSet(),
-            attributes: new ImmutableMap(),
-            style: new ImmutableMap(),
-            menuElStyle: new ImmutableMap(),
-            menuElAttr: new ImmutableMap(),
-        };
+// TODO: Can I change children to reuse <ListItem />?
+// TODO: menufactory
+// TODO: Cancel
+class Select extends Component {
+    static propTypes = {
+        disable: PropTypes.bool,
     }
     componentDidMount() {
-        this.foundation = new MDCSelect(this);
-        this.foundation.init();
-        this.menuEl.addEventListener('MDCSimpleMenu:selected', this.state['MDCSimpleMenu:selected']);
-        this.menuEl.addEventListener('MDCSimpleMenu:cancel', this.state['MDCSimpleMenu:cancel']);
-    }
-    componeWillUnmount() {
-        this.foundation.destroy();
+        const { disable } = this.props;
+        this.select = new MDCSelect(this.mainRoot);
+        this.select.foundation_.setDisabled(disable);
+        this.select.listen('MDCSelect:change', () => {
+            this.setState({
+                selectedTextContent: this.select.selectedOptions[0].textContent,
+                selectedIndex: this.select.selectedIndex,
+                selectedValue: this.select.value,
+            });
+        });
     }
     render() {
-        const { attributes, menuElAttr, menuClasses, menuElStyle, classes, click, keyup, keydown, style } = this.state;
         return (
-            <div
-                ref={(d) => { this.rootEl = d; }}
-                className={classNames('mdc-select', classes.toJS().join(' '))}
-                tabIndex="0"
-                role="listbox"
-                onClick={click}
-                onKeyUp={keyup}
-                onKeyDown={keydown}
-                style={style.toJS()}
-                {...attributes.toJS()}
-            >
+            <div ref={(d) => { this.mainRoot = d; }} className="mdc-select" role="listbox" tabIndex="0">
                 <span className="mdc-select__selected-text">Pick a food group</span>
-                <div
-                    className={classNames('mdc-simple-menu', 'mdc-select__menu', menuClasses.toJS().join(' '))}
-                    {...menuElAttr.toJS()}
-                    style={menuElStyle.toJS()}
-                    ref={(d) => { this.menuEl = d; }}
-                >
-                    <ul
-                        className="mdc-list mdc-simple-menu__items"
-                        ref={(u) => { this.itemsContainer = u; }}
-                    >
-                        <li className="mdc-list-item" aria-selected role="option" id="grains" tabIndex="0">
+                <div className="mdc-simple-menu mdc-select__menu">
+                    <ul className="mdc-list mdc-simple-menu__items">
+                        <li className="mdc-list-item" role="option" id="grains" aria-disabled="true">
+                            Pick a food group
+                        </li>
+                        <li className="mdc-list-item" role="option" id="grains" tabIndex="0">
                             Bread, Cereal, Rice, and Pasta
                         </li>
-                        <li className="mdc-list-item" aria-selected role="option" id="vegetables" tabIndex="0">
+                        <li className="mdc-list-item" role="option" id="vegetables" tabIndex="0">
                             Vegetables
                         </li>
-                        <li className="mdc-list-item" aria-selected role="option" id="fruit" tabIndex="0">
+                        <li className="mdc-list-item" role="option" id="fruit" tabIndex="0">
                             Fruit
                         </li>
-                        <li className="mdc-list-item" aria-selected role="option" id="dairy" tabIndex="0">
+                        <li className="mdc-list-item" role="option" id="dairy" tabIndex="0">
                             Milk, Yogurt, and Cheese
                         </li>
-                        <li className="mdc-list-item" aria-selected role="option" id="meat" tabIndex="0">
+                        <li className="mdc-list-item" role="option" id="meat" tabIndex="0">
                             Meat, Poultry, Fish, Dry Beans, Eggs, and Nuts
                         </li>
-                        <li className="mdc-list-item" aria-selected role="option" id="fats" tabIndex="0">
+                        <li className="mdc-list-item" role="option" id="fats" tabIndex="0">
                             Fats, Oils, and Sweets
                         </li>
                     </ul>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
-import { Dialog, Drawer, DrawerContent, DrawerHeader, DrawerSpacer, IconButton, List, ListItem, PersistentDrawer, Textfield, Toolbar } from '../../../components/react-material-design';
+import { Drawer, DrawerContent, DrawerHeader, DrawerSpacer, IconButton, List, ListItem, Textfield, Toolbar } from '../../../components/react-material-design';
 import Buttons from './Containers/Buttons';
 import Cards from './Containers/Cards';
 import Dialogs from './Containers/Dialogs';
@@ -13,38 +13,34 @@ import ProgressActivty from './Containers/ProgressActivity';
 import Root from './Containers/Root';
 import SelectionControls from './Containers/SelectionControls';
 import SnackbarsToasts from './Containers/SnackbarsToasts';
+import Sliders from './Containers/Sliders';
 import Tabs from './Containers/Tabs';
 import Textfields from './Containers/Textfields';
 import Navigation from './Containers/Navigation';
 
 const contentStyles = {
-    display: 'flex',
-    flex: '1 1 auto',
-    height: '100%',
-    boxSizing: 'border-box',
+  display: 'flex',
+  flex: '1 1 auto',
+  height: '100%',
+  boxSizing: 'border-box',
 };
 const mainStyles = {
-    paddingLeft: '16px',
-    display: 'block',
+  paddingLeft: '16px',
+  display: 'block',
 };
 
 const Layout = ({ location }) => {
-    const reg = /\/|\-/g;
-    const titleCase = str => str.toLowerCase().split(reg).map(word =>
+  const reg = /\/|\-/g;
+  const titleCase = str => str.toLowerCase().split(reg).map(word =>
     `${word.charAt(0).toUpperCase()}${word.slice(1)}`,
   );
-    const breadCrumbs = titleCase(location);
-    breadCrumbs.shift();
-    return (<div>
-        <Toolbar
-            fixed
-            leftElements={<IconButton primary icon="menu" onClick={() => this.drawer.openDrawer()} />}
-            title={breadCrumbs.join(' – ')}
-            rightElements={<Textfield primary label="Search" />}
-        />
-        <PersistentDrawer ref={(c) => { this.drawer = c; }}>
-            <DrawerHeader type="persistent">Header content goes here</DrawerHeader>
-            <DrawerContent type="persistent">
+  const breadCrumbs = titleCase(location);
+  breadCrumbs.shift();
+  return (
+    <div>
+        <Drawer type="temporary" ref={(c) => { this.temporaryDrawer = c; }}>
+            <DrawerHeader type="temporary">Header content goes here</DrawerHeader>
+            <DrawerContent type="temporary">
                 <a className="mdc-list-item mdc-temporary-drawer--selected" href="#">
                     <i className="material-icons mdc-list-item__start-detail" aria-hidden="true">inbox</i>Inbox
                 </a>
@@ -57,7 +53,14 @@ const Layout = ({ location }) => {
                     <i className="material-icons mdc-list-item__start-detail" aria-hidden="true">star</i>Star
                 </a>
             </DrawerContent>
-        </PersistentDrawer>
+        </Drawer>
+        <Toolbar
+            fixed
+            leftElements={<IconButton primary icon="menu" onClick={() => this.temporaryDrawer.toggleDrawer()} />}
+            title={breadCrumbs.join(' – ')}
+            rightElements={<Textfield primary label="Search" />}
+        />
+
         <section
             className="content mdc-toolbar-fixed-adjust"
             style={contentStyles}
@@ -79,6 +82,7 @@ const Layout = ({ location }) => {
                         <ListItem to="/components/menus" value="Menus" />
                         <ListItem to="/components/selection-controls" value="Selection Controls" />
                         <ListItem to="/components/snackbars-toasts" value="Snackbars and Toasts" />
+                        <ListItem to="/components/sliders" value="Sliders" />
                         <ListItem to="/components/textfields" value="Textfields" />
                         <ListItem to="/components/tabs" value="Tabs" />
                         <ListItem to="/components/progress-activity" value="Progress and Activity" />
@@ -107,12 +111,14 @@ const Layout = ({ location }) => {
                 <Route path="/components/progress-activity" component={ProgressActivty} />
                 <Route path="/components/selection-controls" component={SelectionControls} />
                 <Route path="/components/snackbars-toasts" component={SnackbarsToasts} />
+                <Route path="/components/sliders" component={Sliders} />
                 <Route path="/components/tabs" component={Tabs} />
                 <Route path="/components/textfields" component={Textfields} />
                 <Route path="/patterns/navigation" component={Navigation} />
                 <Route path="/layout/responsive-ui-grid" component={LayoutGrids} />
             </main>
-        </section>
-    </div>);
+      </section>
+    </div>
+  );
 };
 export default Layout;

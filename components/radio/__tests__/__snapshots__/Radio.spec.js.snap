@@ -1,18 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Radio /> should render 1`] = `
-<FormField
-  alignEnd={false}
->
+<div>
   <div
     className="mdc-radio"
   >
     <input
-      checked={false}
       className="mdc-radio__native-control"
-      disabled={false}
       id="mdc-radio--2e732f05-f466-4fba-acb5-2f3be58daf75"
-      onChange={[Function]}
       type="radio"
     />
     <div
@@ -26,22 +21,21 @@ exports[`<Radio /> should render 1`] = `
       />
     </div>
   </div>
-</FormField>
+  <label
+    htmlFor="mdc-radio--2e732f05-f466-4fba-acb5-2f3be58daf75"
+    id="mdc-radio-label--2e732f05-f466-4fba-acb5-2f3be58daf75"
+  />
+</div>
 `;
 
 exports[`<Radio /> should render checked 1`] = `
-<FormField
-  alignEnd={false}
->
+<div>
   <div
     className="mdc-radio"
   >
     <input
-      checked={true}
       className="mdc-radio__native-control"
-      disabled={false}
       id="mdc-radio--2e732f05-f466-4fba-acb5-2f3be58daf75"
-      onChange={[Function]}
       type="radio"
     />
     <div
@@ -61,22 +55,17 @@ exports[`<Radio /> should render checked 1`] = `
   >
     Radio 1
   </label>
-</FormField>
+</div>
 `;
 
 exports[`<Radio /> should render disabled 1`] = `
-<FormField
-  alignEnd={false}
->
+<div>
   <div
     className="mdc-radio"
   >
     <input
-      checked={false}
       className="mdc-radio__native-control"
-      disabled={true}
       id="mdc-radio--2e732f05-f466-4fba-acb5-2f3be58daf75"
-      onChange={[Function]}
       type="radio"
     />
     <div
@@ -96,22 +85,17 @@ exports[`<Radio /> should render disabled 1`] = `
   >
     Radio 1
   </label>
-</FormField>
+</div>
 `;
 
 exports[`<Radio /> should render with a label 1`] = `
-<FormField
-  alignEnd={false}
->
+<div>
   <div
     className="mdc-radio"
   >
     <input
-      checked={false}
       className="mdc-radio__native-control"
-      disabled={false}
       id="mdc-radio--2e732f05-f466-4fba-acb5-2f3be58daf75"
-      onChange={[Function]}
       type="radio"
     />
     <div
@@ -131,5 +115,5 @@ exports[`<Radio /> should render with a label 1`] = `
   >
     Radio 1
   </label>
-</FormField>
+</div>
 `;

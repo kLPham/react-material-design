@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<GridList /> should be able to display header caption 1`] = `
+<div
+  className="mdc-grid-list mdc-grid-list--header-caption mdc-grid-list--twoline-caption"
+>
+  <ul
+    className="mdc-grid-list__tiles"
+  >
+    <GridTile
+      src="https://static.pexels.com/photos/58997/pexels-photo-58997.jpeg"
+    />
+    <GridTile
+      src="https://static.pexels.com/photos/58997/pexels-photo-58997.jpeg"
+      supportText="This is my support text."
+    />
+  </ul>
+</div>
+`;
+
+exports[`<GridList /> should be able to display icon 1`] = `
+<div
+  className="mdc-grid-list mdc-grid-list--twoline-caption mdc-grid-list--with-icon-align-end"
+>
+  <ul
+    className="mdc-grid-list__tiles"
+  >
+    <GridTile
+      icon="menu"
+      src="https://static.pexels.com/photos/58997/pexels-photo-58997.jpeg"
+    />
+    <GridTile
+      src="https://static.pexels.com/photos/58997/pexels-photo-58997.jpeg"
+      supportText="This is my support text."
+    />
+  </ul>
+</div>
+`;
+
+exports[`<GridList /> should be able to display two line caption 1`] = `
+<div
+  className="mdc-grid-list mdc-grid-list--twoline-caption"
+>
+  <ul
+    className="mdc-grid-list__tiles"
+  >
+    <GridTile
+      src="https://static.pexels.com/photos/58997/pexels-photo-58997.jpeg"
+    />
+    <GridTile
+      src="https://static.pexels.com/photos/58997/pexels-photo-58997.jpeg"
+      supportText="This is my support text."
+    />
+  </ul>
+</div>
+`;
+
+exports[`<GridList /> should be able to render 1`] = `
+<div
+  className="mdc-grid-list"
+>
+  <ul
+    className="mdc-grid-list__tiles"
+  >
+    <GridTile
+      src="https://static.pexels.com/photos/58997/pexels-photo-58997.jpeg"
+    />
+    <GridTile
+      src="https://static.pexels.com/photos/58997/pexels-photo-58997.jpeg"
+    />
+  </ul>
+</div>
+`;

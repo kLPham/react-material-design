@@ -14,4 +14,12 @@ describe('<MenuItem />', () => {
     );
         expect(menuItem).toMatchSnapshot();
     });
+    it('should render disabled', () => {
+        const disable = true;
+        const value = 'this is my value';
+        const menuItem = shallow(
+            <MenuItem disable={disable} value={value} />,
+      );
+        expect(menuItem).toMatchSnapshot();
+    });
 });
