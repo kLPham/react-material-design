@@ -1,22 +1,31 @@
-import React from 'react';
 import '@material/tabs/dist/mdc.tabs.css';
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 import classNames from 'classnames';
+import { MDCTabBar } from '@material/tabs';
 
-const Tabs = ({ children }) => {
-    const childProps = Array.isArray(children) ? children.map(child =>
+class TabBar extends Component {
+    static propTypes= {
+        children: PropTypes.any,
+    }
+    componentDidMount() {
+        this.tabBar = new MDCTabBar(this.mainRoot);
+    }
+    render() {
+        const { children } = this.props;
+        const childProps = Array.isArray(children) ? children.map(child =>
         child.props) : children.props;
-    const childHasIcon = childProps.filter(child => child.icon);
-    const childHasIconAndText = childHasIcon.some(child => child.label);
-    const baseClass = childHasIcon.length > 0 ? 'mdc-tab-bar' : 'basic-tab-bar';
-    console.log(childHasIcon, childHasIconAndText);
-    const iconAndTextCheck = childHasIconAndText ? 'mdc-tab-bar--icons-with-text' : childHasIcon.length > 0 && 'mdc-tab-bar--icon-tab-bar';
-    return (
-        <nav className={classNames(baseClass, iconAndTextCheck)}>
-            { children }
-            <span className="mdc-tab-bar__indicator" />
-        </nav>
-    );
-};
+        const childHasIcon = childProps.filter(child => child.icon);
+        const childHasIconAndText = childHasIcon.some(child => child.label);
+        const baseClass = childHasIcon.length > 0 ? 'mdc-tab-bar' : 'basic-tab-bar';
+        const iconAndTextCheck = childHasIconAndText ? 'mdc-tab-bar--icons-with-text' : childHasIcon.length > 0 && 'mdc-tab-bar--icon-tab-bar';
+        return (
+            <nav ref={(n) => { this.mainRoot = n; }} className={classNames(baseClass, iconAndTextCheck)}>
+                { children }
+                <span className="mdc-tab-bar__indicator" />
+            </nav>
+        );
+    }
+}
 
-export default Tabs;
-
+export default TabBar;

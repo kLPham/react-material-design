@@ -1,0 +1,97 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TabBarScroller /> should render 1`] = `
+<div
+  className="mdc-tab-bar-scroller"
+  id="my-tab-bar-scroller"
+>
+  <div
+    className="mdc-tab-bar-scroller__indicator mdc-tab-bar-scroller__indicator--back"
+  >
+    <a
+      aria-label="scroll back button"
+      className="mdc-tab-bar-scroller__indicator__inner material-icons"
+      href="#"
+    >
+      navigate_before
+    </a>
+  </div>
+  <div
+    className="mdc-tab-bar-scroller__scroll-frame"
+  >
+    <nav
+      className="mdc-tab-bar mdc-tab-bar-scroller__scroll-frame__tabs"
+      id="my-scrollable-tab-bar"
+    >
+      <a
+        className="mdc-tab mdc-tab--active"
+        href="#one"
+      >
+        Item One
+      </a>
+      <a
+        className="mdc-tab"
+        href="#two"
+      >
+        Item Two
+      </a>
+      <a
+        className="mdc-tab"
+        href="#three"
+      >
+        Item Three
+      </a>
+      <a
+        className="mdc-tab"
+        href="#four"
+      >
+        Item Four
+      </a>
+      <a
+        className="mdc-tab"
+        href="#five"
+      >
+        Item Five
+      </a>
+      <a
+        className="mdc-tab"
+        href="#six"
+      >
+        Item Six
+      </a>
+      <a
+        className="mdc-tab"
+        href="#seven"
+      >
+        Item Seven
+      </a>
+      <a
+        className="mdc-tab"
+        href="#eight"
+      >
+        Item Eight
+      </a>
+      <a
+        className="mdc-tab"
+        href="#nine"
+      >
+        Item Nine
+      </a>
+      <span
+        className="mdc-tab-bar__indicator"
+      />
+    </nav>
+  </div>
+  <div
+    className="mdc-tab-bar-scroller__indicator mdc-tab-bar-scroller__indicator--forward"
+  >
+    <a
+      aria-label="scroll forward button"
+      className="mdc-tab-bar-scroller__indicator__inner material-icons"
+      href="#"
+    >
+      navigate_next
+    </a>
+  </div>
+</div>
+`;

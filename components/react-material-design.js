@@ -31,7 +31,8 @@ import Snackbar from './snackbar';
 import Slider from './slider';
 import Switch from './switch';
 import Tab from './tabs/tab';
-import Tabs from './tabs';
+import TabBar from './tabs';
+import TabBarScroller from './tabs/tabBarScroller';
 import Textfield from './textfield';
 import Toolbar from './toolbar';
 import ToolbarRow from './toolbar/toolbarRow';
@@ -70,7 +71,8 @@ module.exports = {
     Slider,
     Switch,
     Tab,
-    Tabs,
+    TabBar,
+    TabBarScroller,
     Textfield,
     Toolbar,
     ToolbarRow,
