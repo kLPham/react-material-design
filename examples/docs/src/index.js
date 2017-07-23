@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
-import '@material/typography/mdc-typography.scss';
+import '@material/typography/dist/mdc.typography.css';
 import App from './App';
 import './sass/_theme.scss';
 
