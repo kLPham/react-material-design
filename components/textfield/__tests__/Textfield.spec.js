@@ -28,15 +28,6 @@ describe('<Textfield />', () => {
     );
         expect(textfield).toMatchSnapshot();
     });
-    it('should render with as primary', () => {
-        const value = 'this is my value';
-        const label = 'this is my label';
-        const primary = true;
-        const textfield = shallow(
-            <Textfield label={label} value={value} primary={primary} />,
-    );
-        expect(textfield).toMatchSnapshot();
-    });
     it('should render with a helpText', () => {
         const value = 'this is my value';
         const label = 'this is my label';
