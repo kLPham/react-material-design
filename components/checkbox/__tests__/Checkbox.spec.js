@@ -1,6 +1,7 @@
+import Checkbox from '../index';
 import React from 'react';
 import { shallow } from 'enzyme';
-import Checkbox from '../index';
+import { v4 } from 'uuid';
 
 jest.mock('uuid', () => ({
     v4: jest.fn(() => '2e732f05-f466-4fba-acb5-2f3be58daf75'),
@@ -29,10 +30,18 @@ describe('<Checkbox />', () => {
     });
     it('should render as disabled', () => {
         const label = 'My Checkbox Label';
-        const disabled = true;
+        const disable = true;
         const checkbox = shallow(
-            <Checkbox disabled={disabled} label={label} />,
+            <Checkbox disable={disable} label={label} />,
         );
+        expect(checkbox).toMatchSnapshot();
+    });
+    it('should render indeterminate', () => {
+        const label = 'My Checkbox Label';
+        const indeterminate = true;
+        const checkbox = shallow(
+            <Checkbox indeterminate={indeterminate} label={label} />,
+      );
         expect(checkbox).toMatchSnapshot();
     });
 });
