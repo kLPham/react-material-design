@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Textfield, Snackbar } from '../../../../components/react-material-design';
+import { Button, Snackbar, Switch, Textfield } from '../../../../components/react-material-design';
 // import { Button, Textfield, Snackbar } from 'react-material-design';
 
 class SnackbarsToasts extends Component {
@@ -19,10 +19,10 @@ class SnackbarsToasts extends Component {
         this.snackBar.showSnackbar(payload);
     };
     handleChange(e, names) {
-        this.setState({ [names]: e });
+        this.setState({ [names]: e.target.value });
     }
     render() {
-        const { message, actionText } = this.state;
+        const { message, actionText, dismissOnAction } = this.state;
         return (
             <div>
                 <h1>Snackbars</h1>
@@ -34,16 +34,14 @@ class SnackbarsToasts extends Component {
                     label="Message to display"
                     required
                 />
-                <br />
                 <Textfield
                     value={actionText}
                     onChange={e => this.handleChange(e, 'actionText')}
                     label="Action Button Value"
                     required
                 />
-                <br />
                 <Button primary raised label="Show Snackbar" onClick={this.showSnackbar} />
-                <Snackbar ref={(s) => { this.snackBar = s; }} visibleUntilTimeout />
+                <Snackbar ref={(s) => { this.snackBar = s; }} />
             </div>
         );
     }

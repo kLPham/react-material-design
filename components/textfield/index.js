@@ -26,7 +26,7 @@ class Textfield extends Component {
     });
     render() {
         const { id, value } = this.state;
-        const { helpText, label, required } = this.props;
+        const { helpText, label, required, onChange } = this.props;
         return (
             <div>
                 <div
@@ -36,10 +36,10 @@ class Textfield extends Component {
                     <input
                         className="mdc-textfield__input"
                         id={`mdc-textfield--${id}`}
-                        value={value}
+                        value={this.props.value || value}
                         required={required}
                         type="text"
-                        onChange={this.handleChange}
+                        onChange={onChange || this.handleChange}
                     />
                     <label className="mdc-textfield__label" htmlFor={`mdc-textfield--${id}`}>{label}</label>
                 </div>
