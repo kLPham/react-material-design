@@ -13,15 +13,4 @@ describe('<Menu />', () => {
     );
         expect(menu).toMatchSnapshot();
     });
-    it('should render disabled', () => {
-        const parentLabel = 'Clickie';
-        const disabled = true;
-        const menu = shallow(
-            <Menu parentLabel={parentLabel} disabled={disabled}>
-                <MenuItem value="One" />
-                <MenuItem value="Two" />
-            </Menu>,
-    );
-        expect(menu).toMatchSnapshot();
-    });
 });
