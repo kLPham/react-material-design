@@ -16,7 +16,7 @@ import FormField from './formField';
 import GridList from './gridList';
 import GridTile from './gridList/gridTile';
 import IconButton from './button/iconButton';
-import IconToggle from './iconToggle';
+import IconToggle from './icon-toggle';
 import LayoutGrid from './layout-grid';
 import LayoutGridCell from './layout-grid/layoutGridCell';
 import LinearProgress from './linear-progress';
