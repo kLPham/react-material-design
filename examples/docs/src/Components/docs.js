@@ -22,11 +22,11 @@ const Docs = ({ componentDocs }) => {
       <table>
         <thead>
           <tr>
-            <th classNames="mdc-typography--title">Property Name</th>
-            <th classNames="mdc-typography--title">Type</th>
-            <th classNames="mdc-typography--title">Required</th>
-            <th classNames="mdc-typography--title">Default Value</th>
-            <th classNames="mdc-typography--title">Description</th>
+            <th>Property Name</th>
+            <th>Type</th>
+            <th>Required</th>
+            <th>Default Value</th>
+            <th>Description</th>
           </tr>
         </thead>
         <tbody>
