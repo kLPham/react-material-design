@@ -1,50 +1,36 @@
 import '@material/linear-progress/dist/mdc.linear-progress.css';
 import PropTypes from 'prop-types';
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import classNames from 'classnames';
-import { Set as ImmutableSet, Map as ImmutableMap } from 'immutable';
-import MDCLinearProgress from './component';
+import { MDCLinearProgress } from '@material/linear-progress';
 
-// TODO: No reason to have the user provide indeterminate prop. If no progress nor buffer indeterminate?
-class LinearProgress extends PureComponent {
+class LinearProgress extends Component {
     static propTypes = {
         accent: PropTypes.bool,
         buffer: PropTypes.number,
         indeterminate: PropTypes.bool,
         progress: PropTypes.number,
-        reverse: PropTypes.bool,
-    }
-    constructor(props) {
-        super(props);
-        const { progress, buffer, ...rest } = this.props;
-        this.state = {
-            primaryBarStyles: new ImmutableMap(),
-            bufferStyles: new ImmutableMap(),
-            classes: new ImmutableSet(Object.keys(rest).map(item => `mdc-linear-progress--${item}`)),
-        };
+        reversed: PropTypes.bool,
     }
     componentDidMount() {
-        const { progress, buffer } = this.props;
-        this.foundation = new MDCLinearProgress(this);
-        this.foundation.init();
-        if (progress) {
-            this.foundation.setProgress(progress);
-        }
-        if(buffer) {
-          this.foundation.setBuffer(buffer);
-        }
+        const { buffer, indeterminate, progress, reversed } = this.props;
+        this.linearProgress = new MDCLinearProgress(this.mainRoot);
+        this.linearProgress.foundation_.setDeterminate(!indeterminate);
+        this.linearProgress.foundation_.setProgress(progress);
+        this.linearProgress.foundation_.setBuffer(buffer);
+        this.linearProgress.foundation_.setReverse(reversed);
     }
-    handleSetProgress = value => this.foundation.setProgress(value)
     render() {
-        const { classes, bufferStyles, primaryBarStyles } = this.state;
+        const { accent } = this.props;
         return (
             <div
                 role="progressbar"
-                className={classNames('mdc-linear-progress', classes.toJS().join(' '))}
+                className={classNames('mdc-linear-progress', { 'mdc-linear-progress--accent': accent })}
+                ref={(d) => { this.mainRoot = d; }}
             >
                 <div className="mdc-linear-progress__buffering-dots" />
-                <div className="mdc-linear-progress__buffer" style={bufferStyles.toJS()} />
-                <div className="mdc-linear-progress__bar mdc-linear-progress__primary-bar" style={primaryBarStyles.toJS()}>
+                <div className="mdc-linear-progress__buffer" />
+                <div className="mdc-linear-progress__bar mdc-linear-progress__primary-bar">
                     <span className="mdc-linear-progress__bar-inner" />
                 </div>
                 <div className="mdc-linear-progress__bar mdc-linear-progress__secondary-bar">
