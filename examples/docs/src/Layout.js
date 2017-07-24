@@ -15,9 +15,8 @@ import SelectionControls from './Containers/SelectionControls';
 import Sliders from './Containers/Sliders';
 import SnackbarsToasts from './Containers/SnackbarsToasts';
 import Tabs from './Containers/Tabs';
-import TemporaryDrawer from './Containers/TemporaryDrawer';
 import Textfields from './Containers/Textfields';
-import { Drawer, DrawerContent, DrawerSpacer, IconButton, List, ListItem, Textfield, Toolbar } from '../../../components/react-material-design';
+import { Drawer, DrawerContent, DrawerHeader, DrawerSpacer, IconButton, List, ListItem, Textfield, Toolbar } from '../../../components/react-material-design';
 
 const contentStyles = {
     display: 'flex',
@@ -51,7 +50,23 @@ const routes = [
 ];
 const Layout = () => (
     <div>
-        <TemporaryDrawer />
+        <Drawer type="temporary" ref={(c) => { this.temporaryDrawer = c; }}>
+            <DrawerHeader type="temporary">Header content goes here</DrawerHeader>
+            <DrawerContent type="temporary">
+                <a className="mdc-list-item mdc-temporary-drawer--selected" href="#">
+                    <i className="material-icons mdc-list-item__start-detail" aria-hidden="true">inbox</i>Inbox
+            </a>
+                <DrawerSpacer />
+                <a className="mdc-list-item" href="#">
+                    <i className="material-icons mdc-list-item__start-detail" aria-hidden="true">star</i>Star
+            </a>
+                <DrawerSpacer>I have content</DrawerSpacer>
+                <a className="mdc-list-item" href="#">
+                    <i className="material-icons mdc-list-item__start-detail" aria-hidden="true">star</i>Star
+            </a>
+            </DrawerContent>
+        </Drawer>
+
         <Toolbar
           fixed
           leftElements={<IconButton primary icon="menu" onClick={() => this.temporaryDrawer.toggleDrawer()} />}
