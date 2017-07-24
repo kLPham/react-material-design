@@ -61,7 +61,7 @@ const Layout = () => (
                 exact={route.exact}
                 path={route.path}
                 render={() =>
-                    <span>React Material Design - {route.value}</span>
+                    <span>{`React Material Design - ${route.value}`}</span>
                                     }
               />
                     ))}
@@ -136,6 +136,7 @@ const Layout = () => (
             <main style={mainStyles}>
                 {routes.map((route, index) => (
                     <Route
+                      key={index}
                       exact={route.exact}
                       path={route.path}
                       component={route.main}
