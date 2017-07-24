@@ -50,99 +50,99 @@ const routes = [
 { section: 'setup', path: '/setup/getting-started/', value: 'Getting Started', main: () => <GettingStarted /> },
 ];
 const Layout = () => (
-  <div>
-    <TemporaryDrawer />
-    <Toolbar
-      fixed
-      leftElements={<IconButton primary icon="menu" onClick={() => this.temporaryDrawer.toggleDrawer()} />}
-      title={routes.map((route, index) => (
-        <Route
-          key={index}
-          exact={route.exact}
-          path={route.path}
-          render={() =>
-            <span>React Material Design - {route.value}</span>
-                  }
+    <div>
+        <TemporaryDrawer />
+        <Toolbar
+          fixed
+          leftElements={<IconButton primary icon="menu" onClick={() => this.temporaryDrawer.toggleDrawer()} />}
+          title={routes.map((route, index) => (
+              <Route
+                key={index}
+                exact={route.exact}
+                path={route.path}
+                render={() =>
+                    <span>React Material Design - {route.value}</span>
+                                    }
+              />
+                    ))}
+          rightElements={<Textfield primary label="Search" />}
         />
-          ))}
-      rightElements={<Textfield primary label="Search" />}
-    />
 
-    <section
-      className="content mdc-toolbar-fixed-adjust"
-      style={contentStyles}
-    >
-      <Drawer type="permanent">
-        <DrawerContent type="permanent">
-          <h4>Setup</h4>
-          <List>
-            {
-                  routes.filter(f =>
-                  f.section === 'setup').map((route, index) => (
-                    <ListItem
-                      key={index}
-                      to={route.path}
-                      value={route.value}
+        <section
+          className="content mdc-toolbar-fixed-adjust"
+          style={contentStyles}
+        >
+            <Drawer type="permanent">
+                <DrawerContent type="permanent">
+                    <h4>Setup</h4>
+                    <List>
+                        {
+                            routes.filter(f =>
+                            f.section === 'setup').map((route, index) => (
+                                <ListItem
+                                  key={index}
+                                  to={route.path}
+                                  value={route.value}
+                                />
+                            ))
+                        }
+                    </List>
+                    <DrawerSpacer type="permanent" />
+                    <h4>Components</h4>
+                    <List>
+                        {
+                              routes.filter(f =>
+                              f.section === 'components').map((route, index) => (
+                                  <ListItem
+                                    key={index}
+                                    to={route.path}
+                                    value={route.value}
+                                  />
+                              ))
+                        }
+                    </List>
+                    <DrawerSpacer type="permanent" />
+                    <h4>Layout</h4>
+                    <List>
+                        {
+                            routes.filter(f =>
+                                    f.section === 'layout',
+                            ).map((route, index) => (
+                                <ListItem
+                                  key={index}
+                                  to={route.path}
+                                  value={route.value}
+                                />
+                            ))
+                      }
+                    </List>
+                    <DrawerSpacer type="permanent" />
+                    <h4>Patterns</h4>
+                    <List>
+                        {
+                            routes.filter(f =>
+                                    f.section === 'patterns',
+                            ).map((route, index) => (
+                                <ListItem
+                                  key={index}
+                                  to={route.path}
+                                  value={route.value}
+                                />
+                            ))
+                        }
+                    </List>
+                </DrawerContent>
+            </Drawer>
+            <main style={mainStyles}>
+                {routes.map((route, index) => (
+                    <Route
+                      exact={route.exact}
+                      path={route.path}
+                      component={route.main}
                     />
-                  ))
-            }
-          </List>
-          <DrawerSpacer type="permanent" />
-          <h4>Components</h4>
-          <List>
-            {
-                routes.filter(f =>
-                f.section === 'components').map((route, index) => (
-                  <ListItem
-                    key={index}
-                    to={route.path}
-                    value={route.value}
-                  />
-                ))
-              }
-          </List>
-          <DrawerSpacer type="permanent" />
-          <h4>Layout</h4>
-          <List>
-            {
-                          routes.filter(f =>
-                              f.section === 'layout',
-                          ).map((route, index) => (
-                            <ListItem
-                              key={index}
-                              to={route.path}
-                              value={route.value}
-                            />
-                          ))
-                      }
-          </List>
-          <DrawerSpacer type="permanent" />
-          <h4>Patterns</h4>
-          <List>
-            {
-                          routes.filter(f =>
-                              f.section === 'patterns',
-                          ).map((route, index) => (
-                            <ListItem
-                              key={index}
-                              to={route.path}
-                              value={route.value}
-                            />
-                          ))
-                      }
-          </List>
-        </DrawerContent>
-      </Drawer>
-      <main style={mainStyles}>
-        {routes.map((route, index) =>
-                  (<Route
-                    exact={route.exact}
-                    path={route.path}
-                    component={route.main}
-                  />),
-              )}
-      </main>
-    </section>
-  </div>
+                            ))}
+            </main>
+        </section>
+    </div>
   );
 export default Layout;

@@ -9,7 +9,7 @@ const IconButton = ({ icon, primary, onClick }) =>
         className={classNames('mdc-icon-toggle', 'material-icons', { 'mdc-theme--text-primary-on-primary': primary })}
         role="button"
         onClick={onClick}
-     >
+    >
         {icon}
     </i>);
 IconButton.propTypes = {

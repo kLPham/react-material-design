@@ -18,7 +18,7 @@ const Button = ({ children, label, disabled, ripple, onClick, ...rest }) =>
         data-mdc-auto-init={ripple && 'MDCRipple'}
         disabled={disabled}
         onClick={onClick}
-     >
+    >
         {label}
         {children}
     </button>);

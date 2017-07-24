@@ -11,11 +11,10 @@
   "extends": "airbnb",
   "parser": "babel-eslint",
   "rules": {
-    "indent": ["error", 4, {
-      "SwitchCase": 1
-    }],
+    "indent": ["error", 4],
     "no-underscore-dangle": ["error", { "allow": ["adapter_","root_", "getHelptextAdapterMethods_", "getInputAdapterMethods_", "foundation_", "getControlAdapterMethods_"] }],
     "quotes": [2, "single"],
+    "react/jsx-indent": [2, 4 ],
     "react/jsx-filename-extension": 0,
     "react/jsx-uses-react": 2,
     "react/jsx-uses-vars": 2,

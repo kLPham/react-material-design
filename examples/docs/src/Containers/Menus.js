@@ -25,14 +25,14 @@ const Menus = () =>
           <MenuItem disable value="Another Item" />
       </Menu>
       <h2>Icon Menu</h2>
-    <h2>Dropdown menu?</h2>
-    <h2>Button Menu</h2>
-    <Button label="Show Menu" onClick={() => this.menu4.handleOpen()} />
+      <h2>Dropdown menu?</h2>
+      <h2>Button Menu</h2>
+      <Button label="Show Menu" onClick={() => this.menu4.handleOpen()} />
 
-    <Menu ref={(m) => { this.menu4 = m; }}>
-      <MenuItem value="A Menu Item" />
-      <MenuItem value="Another Menu Item" />
-    </Menu>
+      <Menu ref={(m) => { this.menu4 = m; }}>
+          <MenuItem value="A Menu Item" />
+          <MenuItem value="Another Menu Item" />
+      </Menu>
 
   </div>);
 export default Menus;
