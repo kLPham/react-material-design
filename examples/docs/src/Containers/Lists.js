@@ -13,7 +13,7 @@ const parsedListDividerDoc = parse(ListDividerDoc);
 const parsedListItemDoc = parse(ListItemDoc);
 
 const Lists = () =>
-    <div>
+    (<div>
         <h1>Lists</h1>
         <h2>Basic</h2>
         <CodeToggle>
@@ -94,5 +94,5 @@ const Lists = () =>
         <Docs componentDocs={parsedListItemDoc} />
         <Docs componentDocs={parsedListDividerDoc} />
 
-    </div>;
+    </div>);
 export default Lists;

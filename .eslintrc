@@ -25,8 +25,8 @@
     "no-param-reassign": 0,
     "no-underscore-dangle": ["error", { "allow": ["adapter_", "foundation_", "getControlAdapterMethods_", "getHelptextAdapterMethods_", "getInputAdapterMethods_", "root_"] }],
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
-    "react/jsx-indent": ["error", 4],
-    "react/jsx-indent-props": ["error", 4],
+    "react/jsx-indent": [2, 4],
+    "react/jsx-indent-props": [2, 4],
     "react/require-default-props": 0
   },
   "plugins": [

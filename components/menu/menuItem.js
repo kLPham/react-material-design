@@ -16,6 +16,6 @@ const MenuItem = ({ value, disable }) => {
 };
 MenuItem.propTypes = {
     value: PropTypes.string.isRequired,
-    disable: PropTypes.bool
+    disable: PropTypes.bool,
 };
 export default MenuItem;
