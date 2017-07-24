@@ -5,8 +5,9 @@ import Layout from './Layout';
 
 const history = createHistory();
 
-const App = () =>
+const App = () => (
     <Router history={history}>
         <Layout location={history.location.pathname} />
-    </Router>;
+    </Router>
+);
 export default App;

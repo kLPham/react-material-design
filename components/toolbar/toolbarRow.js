@@ -28,6 +28,9 @@ ToolbarRow.propTypes = {
         PropTypes.element,
         PropTypes.arrayOf(PropTypes.element),
     ]),
-    title: PropTypes.string,
+    title: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.array,
+    ]),
 };
 export default ToolbarRow;

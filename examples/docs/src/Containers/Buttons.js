@@ -62,6 +62,6 @@ const Buttons = () =>
           <IconToggle icon="star_border" toggledIcon="star" primary />
           <IconToggle icon="bookmark_border" toggledIcon="bookmark" accent />
 
-    </section>
+      </section>
   </div>);
 export default Buttons;

@@ -15,6 +15,6 @@ const LayoutGrid = ({ children, nested }) =>
   );
 LayoutGrid.propTypes = {
     children: PropTypes.any.isRequired,
-    nested: PropTypes.bool
+    nested: PropTypes.bool,
 };
 export default LayoutGrid;
