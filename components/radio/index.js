@@ -1,4 +1,5 @@
 import '@material/radio/dist/mdc.radio.css';
+import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { MDCRadio } from '@material/radio';
@@ -8,6 +9,7 @@ import { v4 } from 'uuid';
 class Radio extends Component {
     static propTypes = {
         label: PropTypes.string,
+        darkTheme: PropTypes.bool,
         disable: PropTypes.bool,
         checked: PropTypes.bool,
         name: PropTypes.string,
@@ -19,12 +21,12 @@ class Radio extends Component {
         this.radio.foundation_.setChecked(checked);
     }
     render() {
-        const { label, name } = this.props;
+        const { darkTheme, label, name } = this.props;
         const id = v4();
 
         return (
             <div>
-                <div ref={(d) => { this.mainRoot = d; }} className="mdc-radio">
+                <div ref={(d) => { this.mainRoot = d; }} className={classNames('mdc-radio', { 'mdc-radio--theme-dark': darkTheme })}>
                     <input
                         className="mdc-radio__native-control"
                         type="radio"

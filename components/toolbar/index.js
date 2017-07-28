@@ -11,15 +11,16 @@ class Toolbar extends Component {
             PropTypes.element,
             PropTypes.arrayOf(PropTypes.element),
         ]),
+        darkTheme: PropTypes.bool,
         fixed: PropTypes.bool,
     }
     componentDidMount() {
         this.toolbar = new MDCToolbar(this.mainRoot);
     }
     render() {
-        const { children, fixed, ...rest } = this.props;
+        const { children, darkTheme, fixed, ...rest } = this.props;
         return (
-            <header ref={(h) => { this.mainRoot = h; }} className={classNames('mdc-toolbar', { 'mdc-toolbar--fixed': fixed })}>
+            <header ref={(h) => { this.mainRoot = h; }} className={classNames('mdc-toolbar', { 'mdc-toolbar--theme-dark': darkTheme }, { 'mdc-toolbar--fixed': fixed })}>
                 <ToolbarRow {...rest} />
                 {children}
             </header>

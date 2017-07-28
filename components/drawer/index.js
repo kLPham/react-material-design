@@ -1,4 +1,5 @@
 import '@material/drawer/dist/mdc.drawer.css';
+import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { MDCPersistentDrawer, MDCTemporaryDrawer } from '@material/drawer';
@@ -6,6 +7,7 @@ import { MDCPersistentDrawer, MDCTemporaryDrawer } from '@material/drawer';
 class Drawer extends Component {
     static propTypes = {
         children: PropTypes.any,
+        darkTheme: PropTypes.bool,
         type: PropTypes.oneOf(['permanent', 'persistent', 'temporary']).isRequired,
     }
     static defaultProps = {
@@ -40,11 +42,11 @@ class Drawer extends Component {
     }
 
     render() {
-        const { children, type } = this.props;
+        const { children, darkTheme, type } = this.props;
         return (
             <aside
                 ref={(a) => { this.mainRoot = a; }}
-                className={`mdc-${type}-drawer mdc-typography`}
+                className={classNames(`mdc-${type}-drawer mdc-typography`, { [`mdc-${type}-drawer--theme-dark`]: darkTheme })}
             >
                 <nav className={`mdc-${type}-drawer__drawer`}>
                     {children}
