@@ -8,20 +8,30 @@ const OUT_PATH = path.join(__dirname, 'build');
 module.exports = [
     {
         name: 'all',
+        externals: [
+            'classnames',
+            'immutable',
+            /^@material\/.+$/,
+            'material-components-web',
+            'prop-types',
+            'raw-loader',
+            'react',
+            'react-docgen',
+            'react-dom',
+            'react-router-dom',
+            'react-test-renderer',
+            'uuid'
+        ],
         entry: {
             rmd: path.resolve(__dirname, 'components/react-material-design')
         },
         output: {
             path: OUT_PATH,
-            filename: '[name].' + (IS_PROD
-                ? 'min.'
-                : '') + 'js',
+            filename: `[name].${IS_PROD ? 'min.' : ''}js`,
             libraryTarget: 'umd',
             library: '[name]'
         },
-        devtool: IS_DEV
-            ? 'source-map'
-            : 'cheap-module-source-map',
+        devtool: IS_DEV ? 'cheap-module-source-map' : 'source-map',
         module: {
             rules: [
                 {
@@ -45,9 +55,9 @@ module.exports = [
             ]
         },
         plugins: [new webpack.DefinePlugin({
-                'process.env': {
-                    'NODE_ENV': JSON.stringify(process.env.NODE_ENV)
-                }
-            })]
-    }
+            'process.env': {
+                NODE_ENV: JSON.stringify(process.env.NODE_ENV)
+            }
+        })]
+    },
 ];

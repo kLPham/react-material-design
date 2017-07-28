@@ -2,11 +2,12 @@ import React from 'react';
 import { parse } from 'react-docgen';
 import CodeToggle from 'react-code-toggle';
 import { Button, Card, CardActions, CardMedia, CardMediaItem, CardSupportingContent, CardTitle } from '../../../../components/react-material-design';
-// import { Button, Card, CardActions, CardMedia, CardMediaItem, CardSupportingContent, CardTitle } from 'react-material-design';
-const corgiPic = 'https://static.pexels.com/photos/58997/pexels-photo-58997.jpeg';
+
+const corgiPic = 'https://c1.staticflickr.com/9/8507/8525192931_bc451c501e_b.jpg';
+const corgiPic2 = 'https://static.pexels.com/photos/58997/pexels-photo-58997.jpeg';
 const brightPic = 'https://static.pexels.com/photos/311039/pexels-photo-311039.jpeg';
 const styles1 = {
-    maxWidth: '50vw',
+    maxWidth: '60vw',
     marginBottom: '30px',
 };
 const styles2 = {
@@ -83,7 +84,7 @@ const Cards = () =>
               <CardMediaItem
                 subtitle="Subtitle Here"
                 title="Title Here"
-                imgSrc={corgiPic}
+                imgSrc={corgiPic2}
               />
               <CardActions bottom >
                   <Button compact label="Action 1" />
@@ -95,7 +96,7 @@ const Cards = () =>
                 subtitle="Subtitle Here"
                 title="Title Here"
                 imgSize={1.5}
-                imgSrc={corgiPic}
+                imgSrc={corgiPic2}
               />
               <CardActions bottom >
                   <Button compact label="Action 1" />
@@ -107,7 +108,7 @@ const Cards = () =>
                 subtitle="Subtitle Here"
                 title="Title Here"
                 imgSize={2}
-                imgSrc={corgiPic}
+                imgSrc={corgiPic2}
               />
               <CardActions bottom >
                   <Button compact label="Action 1" />
@@ -119,7 +120,7 @@ const Cards = () =>
                     // subtitle="Subtitle Here"
                     //  title="Title Here"
                 imgSize={3}
-                imgSrc={corgiPic}
+                imgSrc={corgiPic2}
               >
                   <CardActions vertical >
                       <Button compact label="A1" />

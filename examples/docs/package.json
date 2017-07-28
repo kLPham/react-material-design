@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Simple demonstration of react-material-design components",
   "scripts": {
-    "start": "webpack-dev-server --open",
+    "start": "webpack-dev-server",
     "build": "yarn cleanup && cross-env NODE_ENV=production webpack -p",
     "cleanup": "rimraf ../../docs/src/**/*",
     "lint": "yarn eslint --ext .js src/ --fix"
@@ -15,7 +15,6 @@
     "babel-preset-env": "^1.6.0",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
-    "chunk-manifest-webpack-plugin": "^1.1.0",
     "cross-env": "^5.0.1",
     "css-loader": "^0.28.4",
     "eslint": "^3.19.0",
@@ -29,13 +28,13 @@
     "rimraf": "^2.6.1",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.18.2",
-    "webpack-chunk-hash": "^0.4.0",
-    "webpack-dev-server": "^2.6.1"
+    "webpack": "^3.4.1",
+    "webpack-dev-server": "^2.6.1",
+    "webpack-hot-middleware": "^2.18.2"
   },
   "dependencies": {
     "history": "^4.6.3",
     "json-loader": "^0.5.7",
-    "material-components-web": "^0.15.0",
     "prop-types": "^15.5.10",
     "raw-loader": "^0.5.1",
     "react": "^15.6.1",
@@ -43,9 +42,7 @@
     "react-docgen": "^2.17.0",
     "react-dom": "^15.6.1",
     "react-hot-loader": "next",
-    "react-material-design": "^0.2.2",
-    "react-router-dom": "^4.1.2",
-    "webpack": "^3.3.0",
-    "webpack-hot-middleware": "^2.18.2"
+    "react-material-design": "file:../../react-material-design-0.3.1.tgz",
+    "react-router-dom": "^4.1.2"
   }
 }

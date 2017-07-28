@@ -6,14 +6,15 @@ describe('<CardMedia />', () => {
     it('should render', () => {
         const src = 'http://google.com/image.jpeg';
         const cardMedia = shallow(
-            <CardMedia src={src} />,
+            <CardMedia>
+                <img src={src} />
+            </CardMedia>,
     );
         expect(cardMedia).toMatchSnapshot();
     });
     it('should render with children', () => {
-        const src = 'http://google.com/image.jpeg';
         const cardMedia = shallow(
-            <CardMedia src={src}>Text</CardMedia>,
+            <CardMedia>Text</CardMedia>,
     );
         expect(cardMedia).toMatchSnapshot();
     });

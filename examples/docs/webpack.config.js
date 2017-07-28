@@ -1,12 +1,10 @@
-const ChunkManifestPlugin = require('chunk-manifest-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const WebpackChunkHash = require("webpack-chunk-hash");
 const path = require('path');
 const webpack = require('webpack');
 
 const fileName = process.env.NODE_ENV === 'production'
-  ? "src/[name].[chunkhash]"
+  ? "src/[name]-[chunkhash]"
   : "src/[name]";
 
 const extractSass = new ExtractTextPlugin({
@@ -56,9 +54,7 @@ const config = {
         return module.context && module.context.indexOf("node_modules") !== -1;
       }
     }),
-    new WebpackChunkHash(),
-    new webpack.optimize.CommonsChunkPlugin({name: 'manifest', minChunks: Infinity}),
-    new ChunkManifestPlugin({filename: "chunk-manifest.json", manifestVariable: "webpackManifest", inlineManifest: true}),
+    new webpack.optimize.CommonsChunkPlugin({name: 'runtime'}),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'src', 'index.template.ejs'),
       inject: 'body'

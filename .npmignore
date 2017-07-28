@@ -10,3 +10,4 @@ docs
 react-material-design-*.tgz
 webpack.config.js
 yarn.lock
+yarn-error.log
