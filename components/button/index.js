@@ -10,9 +10,9 @@ const cx = classNames.bind(buttoncssClasses);
 /**
 * Flat and Raised Buttons
 */
-const Button = ({ children, label, disabled, ripple, onClick, ...rest }) =>
+const Button = ({ children, darkTheme, label, disabled, ripple, onClick, ...rest }) =>
     (<button
-        className={cx('mdc-button', ...Object.keys(rest).map(modifier =>
+        className={cx('mdc-button', { 'mdc-button--theme-dark': darkTheme }, ...Object.keys(rest).map(modifier =>
             buttoncssClasses[modifier],
         ))}
         data-mdc-auto-init={ripple && 'MDCRipple'}
@@ -36,6 +36,10 @@ Button.propTypes = {
     * Reduces the amount of horizontal padding in the button.
     */
     compact: PropTypes.bool,
+    /**
+     * Dark Theme context means the component sits on top of a dark background.
+     */
+    darkTheme: PropTypes.bool,
     /**
     * Compresses the button text to make it slightly smaller.
     */

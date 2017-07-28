@@ -1,4 +1,5 @@
 import '@material/checkbox/dist/mdc.checkbox.css';
+import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { MDCCheckbox } from '@material/checkbox';
@@ -20,12 +21,12 @@ class Checkbox extends Component {
         this.checkbox.foundation_.setIndeterminate(indeterminate);
     }
     render() {
-        const { label } = this.props;
+        const { darkTheme, label } = this.props;
         const id = v4();
 
         return (
             <div className="mdc-form-field">
-                <div ref={(d) => { this.mainRoot = d; }} className="mdc-checkbox">
+                <div ref={(d) => { this.mainRoot = d; }} className={classNames('mdc-checkbox', { 'mdc-checkbox--theme-dark': darkTheme })}>
                     <input
                         className="mdc-checkbox__native-control"
                         id={`mdc-checkbox--${id}`}

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import '@material/select/dist/mdc.select.css';
 import { MDCSelect } from '@material/select';
@@ -23,8 +24,9 @@ class Select extends Component {
         });
     }
     render() {
+        const { darkTheme } = this.props;
         return (
-            <div ref={(d) => { this.mainRoot = d; }} className="mdc-select" role="listbox" tabIndex="0">
+            <div ref={(d) => { this.mainRoot = d; }} className={classNames("mdc-select", {"mdc-select--theme-dark": darkTheme})} role="listbox" tabIndex="0">
                 <span className="mdc-select__selected-text">Pick a food group</span>
                 <div className="mdc-simple-menu mdc-select__menu">
                     <ul className="mdc-list mdc-simple-menu__items">

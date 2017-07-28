@@ -29,11 +29,11 @@ class IconToggle extends Component {
         });
     }
     render() {
-        const { accent, icon, toggledIcon, primary } = this.props;
+        const { accent, darkTheme, icon, toggledIcon, primary } = this.props;
         return (
             <i
                 ref={(i) => { this.mainRoot = i; }}
-                className={classNames('mdc-icon-toggle material-icons', { 'mdc-icon-toggle--primary': primary }, { 'mdc-icon-toggle--accent': accent })}
+                className={classNames('mdc-icon-toggle material-icons', { 'mdc-icon-toggle--theme-dark': darkTheme }, { 'mdc-icon-toggle--primary': primary }, { 'mdc-icon-toggle--accent': accent })}
                 role="button"
                 aria-pressed="false"
                 aria-label="Add to favorites"

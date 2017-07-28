@@ -1,4 +1,5 @@
 import '@material/textfield/dist/mdc.textfield.css';
+import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { MDCTextfield } from '@material/textfield';
@@ -6,6 +7,7 @@ import { v4 } from 'uuid';
 
 class Textfield extends Component {
     static propTypes = {
+        darkTheme: PropTypes.bool,
         disabled: PropTypes.bool,
         helpText: PropTypes.string,
         label: PropTypes.string,
@@ -26,12 +28,12 @@ class Textfield extends Component {
     });
     render() {
         const { id, value } = this.state;
-        const { helpText, label, required, onChange } = this.props;
+        const { darkTheme, helpText, label, required, onChange } = this.props;
         return (
             <div>
                 <div
                     ref={(d) => { this.mainRoot = d; }}
-                    className="mdc-textfield"
+                    className={classNames('mdc-textfield', { 'mdc-textfield--theme-dark': darkTheme })}
                 >
                     <input
                         className="mdc-textfield__input"

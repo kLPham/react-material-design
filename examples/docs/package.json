@@ -33,6 +33,7 @@
     "webpack-hot-middleware": "^2.18.2"
   },
   "dependencies": {
+    "classnames": "^2.2.5",
     "history": "^4.6.3",
     "json-loader": "^0.5.7",
     "prop-types": "^15.5.10",

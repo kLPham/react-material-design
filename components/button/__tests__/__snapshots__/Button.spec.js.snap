@@ -56,3 +56,11 @@ exports[`<Button /> should render raised disabled 1`] = `
   Raised disabled button
 </button>
 `;
+
+exports[`<Button /> shound render darkTheme 1`] = `
+<button
+  className="mdc-button mdc-button--theme-dark"
+>
+  Flat button
+</button>
+`;

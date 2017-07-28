@@ -10,6 +10,14 @@ describe('<Button />', () => {
         );
         expect(button).toMatchSnapshot();
     });
+    it('shound render darkTheme', () => {
+        const label = 'Flat button';
+        const darkTheme = true;
+        const button = shallow(
+            <Button label={label} darkTheme={darkTheme} />,
+        );
+        expect(button).toMatchSnapshot();
+    });
     it('should render colored', () => {
         const label = 'Colored button';
         const colored = true;

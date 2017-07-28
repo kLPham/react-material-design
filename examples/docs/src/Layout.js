@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { Component } from 'react';
+import classNames from 'classnames';
 import { Route } from 'react-router-dom';
-import { Drawer, DrawerContent, DrawerHeader, DrawerSpacer, IconButton, List, ListItem, Textfield, Toolbar } from '../../../components/react-material-design';
+import { Drawer, DrawerContent, DrawerHeader, DrawerSpacer, IconButton, List, ListItem, Toolbar } from '../../../components/react-material-design';
 import Buttons from './Containers/Buttons';
 import Cards from './Containers/Cards';
 import Dialogs from './Containers/Dialogs';
@@ -24,7 +25,6 @@ const contentStyles = {
     height: '100%',
     boxSizing: 'border-box',
 };
-
 const mainStyles = {
     paddingLeft: '16px',
     display: 'block',
@@ -48,117 +48,133 @@ const routes = [
 { section: 'root', path: '/', exact: true, value: 'Home', main: () => <Root /> },
 { section: 'setup', path: '/setup/getting-started/', value: 'Getting Started', main: () => <GettingStarted /> },
 ];
-const Layout = () => (
-    <div>
-        <Drawer type="temporary" ref={(c) => { this.temporaryDrawer = c; }}>
-            <DrawerHeader type="temporary">Header content goes here</DrawerHeader>
-            <DrawerContent type="temporary">
-                <a className="mdc-list-item mdc-temporary-drawer--selected" href="#">
-                    <i className="material-icons mdc-list-item__start-detail" aria-hidden="true">inbox</i>Inbox
-            </a>
-                <DrawerSpacer />
-                <a className="mdc-list-item" href="#">
-                    <i className="material-icons mdc-list-item__start-detail" aria-hidden="true">star</i>Star
-            </a>
-                <DrawerSpacer>I have content</DrawerSpacer>
-                <a className="mdc-list-item" href="#">
-                    <i className="material-icons mdc-list-item__start-detail" aria-hidden="true">star</i>Star
-            </a>
-            </DrawerContent>
-        </Drawer>
+class Layout extends Component {
+    state={
+        darkTheme: false,
+    }
+    handleThemeToggle = () => {
+        document.body.classList.toggle('mdc-theme--dark', !this.state.darkTheme);
+        document.querySelectorAll('.rct-live-example').forEach(el =>
+            el.classList.toggle('rct-live-example--dark', !this.state.darkTheme));
+        this.setState(prevState => ({
+            darkTheme: !prevState.darkTheme,
+        }));
+    }
+    render() {
+        return (
+            <div>
+                <Drawer type="temporary" ref={(c) => { this.temporaryDrawer = c; }}>
+                    <DrawerHeader type="temporary">Header content goes here</DrawerHeader>
+                    <DrawerContent type="temporary">
+                        <a className="mdc-list-item mdc-temporary-drawer--selected" href="#">
+                            <i className="material-icons mdc-list-item__start-detail" aria-hidden="true">inbox</i>Inbox
+                </a>
+                        <DrawerSpacer />
+                        <a className="mdc-list-item" href="#">
+                            <i className="material-icons mdc-list-item__start-detail" aria-hidden="true">star</i>Star
+                </a>
+                        <DrawerSpacer>I have content</DrawerSpacer>
+                        <a className="mdc-list-item" href="#">
+                            <i className="material-icons mdc-list-item__start-detail" aria-hidden="true">star</i>Star
+                </a>
+                    </DrawerContent>
+                </Drawer>
 
-        <Toolbar
-          fixed
-          leftElements={<IconButton primary icon="menu" onClick={() => this.temporaryDrawer.toggleDrawer()} />}
-          title={routes.map((route, index) => (
-              <Route
-                key={index}
-                exact={route.exact}
-                path={route.path}
-                render={() =>
-                    <span>{`React Material Design - ${route.value}`}</span>
-                                    }
-              />
-                    ))}
-          rightElements={<Textfield primary label="Search" />}
-        />
+                <Toolbar
+                  fixed
+                  leftElements={<IconButton primary icon="menu" onClick={() => this.temporaryDrawer.toggleDrawer()} />}
+                  title={routes.map((route, index) => (
+                      <Route
+                        key={index}
+                        exact={route.exact}
+                        path={route.path}
+                        render={() =>
+                            <span>{`React Material Design - ${route.value}`}</span>
+                                        }
+                      />
+                        ))}
+                  rightElements={<IconButton icon="invert_colors" onClick={this.handleThemeToggle} />}
+                />
 
-        <section
-          className="content mdc-toolbar-fixed-adjust"
-          style={contentStyles}
-        >
-            <Drawer type="permanent">
-                <DrawerContent type="permanent">
-                    <h4>Setup</h4>
-                    <List>
-                        {
-                            routes.filter(f =>
-                            f.section === 'setup').map((route, index) => (
-                                <ListItem
-                                  key={index}
-                                  to={route.path}
-                                  value={route.value}
-                                />
-                            ))
-                        }
-                    </List>
-                    <DrawerSpacer type="permanent" />
-                    <h4>Components</h4>
-                    <List>
-                        {
-                              routes.filter(f =>
-                              f.section === 'components').map((route, index) => (
-                                  <ListItem
-                                    key={index}
-                                    to={route.path}
-                                    value={route.value}
-                                  />
-                              ))
-                        }
-                    </List>
-                    <DrawerSpacer type="permanent" />
-                    <h4>Layout</h4>
-                    <List>
-                        {
-                            routes.filter(f =>
-                                    f.section === 'layout',
-                            ).map((route, index) => (
-                                <ListItem
-                                  key={index}
-                                  to={route.path}
-                                  value={route.value}
-                                />
-                            ))
-                      }
-                    </List>
-                    <DrawerSpacer type="permanent" />
-                    <h4>Patterns</h4>
-                    <List>
-                        {
-                            routes.filter(f =>
-                                    f.section === 'patterns',
-                            ).map((route, index) => (
-                                <ListItem
-                                  key={index}
-                                  to={route.path}
-                                  value={route.value}
-                                />
-                            ))
-                        }
-                    </List>
-                </DrawerContent>
-            </Drawer>
-            <main style={mainStyles}>
-                {routes.map((route, index) => (
-                    <Route
-                      key={index}
-                      exact={route.exact}
-                      path={route.path}
-                      component={route.main}
-                    />
-                            ))}
-            </main>
-        </section>
-    </div>
-  );
+                <section
+                  className="content mdc-toolbar-fixed-adjust"
+                  style={contentStyles}
+                >
+                    <Drawer type="permanent">
+                        <DrawerContent type="permanent">
+                            <h4>Setup</h4>
+                            <List>
+                                {
+                                routes.filter(f =>
+                                f.section === 'setup').map((route, index) => (
+                                    <ListItem
+                                      key={index}
+                                      to={route.path}
+                                      value={route.value}
+                                    />
+                                ))
+                            }
+                            </List>
+                            <DrawerSpacer type="permanent" />
+                            <h4>Components</h4>
+                            <List>
+                                {
+                                  routes.filter(f =>
+                                  f.section === 'components').map((route, index) => (
+                                      <ListItem
+                                        key={index}
+                                        to={route.path}
+                                        value={route.value}
+                                      />
+                                  ))
+                            }
+                            </List>
+                            <DrawerSpacer type="permanent" />
+                            <h4>Layout</h4>
+                            <List>
+                                {
+                                routes.filter(f =>
+                                        f.section === 'layout',
+                                ).map((route, index) => (
+                                    <ListItem
+                                      key={index}
+                                      to={route.path}
+                                      value={route.value}
+                                    />
+                                ))
+                          }
+                            </List>
+                            <DrawerSpacer type="permanent" />
+                            <h4>Patterns</h4>
+                            <List>
+                                {
+                                routes.filter(f =>
+                                        f.section === 'patterns',
+                                ).map((route, index) => (
+                                    <ListItem
+                                      key={index}
+                                      to={route.path}
+                                      value={route.value}
+                                    />
+                                ))
+                            }
+                            </List>
+                        </DrawerContent>
+                    </Drawer>
+                    <main style={mainStyles}>
+                        {routes.map((route, index) => (
+                            <Route
+                              key={index}
+                              exact={route.exact}
+                              path={route.path}
+                              component={route.main}
+                            />
+                                ))}
+                    </main>
+                </section>
+            </div>
+
+        );
+    }
+}
 export default Layout;

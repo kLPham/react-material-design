@@ -1,10 +1,12 @@
 import '@material/snackbar/dist/mdc.snackbar.css';
+import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { MDCSnackbar } from '@material/snackbar';
 
 class Snackbar extends Component {
     static propTypes = {
+        darkTheme: PropTypes.bool,
         visibleUntilTimeout: PropTypes.bool,
     }
     componentDidMount() {
@@ -16,10 +18,11 @@ class Snackbar extends Component {
         this.snackbar.show(payload);
     }
     render() {
+        const { darkTheme } = this.props;
         return (
             <div
                 ref={(d) => { this.mainRoot = d; }}
-                className="mdc-snackbar"
+                className={classNames('mdc-snackbar', { 'mdc-snackbar--theme-dark': darkTheme })}
                 aria-live="assertive"
                 aria-atomic="true"
                 aria-hidden="true"
