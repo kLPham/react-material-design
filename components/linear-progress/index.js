@@ -21,11 +21,11 @@ class LinearProgress extends Component {
         this.linearProgress.foundation_.setReverse(reversed);
     }
     render() {
-        const { accent } = this.props;
+        const { accent, darkTheme } = this.props;
         return (
             <div
                 role="progressbar"
-                className={classNames('mdc-linear-progress', { 'mdc-linear-progress--accent': accent })}
+                className={classNames('mdc-linear-progress', { 'mdc-linear-progress--theme-dark': darkTheme }, { 'mdc-linear-progress--accent': accent })}
                 ref={(d) => { this.mainRoot = d; }}
             >
                 <div className="mdc-linear-progress__buffering-dots" />

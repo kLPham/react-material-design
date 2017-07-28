@@ -10,6 +10,7 @@ import { MDCGridList } from '@material/grid-list';
 */
 class GridList extends Component {
     static propTypes = {
+        darkTheme: PropTypes.bool,
       /**
       * Grid lists support header caption. You can change the footer caption to be a header caption.
       */
@@ -23,7 +24,7 @@ class GridList extends Component {
         this.gridList = new MDCGridList(this.mainRoot);
     }
     render() {
-        const { children, headerCaption } = this.props;
+        const { children, headerCaption, darkTheme } = this.props;
         const childProps = children.map(child =>
           child.props,
         );
@@ -35,6 +36,7 @@ class GridList extends Component {
         ).length > 0;
         const cx = classNames(
               'mdc-grid-list',
+              {'mdc-grid-list--theme-dark': darkTheme},
             {
                 'mdc-grid-list--header-caption': headerCaption,
             }, {

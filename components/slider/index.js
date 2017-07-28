@@ -1,10 +1,12 @@
 import '@material/slider/dist/mdc.slider.css';
+import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { MDCSlider } from '@material/slider';
 
 class Slider extends Component {
     static propTypes = {
+        darkTheme: PropTypes.bool,
         disabled: PropTypes.bool,
         initialValue: PropTypes.number,
     };
@@ -26,11 +28,11 @@ class Slider extends Component {
         this.foundation.destroy();
     }
     render() {
-        const { disabled, initialValue } = this.props;
+        const { darkTheme, disabled, initialValue } = this.props;
         return (
             <div
                 ref={(d) => { this.mainRoot = d; }}
-                className="mdc-slider"
+                className={classNames("mdc-slider", {"mdc-slider--theme-dark": darkTheme})}
                 tabIndex="0"
                 role="slider"
                 aria-valuemin="0"

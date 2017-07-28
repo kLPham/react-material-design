@@ -16,7 +16,7 @@ const processType = (children, filterBy) => {
 /**
 * List
 */
-const List = ({ children, dense }) => {
+const List = ({ children, darkTheme, dense }) => {
     const childProps = Array.isArray(children) ? children.map(child =>
       child.props) : children.props;
     const isTwoLineList = processType(childProps, 'secondaryValue');
@@ -24,7 +24,7 @@ const List = ({ children, dense }) => {
 
     return (
         <ul
-            className={cx('mdc-list', { 'mdc-list--two-line': isTwoLineList },
+            className={cx('mdc-list', { 'mdc-list--theme-dark': darkTheme }, { 'mdc-list--two-line': isTwoLineList },
                 { 'mdc-list--avatar-list': isAvatarList },
                 { 'mdc-list--dense': dense })}
         >
@@ -41,6 +41,7 @@ List.propTypes = {
         PropTypes.element,
         PropTypes.instanceOf(ListItem),
     ]).isRequired,
+    darkTheme: PropTypes.bool,
     /**
     * Use dense to make Lists more compact.
     */

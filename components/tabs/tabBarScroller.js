@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import classNames from 'classnames';
 import '@material/tabs/dist/mdc.tabs.css';
 import PropTypes from 'prop-types';
 import { MDCTabBarScroller } from '@material/tabs';
@@ -6,21 +7,22 @@ import { MDCTabBarScroller } from '@material/tabs';
 class TabBarScroller extends Component {
     static propTypes = {
         children: PropTypes.any,
+        darkTheme: PropTypes.bool,
     }
     componentDidMount() {
         this.tabBarScroller = new MDCTabBarScroller(this.mainRoot);
     }
     render() {
-        const { children } = this.props;
+        const { children, darkTheme } = this.props;
         return (
-            <div id="my-tab-bar-scroller" ref={(d) => { this.mainRoot = d; }} className="mdc-tab-bar-scroller">
+            <div id="my-tab-bar-scroller" ref={(d) => { this.mainRoot = d; }} className={classNames('mdc-tab-bar-scroller', { 'mdc-tab-bar-scroller--theme-dark': darkTheme })}>
                 <div className="mdc-tab-bar-scroller__indicator mdc-tab-bar-scroller__indicator--back">
                     <a className="mdc-tab-bar-scroller__indicator__inner material-icons" href="#" aria-label="scroll back button">
                       navigate_before
                   </a>
                 </div>
                 <div className="mdc-tab-bar-scroller__scroll-frame">
-                    <nav id="my-scrollable-tab-bar" className="mdc-tab-bar mdc-tab-bar-scroller__scroll-frame__tabs">
+                    <nav id="my-scrollable-tab-bar" className={classNames('mdc-tab-bar mdc-tab-bar-scroller__scroll-frame__tabs', { 'mdc-tab-bar--theme-dark': darkTheme })}>
                         <a className="mdc-tab mdc-tab--active" href="#one">Item One</a>
                         <a className="mdc-tab" href="#two">Item Two</a>
                         <a className="mdc-tab" href="#three">Item Three</a>

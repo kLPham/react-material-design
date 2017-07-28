@@ -59,10 +59,10 @@ const cx = classNames.bind(fabcssClasses);
 /**
 * Floating Action Button
 */
-const FAB = ({ icon, location, ripple, ...rest }) =>
+const FAB = ({ icon, location, darkTheme, ripple, ...rest }) =>
     (<button
         style={location && styles[location]}
-        className={cx('mdc-fab',
+        className={cx('mdc-fab', { 'mdc-fab--theme-dark': darkTheme },
             ...Object.keys(rest).map(modifier =>
                 fabcssClasses[modifier],
             ),
