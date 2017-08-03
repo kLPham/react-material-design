@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import classNames from 'classnames';
 import { Route } from 'react-router-dom';
 import { Drawer, DrawerContent, DrawerHeader, DrawerSpacer, IconButton, List, ListItem, Toolbar } from '../../../components/react-material-design';
 import Buttons from './Containers/Buttons';
