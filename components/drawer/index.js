@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { MDCPersistentDrawer, MDCTemporaryDrawer } from '@material/drawer';
 
+/** Drawer (Permanent, Persistent, Temporary)*/
 class Drawer extends Component {
     static propTypes = {
         children: PropTypes.any,

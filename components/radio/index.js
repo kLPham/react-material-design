@@ -6,6 +6,7 @@ import { MDCRadio } from '@material/radio';
 import { v4 } from 'uuid';
 
 // TODO: oncClick handle
+/** Radio*/
 class Radio extends Component {
     static propTypes = {
         label: PropTypes.string,

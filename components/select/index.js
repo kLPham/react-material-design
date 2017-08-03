@@ -7,6 +7,7 @@ import { MDCSelect } from '@material/select';
 // TODO: Can I change children to reuse <ListItem />?
 // TODO: menufactory
 // TODO: Cancel
+/** Select*/
 class Select extends Component {
     static propTypes = {
         disable: PropTypes.bool,

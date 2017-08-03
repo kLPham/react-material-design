@@ -1,14 +1,16 @@
 import React from 'react';
 import CodeToggle from 'react-code-toggle';
-import { parse } from 'react-docgen';
+import _ from 'lodash';
 import Docs from '../Components/docs';
-
+import componentDoc from '../docs/componentDoc.json';
 import { FAB, Button, IconToggle, IconButton } from '../../../../components/react-material-design';
-import ButtonDoc from '!raw-loader!../../../../components/button';
-import FABDoc from '!raw-loader!../../../../components/fab';
 
-const parsedButtonDoc = parse(ButtonDoc);
-const parsedFABDoc = parse(FABDoc);
+const buttonDocs = _.pickBy(componentDoc, (value, key) => _.startsWith(key, '../../components/button/'));
+const buttonDocsComponent = _.map(buttonDocs, (doc, key) => <Docs key={key} componentDocs={doc} />);
+const fabDocs = _.pickBy(componentDoc, (value, key) => _.startsWith(key, '../../components/fab/'));
+const fabDocsComponent = _.map(fabDocs, (doc, key) => <Docs key={key} componentDocs={doc} />);
+const iconToggleDocs = _.pickBy(componentDoc, (value, key) => _.startsWith(key, '../../components/icon-toggle/'));
+const iconToggleDocsComponent = _.map(iconToggleDocs, (doc, key) => <Docs key={key} componentDocs={doc} />);
 
 const Buttons = () =>
   (<div>
@@ -24,8 +26,7 @@ const Buttons = () =>
               <FAB location="absolute-bottom-right" plain icon="g_translate" />
               <FAB location="floating-bottom-left" icon="create_new_folder" />
           </CodeToggle>
-          <Docs componentDocs={parsedFABDoc} />
-
+          {fabDocsComponent}
           <h2>Flat and Raised Buttons</h2>
           <h3>Flat buttons</h3>
           <CodeToggle>
@@ -49,9 +50,9 @@ const Buttons = () =>
               <Button label="Dense Raised" dense raised />
               <Button label="Disabled Raised" raised disabled />
           </CodeToggle>
-          <Docs componentDocs={parsedButtonDoc} />
           <h3>Icon Buttons</h3>
           <IconButton icon="menu" />
+          {buttonDocsComponent}
           <h2>Toggle Buttons</h2>
           <h3>Icon Toggles</h3>
           <h4>Basic</h4>
@@ -61,7 +62,7 @@ const Buttons = () =>
           <h4>Primary and Accent Colored</h4>
           <IconToggle icon="star_border" toggledIcon="star" primary />
           <IconToggle icon="bookmark_border" toggledIcon="bookmark" accent />
-
+          {iconToggleDocsComponent}
       </section>
   </div>);
 export default Buttons;

@@ -3,16 +3,16 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
 
-const LayoutGrid = ({ children, nested }) =>
-    (nested ? <div className={classNames('mdc-layout-grid__inner')}>
+/** Layout Grid*/
+const LayoutGrid = ({ children, nested }) => {
+    const inner = (<div className={classNames('mdc-layout-grid__inner')}>
         {children}
-    </div>
-        : <div className="mdc-layout-grid">
-            <div className={classNames('mdc-layout-grid__inner')}>
-                {children}
-            </div>
-        </div>
-  );
+    </div>);
+    if (nested) {
+        return (inner);
+    }
+    return <div className="mdc-layout-grid">{inner}</div>;
+};
 LayoutGrid.propTypes = {
     children: PropTypes.any.isRequired,
     nested: PropTypes.bool,

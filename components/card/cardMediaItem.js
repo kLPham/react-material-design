@@ -5,7 +5,7 @@ import { cardMediaItemcssClasses as imgClasses } from '../classes';
 import CardTitle from './cardTitle';
 
 const cx = classNames.bind(imgClasses);
-
+/** Card Media Item */
 const CardMediaItem = ({ children, imgSrc, imgSize, title, ...rest }) =>
     (<div className="mdc-card__horizontal-block">
         {title && <CardTitle title={title}{...rest} />}

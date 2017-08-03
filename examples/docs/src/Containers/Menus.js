@@ -1,6 +1,11 @@
 import React from 'react';
+import _ from 'lodash';
 import { Button, Menu, MenuItem } from '../../../../components/react-material-design';
-// import { Button, Menu, MenuItem } from 'react-material-design';
+import componentDoc from '../docs/componentDoc.json';
+import Docs from '../Components/docs';
+
+const docs = _.pickBy(componentDoc, (value, key) => _.startsWith(key, '../../components/menu/'));
+const docsComponent = _.map(docs, (doc, key) => <Docs key={key} componentDocs={doc} />);
 
 const Menus = () =>
   (<div>
@@ -33,6 +38,6 @@ const Menus = () =>
           <MenuItem value="A Menu Item" />
           <MenuItem value="Another Menu Item" />
       </Menu>
-
+      {docsComponent}
   </div>);
 export default Menus;

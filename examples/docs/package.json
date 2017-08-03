@@ -4,8 +4,9 @@
   "description": "Simple demonstration of react-material-design components",
   "scripts": {
     "start": "webpack-dev-server",
-    "build": "yarn cleanup && cross-env NODE_ENV=production webpack -p",
+    "build": "yarn docgen && yarn cleanup && cross-env NODE_ENV=production webpack -p",
     "cleanup": "rimraf ../../docs/src/**/*",
+    "docgen": "react-docgen --pretty ../../components -o ./src/docs/componentDoc.json -e component.js -e react-material-design.js --ignore classes",
     "lint": "yarn eslint --ext .js src/ --fix"
   },
   "license": "MIT",
@@ -36,6 +37,7 @@
     "classnames": "^2.2.5",
     "history": "^4.6.3",
     "json-loader": "^0.5.7",
+    "lodash": "^4.17.4",
     "prop-types": "^15.5.10",
     "raw-loader": "^0.5.1",
     "react": "^15.6.1",

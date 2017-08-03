@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { MDCSlider } from '@material/slider';
 
+/** Slider*/
 class Slider extends Component {
     static propTypes = {
         darkTheme: PropTypes.bool,

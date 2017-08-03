@@ -1,24 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import _ from 'lodash';
+// TODO: Methods
 
 const Docs = ({ componentDocs }) => {
     const { description, props } = componentDocs;
-    const propRows = [];
-    for (const [key, value] of Object.entries(props)) {
-        const { type, required, defaultValue, description } = value;
-        propRows.push(
+    const propRows = _.map(props, (doc, key) =>
+        (
             <tr key={key}>
                 <td>{key}</td>
-                <td>{type.name}</td>
-                <td>{String(required)}</td>
-                <td>{defaultValue && defaultValue.value}</td>
-                <td>{description}</td>
-            </tr>,
-    );
-    }
+                <td>{doc.type.name}</td>
+                <td>{String(doc.required)}</td>
+                <td>{doc.defaultValue && doc.defaultValue.value}</td>
+                <td>{doc.description}</td>
+            </tr>
+        ));
+
     return (
         <div>
-            <h2 className="mdc-typography--display1">{`Properties for ${description}`}</h2>
+            <h3 className="mdc-typography--display1">{`Properties for ${description}`}</h3>
             <table>
                 <thead>
                     <tr>
@@ -37,6 +37,6 @@ const Docs = ({ componentDocs }) => {
     );
 };
 Docs.propTypes = {
-    componentDocs: PropTypes.any,
+    componentDocs: PropTypes.object,
 };
 export default Docs;

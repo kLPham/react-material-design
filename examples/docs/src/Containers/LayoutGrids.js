@@ -1,5 +1,11 @@
 import React from 'react';
+import _ from 'lodash';
 import { LayoutGrid, LayoutGridCell } from '../../../../components/react-material-design';
+import componentDoc from '../docs/componentDoc.json';
+import Docs from '../Components/docs';
+
+const docs = _.pickBy(componentDoc, (value, key) => _.startsWith(key, '../../components/layout-grid/'));
+const docsComponent = _.map(docs, (doc, key) => <Docs key={key} componentDocs={doc} />);
 
 const childStyle = {
     backgroundColor: 'gray',
@@ -51,5 +57,6 @@ const LayoutGrids = () =>
             <LayoutGridCell alignment="middle"><div style={childStyle}>middle</div></LayoutGridCell>
             <LayoutGridCell alignment="bottom"><div style={childStyle}>bottom</div></LayoutGridCell>
         </LayoutGrid>
+        {docsComponent}
     </div>);
 export default LayoutGrids;

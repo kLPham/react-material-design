@@ -1,13 +1,13 @@
 import React from 'react';
-import { parse } from 'react-docgen';
+import _ from 'lodash';
+import componentDoc from '../docs/componentDoc.json';
 import Docs from '../Components/docs';
 
 import { GridList, GridTile } from '../../../../components/react-material-design';
-import GridListDoc from '!raw-loader!../../../../components/grid-list';
-import GridTileDoc from '!raw-loader!../../../../components/grid-list/gridTile';
 
-const parsedGridListDoc = parse(GridListDoc);
-const parsedGridTileDoc = parse(GridTileDoc);
+const docs = _.pickBy(componentDoc, (value, key) => _.startsWith(key, '../../components/grid-list/'));
+const docsComponent = _.map(docs, (doc, key) => <Docs key={key} componentDocs={doc} />);
+
 const img = 'https://static.pexels.com/photos/58997/pexels-photo-58997.jpeg';
 const GridLists = () =>
   (<div>
@@ -18,7 +18,6 @@ const GridLists = () =>
           <GridTile src={img} title="First" supportText="Support Text" />
           <GridTile src={img} title="First" icon="star_border" supportText="Support Text" />
       </GridList>
-      <Docs componentDocs={parsedGridListDoc} />
-      <Docs componentDocs={parsedGridTileDoc} />
+    {docsComponent}
   </div>);
 export default GridLists;

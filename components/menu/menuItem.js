@@ -6,6 +6,7 @@ import { v4 } from 'uuid';
 
 // TODO: tabIndex
 // TODO: What behaviors can menu have? Used as a link (Regular link, or react-router), just pick an item,
+/** Menu Item*/
 const MenuItem = ({ value, disable }) => {
     const id = v4();
     return (

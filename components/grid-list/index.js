@@ -5,9 +5,7 @@ import classNames from 'classnames';
 import { MDCGridList } from '@material/grid-list';
 
 // TODO: Aspect ratio
-/**
-* Grid Lists
-*/
+/** Grid Lists*/
 class GridList extends Component {
     static propTypes = {
         darkTheme: PropTypes.bool,

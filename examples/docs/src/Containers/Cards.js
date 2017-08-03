@@ -1,7 +1,12 @@
 import React from 'react';
-import { parse } from 'react-docgen';
 import CodeToggle from 'react-code-toggle';
+import _ from 'lodash';
 import { Button, Card, CardActions, CardMedia, CardMediaItem, CardSupportingContent, CardTitle } from '../../../../components/react-material-design';
+import componentDoc from '../docs/componentDoc.json';
+import Docs from '../Components/docs';
+
+const docs = _.pickBy(componentDoc, (value, key) => _.startsWith(key, '../../components/card/'));
+const docsComponent = _.map(docs, (doc, key) => <Docs key={key} componentDocs={doc} />);
 
 const corgiPic = 'https://c1.staticflickr.com/9/8507/8525192931_bc451c501e_b.jpg';
 const corgiPic2 = 'https://static.pexels.com/photos/58997/pexels-photo-58997.jpeg';
@@ -129,5 +134,6 @@ const Cards = () =>
               </CardMediaItem>
           </Card>
       </CodeToggle>
+      {docsComponent}
   </div>);
 export default Cards;

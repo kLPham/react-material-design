@@ -4,6 +4,7 @@ import '@material/tabs/dist/mdc.tabs.css';
 import PropTypes from 'prop-types';
 import { MDCTabBarScroller } from '@material/tabs';
 
+/** Tab Bar Scroller*/
 class TabBarScroller extends Component {
     static propTypes = {
         children: PropTypes.any,

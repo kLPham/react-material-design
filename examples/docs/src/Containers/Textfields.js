@@ -1,6 +1,12 @@
 import React, { Component } from 'react';
+import _ from 'lodash';
 import { Textfield } from '../../../../components/react-material-design';
-// import { Textfield } from 'react-material-design';
+import componentDoc from '../docs/componentDoc.json';
+import Docs from '../Components/docs';
+
+const docs = _.pickBy(componentDoc, (value, key) => _.startsWith(key, '../../components/textfield/'));
+const docsComponent = _.map(docs, (doc, key) => <Docs key={key} componentDocs={doc} />);
+
 
 class Textfields extends Component {
     state = {
@@ -25,6 +31,7 @@ class Textfields extends Component {
                 <Textfield disabled label="disabled, no ht" value="pre-filled" />
                 <br />
                 <Textfield alignEnd disabled label="disabled, no ht" value="pre-filled" />
+                {docsComponent}
             </div>
         );
     }

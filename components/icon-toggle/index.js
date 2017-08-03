@@ -6,6 +6,7 @@ import { MDCIconToggle } from '@material/icon-toggle';
 
 // TODO: Font Awesome
 // TODO: Label
+/** Icon Toggle*/
 class IconToggle extends Component {
     static propTypes = {
         accent: PropTypes.bool,

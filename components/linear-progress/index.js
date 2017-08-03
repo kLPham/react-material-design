@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 import classNames from 'classnames';
 import { MDCLinearProgress } from '@material/linear-progress';
 
+/** Linear Progress*/
 class LinearProgress extends Component {
     static propTypes = {
         accent: PropTypes.bool,

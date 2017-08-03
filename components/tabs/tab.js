@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import { MDCTab } from '@material/tabs';
 
 // TODO: Logic to handle only one child.
+/** Tab*/
 class Tab extends Component {
     static propTypes = {
         active: PropTypes.bool,

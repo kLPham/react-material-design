@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
+/** Card Actions */
 const CardActions = ({ children, vertical }) =>
     (<section className={classNames('mdc-card__actions', { 'mdc-card__actions--vertical': vertical })}>
         {children}

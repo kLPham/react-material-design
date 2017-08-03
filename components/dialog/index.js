@@ -4,10 +4,11 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { MDCDialog } from '@material/dialog';
 // TODO: trapFocusOnSurface https://www.w3.org/TR/wai-aria-practices/#dialog_modal
-/**
-* Dialog
-*/
+/** Dialog*/
 class Dialog extends Component {
+    static propTypes = {
+        darkTheme: PropTypes.bool,
+    }
     componentDidMount() {
         this.dialog = new MDCDialog(this.mainRoot);
     }

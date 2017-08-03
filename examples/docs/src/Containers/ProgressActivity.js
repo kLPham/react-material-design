@@ -1,6 +1,11 @@
 import React from 'react';
+import _ from 'lodash';
 import { LinearProgress } from '../../../../components/react-material-design';
 import '@material/linear-progress/dist/mdc.linear-progress.css';
+import componentDoc from '../docs/componentDoc.json';
+import Docs from '../Components/docs';
+const docs = _.pickBy(componentDoc, (value, key) => _.startsWith(key, '../../components/linear-progress/'));
+const docsComponent = _.map(docs, (doc, key) => <Docs key={key} componentDocs={doc} />);
 
 const ProgressActivity = () =>
     (<div>
@@ -22,5 +27,6 @@ const ProgressActivity = () =>
         <LinearProgress accent progress={0.22} buffer={0.40} />
         <h4>Buffer Reversed</h4>
         <LinearProgress progress={0.22} buffer={0.40} reversed />
+        {docsComponent}
     </div>);
 export default ProgressActivity;

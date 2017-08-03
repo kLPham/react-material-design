@@ -5,6 +5,7 @@ import '@material/card/dist/mdc.card.css';
 
 // TODO: Horizontal blocks
 // TODO: Cards are taking up full screen.
+/** Card */
 const Card = ({ children, style, darkTheme }) =>
     (<div style={style} className={classNames('mdc-card', { 'mdc-card--theme-dark': darkTheme })}>
         {children}

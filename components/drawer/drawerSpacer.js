@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import '@material/drawer/dist/mdc.drawer.css';
 
+/** Drawer Spacer*/
 const DrawerSpacer = ({ children, type }) =>
     (<div className={`mdc-${type}-drawer__toolbar-spacer`}>
         {children}

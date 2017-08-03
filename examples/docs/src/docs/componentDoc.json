@@ -1,0 +1,1361 @@
+{
+  "../../components/button/iconButton.js": {
+    "description": "Icon Button",
+    "methods": [],
+    "props": {
+      "icon": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": ""
+      },
+      "primary": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": ""
+      }
+    }
+  },
+  "../../components/button/index.js": {
+    "description": "Flat and Raised Buttons",
+    "methods": [],
+    "props": {
+      "accent": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Colors the button with the accent color."
+      },
+      "colored": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Same as accent"
+      },
+      "compact": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Reduces the amount of horizontal padding in the button."
+      },
+      "darkTheme": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Dark Theme context means the component sits on top of a dark background."
+      },
+      "dense": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Compresses the button text to make it slightly smaller."
+      },
+      "disabled": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": ""
+      },
+      "label": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": "Label to be displayed on button.",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "onClick": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": ""
+      },
+      "primary": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Colors the button with the primary color."
+      },
+      "raised": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Elevates the button and creates a colored background."
+      },
+      "ripple": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": ""
+      }
+    }
+  },
+  "../../components/card/cardActions.js": {
+    "description": "Card Actions",
+    "methods": [],
+    "props": {
+      "children": {
+        "type": {
+          "name": "any"
+        },
+        "required": true,
+        "description": ""
+      },
+      "vertical": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      }
+    }
+  },
+  "../../components/card/cardMedia.js": {
+    "description": "Card Media",
+    "methods": [],
+    "props": {
+      "children": {
+        "type": {
+          "name": "any"
+        },
+        "required": false,
+        "description": ""
+      }
+    }
+  },
+  "../../components/card/cardMediaItem.js": {
+    "description": "Card Media Item",
+    "methods": [],
+    "props": {
+      "imgSrc": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": ""
+      },
+      "imgSize": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": ""
+      },
+      "title": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": ""
+      },
+      "children": {
+        "type": {
+          "name": "any"
+        },
+        "required": false,
+        "description": ""
+      }
+    }
+  },
+  "../../components/card/cardSupportingContent.js": {
+    "description": "Card Supporting Content",
+    "methods": [],
+    "props": {
+      "children": {
+        "type": {
+          "name": "any"
+        },
+        "required": true,
+        "description": ""
+      }
+    }
+  },
+  "../../components/card/cardTitle.js": {
+    "description": "Card Title",
+    "methods": [],
+    "props": {
+      "title": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": ""
+      },
+      "subtitle": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "larger": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      }
+    }
+  },
+  "../../components/card/index.js": {
+    "description": "Card",
+    "methods": [],
+    "props": {
+      "children": {
+        "type": {
+          "name": "any"
+        },
+        "required": true,
+        "description": ""
+      },
+      "darkTheme": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": ""
+      },
+      "horizontal": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": ""
+      },
+      "style": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": ""
+      }
+    }
+  },
+  "../../components/checkbox/index.js": {
+    "description": "Checkbox",
+    "methods": [],
+    "props": {
+      "checked": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": ""
+      },
+      "disable": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": ""
+      },
+      "indeterminate": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": ""
+      },
+      "label": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": ""
+      }
+    }
+  },
+  "../../components/dialog/index.js": {
+    "description": "Dialog",
+    "methods": [
+      {
+        "name": "handleOpen",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "handleCancel",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      }
+    ],
+    "props": {
+      "darkTheme": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": ""
+      }
+    }
+  },
+  "../../components/drawer/drawerContent.js": {
+    "description": "Drawer Content",
+    "methods": [],
+    "props": {
+      "children": {
+        "type": {
+          "name": "any"
+        },
+        "required": true,
+        "description": ""
+      },
+      "type": {
+        "type": {
+          "name": "enum",
+          "value": [
+            {
+              "value": "'temporary'",
+              "computed": false
+            },
+            {
+              "value": "'permanent'",
+              "computed": false
+            },
+            {
+              "value": "'persistent'",
+              "computed": false
+            }
+          ]
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "'temporary'",
+          "computed": false
+        }
+      }
+    }
+  },
+  "../../components/drawer/drawerHeader.js": {
+    "description": "Drawer Header",
+    "methods": [],
+    "props": {
+      "children": {
+        "type": {
+          "name": "any"
+        },
+        "required": true,
+        "description": ""
+      },
+      "primary": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": ""
+      },
+      "type": {
+        "type": {
+          "name": "enum",
+          "value": [
+            {
+              "value": "'temporary'",
+              "computed": false
+            },
+            {
+              "value": "'persistent'",
+              "computed": false
+            }
+          ]
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "'temporary'",
+          "computed": false
+        }
+      }
+    }
+  },
+  "../../components/drawer/drawerSpacer.js": {
+    "description": "Drawer Spacer",
+    "methods": [],
+    "props": {
+      "children": {
+        "type": {
+          "name": "any"
+        },
+        "required": false,
+        "description": ""
+      },
+      "type": {
+        "type": {
+          "name": "enum",
+          "value": [
+            {
+              "value": "'permanent'",
+              "computed": false
+            },
+            {
+              "value": "'temporary'",
+              "computed": false
+            }
+          ]
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "'temporary'",
+          "computed": false
+        }
+      }
+    }
+  },
+  "../../components/drawer/index.js": {
+    "description": "Drawer (Permanent, Persistent, Temporary)",
+    "methods": [
+      {
+        "name": "toggleDrawer",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      }
+    ],
+    "props": {
+      "children": {
+        "type": {
+          "name": "any"
+        },
+        "required": false,
+        "description": ""
+      },
+      "darkTheme": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": ""
+      },
+      "type": {
+        "type": {
+          "name": "enum",
+          "value": [
+            {
+              "value": "'permanent'",
+              "computed": false
+            },
+            {
+              "value": "'persistent'",
+              "computed": false
+            },
+            {
+              "value": "'temporary'",
+              "computed": false
+            }
+          ]
+        },
+        "required": true,
+        "description": "",
+        "defaultValue": {
+          "value": "'temporary'",
+          "computed": false
+        }
+      }
+    }
+  },
+  "../../components/fab/index.js": {
+    "description": "Floating Action Button",
+    "methods": [],
+    "props": {
+      "icon": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": "Uses Material Design Icon Font, e.g. icon=\"g_translate\". You may use any other icon method you wish."
+      },
+      "location": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "By default FAB rests in the page where it sits in the content flow. You can re-position it as-needed. Accepts absolute or floating and position on screen e.g., type=\"absolute-bottom-right\""
+      },
+      "ripple": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": ""
+      },
+      "mini": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Makes the FAB smaller (40 x 40 pixels)."
+      },
+      "plain": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Makes the FAB have a white background."
+      }
+    }
+  },
+  "../../components/formField/index.js": {
+    "description": "",
+    "methods": [],
+    "props": {
+      "alignEnd": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": ""
+      },
+      "additionalClassNames": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": ""
+      },
+      "children": {
+        "type": {
+          "name": "any"
+        },
+        "required": true,
+        "description": ""
+      }
+    }
+  },
+  "../../components/grid-list/gridTile.js": {
+    "description": "Grid Tiles",
+    "methods": [],
+    "props": {
+      "icon": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": ""
+      },
+      "src": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": "Source for image to present"
+      },
+      "supportText": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Grid lists support a one-line caption by default. You can add an additional line of support text if needed."
+      },
+      "title": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": ""
+      }
+    }
+  },
+  "../../components/grid-list/index.js": {
+    "description": "Grid Lists",
+    "methods": [],
+    "props": {
+      "darkTheme": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": ""
+      },
+      "headerCaption": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Grid lists support header caption. You can change the footer caption to be a header caption."
+      },
+      "children": {
+        "type": {
+          "name": "arrayOf",
+          "value": {
+            "name": "element"
+          }
+        },
+        "required": true,
+        "description": "Children must be more than one Grid Tile components."
+      }
+    }
+  },
+  "../../components/icon-toggle/index.js": {
+    "description": "Icon Toggle",
+    "methods": [],
+    "props": {
+      "accent": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": ""
+      },
+      "disable": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": ""
+      },
+      "icon": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": "",
+        "defaultValue": {
+          "value": "'favorite_border'",
+          "computed": false
+        }
+      },
+      "toggledIcon": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": "",
+        "defaultValue": {
+          "value": "'favorite'",
+          "computed": false
+        }
+      },
+      "primary": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": ""
+      }
+    }
+  },
+  "../../components/layout-grid/index.js": {
+    "description": "Layout Grid",
+    "methods": [],
+    "props": {
+      "children": {
+        "type": {
+          "name": "any"
+        },
+        "required": true,
+        "description": ""
+      },
+      "nested": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": ""
+      }
+    }
+  },
+  "../../components/layout-grid/layoutGridCell.js": {
+    "description": "Layout Grid Cell",
+    "methods": [],
+    "props": {
+      "alignment": {
+        "type": {
+          "name": "enum",
+          "value": [
+            {
+              "value": "'top'",
+              "computed": false
+            },
+            {
+              "value": "'middle'",
+              "computed": false
+            },
+            {
+              "value": "'bottom'",
+              "computed": false
+            }
+          ]
+        },
+        "required": false,
+        "description": "Items are defined to stretch, by default, taking up the height of their corresponding row. You can switch to a different behavior by using one of top, middle or bottom."
+      },
+      "children": {
+        "type": {
+          "name": "any"
+        },
+        "required": false,
+        "description": ""
+      },
+      "columnSpan": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "You can set the cells span by a column number between 1 and 12."
+      },
+      "screenSize": {
+        "type": {
+          "name": "enum",
+          "value": [
+            {
+              "value": "'desktop'",
+              "computed": false
+            },
+            {
+              "value": "'tablet'",
+              "computed": false
+            },
+            {
+              "value": "'phone'",
+              "computed": false
+            }
+          ]
+        },
+        "required": false,
+        "description": "desktop, tablet or phone"
+      }
+    }
+  },
+  "../../components/linear-progress/index.js": {
+    "description": "Linear Progress",
+    "methods": [],
+    "props": {
+      "accent": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": ""
+      },
+      "buffer": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": ""
+      },
+      "indeterminate": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": ""
+      },
+      "progress": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": ""
+      },
+      "reversed": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": ""
+      }
+    }
+  },
+  "../../components/list/ListDivider.js": {
+    "description": "List Divider",
+    "methods": [],
+    "props": {
+      "inset": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Inset dividers are useful when working with lists which have start details."
+      }
+    }
+  },
+  "../../components/list/ListItem.js": {
+    "description": "List Item",
+    "methods": [],
+    "props": {
+      "avatarSrc": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Source URL for avatar image. Will display to the left of text value."
+      },
+      "icon": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": ""
+      },
+      "iconRight": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": ""
+      },
+      "rightTitle": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": ""
+      },
+      "secondaryValue": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Secondary text value for two-line list item."
+      },
+      "to": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": ""
+      },
+      "value": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": ""
+      }
+    }
+  },
+  "../../components/list/index.js": {
+    "description": "List",
+    "methods": [],
+    "props": {
+      "children": {
+        "type": {
+          "name": "union",
+          "value": [
+            {
+              "name": "arrayOf",
+              "value": {
+                "name": "element"
+              }
+            },
+            {
+              "name": "element"
+            },
+            {
+              "name": "instanceOf",
+              "value": "ListItem"
+            }
+          ]
+        },
+        "required": true,
+        "description": "One or more <ListItem />"
+      },
+      "darkTheme": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": ""
+      },
+      "dense": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Use dense to make Lists more compact."
+      }
+    }
+  },
+  "../../components/menu/index.js": {
+    "description": "Menu",
+    "methods": [
+      {
+        "name": "handleOpen",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "focusIndex",
+            "type": null
+          }
+        ],
+        "returns": null
+      }
+    ],
+    "props": {
+      "children": {
+        "type": {
+          "name": "union",
+          "value": [
+            {
+              "name": "arrayOf",
+              "value": {
+                "name": "element"
+              }
+            },
+            {
+              "name": "element"
+            }
+          ]
+        },
+        "required": true,
+        "description": ""
+      },
+      "darkTheme": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": ""
+      }
+    }
+  },
+  "../../components/menu/menuItem.js": {
+    "description": "Menu Item",
+    "methods": [],
+    "props": {
+      "value": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": ""
+      },
+      "disable": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": ""
+      }
+    }
+  },
+  "../../components/radio/index.js": {
+    "description": "Radio",
+    "methods": [],
+    "props": {
+      "label": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": ""
+      },
+      "darkTheme": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": ""
+      },
+      "disable": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": ""
+      },
+      "checked": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": ""
+      },
+      "name": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": ""
+      }
+    }
+  },
+  "../../components/select/index.js": {
+    "description": "Select",
+    "methods": [],
+    "props": {
+      "disable": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": ""
+      }
+    }
+  },
+  "../../components/slider/index.js": {
+    "description": "Slider",
+    "methods": [],
+    "props": {
+      "darkTheme": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": ""
+      },
+      "disabled": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": ""
+      },
+      "initialValue": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "0",
+          "computed": false
+        }
+      }
+    }
+  },
+  "../../components/snackbar/index.js": {
+    "description": "Snackbar",
+    "methods": [
+      {
+        "name": "showSnackbar",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "payload",
+            "type": null
+          }
+        ],
+        "returns": null
+      }
+    ],
+    "props": {
+      "darkTheme": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": ""
+      },
+      "visibleUntilTimeout": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": ""
+      }
+    }
+  },
+  "../../components/switch/index.js": {
+    "description": "Switch",
+    "methods": [],
+    "props": {
+      "darkTheme": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": ""
+      },
+      "disabled": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": ""
+      },
+      "label": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": ""
+      }
+    }
+  },
+  "../../components/tabs/index.js": {
+    "description": "Tab Bar",
+    "methods": [],
+    "props": {
+      "darkTheme": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": ""
+      },
+      "children": {
+        "type": {
+          "name": "any"
+        },
+        "required": false,
+        "description": ""
+      }
+    }
+  },
+  "../../components/tabs/tab.js": {
+    "description": "Tab",
+    "methods": [],
+    "props": {
+      "active": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": ""
+      },
+      "label": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": ""
+      },
+      "to": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": ""
+      },
+      "icon": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": ""
+      }
+    }
+  },
+  "../../components/tabs/tabBarScroller.js": {
+    "description": "Tab Bar Scroller",
+    "methods": [],
+    "props": {
+      "children": {
+        "type": {
+          "name": "any"
+        },
+        "required": false,
+        "description": ""
+      },
+      "darkTheme": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": ""
+      }
+    }
+  },
+  "../../components/textfield/index.js": {
+    "description": "Textfield",
+    "methods": [
+      {
+        "name": "handleChange",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "e",
+            "type": null
+          }
+        ],
+        "returns": null
+      }
+    ],
+    "props": {
+      "darkTheme": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": ""
+      },
+      "disabled": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": ""
+      },
+      "helpText": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": ""
+      },
+      "label": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": ""
+      },
+      "required": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": ""
+      },
+      "value": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": ""
+      }
+    }
+  },
+  "../../components/toolbar/index.js": {
+    "description": "",
+    "methods": [],
+    "props": {
+      "children": {
+        "type": {
+          "name": "union",
+          "value": [
+            {
+              "name": "element"
+            },
+            {
+              "name": "arrayOf",
+              "value": {
+                "name": "element"
+              }
+            }
+          ]
+        },
+        "required": false,
+        "description": ""
+      },
+      "darkTheme": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": ""
+      },
+      "fixed": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": ""
+      }
+    }
+  },
+  "../../components/toolbar/toolbarRow.js": {
+    "description": "",
+    "methods": [],
+    "props": {
+      "centerElements": {
+        "type": {
+          "name": "union",
+          "value": [
+            {
+              "name": "element"
+            },
+            {
+              "name": "arrayOf",
+              "value": {
+                "name": "element"
+              }
+            }
+          ]
+        },
+        "required": false,
+        "description": ""
+      },
+      "leftElements": {
+        "type": {
+          "name": "union",
+          "value": [
+            {
+              "name": "element"
+            },
+            {
+              "name": "arrayOf",
+              "value": {
+                "name": "element"
+              }
+            }
+          ]
+        },
+        "required": false,
+        "description": ""
+      },
+      "rightElements": {
+        "type": {
+          "name": "union",
+          "value": [
+            {
+              "name": "element"
+            },
+            {
+              "name": "arrayOf",
+              "value": {
+                "name": "element"
+              }
+            }
+          ]
+        },
+        "required": false,
+        "description": ""
+      },
+      "title": {
+        "type": {
+          "name": "union",
+          "value": [
+            {
+              "name": "string"
+            },
+            {
+              "name": "array"
+            }
+          ]
+        },
+        "required": false,
+        "description": ""
+      }
+    }
+  }
+}

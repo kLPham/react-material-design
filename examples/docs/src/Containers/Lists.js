@@ -1,16 +1,12 @@
 import React from 'react';
+import _ from 'lodash';
 import CodeToggle from 'react-code-toggle';
-import { parse } from 'react-docgen';
 import { List, ListItem, ListDivider } from '../../../../components/react-material-design';
-// import { List, ListItem, ListDivider } from 'react-material-design';
+import componentDoc from '../docs/componentDoc.json';
 import Docs from '../Components/docs';
-import ListDoc from '!raw-loader!../../../../components/list';
-import ListDividerDoc from '!raw-loader!../../../../components/list/ListDivider';
-import ListItemDoc from '!raw-loader!../../../../components/list/ListItem';
 
-const parsedListDoc = parse(ListDoc);
-const parsedListDividerDoc = parse(ListDividerDoc);
-const parsedListItemDoc = parse(ListItemDoc);
+const docs = _.pickBy(componentDoc, (value, key) => _.startsWith(key, '../../components/list/'));
+const docsComponent = _.map(docs, (doc, key) => <Docs key={key} componentDocs={doc} />);
 
 const Lists = () =>
     (<div>
@@ -90,9 +86,6 @@ const Lists = () =>
                 <ListItem value="Item 1" secondaryValue="Secondary Value 1" />
             </List>
         </CodeToggle>
-        <Docs componentDocs={parsedListDoc} />
-        <Docs componentDocs={parsedListItemDoc} />
-        <Docs componentDocs={parsedListDividerDoc} />
-
+      {docsComponent}
     </div>);
 export default Lists;

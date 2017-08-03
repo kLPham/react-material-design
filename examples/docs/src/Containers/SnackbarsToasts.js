@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
+import _ from 'lodash';
 import { Button, Snackbar, Textfield } from '../../../../components/react-material-design';
-// import { Button, Textfield, Snackbar } from 'react-material-design';
+import componentDoc from '../docs/componentDoc.json';
+import Docs from '../Components/docs';
+
+const docs = _.pickBy(componentDoc, (value, key) => _.startsWith(key, '../../components/snackbar/'));
+const docsComponent = _.map(docs, (doc, key) => <Docs key={key} componentDocs={doc} />);
 
 class SnackbarsToasts extends Component {
     constructor(props) {
@@ -42,6 +47,7 @@ class SnackbarsToasts extends Component {
                 />
                 <Button primary raised label="Show Snackbar" onClick={this.showSnackbar} />
                 <Snackbar ref={(s) => { this.snackBar = s; }} />
+                {docsComponent}
             </div>
         );
     }

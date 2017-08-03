@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { v4 } from 'uuid';
 
+/** Switch*/
 const Switch = ({ darkTheme, disabled, label }) => {
     const id = v4();
     return (

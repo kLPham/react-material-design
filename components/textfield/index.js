@@ -5,6 +5,7 @@ import React, { Component } from 'react';
 import { MDCTextfield } from '@material/textfield';
 import { v4 } from 'uuid';
 
+/** Textfield*/
 class Textfield extends Component {
     static propTypes = {
         darkTheme: PropTypes.bool,
