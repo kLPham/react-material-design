@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Simple demonstration of react-material-design components",
   "engines": {
-    "node": ">=6.11.0"
+    "node": ">=8.3.0"
   },
   "scripts": {
     "start:dev": "webpack-dev-server",
