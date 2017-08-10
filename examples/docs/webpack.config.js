@@ -19,8 +19,8 @@ const config = {
   entry: ['./src/index'],
   output: {
     filename: `${fileName}.js`,
-    path: path.resolve(__dirname, '../../docs'),
-    publicPath: '/'
+    path: path.resolve(__dirname, './dist'),
+    publicPath:'/'
   },
   module: {
     rules: [
