@@ -28,6 +28,7 @@ Button.propTypes = {
   * Colors the button with the accent color.
   */
     accent: PropTypes.bool,
+    children: PropTypes.any,
   /**
   * Same as accent
   */

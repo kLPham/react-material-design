@@ -3,11 +3,25 @@
     "description": "Icon Button",
     "methods": [],
     "props": {
+      "darkTheme": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": ""
+      },
       "icon": {
         "type": {
           "name": "string"
         },
         "required": true,
+        "description": ""
+      },
+      "onClick": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
         "description": ""
       },
       "primary": {
@@ -29,6 +43,13 @@
         },
         "required": false,
         "description": "Colors the button with the accent color."
+      },
+      "children": {
+        "type": {
+          "name": "any"
+        },
+        "required": false,
+        "description": ""
       },
       "colored": {
         "type": {
@@ -270,6 +291,13 @@
         "required": false,
         "description": ""
       },
+      "darkTheme": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": ""
+      },
       "disable": {
         "type": {
           "name": "bool"
@@ -287,6 +315,19 @@
       "label": {
         "type": {
           "name": "string"
+        },
+        "required": false,
+        "description": ""
+      }
+    }
+  },
+  "../../components/dialog/dialogBody.js": {
+    "description": "Dialog Body",
+    "methods": [],
+    "props": {
+      "children": {
+        "type": {
+          "name": "any"
         },
         "required": false,
         "description": ""
@@ -312,11 +353,59 @@
       }
     ],
     "props": {
+      "children": {
+        "type": {
+          "name": "element"
+        },
+        "required": true,
+        "description": "Must be a <DialogBody />"
+      },
+      "footerActions": {
+        "type": {
+          "name": "arrayOf",
+          "value": {
+            "name": "shape",
+            "value": {
+              "label": {
+                "name": "string",
+                "required": true
+              },
+              "type": {
+                "name": "enum",
+                "value": [
+                  {
+                    "value": "'cancel'",
+                    "computed": false
+                  },
+                  {
+                    "value": "'accept'",
+                    "computed": false
+                  }
+                ],
+                "required": true
+              },
+              "onClick": {
+                "name": "func",
+                "required": false
+              }
+            }
+          }
+        },
+        "required": true,
+        "description": "Used to construct footer actions. Must be an array of object(s). The object must have label, and type. Type must be either cancel or accept"
+      },
       "darkTheme": {
         "type": {
           "name": "bool"
         },
         "required": false,
+        "description": ""
+      },
+      "headerTitle": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
         "description": ""
       }
     }
@@ -630,6 +719,13 @@
         "required": false,
         "description": ""
       },
+      "darkTheme": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": ""
+      },
       "disable": {
         "type": {
           "name": "bool"
@@ -764,6 +860,13 @@
       "buffer": {
         "type": {
           "name": "number"
+        },
+        "required": false,
+        "description": ""
+      },
+      "darkTheme": {
+        "type": {
+          "name": "bool"
         },
         "required": false,
         "description": ""
@@ -942,6 +1045,13 @@
         },
         "required": false,
         "description": ""
+      },
+      "selectMenu": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "When menu is used as a child within <Select />"
       }
     }
   },
@@ -1011,6 +1121,20 @@
     "methods": [],
     "props": {
       "disable": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": ""
+      },
+      "children": {
+        "type": {
+          "name": "element"
+        },
+        "required": true,
+        "description": "Children should be a menu and menu item elements, e.g., <Menu><MenuItem value=\"first /></Menu>"
+      },
+      "darkTheme": {
         "type": {
           "name": "bool"
         },
@@ -1225,6 +1349,13 @@
       "label": {
         "type": {
           "name": "string"
+        },
+        "required": false,
+        "description": ""
+      },
+      "onChange": {
+        "type": {
+          "name": "func"
         },
         "required": false,
         "description": ""

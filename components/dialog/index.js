@@ -3,11 +3,23 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { MDCDialog } from '@material/dialog';
-// TODO: trapFocusOnSurface https://www.w3.org/TR/wai-aria-practices/#dialog_modal
-/** Dialog*/
+
+// TODO: Scrollable
+/** Dialog */
 class Dialog extends Component {
     static propTypes = {
+        /** Must be a <DialogBody /> */
+        children: PropTypes.element.isRequired,
+        /** Used to construct footer actions. Must be an array of object(s). The object must have label, and type. Type must be either cancel or accept */
+        footerActions: PropTypes.arrayOf(
+            PropTypes.shape({
+                label: PropTypes.string.isRequired,
+                type: PropTypes.oneOf(['cancel', 'accept']).isRequired,
+                onClick: PropTypes.func,
+            }),
+        ).isRequired,
         darkTheme: PropTypes.bool,
+        headerTitle: PropTypes.string.isRequired,
     }
     componentDidMount() {
         this.dialog = new MDCDialog(this.mainRoot);
@@ -19,10 +31,9 @@ class Dialog extends Component {
         this.dialog.foundation_.cancel();
     }
     render() {
-        const { darkTheme } = this.props;
+        const { children, darkTheme, footerActions, headerTitle } = this.props;
         return (
             <aside
-                id="my-mdc-dialog"
                 className={classNames('mdc-dialog', { 'mdc-dialog--theme-dark': darkTheme })}
                 ref={(d) => { this.mainRoot = d; }}
                 role="alertdialog"
@@ -31,16 +42,23 @@ class Dialog extends Component {
             >
                 <div className="mdc-dialog__surface">
                     <header className="mdc-dialog__header">
-                        <h2 id="my-mdc-dialog-label" className="mdc-dialog__header__title">
-                            Use Googles location service?
+                        <h2 className="mdc-dialog__header__title">
+                            {headerTitle}
                         </h2>
                     </header>
-                    <section id="my-mdc-dialog-description" className="mdc-dialog__body">
-                        Let Google help apps determine location. This means sending anonymous location data to Google, even when no apps are running.
-                    </section>
+                    {children}
                     <footer className="mdc-dialog__footer">
-                        <button type="button" onClick={this.handleCancel} className={classNames('mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--cancel', { 'mdc-button--theme-dark': darkTheme })}>Decline</button>
-                        <button type="button" className={classNames('mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--accept', { 'mdc-button--theme-dark': darkTheme })}>Accept</button>
+                        {footerActions.map((action, index) =>
+                        (<button
+                            key={index}
+                            type="button"
+                            onClick={action.type === 'cancel' ? this.handleCancel : action.onClick}
+                            className={classNames('mdc-button', 'mdc-dialog__footer__button', `mdc-dialog__footer__button--${action.type}`, { 'mdc-button--theme-dark': darkTheme })}
+                        >
+                            {action.label}
+                        </button>),
+
+                    )}
                     </footer>
                 </div>
                 <div className="mdc-dialog__backdrop" />

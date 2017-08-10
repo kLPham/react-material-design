@@ -5,13 +5,14 @@ import React, { Component } from 'react';
 import { MDCTextfield } from '@material/textfield';
 import { v4 } from 'uuid';
 
-/** Textfield*/
+/** Textfield */
 class Textfield extends Component {
     static propTypes = {
         darkTheme: PropTypes.bool,
         disabled: PropTypes.bool,
         helpText: PropTypes.string,
         label: PropTypes.string,
+        onChange: PropTypes.func,
         required: PropTypes.bool,
         value: PropTypes.string,
     }

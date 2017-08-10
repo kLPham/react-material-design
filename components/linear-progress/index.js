@@ -4,11 +4,12 @@ import React, { Component } from 'react';
 import classNames from 'classnames';
 import { MDCLinearProgress } from '@material/linear-progress';
 
-/** Linear Progress*/
+/** Linear Progress */
 class LinearProgress extends Component {
     static propTypes = {
         accent: PropTypes.bool,
         buffer: PropTypes.number,
+        darkTheme: PropTypes.bool,
         indeterminate: PropTypes.bool,
         progress: PropTypes.number,
         reversed: PropTypes.bool,

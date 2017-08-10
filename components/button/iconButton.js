@@ -14,7 +14,9 @@ const IconButton = ({ icon, primary, onClick, darkTheme }) =>
         {icon}
     </i>);
 IconButton.propTypes = {
+    darkTheme: PropTypes.bool,
     icon: PropTypes.string.isRequired,
+    onClick: PropTypes.func,
     primary: PropTypes.bool,
 };
 export default IconButton;

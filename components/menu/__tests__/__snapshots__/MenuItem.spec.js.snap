@@ -17,7 +17,7 @@ exports[`<MenuItem /> should render disabled 1`] = `
   className="mdc-list-item"
   id="mdc-list-item--2e732f05-f466-4fba-acb5-2f3be58daf75"
   role="menuitem"
-  tabIndex="0"
+  tabIndex="-1"
 >
   this is my value
 </li>

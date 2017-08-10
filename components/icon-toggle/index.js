@@ -6,10 +6,11 @@ import { MDCIconToggle } from '@material/icon-toggle';
 
 // TODO: Font Awesome
 // TODO: Label
-/** Icon Toggle*/
+/** Icon Toggle */
 class IconToggle extends Component {
     static propTypes = {
         accent: PropTypes.bool,
+        darkTheme: PropTypes.bool,
         disable: PropTypes.bool,
         icon: PropTypes.string.isRequired,
         toggledIcon: PropTypes.string.isRequired,

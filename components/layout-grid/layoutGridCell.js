@@ -4,7 +4,7 @@ import React from 'react';
 import classNames from 'classnames';
 
 // TODO: Reordering
-/** Layout Grid Cell*/
+/** Layout Grid Cell */
 const LayoutGridCell = ({ alignment, children, columnSpan, screenSize }) =>
     (
         <div className={classNames(

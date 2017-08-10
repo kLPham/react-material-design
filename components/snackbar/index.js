@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { MDCSnackbar } from '@material/snackbar';
 
-/** Snackbar*/
+/** Snackbar */
 class Snackbar extends Component {
     static propTypes = {
         darkTheme: PropTypes.bool,

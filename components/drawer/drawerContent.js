@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import '@material/drawer/dist/mdc.drawer.css';
 
 // TODO: HOC: I'd like to use existing list-item and feed it mdc-temporary-drawer--* classes.
-/** Drawer Content*/
+/** Drawer Content */
 const DrawerContent = ({ children, type }) =>
     (<nav id="icon-with-text-demo" className={`mdc-${type}-drawer__content`}>
         {children}

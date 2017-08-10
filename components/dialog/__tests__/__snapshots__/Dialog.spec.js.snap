@@ -5,7 +5,6 @@ exports[`<Dialog /> should render 1`] = `
   aria-describedby="my-mdc-dialog-description"
   aria-labelledby="my-mdc-dialog-label"
   className="mdc-dialog"
-  id="my-mdc-dialog"
   role="alertdialog"
 >
   <div
@@ -16,17 +15,13 @@ exports[`<Dialog /> should render 1`] = `
     >
       <h2
         className="mdc-dialog__header__title"
-        id="my-mdc-dialog-label"
       >
         Use Googles location service?
       </h2>
     </header>
-    <section
-      className="mdc-dialog__body"
-      id="my-mdc-dialog-description"
-    >
+    <DialogBody>
       Let Google help apps determine location. This means sending anonymous location data to Google, even when no apps are running.
-    </section>
+    </DialogBody>
     <footer
       className="mdc-dialog__footer"
     >

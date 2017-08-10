@@ -4,13 +4,16 @@ import PropTypes from 'prop-types';
 import '@material/select/dist/mdc.select.css';
 import { MDCSelect } from '@material/select';
 
-// TODO: Can I change children to reuse <ListItem />?
 // TODO: menufactory
+// TODO: Multiple select
 // TODO: Cancel
-/** Select*/
+/** Select */
 class Select extends Component {
     static propTypes = {
         disable: PropTypes.bool,
+        /** Children should be a menu and menu item elements, e.g., <Menu><MenuItem value="first /></Menu> */
+        children: PropTypes.element.isRequired,
+        darkTheme: PropTypes.bool,
     }
     componentDidMount() {
         const { disable } = this.props;
@@ -25,35 +28,11 @@ class Select extends Component {
         });
     }
     render() {
-        const { darkTheme } = this.props;
+        const { darkTheme, children } = this.props;
         return (
-            <div ref={(d) => { this.mainRoot = d; }} className={classNames("mdc-select", {"mdc-select--theme-dark": darkTheme})} role="listbox" tabIndex="0">
+            <div ref={(d) => { this.mainRoot = d; }} className={classNames('mdc-select', { 'mdc-select--theme-dark': darkTheme })} role="listbox">
                 <span className="mdc-select__selected-text">Pick a food group</span>
-                <div className="mdc-simple-menu mdc-select__menu">
-                    <ul className="mdc-list mdc-simple-menu__items">
-                        <li className="mdc-list-item" role="option" id="grains" aria-disabled="true">
-                            Pick a food group
-                        </li>
-                        <li className="mdc-list-item" role="option" id="grains" tabIndex="0">
-                            Bread, Cereal, Rice, and Pasta
-                        </li>
-                        <li className="mdc-list-item" role="option" id="vegetables" tabIndex="0">
-                            Vegetables
-                        </li>
-                        <li className="mdc-list-item" role="option" id="fruit" tabIndex="0">
-                            Fruit
-                        </li>
-                        <li className="mdc-list-item" role="option" id="dairy" tabIndex="0">
-                            Milk, Yogurt, and Cheese
-                        </li>
-                        <li className="mdc-list-item" role="option" id="meat" tabIndex="0">
-                            Meat, Poultry, Fish, Dry Beans, Eggs, and Nuts
-                        </li>
-                        <li className="mdc-list-item" role="option" id="fats" tabIndex="0">
-                            Fats, Oils, and Sweets
-                        </li>
-                    </ul>
-                </div>
+                {children}
             </div>
         );
     }

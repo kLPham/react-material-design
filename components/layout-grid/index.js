@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
 
-/** Layout Grid*/
+/** Layout Grid */
 const LayoutGrid = ({ children, nested }) => {
     const inner = (<div className={classNames('mdc-layout-grid__inner')}>
         {children}

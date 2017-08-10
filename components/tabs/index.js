@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 import classNames from 'classnames';
 import { MDCTabBar } from '@material/tabs';
 
-/** Tab Bar*/
+/** Tab Bar */
 class TabBar extends Component {
     static propTypes= {
         darkTheme: PropTypes.bool,

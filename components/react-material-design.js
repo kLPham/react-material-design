@@ -7,6 +7,7 @@ import CardSupportingContent from './card/cardSupportingContent';
 import CardTitle from './card/cardTitle';
 import Checkbox from './checkbox';
 import Dialog from './dialog';
+import DialogBody from './dialog/dialogBody';
 import Drawer from './drawer';
 import DrawerContent from './drawer/drawerContent';
 import DrawerHeader from './drawer/drawerHeader';
@@ -47,6 +48,7 @@ module.exports = {
     CardTitle,
     Checkbox,
     Dialog,
+    DialogBody,
     Drawer,
     DrawerContent,
     DrawerHeader,

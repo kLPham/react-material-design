@@ -1,6 +1,7 @@
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const webpack = require('webpack');
 
 const fileName = process.env.NODE_ENV === 'production'
@@ -46,7 +47,6 @@ const config = {
       }
     ]
   },
-  devtool: 'eval',
   plugins: [
     new webpack.optimize.CommonsChunkPlugin({
       name: "vendor",
@@ -65,37 +65,28 @@ const config = {
 }
 
 if (process.env.NODE_ENV === 'production') {
+  config.devtool = 'source-map',  
   config.plugins = [
     ...config.plugins,
-    new webpack.optimize.UglifyJsPlugin({
-      beautify: false,
-      mangle: {
-        screw_ie8: true,
-        keep_fnames: true
-      },
-      compress: {
-        screw_ie8: true
-      },
-      comments: false
+    new UglifyJSPlugin({
+      sourceMap: true,
+      parallel: true
     }),
     new webpack.LoaderOptionsPlugin({minimized: true, debug: false}),
     new webpack.HashedModuleIdsPlugin(),
     new webpack.DefinePlugin({
-      'process.env': {
-        'NODE_ENV': JSON.stringify('production')
-      }
+      'process.env.NODE_ENV': JSON.stringify('production')
     })
   ];
 } else {
+  config.devtool = 'eval',
   config.entry = [
     'react-hot-loader/patch', 'webpack-dev-server/client?http://localhost:8080', 'webpack/hot/only-dev-server', ...config.entry
   ]
-  config.output.path = path.resolve(__dirname, 'dist')
   config.devServer = {
     contentBase: path.resolve(__dirname, 'dist'),
     compress: true,
     port: 8080,
-    https: true,
     historyApiFallback: true,
     hot: true,
     publicPath: '/'
@@ -105,9 +96,7 @@ if (process.env.NODE_ENV === 'production') {
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NamedModulesPlugin(),
     new webpack.DefinePlugin({
-      'process.env': {
-        'NODE_ENV': JSON.stringify('dev')
-      }
+      'process.env.NODE_ENV': JSON.stringify('development')
     })
   ];
 }

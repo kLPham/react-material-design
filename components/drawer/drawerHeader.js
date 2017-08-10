@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import '@material/drawer/dist/mdc.drawer.css';
 
 // TODO: what do you want header to be able to be?
-/** Drawer Header*/
+/** Drawer Header */
 const DrawerHeader = ({ children, primary, type }) =>
     (<header className={`mdc-${type}-drawer__header`}>
         <div className={classNames(`mdc-${type}-drawer__header-content`, { 'mdc-theme--primary-bg mdc-theme--text-primary-on-primary': primary })}>

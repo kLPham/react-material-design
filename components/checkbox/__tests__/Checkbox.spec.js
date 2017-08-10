@@ -1,7 +1,6 @@
-import Checkbox from '../index';
 import React from 'react';
 import { shallow } from 'enzyme';
-import { v4 } from 'uuid';
+import Checkbox from '../index';
 
 jest.mock('uuid', () => ({
     v4: jest.fn(() => '2e732f05-f466-4fba-acb5-2f3be58daf75'),

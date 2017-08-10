@@ -1,6 +1,6 @@
 {
   "name": "react-material-design",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "description": "react material-components",
   "main": "index.js",
   "contributors": [
@@ -37,7 +37,6 @@
     "build:min": "cross-env NODE_ENV=production webpack",
     "cleanup": "rimraf '{build,coverage}' --rmdir && rimraf react-material-design-*.tgz",
     "dist": "yarn cleanup && yarn build && yarn build:min",
-    "docgen": "react-docgen ./components -o output.json -e component.js -e react-material-design.js --ignore classes",
     "lint": "eslint components --ext .js",
     "prepare": "yarn dist",
     "test": "jest",
@@ -46,7 +45,7 @@
   "dependencies": {
     "classnames": "^2.2.5",
     "immutable": "^3.8.1",
-    "material-components-web": "^0.16.0",
+    "material-components-web": "^0.17.0",
     "prop-types": "^15.5.10",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
@@ -82,7 +81,7 @@
     "react-addons-test-utils": "^15.6.0",
     "rimraf": "^2.6.1",
     "style-loader": "^0.18.2",
-    "webpack": "^3.4.1"
+    "webpack": "^3.5.3"
   },
   "jest": {
     "setupTestFrameworkScriptFile": "<rootDir>/node_modules/jest-enzyme/lib/index.js",

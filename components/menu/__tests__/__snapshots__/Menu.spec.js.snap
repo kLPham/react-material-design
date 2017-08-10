@@ -7,7 +7,7 @@ exports[`<Menu /> should render 1`] = `
 >
   <ul
     aria-hidden="true"
-    className="mdc-simple-menu__items mdc-list"
+    className="mdc-list mdc-simple-menu__items"
     role="menu"
   >
     <MenuItem

@@ -6,10 +6,11 @@ import { MDCCheckbox } from '@material/checkbox';
 import { v4 } from 'uuid';
 
 // TODO: Align End
-/** Checkbox*/
+/** Checkbox */
 class Checkbox extends Component {
     static propTypes = {
         checked: PropTypes.bool,
+        darkTheme: PropTypes.bool,
         disable: PropTypes.bool,
         indeterminate: PropTypes.bool,
         label: PropTypes.string,

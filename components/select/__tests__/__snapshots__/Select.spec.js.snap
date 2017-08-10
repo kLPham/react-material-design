@@ -4,77 +4,34 @@ exports[`<Select /> should render 1`] = `
 <div
   className="mdc-select"
   role="listbox"
-  tabIndex="0"
 >
   <span
     className="mdc-select__selected-text"
   >
     Pick a food group
   </span>
-  <div
-    className="mdc-simple-menu mdc-select__menu"
+  <Menu
+    selectMenu={true}
   >
-    <ul
-      className="mdc-list mdc-simple-menu__items"
-    >
-      <li
-        aria-disabled="true"
-        className="mdc-list-item"
-        id="grains"
-        role="option"
-      >
-        Pick a food group
-      </li>
-      <li
-        className="mdc-list-item"
-        id="grains"
-        role="option"
-        tabIndex="0"
-      >
-        Bread, Cereal, Rice, and Pasta
-      </li>
-      <li
-        className="mdc-list-item"
-        id="vegetables"
-        role="option"
-        tabIndex="0"
-      >
-        Vegetables
-      </li>
-      <li
-        className="mdc-list-item"
-        id="fruit"
-        role="option"
-        tabIndex="0"
-      >
-        Fruit
-      </li>
-      <li
-        className="mdc-list-item"
-        id="dairy"
-        role="option"
-        tabIndex="0"
-      >
-        Milk, Yogurt, and Cheese
-      </li>
-      <li
-        className="mdc-list-item"
-        id="meat"
-        role="option"
-        tabIndex="0"
-      >
-        Meat, Poultry, Fish, Dry Beans, Eggs, and Nuts
-      </li>
-      <li
-        className="mdc-list-item"
-        id="fats"
-        role="option"
-        tabIndex="0"
-      >
-        Fats, Oils, and Sweets
-      </li>
-    </ul>
-  </div>
+    <MenuItem
+      value="Bread, Cereal, Rice, and Pasta"
+    />
+    <MenuItem
+      value="Vegetables"
+    />
+    <MenuItem
+      value="Fruit"
+    />
+    <MenuItem
+      value="Milk, Yogurt, and Cheese"
+    />
+    <MenuItem
+      value="Meat, Poultry, Fish, Dry Beans, Eggs, and Nuts"
+    />
+    <MenuItem
+      value="Fats, Oils, and Sweets"
+    />
+  </Menu>
 </div>
 `;
 
@@ -82,76 +39,33 @@ exports[`<Select /> should render disabled 1`] = `
 <div
   className="mdc-select"
   role="listbox"
-  tabIndex="0"
 >
   <span
     className="mdc-select__selected-text"
   >
     Pick a food group
   </span>
-  <div
-    className="mdc-simple-menu mdc-select__menu"
+  <Menu
+    selectMenu={true}
   >
-    <ul
-      className="mdc-list mdc-simple-menu__items"
-    >
-      <li
-        aria-disabled="true"
-        className="mdc-list-item"
-        id="grains"
-        role="option"
-      >
-        Pick a food group
-      </li>
-      <li
-        className="mdc-list-item"
-        id="grains"
-        role="option"
-        tabIndex="0"
-      >
-        Bread, Cereal, Rice, and Pasta
-      </li>
-      <li
-        className="mdc-list-item"
-        id="vegetables"
-        role="option"
-        tabIndex="0"
-      >
-        Vegetables
-      </li>
-      <li
-        className="mdc-list-item"
-        id="fruit"
-        role="option"
-        tabIndex="0"
-      >
-        Fruit
-      </li>
-      <li
-        className="mdc-list-item"
-        id="dairy"
-        role="option"
-        tabIndex="0"
-      >
-        Milk, Yogurt, and Cheese
-      </li>
-      <li
-        className="mdc-list-item"
-        id="meat"
-        role="option"
-        tabIndex="0"
-      >
-        Meat, Poultry, Fish, Dry Beans, Eggs, and Nuts
-      </li>
-      <li
-        className="mdc-list-item"
-        id="fats"
-        role="option"
-        tabIndex="0"
-      >
-        Fats, Oils, and Sweets
-      </li>
-    </ul>
-  </div>
+    <MenuItem
+      value="Bread, Cereal, Rice, and Pasta"
+    />
+    <MenuItem
+      value="Vegetables"
+    />
+    <MenuItem
+      value="Fruit"
+    />
+    <MenuItem
+      value="Milk, Yogurt, and Cheese"
+    />
+    <MenuItem
+      value="Meat, Poultry, Fish, Dry Beans, Eggs, and Nuts"
+    />
+    <MenuItem
+      value="Fats, Oils, and Sweets"
+    />
+  </Menu>
 </div>
 `;

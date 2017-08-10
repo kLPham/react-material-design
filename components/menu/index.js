@@ -4,7 +4,8 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { MDCSimpleMenu } from '@material/menu';
 
-/** Menu*/
+// TODO: Dynamically set selectMenu
+/** Menu */
 class Menu extends Component {
     static propTypes = {
         children: PropTypes.oneOfType([
@@ -12,6 +13,8 @@ class Menu extends Component {
             PropTypes.element,
         ]).isRequired,
         darkTheme: PropTypes.bool,
+        /** When menu is used as a child within <Select /> */
+        selectMenu: PropTypes.bool,
     }
     componentDidMount() {
         this.menu = new MDCSimpleMenu(this.rootMenu);
@@ -25,14 +28,14 @@ class Menu extends Component {
         this.menu.show({ focusIndex });
     }
     render() {
-        const { children, darkTheme } = this.props;
+        const { children, darkTheme, selectMenu } = this.props;
         return (
             <div
                 ref={(d) => { this.rootMenu = d; }}
-                className={classNames('mdc-simple-menu', { 'mdc-simple-menu--theme-dark': darkTheme })}
+                className={classNames('mdc-simple-menu', { 'mdc-simple-menu--theme-dark': darkTheme }, { 'mdc-select__menu': selectMenu })}
                 tabIndex="-1"
             >
-                <ul className="mdc-simple-menu__items mdc-list" role="menu" aria-hidden="true">
+                <ul className="mdc-list mdc-simple-menu__items" role="menu" aria-hidden="true">
                     {children}
                 </ul>
             </div>

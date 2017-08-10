@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<DialogBody /> should render 1`] = `
+<section
+  className="mdc-dialog__body"
+  id="my-mdc-dialog-description"
+>
+  Let Google help apps determine location. This means sending anonymous location data to Google, even when no apps are running.
+</section>
+`;

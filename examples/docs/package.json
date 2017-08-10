@@ -7,7 +7,7 @@
   },
   "scripts": {
     "start:dev": "webpack-dev-server",
-    "build": "yarn docgen && yarn cleanup && cross-env NODE_ENV=production webpack -p",
+    "build": "yarn docgen && yarn cleanup && cross-env NODE_ENV=production webpack",
     "prestart": "yarn build",
     "cleanup": "rimraf ./dist/src/**/*",
     "docgen": "react-docgen --pretty ../../components -o ./src/docs/componentDoc.json -e component.js -e react-material-design.js --ignore classes",
@@ -33,7 +33,8 @@
     "rimraf": "^2.6.1",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.18.2",
-    "webpack": "^3.4.1",
+    "uglifyjs-webpack-plugin": "^1.0.0-beta.2",
+    "webpack": "^3.5.3",
     "webpack-dev-server": "^2.6.1",
     "webpack-hot-middleware": "^2.18.2"
   },
