@@ -2,10 +2,14 @@
   "name": "react-material-design-simple-form",
   "version": "1.0.0",
   "description": "Simple demonstration of react-material-design components",
+  "engines": {
+    "node": ">=6.11.0"
+  },
   "scripts": {
-    "start": "webpack-dev-server",
+    "start:dev": "webpack-dev-server",
     "build": "yarn docgen && yarn cleanup && cross-env NODE_ENV=production webpack -p",
-    "cleanup": "rimraf ../../docs/src/**/*",
+    "prestart": "yarn build",
+    "cleanup": "rimraf ./dist/src/**/*",
     "docgen": "react-docgen --pretty ../../components -o ./src/docs/componentDoc.json -e component.js -e react-material-design.js --ignore classes",
     "lint": "yarn eslint --ext .js src/ --fix"
   },
@@ -35,6 +39,7 @@
   },
   "dependencies": {
     "classnames": "^2.2.5",
+    "express": "^4.15.4",
     "history": "^4.6.3",
     "json-loader": "^0.5.7",
     "lodash": "^4.17.4",
@@ -46,7 +51,6 @@
     "react-dom": "^15.6.1",
     "react-ga": "^2.2.0",
     "react-hot-loader": "next",
-    "react-material-design": "file:../../react-material-design-0.3.1.tgz",
     "react-router-dom": "^4.1.2"
   }
 }
