@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import _ from 'lodash';
+import jsxToString from 'jsx-to-string';
+import Playground from 'component-playground';
 import { Button, Snackbar, Textfield } from '../../../../components/react-material-design';
 import componentDoc from '../docs/componentDoc.json';
 import Docs from '../Components/docs';
@@ -31,7 +33,7 @@ class SnackbarsToasts extends Component {
         return (
             <div>
                 <h1>Snackbars</h1>
-                <h3>Enter a message and action text, and then click Shot Snackbar</h3>
+                <h3>Enter a message and action text, and then click Show Snackbar</h3>
                 <Textfield
                   value={message}
                   name="message"
@@ -46,6 +48,15 @@ class SnackbarsToasts extends Component {
                   required
                 />
                 <Button primary raised label="Show Snackbar" onClick={this.showSnackbar} />
+                <Playground
+                  collapsableCode
+                  noRender={false}
+                  codeText={jsxToString(
+                      <code>
+                          <Snackbar />
+                      </code>)}
+                  scope={{ React, Snackbar }}
+                />
                 <Snackbar ref={(s) => { this.snackBar = s; }} />
                 {docsComponent}
             </div>

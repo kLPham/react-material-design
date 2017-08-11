@@ -10,10 +10,11 @@ import { MDCSelect } from '@material/select';
 /** Select */
 class Select extends Component {
     static propTypes = {
-        disable: PropTypes.bool,
-        /** Children should be a menu and menu item elements, e.g., <Menu><MenuItem value="first /></Menu> */
         children: PropTypes.element.isRequired,
+        disable: PropTypes.bool,
+        /** Children should be a menu and menu item elements. */
         darkTheme: PropTypes.bool,
+        label: PropTypes.string.isRequired,
     }
     componentDidMount() {
         const { disable } = this.props;
@@ -28,10 +29,10 @@ class Select extends Component {
         });
     }
     render() {
-        const { darkTheme, children } = this.props;
+        const { darkTheme, children, label } = this.props;
         return (
             <div ref={(d) => { this.mainRoot = d; }} className={classNames('mdc-select', { 'mdc-select--theme-dark': darkTheme })} role="listbox">
-                <span className="mdc-select__selected-text">Pick a food group</span>
+                <span className="mdc-select__selected-text">{label}</span>
                 {children}
             </div>
         );

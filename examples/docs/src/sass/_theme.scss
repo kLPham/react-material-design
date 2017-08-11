@@ -6,3 +6,14 @@ div.rct-live-example--dark {
   background-color: #303030;
   color: var(--mdc-theme-text-primary-on-dark, white);
 }
+table {
+  border-collapse: collapse;
+  width: 80%;
+}
+th {
+  border-bottom: 1px solid #ddd;
+}
+th, td {
+  padding: 5px;
+  text-align: left;
+}

@@ -6,8 +6,9 @@ import MenuItem from '../../menu/menuItem';
 
 describe('<Select />', () => {
     it('should render', () => {
+        const label = 'Pick a food group';
         const select = shallow(
-            <Select>
+            <Select label={label}>
                 <Menu selectMenu>
                     <MenuItem value="Bread, Cereal, Rice, and Pasta" />
                     <MenuItem value="Vegetables" />
@@ -22,8 +23,9 @@ describe('<Select />', () => {
     });
     it('should render disabled', () => {
         const disable = true;
+        const label = 'Pick a food group';
         const select = shallow(
-            <Select disable={disable}>
+            <Select label={label} disable={disable}>
                 <Menu selectMenu>
                     <MenuItem value="Bread, Cereal, Rice, and Pasta" />
                     <MenuItem value="Vegetables" />

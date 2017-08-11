@@ -68,10 +68,10 @@ if (process.env.NODE_ENV === 'production') {
   config.devtool = 'source-map',  
   config.plugins = [
     ...config.plugins,
-    new UglifyJSPlugin({
-      sourceMap: true,
-      parallel: true
-    }),
+    // new UglifyJSPlugin({
+    //   sourceMap: true,
+    //   parallel: true,
+    // }),
     new webpack.LoaderOptionsPlugin({minimized: true, debug: false}),
     new webpack.HashedModuleIdsPlugin(),
     new webpack.DefinePlugin({

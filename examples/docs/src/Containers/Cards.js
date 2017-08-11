@@ -1,6 +1,7 @@
 import React from 'react';
-import CodeToggle from 'react-code-toggle';
 import _ from 'lodash';
+import jsxToString from 'jsx-to-string';
+import Playground from 'component-playground';
 import { Button, Card, CardActions, CardMedia, CardMediaItem, CardSupportingContent, CardTitle } from '../../../../components/react-material-design';
 import componentDoc from '../docs/componentDoc.json';
 import Docs from '../Components/docs';
@@ -22,118 +23,142 @@ const styles2 = {
 const Cards = () =>
   (<div>
       <h2>Card</h2>
-      <CodeToggle>
-          <Card style={styles1}>
-              <CardTitle title="Basic Card" subtitle="Title, Text and Actions" />
-              <CardSupportingContent>
-                  <p>Cheesecake chocolate cake carrot cake marshmallow. Topping toffee sweet gingerbread bear claw muffin.</p>
-                  <p>Liquorice chocolate cake powder cupcake. Caramels muffin tiramisu carrot cake chocolate bar wafer liquorice.</p>
-                  <p>Gummi bears tiramisu bear claw chocolate. Candy ice cream sesame snaps marshmallow sugar plum. Halvah jelly-o tiramisu</p>
-                  <p>sweet sesame snaps soufflé cupcake sesame snaps gummies. Pastry cotton candy chocolate cake liquorice candy canes ice cream wafer bonbon.</p>
-                  <p>Cheesecake soufflé dessert lollipop tootsie roll gingerbread cheesecake cotton candy croissant.</p>
-              </CardSupportingContent>
-              <CardActions >
-                  <Button compact label="Action 1" />
-                  <Button compact label="Action 2" />
-              </CardActions>
-          </Card>
-      </CodeToggle>
-      <CodeToggle>
-          <Card style={styles1}>
-              <CardMedia>
-                  <img src={corgiPic} />
-              </CardMedia>
-              <CardSupportingContent>
-                    Cheesecake chocolate cake carrot cake marshmallow. Topping toffee sweet gingerbread bear claw muffin. Liquorice chocolate cake powder cupcake. Caramels muffin tiramisu carrot cake chocolate bar wafer liquorice. Gummi bears tiramisu bear claw chocolate. Candy ice cream sesame snaps marshmallow sugar plum. Halvah jelly-o tiramisu sweet sesame snaps soufflé cupcake sesame snaps gummies. Pastry cotton candy chocolate cake liquorice candy canes ice cream wafer bonbon. Cheesecake soufflé dessert lollipop tootsie roll gingerbread cheesecake cotton candy croissant.
-                </CardSupportingContent>
-          </Card>
-          <Card style={styles1}>
-              <CardTitle title="Media Card" subtitle="Title, and Vertical Actions" />
-              <CardMedia>
-                  <img src={corgiPic} />
-              </CardMedia>
-              <CardActions vertical>
-                  <Button compact label="vAction 1" />
-                  <Button compact label="vAction 2" />
-              </CardActions>
-          </Card>
-      </CodeToggle>
-      <CodeToggle>
-          <Card style={styles1}>
-              <CardTitle title="Basic Card" subtitle="Title, Text and Actions" />
-              <CardMedia>
-                  <img alt="" src={corgiPic} />
-              </CardMedia>
-              <CardSupportingContent>
-                    Cheesecake chocolate cake carrot cake marshmallow. Topping toffee sweet gingerbread bear claw muffin. Liquorice chocolate cake powder cupcake. Caramels muffin tiramisu carrot cake chocolate bar wafer liquorice. Gummi bears tiramisu bear claw chocolate. Candy ice cream sesame snaps marshmallow sugar plum. Halvah jelly-o tiramisu sweet sesame snaps soufflé cupcake sesame snaps gummies. Pastry cotton candy chocolate cake liquorice candy canes ice cream wafer bonbon. Cheesecake soufflé dessert lollipop tootsie roll gingerbread cheesecake cotton candy croissant.
-                </CardSupportingContent>
-              <CardActions >
-                  <Button compact label="Action 1" />
-                  <Button compact label="Action 2" />
-              </CardActions>
-          </Card>
-      </CodeToggle>
-      <CodeToggle>
-
-          <Card style={styles2}>
-              <CardMedia src={brightPic}>
-                  <CardTitle larger title="Title ontop of media" />
-              </CardMedia>
-              <CardActions >
-                  <Button compact label="Action 1" />
-              </CardActions>
-          </Card>
-
-
-          <Card style={styles2}>
-              <CardMediaItem
-                subtitle="Subtitle Here"
-                title="Title Here"
-                imgSrc={corgiPic2}
-              />
-              <CardActions bottom >
-                  <Button compact label="Action 1" />
-                  <Button compact label="Action 2" />
-              </CardActions>
-          </Card>
-          <Card style={styles2}>
-              <CardMediaItem
-                subtitle="Subtitle Here"
-                title="Title Here"
-                imgSize={1.5}
-                imgSrc={corgiPic2}
-              />
-              <CardActions bottom >
-                  <Button compact label="Action 1" />
-                  <Button compact label="Action 2" />
-              </CardActions>
-          </Card>
-          <Card style={styles2}>
-              <CardMediaItem
-                subtitle="Subtitle Here"
-                title="Title Here"
-                imgSize={2}
-                imgSrc={corgiPic2}
-              />
-              <CardActions bottom >
-                  <Button compact label="Action 1" />
-                  <Button compact label="Action 2" />
-              </CardActions>
-          </Card>
-          <Card style={styles2}>
-              <CardMediaItem
-                    // subtitle="Subtitle Here"
-                    //  title="Title Here"
-                imgSize={3}
-                imgSrc={corgiPic2}
-              >
-                  <CardActions vertical >
-                      <Button compact label="A1" />
-                      <Button compact label="A2" />
-                  </CardActions>
-              </CardMediaItem>
-          </Card>
-      </CodeToggle>
+      <Playground
+        collapsableCode
+        codeText={jsxToString(
+            <code>
+                <Card style={styles1}>
+                    <CardTitle title="Basic Card" subtitle="Title, Text and Actions" />
+                    <CardSupportingContent>
+                        <p>Cheesecake chocolate cake carrot cake marshmallow. Topping toffee sweet gingerbread bear claw muffin.</p>
+                        <p>Liquorice chocolate cake powder cupcake. Caramels muffin tiramisu carrot cake chocolate bar wafer liquorice.</p>
+                        <p>Gummi bears tiramisu bear claw chocolate. Candy ice cream sesame snaps marshmallow sugar plum. Halvah jelly-o tiramisu</p>
+                        <p>sweet sesame snaps soufflé cupcake sesame snaps gummies. Pastry cotton candy chocolate cake liquorice candy canes ice cream wafer bonbon.</p>
+                        <p>Cheesecake soufflé dessert lollipop tootsie roll gingerbread cheesecake cotton candy croissant.</p>
+                    </CardSupportingContent>
+                    <CardActions >
+                        <Button compact label="Action 1" />
+                        <Button compact label="Action 2" />
+                    </CardActions>
+                </Card>
+            </code>)}
+        scope={{ React, Button, Card, CardTitle, CardSupportingContent, CardActions }}
+      />
+      <Playground
+        collapsableCode
+        codeText={jsxToString(
+            <code>
+                <Card style={styles1}>
+                    <CardMedia>
+                        <img src={corgiPic} />
+                    </CardMedia>
+                    <CardSupportingContent>
+                Cheesecake chocolate cake carrot cake marshmallow. Topping toffee sweet gingerbread bear claw muffin. Liquorice chocolate cake powder cupcake. Caramels muffin tiramisu carrot cake chocolate bar wafer liquorice. Gummi bears tiramisu bear claw chocolate. Candy ice cream sesame snaps marshmallow sugar plum. Halvah jelly-o tiramisu sweet sesame snaps soufflé cupcake sesame snaps gummies. Pastry cotton candy chocolate cake liquorice candy canes ice cream wafer bonbon. Cheesecake soufflé dessert lollipop tootsie roll gingerbread cheesecake cotton candy croissant.
+            </CardSupportingContent>
+                </Card>
+                <Card style={styles1}>
+                    <CardTitle title="Media Card" subtitle="Title, and Vertical Actions" />
+                    <CardMedia>
+                        <img src={corgiPic} />
+                    </CardMedia>
+                    <CardActions vertical>
+                        <Button compact label="vAction 1" />
+                        <Button compact label="vAction 2" />
+                    </CardActions>
+                </Card>
+            </code>)}
+        scope={{ React, Button, Card, CardMedia, CardTitle, CardSupportingContent, CardActions }}
+      />
+      <Playground
+        collapsableCode
+        codeText={jsxToString(
+            <code>
+                <Card style={styles1}>
+                    <CardTitle title="Basic Card" subtitle="Title, Text and Actions" />
+                    <CardMedia>
+                        <img alt="" src={corgiPic} />
+                    </CardMedia>
+                    <CardSupportingContent>
+                Cheesecake chocolate cake carrot cake marshmallow. Topping toffee sweet gingerbread bear claw muffin. Liquorice chocolate cake powder cupcake. Caramels muffin tiramisu carrot cake chocolate bar wafer liquorice. Gummi bears tiramisu bear claw chocolate. Candy ice cream sesame snaps marshmallow sugar plum. Halvah jelly-o tiramisu sweet sesame snaps soufflé cupcake sesame snaps gummies. Pastry cotton candy chocolate cake liquorice candy canes ice cream wafer bonbon. Cheesecake soufflé dessert lollipop tootsie roll gingerbread cheesecake cotton candy croissant.
+            </CardSupportingContent>
+                    <CardActions >
+                        <Button compact label="Action 1" />
+                        <Button compact label="Action 2" />
+                    </CardActions>
+                </Card>
+            </code>)}
+        scope={{ React, Button, Card, CardMedia, CardTitle, CardSupportingContent, CardActions }}
+      />
+      <Playground
+        collapsableCode
+        codeText={jsxToString(
+            <code>
+                <Card style={styles2}>
+                    <CardMedia src={brightPic}>
+                        <CardTitle larger title="Title ontop of media" />
+                    </CardMedia>
+                    <CardActions >
+                        <Button compact label="Action 1" />
+                    </CardActions>
+                </Card>
+            </code>)}
+        scope={{ React, Button, Card, CardMedia, CardTitle, CardSupportingContent, CardActions }}
+      />
+      <Playground
+        collapsableCode
+        codeText={jsxToString(
+            <code>
+                <Card style={styles2}>
+                    <CardMediaItem
+                      subtitle="Subtitle Here"
+                      title="Title Here"
+                      imgSrc={corgiPic2}
+                    />
+                    <CardActions bottom >
+                        <Button compact label="Action 1" />
+                        <Button compact label="Action 2" />
+                    </CardActions>
+                </Card>
+                <Card style={styles2}>
+                    <CardMediaItem
+                      subtitle="Subtitle Here"
+                      title="Title Here"
+                      imgSize={1.5}
+                      imgSrc={corgiPic2}
+                    />
+                    <CardActions bottom >
+                        <Button compact label="Action 1" />
+                        <Button compact label="Action 2" />
+                    </CardActions>
+                </Card>
+                <Card style={styles2}>
+                    <CardMediaItem
+                      subtitle="Subtitle Here"
+                      title="Title Here"
+                      imgSize={2}
+                      imgSrc={corgiPic2}
+                    />
+                    <CardActions bottom >
+                        <Button compact label="Action 1" />
+                        <Button compact label="Action 2" />
+                    </CardActions>
+                </Card>
+                <Card style={styles2}>
+                    <CardMediaItem
+                // subtitle="Subtitle Here"
+                //  title="Title Here"
+                      imgSize={3}
+                      imgSrc={corgiPic2}
+                    >
+                        <CardActions vertical >
+                            <Button compact label="A1" />
+                            <Button compact label="A2" />
+                        </CardActions>
+                    </CardMediaItem>
+                </Card>
+            </code>)}
+        scope={{ React, Button, Card, CardMedia, CardMediaItem, CardTitle, CardSupportingContent, CardActions }}
+      />
       {docsComponent}
   </div>);
 export default Cards;

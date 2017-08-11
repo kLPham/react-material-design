@@ -13,10 +13,10 @@ class Navigation extends PureComponent {
             <div>
                 <h2>Navigation</h2>
                 <h3>Temporary Drawer</h3>
-                <p>Click the menu icon above to open and close the drawer.</p>
+                <p>Click the menu icon above to open the drawer.</p>
                 {docsComponent}                
                 <h3>Persistent Drawer</h3>
-                <Button onClick={() => this.persistentDrawer.toggleDrawer()} type="raised" label="Toggle Drawer" />
+                <Button primary raised onClick={() => this.persistentDrawer.toggleDrawer()} type="raised" label="Toggle Drawer" />
                 <Drawer type="persistent" ref={(c) => { this.persistentDrawer = c; }}>
                     <DrawerHeader type="persistent">Header content goes here</DrawerHeader>
                     <DrawerContent type="persistent">

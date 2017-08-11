@@ -4,6 +4,7 @@ import { AppContainer } from 'react-hot-loader';
 import '@material/typography/dist/mdc.typography.css';
 import App from './App';
 import './sass/_theme.scss';
+import './sass/component-playground.scss';
 
 const rootEl = document.getElementById('root');
 

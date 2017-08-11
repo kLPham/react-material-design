@@ -1,5 +1,7 @@
 import React from 'react';
 import _ from 'lodash';
+import jsxToString from 'jsx-to-string';
+import Playground from 'component-playground';
 import { Slider } from '../../../../components/react-material-design';
 import componentDoc from '../docs/componentDoc.json';
 import Docs from '../Components/docs';
@@ -10,11 +12,16 @@ const docsComponent = _.map(docs, (doc, key) => <Docs key={key} componentDocs={d
 const Sliders = () => (
     <div>
         <h1>Sliders</h1>
-        <h2>Continuous Sliders</h2>
-        <Slider />
-        <Slider initialValue={20} />
-        <h3>Disabled</h3>
-        <Slider disabled />
+        <Playground
+          collapsableCode
+          codeText={jsxToString(
+              <code>
+                  <Slider />
+                  <Slider initialValue={20} />
+                  <Slider disabled />
+              </code>)}
+          scope={{ React, Slider }}
+        />
         {docsComponent}
     </div>
           );

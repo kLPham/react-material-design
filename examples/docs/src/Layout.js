@@ -4,7 +4,6 @@ import { Drawer, DrawerContent, DrawerHeader, DrawerSpacer, IconButton, List, Li
 import Buttons from './Containers/Buttons';
 import Cards from './Containers/Cards';
 import Dialogs from './Containers/Dialogs';
-import GettingStarted from './Containers/GettingStarted';
 import GridLists from './Containers/GridLists';
 import LayoutGrids from './Containers/LayoutGrids';
 import Lists from './Containers/Lists';
@@ -45,7 +44,7 @@ const routes = [
 { section: 'layout', path: '/layout/responsive-ui-grid', value: 'Responsive UI', main: () => <LayoutGrids /> },
 { section: 'patterns', path: '/patterns/navigation', value: 'Navigation', main: () => <Navigation /> },
 { section: 'root', path: '/', exact: true, value: 'Home', main: () => <Root /> },
-{ section: 'setup', path: '/setup/getting-started/', value: 'Getting Started', main: () => <GettingStarted /> },
+{ section: 'setup', path: '/setup/getting-started/', value: 'Getting Started', main: () => <Root /> },
 ];
 class Layout extends Component {
     state={

@@ -1120,6 +1120,13 @@
     "description": "Select",
     "methods": [],
     "props": {
+      "children": {
+        "type": {
+          "name": "element"
+        },
+        "required": true,
+        "description": ""
+      },
       "disable": {
         "type": {
           "name": "bool"
@@ -1127,18 +1134,18 @@
         "required": false,
         "description": ""
       },
-      "children": {
-        "type": {
-          "name": "element"
-        },
-        "required": true,
-        "description": "Children should be a menu and menu item elements, e.g., <Menu><MenuItem value=\"first /></Menu>"
-      },
       "darkTheme": {
         "type": {
           "name": "bool"
         },
         "required": false,
+        "description": "Children should be a menu and menu item elements."
+      },
+      "label": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
         "description": ""
       }
     }
@@ -1218,7 +1225,7 @@
         "required": false,
         "description": ""
       },
-      "disabled": {
+      "disable": {
         "type": {
           "name": "bool"
         },
