@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ReactGA from 'react-ga';
 import { Route } from 'react-router-dom';
 import { Drawer, DrawerContent, DrawerHeader, DrawerSpacer, IconButton, List, ListItem, Toolbar } from '../../../components/react-material-design';
 import Buttons from './Containers/Buttons';
@@ -51,6 +52,10 @@ class Layout extends Component {
         darkTheme: false,
     }
     handleThemeToggle = () => {
+        ReactGA.event({
+            category: 'Navigation',
+            action: 'mdc-theme-toggle',
+        });
         document.body.classList.toggle('mdc-theme--dark', !this.state.darkTheme);
         document.querySelectorAll('.rct-live-example').forEach(el =>
             el.classList.toggle('rct-live-example--dark', !this.state.darkTheme));

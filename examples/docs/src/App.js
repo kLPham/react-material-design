@@ -4,20 +4,25 @@ import createHistory from 'history/createBrowserHistory';
 import { Router } from 'react-router-dom';
 import Layout from './Layout';
 
-ReactGA.initialize('UA-104006670-1');
-const history = createHistory();
-
 const logPageView = (location) => {
     if (process.env.NODE_ENV === 'production') {
-        ReactGA.set({ page: location.pathname + location.search });
-        ReactGA.pageview(location.pathname + location.search);
+        ReactGA.set({ page: location.pathname });
+        ReactGA.pageview(location.pathname);
     } else {
         console.log('=====GA=====>', location.pathname, location.search);
     }
 };
-history.listen((location) => {
-    logPageView(location);
-});
+
+const initGA = (history) => {
+    ReactGA.initialize('UA-104006670-1');
+    logPageView(history.location);
+    history.listen(logPageView);
+};
+
+const history = createHistory();
+
+initGA(history);
+
 const App = () => (
     <Router history={history}>
         <Layout />
